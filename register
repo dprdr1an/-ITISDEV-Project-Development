@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | IMC Rollout System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --orange:#F97316;
+    --orange-dark:#EA6A0A;
+    --orange-light:#FEF3EB;
+    --gray-100:#F3F4F6;
+    --gray-200:#E5E7EB;
+    --gray-600:#4B5563;
+    --gray-900:#111827;
+    --white:#FFFFFF;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(135deg,#fff 50%,#FEF3EB 100%);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:550px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h1{
+    color:var(--gray-900);
+    font-size:28px;
+}
+
+.logo span{
+    color:var(--orange);
+}
+
+.subtitle{
+    text-align:center;
+    color:var(--gray-600);
+    margin-top:8px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--gray-900);
+}
+
+input,
+select{
+    width:100%;
+    padding:14px;
+    border:1px solid var(--gray-200);
+    border-radius:10px;
+    font-size:15px;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:var(--orange);
+}
+
+.btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:var(--orange);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn:hover{
+    background:var(--orange-dark);
+}
+
+.message{
+    margin-top:18px;
+    padding:12px;
+    border-radius:8px;
+    display:none;
+}
+
+.success{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.error{
+    background:#fee2e2;
+    color:#991b1b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <div class="logo">
+            <h1>IMC <span>Registration</span></h1>
+            <p class="subtitle">
+                Create your account to access the IMC Rollout & Project Tracking System
+            </p>
+        </div>
+
+        <form id="registerForm">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="name">
+            </div>
+
+            <div class="form-group">
+                <label>Committee</label>
+                <select id="committee">
+                    <option value="">Select Committee</option>
+                    <option>Integrated Marketing Communications</option>
+                    <option>Creatives</option>
+                    <option>Documentation</option>
+                    <option>External Relations</option>
+                    <option>Logistics</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Position</label>
+                <input type="text" id="position">
+            </div>
+
+            <div class="form-group">
+                <label>DLSU Email</label>
+                <input type="email" id="email" placeholder="juan_dela_cruz@dlsu.edu.ph">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password">
+            </div>
+
+            <button type="submit" class="btn">
+                Create Account
+            </button>
+
+            <div id="message" class="message"></div>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+const form = document.getElementById('registerForm');
+const message = document.getElementById('message');
+
+form.addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const committee = document.getElementById('committee').value;
+    const position = document.getElementById('position').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    if(!name || !committee || !position || !email || !password){
+        showMessage(
+            'Please complete all required fields.',
+            'error'
+        );
+        return;
+    }
+
+    const dlsuPattern = /^[a-zA-Z0-9._%+-]+@dlsu\.edu\.ph$/;
+
+    if(!dlsuPattern.test(email)){
+        showMessage(
+            'Please use a valid DLSU email address.',
+            'error'
+        );
+        return;
+    }
+
+    const users =
+        JSON.parse(localStorage.getItem('imcUsers')) || [];
+
+    const existingUser = users.find(
+        user => user.email.toLowerCase() === email.toLowerCase()
+    );
+
+    if(existingUser){
+        showMessage(
+            'This DLSU email is already registered.',
+            'error'
+        );
+        return;
+    }
+
+    const newUser = {
+        name,
+        committee,
+        position,
+        email,
+        password
+    };
+
+    users.push(newUser);
+
+    localStorage.setItem(
+        'imcUsers',
+        JSON.stringify(users)
+    );
+
+    showMessage(
+        'Account created successfully! Welcome to the IMC Rollout & Project Tracking System.',
+        'success'
+    );
+
+    form.reset();
+});
+
+function showMessage(text,type){
+
+    message.className = 'message ' + type;
+    message.style.display = 'block';
+    message.textContent = text;
+}
+</script>
+
+</body>
+</html>
