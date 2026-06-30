@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | IMC Rollout System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <div class="logo">
+            <h1>IMC <span>Registration</span></h1>
+            <p class="subtitle">
+                Create your account to access the IMC Rollout & Project Tracking System
+            </p>
+        </div>
+
+        <form id="registerForm">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="name">
+            </div>
+
+            <div class="form-group">
+                <label>Committee</label>
+                <select id="committee">
+                    <option value="">Select Committee</option>
+                    <option>Creatives</option>
+                    <option>Marketing</option>
+                    <option>Media Coverage</option>
+                    <option>Documentation</option>
+                    <option>External Relations</option>
+                    <option>Logistics</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Position</label>
+                <select id="position">
+                    <option value="">Select Position</option>
+                    <option>Executive</option>
+                    <option>Chairperson</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>DLSU Email</label>
+                <input type="email" id="email" placeholder="juan_dela_cruz@dlsu.edu.ph">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password">
+            </div>
+
+            <button type="submit" class="btn">
+                Create Account
+            </button>
+
+            <div id="message" class="message"></div>
+
+        </form>
+
+    </div>
+</div>
+
+<script src="js/register.js"></script>
+
+</body>
+</html>

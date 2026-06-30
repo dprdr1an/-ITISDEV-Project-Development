@@ -1,5 +1,16 @@
-*.dmb
-*.rsc
-*.int
-*.lk
-*.zip
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional
+coverage/
