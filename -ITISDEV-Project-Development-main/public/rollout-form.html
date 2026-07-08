@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New IMC Rollout — CatchIT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:       #F97316;
+      --orange-dark:  #EA6A0A;
+      --orange-light: #FEF3EB;
+      --orange-mid:   #FDBA74;
+      --white:        #FFFFFF;
+      --off-white:    #FAFAFA;
+      --gray-50:      #F8F8F8;
+      --gray-100:     #F1F1F1;
+      --gray-200:     #E2E2E2;
+      --gray-400:     #9CA3AF;
+      --gray-600:     #4B5563;
+      --gray-700:     #374151;
+      --gray-800:     #1F2937;
+      --gray-900:     #111827;
+      --green:        #10B981;
+      --green-light:  #D1FAE5;
+      --blue:         #6366F1;
+      --blue-light:   #E0E7FF;
+      --yellow:       #F59E0B;
+      --yellow-light: #FEF3C7;
+      --red:          #EF4444;
+      --red-light:    #FEE2E2;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:    0 4px 16px rgba(0,0,0,0.08);
+      --radius-sm:    8px;
+      --radius-md:    14px;
+      --sidebar-w:    240px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-800);
+      background: var(--gray-50);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── SIDEBAR (same as dashboard) ── */
+    .sidebar {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      background: var(--gray-900);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0;
+      height: 100vh;
+      z-index: 50;
+      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .sidebar-header {
+      padding: 22px 20px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sidebar-logo-wrap {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      background: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-logo-wrap svg {
+      width: 18px; height: 18px;
+      stroke: #fff; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .sidebar-brand {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 0.9rem;
+      color: var(--white); letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .sidebar-brand span { color: var(--orange); }
+    .sidebar-brand-sub { font-size: 0.65rem; color: rgba(255,255,255,0.38); font-weight: 400; margin-top: 1px; }
+
+    .sidebar-nav { flex: 1; padding: 16px 12px; overflow-y: auto; }
+
+    .sidebar-section-label {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.28);
+      padding: 0 8px; margin: 16px 0 6px;
+    }
+    .sidebar-section-label:first-child { margin-top: 0; }
+
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 9px;
+      cursor: pointer; transition: background 0.16s;
+      text-decoration: none; margin-bottom: 2px;
+    }
+    .nav-item:hover { background: rgba(255,255,255,0.07); }
+    .nav-item.active { background: var(--orange); }
+    .nav-item.active .nav-label { color: var(--white); }
+    .nav-item.active .nav-icon svg { stroke: var(--white); }
+
+    .nav-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-icon svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.45); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.16s; }
+    .nav-item:not(.active):hover .nav-icon svg { stroke: rgba(255,255,255,0.75); }
+
+    .nav-label { font-size: 0.845rem; font-weight: 500; color: rgba(255,255,255,0.55); transition: color 0.16s; flex: 1; }
+    .nav-item:not(.active):hover .nav-label { color: rgba(255,255,255,0.85); }
+
+    .sidebar-footer { padding: 14px 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+
+    .sidebar-user { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; cursor: pointer; transition: background 0.16s; }
+    .sidebar-user:hover { background: rgba(255,255,255,0.07); }
+
+    .user-avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), #c2410c);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 800; color: var(--white); flex-shrink: 0;
+    }
+    .user-info { flex: 1; overflow: hidden; }
+    .user-name { font-size: 0.8rem; font-weight: 600; color: var(--white); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-role { font-size: 0.65rem; color: rgba(255,255,255,0.38); }
+
+    /* ── MAIN ── */
+    .main { margin-left: var(--sidebar-w); flex: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 28px; height: 64px;
+      display: flex; align-items: center; gap: 16px;
+      position: sticky; top: 0; z-index: 40;
+    }
+
+    .topbar-left { flex: 1; display: flex; align-items: center; gap: 8px; }
+
+    .hamburger-btn {
+      display: none; width: 36px; height: 36px;
+      background: none; border: 1px solid var(--gray-200); border-radius: 8px;
+      align-items: center; justify-content: center; cursor: pointer;
+      flex-direction: column; gap: 4px; padding: 8px 7px;
+    }
+    .hamburger-btn span { display: block; width: 100%; height: 2px; background: var(--gray-600); border-radius: 2px; }
+
+    .breadcrumb { display: flex; align-items: center; gap: 6px; }
+    .breadcrumb-item { font-size: 0.845rem; color: var(--gray-400); text-decoration: none; }
+    .breadcrumb-item:hover { color: var(--orange); }
+    .breadcrumb-sep { color: var(--gray-400); font-size: 0.75rem; }
+    .breadcrumb-current { font-size: 0.845rem; font-weight: 600; color: var(--gray-900); }
+
+    .topbar-right { display: flex; align-items: center; gap: 8px; }
+
+    .topbar-icon-btn {
+      width: 36px; height: 36px; border-radius: 9px;
+      border: 1px solid var(--gray-200); background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.16s; position: relative;
+    }
+    .topbar-icon-btn:hover { background: var(--gray-100); }
+    .topbar-icon-btn svg { width: 16px; height: 16px; stroke: var(--gray-600); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .notif-dot { position: absolute; top: 7px; right: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); border: 1.5px solid var(--white); }
+
+    .topbar-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), #c2410c);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 800; color: var(--white); cursor: pointer;
+    }
+
+    /* ── PAGE CONTENT ── */
+    .page-content { padding: 28px 28px 64px; flex: 1; max-width: 900px; }
+
+    /* ── PROGRESS STEPS ── */
+    .steps-bar {
+      display: flex; align-items: center;
+      gap: 0; margin-bottom: 32px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step {
+      flex: 1; display: flex; align-items: center; gap: 10px;
+      padding: 14px 18px; position: relative;
+      cursor: pointer; transition: background 0.18s;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -10px; top: 50%; transform: translateY(-50%);
+      width: 0; height: 0;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      border-left: 10px solid var(--gray-200);
+      z-index: 2;
+    }
+
+    .step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      right: -11px; top: 50%; transform: translateY(-50%);
+      width: 0; height: 0;
+      border-top: 23px solid transparent;
+      border-bottom: 23px solid transparent;
+      border-left: 11px solid var(--gray-200);
+      z-index: 1;
+    }
+
+    .step.active { background: var(--orange-light); }
+    .step.done   { background: var(--gray-50); }
+    .step:hover:not(.active) { background: var(--gray-50); }
+
+    .step-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 700;
+      background: var(--gray-200); color: var(--gray-600);
+      flex-shrink: 0; transition: background 0.18s, color 0.18s;
+    }
+
+    .step.active .step-num { background: var(--orange); color: var(--white); }
+    .step.done .step-num   { background: var(--green); color: var(--white); }
+
+    .step.done .step-num::before { content: '✓'; font-size: 0.75rem; }
+    .step.done .step-num span { display: none; }
+
+    .step-label {
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--gray-400); line-height: 1.3;
+    }
+    .step.active .step-label { color: var(--orange-dark); }
+    .step.done .step-label   { color: var(--gray-600); }
+
+    /* ── GUIDELINES BANNER ── */
+    .guidelines-banner {
+      background: var(--orange-light);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .guidelines-icon {
+      width: 36px; height: 36px;
+      background: var(--orange);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .guidelines-icon svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .guidelines-body { flex: 1; }
+    .guidelines-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--orange-dark); margin-bottom: 4px; }
+    .guidelines-text { font-size: 0.8rem; color: var(--gray-700); line-height: 1.6; }
+    .guidelines-text strong { font-weight: 600; }
+
+    .guidelines-toggle {
+      font-size: 0.78rem; font-weight: 600; color: var(--orange);
+      cursor: pointer; background: none; border: none;
+      font-family: 'Inter', sans-serif; padding: 0;
+      margin-top: 6px; display: inline-block;
+    }
+
+    .guidelines-list {
+      margin-top: 10px; padding-left: 16px;
+      display: none;
+    }
+    .guidelines-list.open { display: block; }
+    .guidelines-list li { font-size: 0.78rem; color: var(--gray-700); line-height: 1.7; }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .form-card-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--gray-100);
+      background: var(--gray-50);
+    }
+
+    .form-card-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: var(--orange-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .form-card-icon svg { width: 16px; height: 16px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .form-card-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--gray-900); }
+    .form-card-sub   { font-size: 0.75rem; color: var(--gray-400); margin-top: 1px; }
+
+    .form-card-body { padding: 22px; }
+
+    /* ── FORM ELEMENTS ── */
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .form-row.cols-1 { grid-template-columns: 1fr; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-label {
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--gray-700); letter-spacing: 0.01em;
+    }
+    .form-label .required { color: var(--red); margin-left: 2px; }
+
+    .form-hint { font-size: 0.72rem; color: var(--gray-400); }
+
+    .form-control {
+      height: 40px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 9px;
+      padding: 0 12px;
+      font-size: 0.845rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      background: var(--white);
+      transition: border-color 0.18s, box-shadow 0.18s;
+      outline: none;
+      width: 100%;
+    }
+    .form-control:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+    }
+    .form-control::placeholder { color: var(--gray-400); }
+
+    .form-control.textarea {
+      height: auto;
+      min-height: 90px;
+      padding: 10px 12px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    select.form-control {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 34px;
+      cursor: pointer;
+    }
+
+    /* Tag input for point persons */
+    .tag-input-wrap {
+      border: 1.5px solid var(--gray-200);
+      border-radius: 9px;
+      padding: 6px 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      min-height: 44px;
+      cursor: text;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      background: var(--white);
+    }
+    .tag-input-wrap:focus-within {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+    }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 3px 8px; border-radius: 6px;
+    }
+    .tag-remove {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: rgba(234,106,10,0.2);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0;
+      font-size: 0.6rem; font-weight: 700;
+      color: var(--orange-dark);
+      border: none; font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .tag-remove:hover { background: var(--orange); color: white; }
+
+    .tag-real-input {
+      border: none; outline: none;
+      font-size: 0.845rem; font-family: 'Inter', sans-serif;
+      color: var(--gray-900); flex: 1; min-width: 120px;
+      background: transparent;
+    }
+    .tag-real-input::placeholder { color: var(--gray-400); }
+
+    /* Publication table */
+    .pub-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .pub-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+
+    .pub-table th {
+      background: var(--gray-50);
+      text-align: left;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--gray-400);
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-200);
+      white-space: nowrap;
+    }
+
+    .pub-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--gray-100);
+      vertical-align: top;
+    }
+
+    .pub-table tr:last-child td { border-bottom: none; }
+    .pub-table tr:hover td { background: var(--gray-50); }
+
+    .pub-table td input,
+    .pub-table td select,
+    .pub-table td textarea {
+      width: 100%;
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 5px 8px;
+      font-size: 0.78rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s;
+      min-width: 80px;
+    }
+
+    .pub-table td input:focus,
+    .pub-table td select:focus,
+    .pub-table td textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 2px rgba(249,115,22,0.1);
+    }
+
+    .pub-table td textarea { min-height: 56px; resize: vertical; }
+
+    .pub-table td select {
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 6px center;
+      padding-right: 22px; cursor: pointer;
+    }
+
+    .pub-table td:last-child { width: 36px; text-align: center; }
+
+    .del-row-btn {
+      width: 26px; height: 26px; border-radius: 7px;
+      background: var(--red-light); border: none;
+      color: var(--red); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s; margin: 0 auto;
+    }
+    .del-row-btn:hover { background: var(--red); color: white; }
+    .del-row-btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+
+    .add-row-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: none; border: 1.5px dashed var(--gray-200);
+      border-radius: 8px; padding: 7px 14px;
+      font-size: 0.78rem; font-weight: 600; color: var(--gray-600);
+      cursor: pointer; transition: border-color 0.15s, color 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .add-row-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .add-row-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+
+    /* Publicity plan timeline */
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 140px 36px;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    /* Checklist */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .checklist-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+
+    .checklist-item.checked {
+      border-color: var(--green);
+      background: var(--green-light);
+    }
+
+    .check-box {
+      width: 20px; height: 20px; border-radius: 6px;
+      border: 2px solid var(--gray-200);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .checklist-item.checked .check-box {
+      background: var(--green); border-color: var(--green);
+    }
+    .check-box svg { width: 11px; height: 11px; stroke: white; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; display: none; }
+    .checklist-item.checked .check-box svg { display: block; }
+
+    .check-label { font-size: 0.82rem; font-weight: 500; color: var(--gray-800); line-height: 1.45; }
+    .check-sub   { font-size: 0.72rem; color: var(--gray-400); margin-top: 2px; }
+    .checklist-item.checked .check-label { color: #065f46; }
+    .checklist-item.checked .check-sub   { color: #065f46; opacity: 0.7; }
+
+    /* Checklist progress */
+    .checklist-progress {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px;
+    }
+    .checklist-progress-bar {
+      flex: 1; height: 6px; background: var(--gray-200); border-radius: 10px; overflow: hidden;
+    }
+    .checklist-progress-fill {
+      height: 100%; border-radius: 10px;
+      background: var(--green);
+      transition: width 0.3s ease;
+    }
+    .checklist-progress-label { font-size: 0.75rem; font-weight: 600; color: var(--gray-600); white-space: nowrap; }
+
+    /* Section divider */
+    .section-divider {
+      border: none; border-top: 1px solid var(--gray-100);
+      margin: 20px 0;
+    }
+
+    /* Revision log */
+    .revision-item {
+      display: flex; gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .revision-item:last-child { border-bottom: none; }
+
+    .revision-dot-wrap {
+      display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
+    }
+    .revision-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--orange); border: 2px solid var(--orange-light);
+      margin-top: 4px; flex-shrink: 0;
+    }
+    .revision-line { flex: 1; width: 2px; background: var(--gray-100); margin-top: 4px; }
+    .revision-item:last-child .revision-line { display: none; }
+
+    .revision-body { flex: 1; }
+    .revision-action { font-size: 0.82rem; font-weight: 600; color: var(--gray-900); }
+    .revision-meta   { font-size: 0.72rem; color: var(--gray-400); margin-top: 2px; }
+    .revision-note   { font-size: 0.78rem; color: var(--gray-600); margin-top: 4px; font-style: italic; }
+
+    /* Status badge */
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .status-badge .dot { width: 7px; height: 7px; border-radius: 50%; }
+    .status-draft    { background: var(--gray-100); color: var(--gray-600); }
+    .status-draft    .dot { background: var(--gray-400); }
+    .status-review   { background: var(--yellow-light); color: #92400E; }
+    .status-review   .dot { background: var(--yellow); }
+    .status-approved { background: var(--green-light); color: #065f46; }
+    .status-approved .dot { background: var(--green); }
+
+    /* Form actions */
+    .form-actions {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px;
+      padding: 20px 22px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      position: sticky; bottom: 24px;
+    }
+
+    .form-actions-left { display: flex; align-items: center; gap: 10px; }
+    .form-actions-right { display: flex; align-items: center; gap: 10px; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--orange); color: var(--white);
+      font-weight: 600; font-size: 0.845rem;
+      padding: 10px 20px; border-radius: 9px;
+      border: none; cursor: pointer;
+      transition: background 0.18s, transform 0.12s;
+      box-shadow: 0 4px 14px rgba(249,115,22,0.30);
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .btn-primary svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--white); color: var(--gray-700);
+      font-weight: 600; font-size: 0.845rem;
+      padding: 10px 20px; border-radius: 9px;
+      border: 1.5px solid var(--gray-200); cursor: pointer;
+      transition: border-color 0.18s, color 0.18s, background 0.18s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-secondary:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-light); }
+    .btn-secondary svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: none; color: var(--gray-600);
+      font-weight: 500; font-size: 0.845rem;
+      padding: 10px 16px; border-radius: 9px;
+      border: none; cursor: pointer;
+      transition: color 0.15s, background 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-ghost:hover { color: var(--gray-900); background: var(--gray-100); }
+    .btn-ghost svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 90px; right: 24px;
+      background: var(--gray-900); color: white;
+      padding: 12px 18px; border-radius: 10px;
+      font-size: 0.845rem; font-weight: 500;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: var(--shadow-md);
+      transform: translateY(20px); opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      z-index: 200; pointer-events: none;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+    .sidebar-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45); z-index: 45;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(calc(-1 * var(--sidebar-w))); }
+      .sidebar.open { transform: translateX(0); }
+      .sidebar-overlay.show { display: block; }
+      .main { margin-left: 0; }
+      .hamburger-btn { display: flex; }
+      .page-content { padding: 20px 14px 80px; }
+      .topbar { padding: 0 14px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-row.cols-3 { grid-template-columns: 1fr; }
+      .checklist-grid { grid-template-columns: 1fr; }
+      .steps-bar { display: none; }
+      .timeline-row { grid-template-columns: 1fr 1fr; }
+      .timeline-row > *:nth-child(3) { grid-column: span 2; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo-wrap">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <div>
+      <div class="sidebar-brand">IMC <span>Rollout</span></div>
+      <div class="sidebar-brand-sub">CATCH2T28 · DLSU</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">Main</div>
+    <a href="dashboard.html" class="nav-item">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <span class="nav-label">Dashboard</span>
+    </a>
+    <a href="project-request.html" class="nav-item">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+      <span class="nav-label">Projects</span>
+    </a>
+    <a href="task-assignment.html" class="nav-item">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <span class="nav-label">My Tasks</span>
+    </a>
+    <a href="rollout-form.html" class="nav-item active">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <span class="nav-label">Rollout Forms</span>
+    </a>
+    <a href="#" class="nav-item">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg></div>
+      <span class="nav-label">File Repository</span>
+    </a>
+    <div class="sidebar-section-label">Manage</div>
+    <a href="#" class="nav-item">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <span class="nav-label">Members</span>
+    </a>
+    <a href="#" class="nav-item">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <span class="nav-label">Project Status</span>
+    </a>
+    <a href="#" class="nav-item">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <span class="nav-label">Discussions</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="user-avatar">FGB</div>
+      <div class="user-info">
+        <div class="user-name">Francis Gabrielle B.</div>
+        <div class="user-role">Project Head · IMC</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="hamburger-btn" id="hamburgerBtn"><span></span><span></span><span></span></button>
+      <div class="breadcrumb">
+        <a href="rollout-form.html" class="breadcrumb-item">Rollout Forms</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">New IMC Rollout</span>
+      </div>
+      <span class="status-badge status-draft" id="globalStatus" style="margin-left:8px;">
+        <span class="dot"></span> Draft
+      </span>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-icon-btn">
+        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <div class="notif-dot"></div>
+      </div>
+      <div class="topbar-avatar">FGB</div>
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- Steps bar -->
+    <div class="steps-bar">
+      <div class="step active" data-step="1" onclick="goStep(1)">
+        <div class="step-num"><span>1</span></div>
+        <div class="step-label">Project Details</div>
+      </div>
+      <div class="step" data-step="2" onclick="goStep(2)">
+        <div class="step-num"><span>2</span></div>
+        <div class="step-label">Publication Plan</div>
+      </div>
+      <div class="step" data-step="3" onclick="goStep(3)">
+        <div class="step-num"><span>3</span></div>
+        <div class="step-label">Publicity Plan</div>
+      </div>
+      <div class="step" data-step="4" onclick="goStep(4)">
+        <div class="step-num"><span>4</span></div>
+        <div class="step-label">Checklist</div>
+      </div>
+    </div>
+
+    <!-- Guidelines Banner -->
+    <div class="guidelines-banner">
+      <div class="guidelines-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="guidelines-body">
+        <div class="guidelines-title">IMC Rollout Guidelines</div>
+        <div class="guidelines-text">Complete <strong>all sections</strong> thoroughly. Incomplete or placeholder-filled forms will not be processed. Notify any chairperson immediately if revisions are made.</div>
+        <button class="guidelines-toggle" id="guidelinesToggle">Show all reminders ↓</button>
+        <ol class="guidelines-list" id="guidelinesList">
+          <li>Complete all sections with relevant details — timelines, content, and key information.</li>
+          <li>For big projects (series of postings): consolidate all required publication content and add additional tables as needed.</li>
+          <li>Provide a clear and detailed publicity plan to ensure smooth execution and DAAM approval.</li>
+          <li>Notify any chairperson <strong>immediately</strong> if revisions are made after submission.</li>
+          <li>Incomplete submissions will be placed on hold.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ── SECTION 1: Project Details ── -->
+    <div class="form-card" id="section1">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Project Details</div>
+          <div class="form-card-sub">Basic information about the project and its key people</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Project Name <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="e.g. DLSU Technology Summit 2026" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Committee <span class="required">*</span></label>
+            <select class="form-control">
+              <option value="" disabled selected>Select committee</option>
+              <option>Creatives</option>
+              <option>Marketing</option>
+              <option>Media Productions</option>
+              <option>Events</option>
+              <option>Publications</option>
+              <option>Human Resources</option>
+              <option>Finance</option>
+              <option>IMC (Cross-committee)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row cols-3">
+          <div class="form-group">
+            <label class="form-label">Project Type <span class="required">*</span></label>
+            <select class="form-control">
+              <option value="" disabled selected>Select type</option>
+              <option>Event Promotion</option>
+              <option>Publication / Pubmat</option>
+              <option>Digital Campaign</option>
+              <option>Video / Reel</option>
+              <option>General Announcement</option>
+              <option>Series of Postings</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Target Platform <span class="required">*</span></label>
+            <select class="form-control">
+              <option value="" disabled selected>Select platform</option>
+              <option>Facebook</option>
+              <option>Instagram</option>
+              <option>Facebook + Instagram</option>
+              <option>TikTok</option>
+              <option>All Platforms</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priority Level</label>
+            <select class="form-control">
+              <option value="" disabled selected>Select priority</option>
+              <option>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Requesting Head / Officer <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="Full name and position" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Point Person(s) <span class="required">*</span></label>
+            <div class="tag-input-wrap" id="pointPersonWrap">
+              <span class="tag">Sophia R. Nicolas <button class="tag-remove" onclick="removeTag(this)">✕</button></span>
+              <input type="text" class="tag-real-input" placeholder="Type name and press Enter…" id="pointPersonInput" />
+            </div>
+            <span class="form-hint">Press Enter to add multiple people</span>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Rollout Start Date <span class="required">*</span></label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Rollout End Date / Posting Date <span class="required">*</span></label>
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">DAAM Submission Deadline <span class="required">*</span></label>
+            <input type="date" class="form-control" />
+            <span class="form-hint">Deadline for submitting materials for DAAM approval</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Event / Campaign Date</label>
+            <input type="date" class="form-control" />
+            <span class="form-hint">If applicable (event this rollout is promoting)</span>
+          </div>
+        </div>
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Project Description / Objective <span class="required">*</span></label>
+            <textarea class="form-control textarea" placeholder="Briefly describe the project, its goal, and the target audience. What are we trying to communicate?"></textarea>
+          </div>
+        </div>
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Key Messages / Talking Points</label>
+            <textarea class="form-control textarea" placeholder="List the main messages or themes that should be reflected in all materials for this project."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2: Publication Plan ── -->
+    <div class="form-card" id="section2">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Publication Plan</div>
+          <div class="form-card-sub">List each pubmat, caption, or asset needed for this rollout</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-bottom:14px;">For series postings, add one row per publication. Each row represents one deliverable that needs to be created and posted.</p>
+
+        <div class="pub-table-wrap">
+          <table class="pub-table" id="pubTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th style="min-width:160px;">Publication Title / Description</th>
+                <th style="min-width:120px;">Material Type</th>
+                <th style="min-width:110px;">Posting Date</th>
+                <th style="min-width:110px;">Posting Time</th>
+                <th style="min-width:180px;">Caption / Copy Notes</th>
+                <th style="min-width:120px;">Assigned To</th>
+                <th style="min-width:90px;">Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="pubTableBody">
+              <tr>
+                <td style="color:var(--gray-400);font-size:0.78rem;font-weight:600;">1</td>
+                <td><input type="text" placeholder="e.g. Event poster — main visual" /></td>
+                <td>
+                  <select>
+                    <option value="" disabled selected>Type</option>
+                    <option>Static Post</option>
+                    <option>Carousel</option>
+                    <option>Story</option>
+                    <option>Reel / Video</option>
+                    <option>Caption Only</option>
+                    <option>Infographic</option>
+                    <option>Cover Photo</option>
+                  </select>
+                </td>
+                <td><input type="date" /></td>
+                <td><input type="time" /></td>
+                <td><textarea placeholder="Caption notes, hashtags, tone…"></textarea></td>
+                <td><input type="text" placeholder="Member name" /></td>
+                <td>
+                  <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>For Review</option>
+                    <option>Done</option>
+                  </select>
+                </td>
+                <td><button class="del-row-btn" onclick="delPubRow(this)" title="Remove row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></td>
+              </tr>
+              <tr>
+                <td style="color:var(--gray-400);font-size:0.78rem;font-weight:600;">2</td>
+                <td><input type="text" placeholder="e.g. Countdown story — Day 1" /></td>
+                <td>
+                  <select>
+                    <option value="" disabled selected>Type</option>
+                    <option>Static Post</option>
+                    <option>Carousel</option>
+                    <option>Story</option>
+                    <option>Reel / Video</option>
+                    <option>Caption Only</option>
+                    <option>Infographic</option>
+                    <option>Cover Photo</option>
+                  </select>
+                </td>
+                <td><input type="date" /></td>
+                <td><input type="time" /></td>
+                <td><textarea placeholder="Caption notes, hashtags, tone…"></textarea></td>
+                <td><input type="text" placeholder="Member name" /></td>
+                <td>
+                  <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>For Review</option>
+                    <option>Done</option>
+                  </select>
+                </td>
+                <td><button class="del-row-btn" onclick="delPubRow(this)" title="Remove row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="add-row-btn" onclick="addPubRow()">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add publication
+        </button>
+
+        <hr class="section-divider" />
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Additional Notes for Creatives / Media</label>
+            <textarea class="form-control textarea" placeholder="Branding guidelines, color palette, reference materials, tone of voice, or any other direction for the team producing the materials."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3: Publicity Plan ── -->
+    <div class="form-card" id="section3">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Publicity Plan</div>
+          <div class="form-card-sub">Timeline of activities and tasks to execute this rollout</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-bottom:16px;">Provide a clear and detailed plan to ensure smooth execution and DAAM approval. Include all key milestones from design briefing to final posting.</p>
+
+        <div id="publicityRows">
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Activity / milestone (e.g. Send design brief to Creatives)" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="e.g. Submit to DAAM for approval" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="="18"/></svg></button>
+          </div>
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="e.g. Review and final approval by chairperson" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="e.g. Post goes live on all platforms" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="add-row-btn" onclick="addPublicityRow()">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add activity
+          </button>
+          <span style="font-size:0.72rem;color:var(--gray-400);">Date · Activity · Person responsible</span>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Coordination Notes</label>
+            <textarea class="form-control textarea" placeholder="Any coordination needed with other committees (Events, Finance, etc.), external parties, or special approvals required."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: Checklist ── -->
+    <div class="form-card" id="section4">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Pre-Submission Checklist</div>
+          <div class="form-card-sub">Ensure all deliverables are complete before submitting</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="checklist-progress">
+          <div class="checklist-progress-bar">
+            <div class="checklist-progress-fill" id="checklistFill" style="width:0%"></div>
+          </div>
+          <span class="checklist-progress-label" id="checklistCount">0 / 8 complete</span>
+        </div>
+
+        <div class="checklist-grid" id="checklistGrid">
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Project details filled in completely</div>
+              <div class="check-sub">Name, committee, type, dates, objective</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Point person(s) assigned</div>
+              <div class="check-sub">At least one responsible member named</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Publication plan complete</div>
+              <div class="check-sub">All pubmats listed with dates and assignees</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Captions / copy notes provided</div>
+              <div class="check-sub">Each publication has content direction</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Publicity plan is complete</div>
+              <div class="check-sub">Key milestones with dates and people</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">DAAM submission deadline set</div>
+              <div class="check-sub">Allows enough lead time for approval</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">No placeholder text remaining</div>
+              <div class="check-sub">All fields have real, finalized content</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Ready for chairperson review</div>
+              <div class="check-sub">Confirmed with point person before submitting</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- Revision Log -->
+        <div style="margin-bottom:8px;">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;font-weight:700;color:var(--gray-900);margin-bottom:2px;">Revision & Update Log</div>
+          <div style="font-size:0.75rem;color:var(--gray-400);">Automatically recorded — all changes are tracked here</div>
+        </div>
+
+        <div id="revisionLog">
+          <div class="revision-item">
+            <div class="revision-dot-wrap"><div class="revision-dot"></div><div class="revision-line"></div></div>
+            <div class="revision-body">
+              <div class="revision-action">Form created</div>
+              <div class="revision-meta">Francis G. B. · Today, 9:14 AM</div>
+              <div class="revision-note">New IMC Rollout form started.</div>
+            </div>
+          </div>
+          <div class="revision-item">
+            <div class="revision-dot-wrap"><div class="revision-dot" style="background:var(--blue);border-color:var(--blue-light);"></div><div class="revision-line"></div></div>
+            <div class="revision-body">
+              <div class="revision-action">Project details updated</div>
+              <div class="revision-meta">Francis G. B. · Today, 9:18 AM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STICKY FORM ACTIONS ── -->
+    <div class="form-actions">
+      <div class="form-actions-left">
+        <a href="dashboard.html" class="btn-ghost">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          Back
+        </a>
+        <span style="font-size:0.78rem;color:var(--gray-400);" id="autoSaveLabel">Auto-saved · just now</span>
+      </div>
+      <div class="form-actions-right">
+        <button class="btn-secondary" onclick="saveDraft()">
+          <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Save Draft
+        </button>
+        <button class="btn-primary" onclick="submitRollout()">
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Submit Rollout
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /page-content -->
+</div><!-- /main -->
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <span id="toastMsg">Saved!</span>
+</div>
+
+<script>
+  // Sidebar toggle
+  const hamburgerBtn   = document.getElementById('hamburgerBtn');
+  const sidebar        = document.getElementById('sidebar');
+  const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+  hamburgerBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    sidebarOverlay.classList.toggle('show');
+  });
+  sidebarOverlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('show');
+  });
+
+  // Guidelines toggle
+  document.getElementById('guidelinesToggle').addEventListener('click', function() {
+    const list = document.getElementById('guidelinesList');
+    list.classList.toggle('open');
+    this.textContent = list.classList.contains('open') ? 'Hide reminders ↑' : 'Show all reminders ↓';
+  });
+
+  // Step navigation
+  let currentStep = 1;
+  function goStep(n) {
+    currentStep = n;
+    document.querySelectorAll('.step').forEach((s, i) => {
+      s.classList.remove('active', 'done');
+      if (i + 1 < n) s.classList.add('done');
+      else if (i + 1 === n) s.classList.add('active');
+    });
+    const section = document.getElementById('section' + n);
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Tag input
+  const tagInput = document.getElementById('pointPersonInput');
+  const tagWrap  = document.getElementById('pointPersonWrap');
+
+  tagInput.addEventListener('keydown', function(e) {
+    if ((e.key === 'Enter' || e.key === ',') && this.value.trim()) {
+      e.preventDefault();
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.innerHTML = this.value.trim() + ' <button class="tag-remove" onclick="removeTag(this)">✕</button>';
+      tagWrap.insertBefore(tag, this);
+      this.value = '';
+    }
+  });
+
+  tagWrap.addEventListener('click', () => tagInput.focus());
+
+  function removeTag(btn) {
+    btn.closest('.tag').remove();
+  }
+
+  // Publication table rows
+  let pubRowCount = 2;
+
+  function makeSelect(options, name) {
+    const sel = document.createElement('select');
+    options.forEach(o => {
+      const opt = document.createElement('option');
+      opt.text = o; sel.appendChild(opt);
+    });
+    return sel;
+  }
+
+  function addPubRow() {
+    pubRowCount++;
+    const tbody = document.getElementById('pubTableBody');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="color:var(--gray-400);font-size:0.78rem;font-weight:600;">${pubRowCount}</td>
+      <td><input type="text" placeholder="Publication description" /></td>
+      <td><select>
+        <option value="" disabled selected>Type</option>
+        <option>Static Post</option><option>Carousel</option><option>Story</option>
+        <option>Reel / Video</option><option>Caption Only</option><option>Infographic</option><option>Cover Photo</option>
+      </select></td>
+      <td><input type="date" /></td>
+      <td><input type="time" /></td>
+      <td><textarea placeholder="Caption notes…"></textarea></td>
+      <td><input type="text" placeholder="Member name" /></td>
+      <td><select><option>Pending</option><option>In Progress</option><option>For Review</option><option>Done</option></select></td>
+      <td><button class="del-row-btn" onclick="delPubRow(this)" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  function delPubRow(btn) {
+    const tbody = document.getElementById('pubTableBody');
+    if (tbody.rows.length <= 1) return;
+    btn.closest('tr').remove();
+    Array.from(tbody.rows).forEach((r, i) => {
+      r.cells[0].textContent = i + 1;
+    });
+    pubRowCount = tbody.rows.length;
+  }
+
+  // Publicity plan rows
+  function addPublicityRow() {
+    const container = document.getElementById('publicityRows');
+    const div = document.createElement('div');
+    div.className = 'timeline-row';
+    div.innerHTML = `
+      <input type="date" class="form-control" style="height:38px;" />
+      <input type="text" class="form-control" placeholder="Activity / milestone" style="height:38px;" />
+      <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+      <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    `;
+    container.appendChild(div);
+  }
+
+  // Checklist
+  function toggleCheck(item) {
+    item.classList.toggle('checked');
+    updateChecklistProgress();
+  }
+
+  function updateChecklistProgress() {
+    const items = document.querySelectorAll('.checklist-item');
+    const checked = document.querySelectorAll('.checklist-item.checked').length;
+    const pct = Math.round((checked / items.length) * 100);
+    document.getElementById('checklistFill').style.width = pct + '%';
+    document.getElementById('checklistCount').textContent = checked + ' / ' + items.length + ' complete';
+  }
+
+  // Toast
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2800);
+  }
+
+  // Save draft
+  function saveDraft() {
+    addRevisionEntry('Draft saved', 'Francis G. B.', 'Form progress saved.');
+    document.getElementById('autoSaveLabel').textContent = 'Saved · just now';
+    showToast('Draft saved successfully');
+  }
+
+  // Submit rollout
+  function submitRollout() {
+    const checked = document.querySelectorAll('.checklist-item.checked').length;
+    const total = document.querySelectorAll('.checklist-item').length;
+
+    if (checked < total) {
+      const proceed = confirm(`You have ${total - checked} unchecked item(s) in the pre-submission checklist. Submit anyway?`);
+      if (!proceed) return;
+    }
+
+    const statusBadge = document.getElementById('globalStatus');
+    statusBadge.className = 'status-badge status-review';
+    statusBadge.innerHTML = '<span class="dot"></span> Submitted — For Review';
+
+    addRevisionEntry('Rollout submitted for review', 'Francis G. B.', 'Sent to chairpersons for review and approval. Notifications dispatched.');
+    showToast('Rollout submitted! Chairpersons have been notified.');
+  }
+
+  // Add revision entry
+  function addRevisionEntry(action, author, note) {
+    const log = document.getElementById('revisionLog');
+    const now = new Date();
+    const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const div = document.createElement('div');
+    div.className = 'revision-item';
+    div.style.opacity = '0';
+    div.innerHTML = `
+      <div class="revision-dot-wrap">
+        <div class="revision-dot" style="background:var(--orange);"></div>
+        <div class="revision-line"></div>
+      </div>
+      <div class="revision-body">
+        <div class="revision-action">${action}</div>
+        <div class="revision-meta">${author} · Today, ${time}</div>
+        ${note ? `<div class="revision-note">${note}</div>` : ''}
+      </div>
+    `;
+    log.appendChild(div);
+    setTimeout(() => { div.style.transition = 'opacity 0.4s'; div.style.opacity = '1'; }, 50);
+  }
+
+  // Auto-save simulation
+  let autoSaveTimer;
+  document.querySelectorAll('.form-control, input, select, textarea').forEach(el => {
+    el.addEventListener('input', () => {
+      document.getElementById('autoSaveLabel').textContent = 'Saving…';
+      clearTimeout(autoSaveTimer);
+      autoSaveTimer = setTimeout(() => {
+        document.getElementById('autoSaveLabel').textContent = 'Auto-saved · just now';
+      }, 1200);
+    });
+  });
+
+  // Scroll-based step highlighting
+  const sections = ['section1','section2','section3','section4'];
+  window.addEventListener('scroll', () => {
+    let current = 1;
+    sections.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 120) current = i + 1;
+    });
+    document.querySelectorAll('.step').forEach((s, i) => {
+      s.classList.remove('active', 'done');
+      if (i + 1 < current) s.classList.add('done');
+      else if (i + 1 === current) s.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
