@@ -1112,18 +1112,123 @@
   });
 
   // Save draft
-  function saveDraft() { showToast('Draft saved successfully'); }
+  // Collect all form data into one object
+  function collectFormData() {
+    // Point persons from tags
+    const pointPersons = Array.from(
+      document.querySelectorAll('#pointPersonWrap .tag')
+    ).map(t => t.textContent.replace('✕', '').trim());
 
-  // Submit
-  function submitRequest() {
+    // Deliverables from rows
+    const deliverables = Array.from(
+      document.querySelectorAll('#deliverableRows .deliverable-row')
+    ).map(row => ({
+      description: row.querySelector('input').value.trim(),
+      category:    row.querySelector('select').value
+    })).filter(d => d.description);
+
+    // Selected project type card
+    const typeCard = document.querySelector('.radio-card.selected .radio-card-label');
+
+    // Selected priority pill
+    const priorityEl = document.querySelector('.priority-pill[class*="selected"]');
+    let priority = 'Medium';
+    if (priorityEl) {
+      if (priorityEl.classList.contains('selected-high'))   priority = 'High';
+      if (priorityEl.classList.contains('selected-medium')) priority = 'Medium';
+      if (priorityEl.classList.contains('selected-low'))    priority = 'Low';
+    }
+
+    // Target each field directly by type and position — no fragile index guessing
+    const allInputs    = Array.from(document.querySelectorAll('.form-col input[type="text"], .form-col input:not([type])'));
+    const allSelects   = Array.from(document.querySelectorAll('.form-col select'));
+    const allDates     = Array.from(document.querySelectorAll('.form-col input[type="date"]'));
+    const allTextareas = Array.from(document.querySelectorAll('.form-col textarea'));
+
+    // text inputs: [0]=projName (use id), [1]=requestingHead, [2]=referenceLink
+    const requestingHead = allInputs.find(i =>
+      i.placeholder && i.placeholder.toLowerCase().includes('full name')
+    )?.value.trim() || '';
+
+    const referenceLink = allInputs.find(i =>
+      i.placeholder && i.placeholder.toLowerCase().includes('google drive')
+    )?.value.trim() || '';
+
+    // selects: [0]=committee
+    const committee = allSelects[0]?.value || '';
+
+    // dates in order: startDate, postingDate, eventDate
+    const startDate   = allDates[0]?.value || null;
+    const postingDate = allDates[1]?.value || null;
+    const eventDate   = allDates[2]?.value || null;
+
+    // textareas: [0]=description (use id), [1]=keyMessages, [2]=additionalNotes
+    const keyMessages      = allTextareas[1]?.value.trim() || '';
+    const additionalNotes  = allTextareas[allTextareas.length - 1]?.value.trim() || '';
+
+    return {
+      projectName:    document.getElementById('projName').value.trim(),
+      committee,
+      projectType:    typeCard ? typeCard.textContent.trim() : '',
+      description:    document.getElementById('projDesc').value.trim(),
+      keyMessages,
+      requestingHead,
+      pointPersons,
+      startDate:      startDate   || null,
+      postingDate:    postingDate || null,
+      eventDate:      eventDate   || null,
+      priority,
+      deliverables,
+      additionalNotes,
+      referenceLinks: referenceLink ? [referenceLink] : []
+    };
+  }
+
+  async function saveDraft() {
+    const data = collectFormData();
+    try {
+      const res = await fetch('/api/projects', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, status: 'Pending' })
+      });
+      const result = await res.json();
+      if (result.success) {
+        showToast('Draft saved — ' + result.refNumber);
+      } else {
+        showToast('Save failed: ' + result.message);
+      }
+    } catch (err) {
+      showToast('Could not reach server. Check that app.js is running.');
+    }
+  }
+
+  async function submitRequest() {
     const pct = parseInt(document.getElementById('progressPct').textContent);
     if (pct < 30) {
       showToast('Please fill in the required fields before submitting.');
       return;
     }
-    const ref = 'REF #IMC-2026-' + String(Math.floor(Math.random() * 89) + 10).padStart(4,'0');
-    document.getElementById('successRef').textContent = ref;
-    document.getElementById('successOverlay').classList.add('show');
+
+    const data = collectFormData();
+
+    try {
+      const res = await fetch('/api/projects', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        document.getElementById('successRef').textContent = 'REF #' + result.refNumber;
+        document.getElementById('successOverlay').classList.add('show');
+      } else {
+        showToast('Submission failed: ' + result.message);
+      }
+    } catch (err) {
+      showToast('Could not reach server. Check that app.js is running.');
+    }
   }
 
   function closeSuccess() {

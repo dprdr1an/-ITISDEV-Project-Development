@@ -1414,28 +1414,121 @@
   }
 
   // Save draft
-  function saveDraft() {
-    addRevisionEntry('Draft saved', 'Francis G. B.', 'Form progress saved.');
-    document.getElementById('autoSaveLabel').textContent = 'Saved · just now';
-    showToast('Draft saved successfully');
+  // Collect all rollout form data
+  function collectRolloutData() {
+    // Point persons from tags
+    const pointPersons = Array.from(
+      document.querySelectorAll('#pointPersonWrap .tag')
+    ).map(t => t.textContent.replace('✕','').trim());
+
+    // Publication rows
+    const publications = Array.from(
+      document.querySelectorAll('#pubTableBody tr')
+    ).map(row => {
+      const inputs   = row.querySelectorAll('input, select, textarea');
+      return {
+        title:        inputs[0]?.value || '',
+        materialType: inputs[1]?.value || '',
+        postingDate:  inputs[2]?.value || null,
+        postingTime:  inputs[3]?.value || '',
+        captionNotes: inputs[4]?.value || '',
+        assignedTo:   inputs[5]?.value || '',
+        status:       inputs[6]?.value || 'Pending'
+      };
+    }).filter(p => p.title);
+
+    // Publicity plan rows
+    const publicityPlan = Array.from(
+      document.querySelectorAll('#publicityRows .timeline-row')
+    ).map(row => {
+      const inputs = row.querySelectorAll('input');
+      return {
+        date:              inputs[0]?.value || null,
+        activity:          inputs[1]?.value || '',
+        personResponsible: inputs[2]?.value || ''
+      };
+    }).filter(p => p.activity);
+
+    // Checked checklist items
+    const checklist = Array.from(
+      document.querySelectorAll('.checklist-item.checked .check-label')
+    ).map(el => el.textContent.trim());
+
+    // Main fields — grab all visible inputs in order
+    const allInputs = document.querySelectorAll('.form-control');
+
+    return {
+      projectName:    allInputs[0]?.value || '',
+      committee:      allInputs[1]?.value || '',
+      projectType:    allInputs[2]?.value || '',
+      targetPlatform: allInputs[3]?.value || '',
+      priority:       allInputs[4]?.value || '',
+      requestingHead: allInputs[5]?.value || '',
+      pointPersons,
+      startDate:      allInputs[6]?.value || null,
+      endDate:        allInputs[7]?.value || null,
+      daamDeadline:   allInputs[8]?.value || null,
+      eventDate:      allInputs[9]?.value || null,
+      description:    allInputs[10]?.value || '',
+      keyMessages:    allInputs[11]?.value || '',
+      publications,
+      publicityPlan,
+      checklist
+    };
   }
 
-  // Submit rollout
-  function submitRollout() {
+  async function saveDraft() {
+    const data = collectRolloutData();
+    try {
+      const res = await fetch('/api/rollouts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, submit: false })
+      });
+      const result = await res.json();
+      if (result.success) {
+        addRevisionEntry('Draft saved', data.requestingHead || 'User', 'Form progress saved.');
+        document.getElementById('autoSaveLabel').textContent = 'Saved · just now';
+        showToast('Draft saved successfully');
+      } else {
+        showToast('Save failed: ' + result.message);
+      }
+    } catch (err) {
+      showToast('Could not reach server. Check that app.js is running.');
+    }
+  }
+
+  async function submitRollout() {
     const checked = document.querySelectorAll('.checklist-item.checked').length;
-    const total = document.querySelectorAll('.checklist-item').length;
+    const total   = document.querySelectorAll('.checklist-item').length;
 
     if (checked < total) {
-      const proceed = confirm(`You have ${total - checked} unchecked item(s) in the pre-submission checklist. Submit anyway?`);
+      const proceed = confirm(`You have ${total - checked} unchecked item(s) in the checklist. Submit anyway?`);
       if (!proceed) return;
     }
 
-    const statusBadge = document.getElementById('globalStatus');
-    statusBadge.className = 'status-badge status-review';
-    statusBadge.innerHTML = '<span class="dot"></span> Submitted — For Review';
+    const data = collectRolloutData();
 
-    addRevisionEntry('Rollout submitted for review', 'Francis G. B.', 'Sent to chairpersons for review and approval. Notifications dispatched.');
-    showToast('Rollout submitted! Chairpersons have been notified.');
+    try {
+      const res = await fetch('/api/rollouts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, submit: true })
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        const statusBadge = document.getElementById('globalStatus');
+        statusBadge.className = 'status-badge status-review';
+        statusBadge.innerHTML = '<span class="dot"></span> Submitted — For Review';
+        addRevisionEntry('Rollout submitted for review', data.requestingHead || 'User', 'Sent to chairpersons for review and approval.');
+        showToast('Rollout submitted! Chairpersons have been notified.');
+      } else {
+        showToast('Submission failed: ' + result.message);
+      }
+    } catch (err) {
+      showToast('Could not reach server. Check that app.js is running.');
+    }
   }
 
   // Add revision entry
