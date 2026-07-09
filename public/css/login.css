@@ -1,0 +1,261 @@
+/* ─────────────────────────────────────────────────────────────
+   login.css
+   Design tokens and layout mirror register.css exactly.
+   New additions: .password-wrap, .toggle-pw, .field-error,
+   .register-link, and the .has-error modifier.
+───────────────────────────────────────────────────────────── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange:        #F97316;
+    --orange-dark:   #EA6A0A;
+    --orange-light:  #FEF3EB;
+    --gray-100:      #F3F4F6;
+    --gray-200:      #E5E7EB;
+    --gray-400:      #9CA3AF;
+    --gray-600:      #4B5563;
+    --gray-900:      #111827;
+    --white:         #FFFFFF;
+    --red:           #EF4444;
+    --red-light:     #FEE2E2;
+    --green:         #166534;
+    --green-light:   #DCFCE7;
+}
+
+/* ── Page ── */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #fff 50%, #FEF3EB 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* ── Wrapper ── */
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+/* ── Card ── */
+.card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Logo / heading ── */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    color: var(--gray-900);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 14px;
+    line-height: 1.55;
+    margin-top: 8px;
+}
+
+/* ── Form groups ── */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gray-900);
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--gray-900);
+    background: var(--white);
+    transition: border-color 0.18s, box-shadow 0.18s;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--gray-400);
+}
+
+input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+
+/* ── Password field with reveal toggle ── */
+.password-wrap {
+    position: relative;
+}
+
+.password-wrap input {
+    padding-right: 46px; /* room for the toggle button */
+}
+
+.toggle-pw {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-400);
+    transition: color 0.16s;
+}
+
+.toggle-pw:hover {
+    color: var(--orange);
+}
+
+.toggle-pw svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ── Inline field errors ── */
+.field-error {
+    font-size: 13px;
+    color: var(--red);
+    margin-top: 6px;
+    display: none; /* shown by JS via .has-error */
+}
+
+.form-group.has-error input {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.10);
+}
+
+.form-group.has-error .field-error {
+    display: block;
+}
+
+/* ── Submit button ── */
+.btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.12s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.30);
+    margin-top: 4px;
+}
+
+.btn:hover {
+    background: var(--orange-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(249, 115, 22, 0.36);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    background: var(--gray-200);
+    color: var(--gray-600);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ── Status message banner ── */
+.message {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    display: none; /* toggled by JS */
+}
+
+.message.success {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.message.error {
+    background: var(--red-light);
+    color: #991B1B;
+}
+
+/* ── Register link ── */
+.register-link {
+    text-align: center;
+    margin-top: 22px;
+    color: var(--gray-600);
+    font-size: 14px;
+}
+
+.register-link a {
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.16s;
+}
+
+.register-link a:hover {
+    color: var(--orange-dark);
+    text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+    .card {
+        padding: 28px 22px;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
