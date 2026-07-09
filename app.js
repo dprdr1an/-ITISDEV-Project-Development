@@ -1,8 +1,8 @@
 require('dotenv').config();
 
 const express = require('express');
-const path = require('path');
-const cors = require('cors');
+const path    = require('path');
+const cors    = require('cors');
 
 const connectDB = require('./config/db');
 
@@ -16,23 +16,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files
+// Serve static files from /public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Temporary route
-app.get('/', (req, res) => {
+// ── Routes ──────────────────────────────────────────
+app.use('/auth',         require('./routes/authRoutes'));
+app.use('/api/projects', require('./routes/projectRoutes'));
+app.use('/api/rollouts', require('./routes/rolloutRoutes'));
+
+// Catch-all: serve index.html for any unmatched route
+app.get('/{*path}', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Future routes
-// app.use('/auth', require('./routes/authRoutes'));
-
+// ── Start server ─────────────────────────────────────
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
-
-const authRoutes = require('./routes/authRoutes');
-
-app.use('/auth', authRoutes);
