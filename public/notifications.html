@@ -1,9 +1,28 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Notifications & Reminders — IMC Rollout</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--orange:#F97316;--orange-dark:#EA6A0A;--orange-light:#FEF3EB;--white:#fff;--gray-50:#F8F8F8;--gray-100:#F1F1F1;--gray-200:#E2E2E2;--gray-400:#9CA3AF;--gray-600:#4B5563;--gray-700:#374151;--gray-800:#1F2937;--gray-900:#111827;--green:#10B981;--green-light:#D1FAE5;--blue:#6366F1;--blue-light:#E0E7FF;--yellow:#F59E0B;--yellow-light:#FEF3C7;--red:#EF4444;--red-light:#FEE2E2;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.08);--radius-md:14px;--sidebar-w:240px}body{font-family:Inter,sans-serif;color:var(--gray-800);background:var(--gray-50);display:flex;min-height:100vh}.sidebar{width:var(--sidebar-w);background:var(--gray-900);position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column}.sidebar-header{padding:22px 20px 18px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:12px}.sidebar-logo-wrap{width:36px;height:36px;border-radius:9px;background:var(--orange);display:flex;align-items:center;justify-content:center}.sidebar svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.sidebar-brand{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;color:white}.sidebar-brand span{color:var(--orange)}.sidebar-brand-sub{font-size:.65rem;color:rgba(255,255,255,.38);margin-top:1px}.sidebar-nav{flex:1;padding:16px 12px;overflow:auto}.sidebar-section-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);padding:0 8px;margin:16px 0 6px}.nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;text-decoration:none;margin-bottom:2px}.nav-item:hover{background:rgba(255,255,255,.07)}.nav-item.active{background:var(--orange)}.nav-icon{width:30px;height:30px;display:flex;align-items:center;justify-content:center}.nav-icon svg{width:16px;height:16px;stroke:rgba(255,255,255,.45)}.nav-item.active svg{stroke:white}.nav-label{font-size:.845rem;font-weight:500;color:rgba(255,255,255,.55);flex:1}.nav-item:hover .nav-label,.nav-item.active .nav-label{color:white}.sidebar-footer{padding:14px 12px;border-top:1px solid rgba(255,255,255,.07)}.sidebar-user{display:flex;align-items:center;gap:10px;padding:10px}.user-avatar,.topbar-avatar,.member-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#c2410c);display:flex;align-items:center;justify-content:center;color:white;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:800}.user-name{font-size:.8rem;font-weight:600;color:white}.user-role{font-size:.65rem;color:rgba(255,255,255,.38)}.main{margin-left:var(--sidebar-w);flex:1;min-height:100vh}.topbar{height:64px;background:rgba(255,255,255,.92);border-bottom:1px solid var(--gray-200);padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}.breadcrumb{display:flex;gap:7px;align-items:center;font-size:.845rem}.breadcrumb a{color:var(--gray-400);text-decoration:none}.breadcrumb-current{font-weight:600;color:var(--gray-900)}.page-content{padding:28px;max-width:1180px}.page-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:24px;flex-wrap:wrap}.page-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:5px}.page-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.55rem;font-weight:800;color:var(--gray-900)}.page-subtitle{font-size:.875rem;color:var(--gray-400);margin-top:4px}.layout{display:grid;grid-template-columns:1fr 330px;gap:20px}.card{background:white;border:1px solid var(--gray-200);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px}.card-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid var(--gray-100);background:var(--gray-50)}.card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:var(--gray-900)}.card-sub{font-size:.75rem;color:var(--gray-400);margin-top:2px}.card-body{padding:20px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.form-group{display:flex;flex-direction:column;gap:6px}.form-label{font-size:.8rem;font-weight:600;color:var(--gray-700)}.required{color:var(--red)}.form-control{height:40px;border:1.5px solid var(--gray-200);border-radius:9px;padding:0 12px;font-size:.845rem;font-family:Inter,sans-serif;color:var(--gray-900);outline:none;background:white;width:100%}.form-control:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(249,115,22,.1)}.textarea{height:auto;min-height:86px;padding:10px 12px;resize:vertical;line-height:1.6}select.form-control{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:34px}.file-drop{border:2px dashed var(--gray-200);border-radius:12px;padding:30px 20px;text-align:center;cursor:pointer;transition:.18s}.file-drop:hover,.file-drop.dragover{border-color:var(--orange);background:var(--orange-light)}.file-drop-icon{width:46px;height:46px;border-radius:12px;background:var(--orange-light);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}.file-drop-icon svg{width:21px;height:21px;stroke:var(--orange);fill:none;stroke-width:2}.file-drop-title{font-size:.9rem;font-weight:700;color:var(--gray-900)}.file-drop-sub{font-size:.78rem;color:var(--gray-400);margin-top:4px}.btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.845rem;padding:10px 18px;border-radius:9px;cursor:pointer;font-family:Inter,sans-serif;text-decoration:none}.btn-primary{background:var(--orange);color:white;border:none;box-shadow:0 4px 14px rgba(249,115,22,.3)}.btn-primary:hover{background:var(--orange-dark)}.btn-secondary{background:white;color:var(--gray-700);border:1.5px solid var(--gray-200)}.btn-secondary:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-light)}.folder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.folder-card{border:1px solid var(--gray-200);border-radius:12px;background:white;padding:14px;cursor:pointer}.folder-card:hover{border-color:var(--orange);background:var(--orange-light)}.folder-icon{width:36px;height:36px;border-radius:10px;background:var(--orange-light);display:flex;align-items:center;justify-content:center;margin-bottom:10px}.folder-icon svg{width:17px;height:17px;stroke:var(--orange);fill:none;stroke-width:2}.folder-name{font-size:.84rem;font-weight:700;color:var(--gray-900)}.folder-meta{font-size:.7rem;color:var(--gray-400);margin-top:3px}.table-wrap{overflow-x:auto}.repo-table{width:100%;border-collapse:collapse}.repo-table th{text-align:left;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);padding:0 0 10px;border-bottom:1px solid var(--gray-200)}.repo-table td{padding:13px 0;border-bottom:1px solid var(--gray-100);vertical-align:middle}.repo-table tr:last-child td{border-bottom:none}.file-name-cell{display:flex;align-items:center;gap:10px}.file-icon-small{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:var(--blue-light)}.file-icon-small svg{width:15px;height:15px;stroke:var(--blue);fill:none;stroke-width:2}.file-title{font-size:.845rem;font-weight:600;color:var(--gray-900)}.file-meta{font-size:.72rem;color:var(--gray-400);margin-top:2px}.badge{display:inline-flex;align-items:center;font-size:.68rem;font-weight:700;padding:4px 9px;border-radius:100px;white-space:nowrap}.badge-pubmat{background:var(--orange-light);color:var(--orange-dark)}.badge-photo{background:var(--blue-light);color:#4338CA}.badge-doc{background:var(--green-light);color:#047857}.badge-preso{background:var(--yellow-light);color:#92400E}.quick-actions{display:flex;gap:8px;flex-wrap:wrap}.action-link{font-size:.78rem;font-weight:600;color:var(--orange);text-decoration:none;border:none;background:none;cursor:pointer}.upload-list{display:flex;flex-direction:column;gap:10px}.upload-item{display:flex;align-items:center;gap:10px;border:1px solid var(--gray-200);background:var(--gray-50);border-radius:10px;padding:10px}.upload-item-info{flex:1}.progress-track{height:5px;background:var(--gray-200);border-radius:99px;overflow:hidden;margin-top:6px}.progress-fill{height:100%;background:var(--orange);border-radius:99px}.notice{background:var(--orange-light);border:1px solid rgba(249,115,22,.25);border-radius:12px;padding:14px 16px;font-size:.8rem;color:var(--gray-700);line-height:1.55}.toast{position:fixed;right:24px;bottom:24px;background:var(--gray-900);color:white;padding:12px 18px;border-radius:10px;font-size:.845rem;font-weight:500;box-shadow:var(--shadow-md);opacity:0;transform:translateY(20px);transition:.3s}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:900px){.layout{grid-template-columns:1fr}.folder-grid{grid-template-columns:1fr 1fr}}@media(max-width:768px){.sidebar{display:none}.main{margin-left:0}.page-content{padding:20px 14px}.form-row{grid-template-columns:1fr}.folder-grid{grid-template-columns:1fr}.topbar{padding:0 14px}}
-.notif-grid{display:grid;grid-template-columns:1fr 320px;gap:20px}.notif-list{display:flex;flex-direction:column;gap:12px}.notif-card{background:white;border:1px solid var(--gray-200);border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow-sm)}.notif-card.unread{border-left:4px solid var(--orange);background:linear-gradient(90deg,var(--orange-light),white 45%)}.notif-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.notif-icon svg{width:18px;height:18px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.notif-icon.deadline{background:var(--yellow-light)}.notif-icon.deadline svg{stroke:var(--yellow)}.notif-icon.overdue{background:var(--red-light)}.notif-icon.overdue svg{stroke:var(--red)}.notif-icon.update{background:var(--blue-light)}.notif-icon.update svg{stroke:var(--blue)}.notif-icon.approval{background:var(--green-light)}.notif-icon.approval svg{stroke:var(--green)}.notif-body{flex:1}.notif-title{font-size:.88rem;font-weight:700;color:var(--gray-900);margin-bottom:4px}.notif-message{font-size:.8rem;color:var(--gray-600);line-height:1.55}.notif-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:9px;font-size:.7rem;color:var(--gray-400)}.notif-actions{display:flex;gap:8px;margin-top:12px}.mini-btn{font-size:.74rem;font-weight:700;border:1px solid var(--gray-200);background:white;border-radius:8px;padding:6px 10px;cursor:pointer;color:var(--gray-700)}.mini-btn:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-light)}.filter-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.filter-pill{border:1px solid var(--gray-200);background:white;border-radius:99px;padding:7px 13px;font-size:.78rem;font-weight:700;color:var(--gray-600);cursor:pointer}.filter-pill.active,.filter-pill:hover{background:var(--orange);border-color:var(--orange);color:white}.reminder-item{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px solid var(--gray-100)}.reminder-item:last-child{border-bottom:none}.reminder-date{width:46px;height:46px;border-radius:12px;background:var(--orange-light);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}.reminder-date strong{font-size:.9rem;color:var(--orange-dark);line-height:1}.reminder-date span{font-size:.62rem;color:var(--orange-dark);font-weight:700;text-transform:uppercase}.reminder-title{font-size:.82rem;font-weight:700;color:var(--gray-900)}.reminder-sub{font-size:.72rem;color:var(--gray-400);margin-top:3px;line-height:1.4}.history-row{display:grid;grid-template-columns:120px 1fr 120px;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray-100);font-size:.8rem}.history-row:last-child{border-bottom:none}.history-label{font-weight:700;color:var(--gray-900)}.history-time{color:var(--gray-400)}.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}.topbar-icon-btn{width:36px;height:36px;border-radius:9px;border:1px solid var(--gray-200);background:white;display:flex;align-items:center;justify-content:center;position:relative}.topbar-icon-btn svg{width:16px;height:16px;stroke:var(--gray-600);fill:none;stroke-width:1.8}.notif-dot-small{position:absolute;top:7px;right:7px;width:7px;height:7px;border-radius:50%;background:var(--orange);border:1.5px solid white}@media(max-width:950px){.notif-grid{grid-template-columns:1fr}.history-row{grid-template-columns:1fr}}</style></head><body><!-- ── SIDEBAR ── -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications & Reminders — IMC Rollout</title>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+  rel="stylesheet">
+
+<link rel="stylesheet" href="css/notifications.css">
+
+</head>
+
+<body><!-- ── SIDEBAR ── -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-logo-wrap">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </svg>
     </div>
     <div>
       <div class="sidebar-brand">IMC <span>Rollout</span></div>
@@ -14,49 +33,88 @@
   <nav class="sidebar-nav">
     <div class="sidebar-section-label">Main</div>
     <a href="dashboard.html" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg></div>
       <span class="nav-label">Dashboard</span>
     </a>
     <a href="project-request.html" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+        </svg></div>
       <span class="nav-label">Projects</span>
     </a>
     <a href="task-assignment.html" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg></div>
       <span class="nav-label">My Tasks</span>
     </a>
     <a href="project-status.html" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg></div>
       <span class="nav-label">Project Status</span>
     </a>
     <a href="rollout-form.html" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+        </svg></div>
       <span class="nav-label">Rollout Forms</span>
     </a>
     <a href="file-repository.html" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <polyline points="16 16 12 12 8 16" />
+          <line x1="12" y1="12" x2="12" y2="21" />
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />
+        </svg></div>
       <span class="nav-label">File Repository</span>
     </a>
     <a href="notifications.html" class="nav-item active">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg></div>
       <span class="nav-label">Notifications</span>
     </a>
 
     <div class="sidebar-section-label">Manage</div>
     <a href="#" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg></div>
       <span class="nav-label">Members</span>
     </a>
     <a href="#" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg></div>
       <span class="nav-label">Analytics</span>
     </a>
     <a href="#" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg></div>
       <span class="nav-label">Discussions</span>
     </a>
     <a href="register.html" class="nav-item">
-      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg></div>
       <span class="nav-label">Register</span>
     </a>
   </nav>
@@ -70,4 +128,179 @@
       </div>
     </div>
   </div>
-</aside><main class="main"><header class="topbar"><div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>›</span><span class="breadcrumb-current">Notifications & Reminders</span></div><a class="topbar-icon-btn" href="notifications.html" title="Notifications"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-dot-small"></span></a><div class="topbar-avatar">FGB</div></header><div class="page-content"><div class="page-header"><div><div class="page-eyebrow">CATCH2T28 · IMC Department</div><h1 class="page-title">Notifications & Reminders</h1><p class="page-subtitle">Stay informed about deadlines, overdue tasks, rollout updates, approvals, and pending actions.</p></div><button class="btn-primary" id="markAllBtn">Mark All as Read</button></div><div class="notif-grid"><section><div class="filter-pills"><button class="filter-pill active" data-filter="all">All</button><button class="filter-pill" data-filter="deadline">Deadlines</button><button class="filter-pill" data-filter="overdue">Overdue</button><button class="filter-pill" data-filter="update">Rollout Updates</button><button class="filter-pill" data-filter="approval">Approvals</button></div><div class="notif-list" id="notifList"><article class="notif-card unread" data-type="deadline"><div class="notif-icon deadline"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="notif-body"><div class="notif-title">Upcoming deadline: Summit pubmat review</div><div class="notif-message">The pubmat set for <strong>DLSU Technology Summit 2026</strong> is due for chairperson review tomorrow at 5:00 PM.</div><div class="notif-meta"><span><span class="status-dot" style="background:var(--yellow)"></span>Deadline Reminder</span><span>10 minutes ago</span></div><div class="notif-actions"><button class="mini-btn">View Task</button><button class="mini-btn">Snooze</button></div></div></article><article class="notif-card unread" data-type="overdue"><div class="notif-icon overdue"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="notif-body"><div class="notif-title">Overdue task: Caption draft revision</div><div class="notif-message">Your assigned caption revision for <strong>LRT (Light Reboot Transit)</strong> is past the deadline. Please update the task status.</div><div class="notif-meta"><span><span class="status-dot" style="background:var(--red)"></span>Overdue Alert</span><span>1 hour ago</span></div><div class="notif-actions"><button class="mini-btn">Open Assignment</button><button class="mini-btn">Update Status</button></div></div></article><article class="notif-card" data-type="update"><div class="notif-icon update"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="notif-body"><div class="notif-title">Rollout update received</div><div class="notif-message"><strong>CCS Welcome Week Promotions</strong> was moved from Ongoing to For Review. The dashboard status should reflect the change immediately.</div><div class="notif-meta"><span><span class="status-dot" style="background:var(--blue)"></span>Rollout Update</span><span>Yesterday</span></div><div class="notif-actions"><button class="mini-btn">View Project</button></div></div></article><article class="notif-card" data-type="approval"><div class="notif-icon approval"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="notif-body"><div class="notif-title">Approval completed</div><div class="notif-message">The final publication plan for <strong>Term 3 General Assembly</strong> has been approved by the authorized reviewer.</div><div class="notif-meta"><span><span class="status-dot" style="background:var(--green)"></span>Approval</span><span>Jul 7, 2026</span></div><div class="notif-actions"><button class="mini-btn">View Rollout</button></div></div></article></div><div class="card" style="margin-top:20px"><div class="card-header"><div><div class="card-title">Notification History</div><div class="card-sub">Record of received alerts and reminders</div></div></div><div class="card-body"><div class="history-row"><div class="history-time">Jul 8 · 3:00 PM</div><div><div class="history-label">Deadline reminder sent</div><div class="file-meta">Summit pubmat review deadline reminder was generated.</div></div><span class="badge badge-preso">Reminder</span></div><div class="history-row"><div class="history-time">Jul 8 · 10:40 AM</div><div><div class="history-label">Task marked overdue</div><div class="file-meta">Caption revision passed its deadline and was flagged.</div></div><span class="badge badge-doc">Overdue</span></div><div class="history-row"><div class="history-time">Jul 7 · 6:15 PM</div><div><div class="history-label">Project status changed</div><div class="file-meta">CCS Welcome Week Promotions changed to For Review.</div></div><span class="badge badge-photo">Update</span></div></div></div></section><aside><div class="card"><div class="card-header"><div><div class="card-title">Upcoming Reminders</div><div class="card-sub">Tasks and project checkpoints</div></div></div><div class="card-body"><div class="reminder-item"><div class="reminder-date"><strong>09</strong><span>Jul</span></div><div><div class="reminder-title">Submit final pubmat set</div><div class="reminder-sub">DLSU Technology Summit 2026 · 5:00 PM</div></div></div><div class="reminder-item"><div class="reminder-date"><strong>10</strong><span>Jul</span></div><div><div class="reminder-title">DAAM approval follow-up</div><div class="reminder-sub">CCS Welcome Week Promotions · Waiting for Approval</div></div></div><div class="reminder-item"><div class="reminder-date"><strong>12</strong><span>Jul</span></div><div><div class="reminder-title">Review rollout checklist</div><div class="reminder-sub">LRT campaign · Chairperson review</div></div></div></div></div><div class="card"><div class="card-header"><div><div class="card-title">Notification Settings</div><div class="card-sub">Sample controls for future backend</div></div></div><div class="card-body"><label class="form-label"><input type="checkbox" checked> Deadline reminders</label><br><br><label class="form-label"><input type="checkbox" checked> Overdue task alerts</label><br><br><label class="form-label"><input type="checkbox" checked> Rollout updates</label><br><br><label class="form-label"><input type="checkbox" checked> Approval notifications</label></div></div><div class="notice"><strong>Acceptance criteria covered:</strong> deadline notifications, overdue alerts, rollout/approval updates, in-system display, and notification history.</div></aside></div></div></main><div id="toast" class="toast">Notifications updated.</div><script>const pills=document.querySelectorAll('.filter-pill'),cards=document.querySelectorAll('.notif-card'),toast=document.getElementById('toast');pills.forEach(p=>p.onclick=()=>{pills.forEach(x=>x.classList.remove('active'));p.classList.add('active');const f=p.dataset.filter;cards.forEach(c=>c.style.display=(f==='all'||c.dataset.type===f)?'flex':'none')});document.getElementById('markAllBtn').onclick=()=>{cards.forEach(c=>c.classList.remove('unread'));toast.textContent='All notifications marked as read.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)};document.querySelectorAll('.mini-btn').forEach(b=>b.onclick=()=>{toast.textContent=b.textContent+' selected.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2000)});</script></body></html>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>›</span><span
+        class="breadcrumb-current">Notifications & Reminders</span></div><a class="topbar-icon-btn"
+      href="notifications.html" title="Notifications"><svg viewBox="0 0 24 24">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+      </svg><span class="notif-dot-small"></span></a>
+    <div class="topbar-avatar">FGB</div>
+  </header>
+  <div class="page-content">
+    <div class="page-header">
+      <div>
+        <div class="page-eyebrow">CATCH2T28 · IMC Department</div>
+        <h1 class="page-title">Notifications & Reminders</h1>
+        <p class="page-subtitle">Stay informed about deadlines, overdue tasks, rollout updates, approvals, and pending
+          actions.</p>
+      </div><button class="btn-primary" id="markAllBtn">Mark All as Read</button>
+    </div>
+    <div class="notif-grid">
+      <section>
+        <div class="filter-pills"><button class="filter-pill active" data-filter="all">All</button><button
+            class="filter-pill" data-filter="deadline">Deadlines</button><button class="filter-pill"
+            data-filter="overdue">Overdue</button><button class="filter-pill" data-filter="update">Rollout
+            Updates</button><button class="filter-pill" data-filter="approval">Approvals</button></div>
+        <div class="notif-list" id="notifList">
+          <article class="notif-card unread" data-type="deadline">
+            <div class="notif-icon deadline"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg></div>
+            <div class="notif-body">
+              <div class="notif-title">Upcoming deadline: Summit pubmat review</div>
+              <div class="notif-message">The pubmat set for <strong>DLSU Technology Summit 2026</strong> is due for
+                chairperson review tomorrow at 5:00 PM.</div>
+              <div class="notif-meta"><span><span class="status-dot" style="background:var(--yellow)"></span>Deadline
+                  Reminder</span><span>10 minutes ago</span></div>
+              <div class="notif-actions"><button class="mini-btn">View Task</button><button
+                  class="mini-btn">Snooze</button></div>
+            </div>
+          </article>
+          <article class="notif-card unread" data-type="overdue">
+            <div class="notif-icon overdue"><svg viewBox="0 0 24 24">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg></div>
+            <div class="notif-body">
+              <div class="notif-title">Overdue task: Caption draft revision</div>
+              <div class="notif-message">Your assigned caption revision for <strong>LRT (Light Reboot
+                  Transit)</strong> is past the deadline. Please update the task status.</div>
+              <div class="notif-meta"><span><span class="status-dot" style="background:var(--red)"></span>Overdue
+                  Alert</span><span>1 hour ago</span></div>
+              <div class="notif-actions"><button class="mini-btn">Open Assignment</button><button
+                  class="mini-btn">Update Status</button></div>
+            </div>
+          </article>
+          <article class="notif-card" data-type="update">
+            <div class="notif-icon update"><svg viewBox="0 0 24 24">
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+              </svg></div>
+            <div class="notif-body">
+              <div class="notif-title">Rollout update received</div>
+              <div class="notif-message"><strong>CCS Welcome Week Promotions</strong> was moved from Ongoing to For
+                Review. The dashboard status should reflect the change immediately.</div>
+              <div class="notif-meta"><span><span class="status-dot" style="background:var(--blue)"></span>Rollout
+                  Update</span><span>Yesterday</span></div>
+              <div class="notif-actions"><button class="mini-btn">View Project</button></div>
+            </div>
+          </article>
+          <article class="notif-card" data-type="approval">
+            <div class="notif-icon approval"><svg viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg></div>
+            <div class="notif-body">
+              <div class="notif-title">Approval completed</div>
+              <div class="notif-message">The final publication plan for <strong>Term 3 General Assembly</strong> has
+                been approved by the authorized reviewer.</div>
+              <div class="notif-meta"><span><span class="status-dot"
+                    style="background:var(--green)"></span>Approval</span><span>Jul 7, 2026</span></div>
+              <div class="notif-actions"><button class="mini-btn">View Rollout</button></div>
+            </div>
+          </article>
+        </div>
+        <div class="card" style="margin-top:20px">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Notification History</div>
+              <div class="card-sub">Record of received alerts and reminders</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="history-row">
+              <div class="history-time">Jul 8 · 3:00 PM</div>
+              <div>
+                <div class="history-label">Deadline reminder sent</div>
+                <div class="file-meta">Summit pubmat review deadline reminder was generated.</div>
+              </div><span class="badge badge-preso">Reminder</span>
+            </div>
+            <div class="history-row">
+              <div class="history-time">Jul 8 · 10:40 AM</div>
+              <div>
+                <div class="history-label">Task marked overdue</div>
+                <div class="file-meta">Caption revision passed its deadline and was flagged.</div>
+              </div><span class="badge badge-doc">Overdue</span>
+            </div>
+            <div class="history-row">
+              <div class="history-time">Jul 7 · 6:15 PM</div>
+              <div>
+                <div class="history-label">Project status changed</div>
+                <div class="file-meta">CCS Welcome Week Promotions changed to For Review.</div>
+              </div><span class="badge badge-photo">Update</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside>
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Upcoming Reminders</div>
+              <div class="card-sub">Tasks and project checkpoints</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="reminder-item">
+              <div class="reminder-date"><strong>09</strong><span>Jul</span></div>
+              <div>
+                <div class="reminder-title">Submit final pubmat set</div>
+                <div class="reminder-sub">DLSU Technology Summit 2026 · 5:00 PM</div>
+              </div>
+            </div>
+            <div class="reminder-item">
+              <div class="reminder-date"><strong>10</strong><span>Jul</span></div>
+              <div>
+                <div class="reminder-title">DAAM approval follow-up</div>
+                <div class="reminder-sub">CCS Welcome Week Promotions · Waiting for Approval</div>
+              </div>
+            </div>
+            <div class="reminder-item">
+              <div class="reminder-date"><strong>12</strong><span>Jul</span></div>
+              <div>
+                <div class="reminder-title">Review rollout checklist</div>
+                <div class="reminder-sub">LRT campaign · Chairperson review</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Notification Settings</div>
+              <div class="card-sub">Sample controls for future backend</div>
+            </div>
+          </div>
+          <div class="card-body"><label class="form-label"><input type="checkbox" checked> Deadline
+              reminders</label><br><br><label class="form-label"><input type="checkbox" checked> Overdue task
+              alerts</label><br><br><label class="form-label"><input type="checkbox" checked> Rollout
+              updates</label><br><br><label class="form-label"><input type="checkbox" checked> Approval
+              notifications</label></div>
+        </div>
+        <div class="notice"><strong>Acceptance criteria covered:</strong> deadline notifications, overdue alerts,
+          rollout/approval updates, in-system display, and notification history.</div>
+      </aside>
+    </div>
+  </div>
+</main>
+<div id="toast" class="toast">Notifications updated.</div>
+
+<script src="js/notifications.js"></script>
+
+</body>
+</html>
