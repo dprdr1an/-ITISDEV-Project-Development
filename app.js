@@ -33,6 +33,8 @@ app.use('/api/files', require('./routes/fileRoutes'));
 
 app.use('/api/notifications', require('./routes/notificationRoutes'));
 
+app.use('/api/tasks', require('./routes/taskRoutes'));
+
 // Catch-all: serve index.html for any unmatched route
 app.get('/{*path}', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
