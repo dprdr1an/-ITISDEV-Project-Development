@@ -161,7 +161,7 @@
     </div>
     <div class="layout">
      <section>
-      <form id="taskForm">
+      <form id="taskForm" novalidate="">
        <div class="card">
         <div class="card-header">
          <div>
@@ -185,18 +185,9 @@
              *
             </span>
            </label>
-           <select class="form-control" required="">
+           <select class="form-control" id="taskProject" name="project" required="">
             <option value="">
              Select project
-            </option>
-            <option>
-             DLSU Technology Summit 2026
-            </option>
-            <option>
-             LRT (Light Reboot Transit)
-            </option>
-            <option>
-             CCS Welcome Week Promotions
             </option>
            </select>
           </div>
@@ -207,7 +198,7 @@
              *
             </span>
            </label>
-           <input class="form-control" required="" type="date"/>
+           <input class="form-control" id="taskDeadline" name="deadline" required="" type="date"/>
           </div>
          </div>
          <div class="form-row">
@@ -218,20 +209,20 @@
              *
             </span>
            </label>
-           <input class="form-control" placeholder="e.g. Design event poster" required=""/>
+           <input class="form-control" id="taskTitle" name="title" placeholder="e.g. Design event poster" required=""/>
           </div>
           <div class="form-group">
            <label class="form-label">
             Priority
            </label>
-           <select class="form-control">
-            <option>
+           <select class="form-control" id="taskPriority" name="priority">
+            <option value="Medium">
              Medium
             </option>
-            <option>
+            <option value="High">
              High
             </option>
-            <option>
+            <option value="Low">
              Low
             </option>
            </select>
@@ -245,7 +236,7 @@
              *
             </span>
            </label>
-           <textarea class="form-control textarea" placeholder="Describe what should be done, required outputs, and important notes." required=""></textarea>
+           <textarea class="form-control textarea" id="taskDescription" name="description" placeholder="Describe what should be done, required outputs, and important notes." required=""></textarea>
           </div>
          </div>
         </div>
@@ -262,51 +253,18 @@
          </div>
         </div>
         <div class="card-body">
-         <div class="member-checks">
-          <label class="member-check">
-           <input type="checkbox"/>
-           <span>
-            Sophia R. Nicolas
-           </span>
-          </label>
-          <label class="member-check">
-           <input type="checkbox"/>
-           <span>
-            Gabriel E.
-           </span>
-          </label>
-          <label class="member-check">
-           <input type="checkbox"/>
-           <span>
-            Cassandra E.
-           </span>
-          </label>
-          <label class="member-check">
-           <input type="checkbox"/>
-           <span>
-            Jose Noel P.
-           </span>
-          </label>
-          <label class="member-check">
-           <input type="checkbox"/>
-           <span>
-            Francis Gabrielle B.
-           </span>
-          </label>
-          <label class="member-check">
-           <input type="checkbox"/>
-           <span>
-            Nicole M.
-           </span>
-          </label>
+         <div class="member-checks" id="memberChecks">
+          <p class="task-meta">
+           Loading members...
+          </p>
          </div>
         </div>
        </div>
        <div class="form-actions">
-        <button class="btn-secondary" type="reset">
+        <button class="btn-secondary" id="clearTaskBtn" type="reset">
          Clear
         </button>
-        <button class="btn-primary" type="submit">
+        <button class="btn-primary" id="assignTaskBtn" type="submit">
          Assign Task &amp; Notify Members
         </button>
        </div>
@@ -324,55 +282,10 @@
          </div>
         </div>
        </div>
-       <div class="card-body">
-        <div class="task-item">
-         <div class="member-avatar">
-          SRN
-         </div>
-         <div>
-          <div class="task-name">
-           Create pubmat draft
-          </div>
-          <div class="task-meta">
-           DLSU Summit · Due Jul 12 · Sophia R.
-          </div>
-          <span class="badge badge-pending">
-           Pending
-          </span>
-         </div>
-        </div>
-        <div class="task-item">
-         <div class="member-avatar" style="background:linear-gradient(135deg,#6366F1,#4338CA)">
-          GE
-         </div>
-         <div>
-          <div class="task-name">
-           Caption review
-          </div>
-          <div class="task-meta">
-           LRT · Due Jul 10 · Gabriel E.
-          </div>
-          <span class="badge badge-active">
-           Ongoing
-          </span>
-         </div>
-        </div>
-        <div class="task-item">
-         <div class="member-avatar" style="background:linear-gradient(135deg,#10B981,#047857)">
-          CE
-         </div>
-         <div>
-          <div class="task-name">
-           Approval follow-up
-          </div>
-          <div class="task-meta">
-           Welcome Week · Due Jul 15 · Cassandra E.
-          </div>
-          <span class="badge badge-pending">
-           Pending
-          </span>
-         </div>
-        </div>
+       <div class="card-body" id="taskRecords">
+        <p class="task-meta">
+         Loading task records...
+        </p>
        </div>
       </div>
       <div class="notice">
@@ -388,8 +301,7 @@
   <div class="toast" id="toast">
    Task assigned. Assigned members will be notified.
   </div>
-  <script>
-   document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('toast').classList.add('show');setTimeout(()=>document.getElementById('toast').classList.remove('show'),2500);});
+  <script src="js/task-assignment.js">
   </script>
  </body>
 </html>
