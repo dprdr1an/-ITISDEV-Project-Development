@@ -1,7 +1,6 @@
 const drop = document.getElementById("fileDrop");
 const input = document.getElementById("fileInput");
 const list = document.getElementById("uploadList");
-const toast = document.getElementById("toast");
 
 // Open file picker
 drop.onclick = () => input.click();
@@ -69,11 +68,7 @@ function renderFiles(files) {
 document.getElementById("uploadForm").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2400);
+    showToast("Files uploaded successfully.");
 });
 
 // Folder cards & actions
@@ -83,15 +78,11 @@ document.querySelectorAll(".folder-card, .action-link").forEach((el) => {
             e.preventDefault();
         }
 
-        toast.textContent =
+        const message =
             el.textContent.trim() === "Move"
                 ? "Folder/category organization opened."
                 : "File repository updated.";
 
-        toast.classList.add("show");
-
-        setTimeout(() => {
-            toast.classList.remove("show");
-        }, 2200);
+        showToast(message);
     });
 });

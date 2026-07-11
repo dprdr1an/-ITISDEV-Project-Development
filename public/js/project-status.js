@@ -6,8 +6,6 @@ const map = {
     Completed: "status-completed"
 };
 
-const toast = document.getElementById("toast");
-
 // Update project status
 document.querySelectorAll(".status-select").forEach((select) => {
     select.addEventListener("change", () => {
@@ -17,19 +15,11 @@ document.querySelectorAll(".status-select").forEach((select) => {
         badge.className = `badge ${map[select.value]}`;
         badge.innerHTML = `<span class="dot"></span>${select.value}`;
 
-        toast.classList.add("show");
-
-        setTimeout(() => {
-            toast.classList.remove("show");
-        }, 2400);
+        showToast("Project status updated.");
     });
 });
 
 // Refresh button
 document.getElementById("refreshBtn").onclick = () => {
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2400);
+    showToast("Project list refreshed.");
 };

@@ -1,10 +1,3 @@
-// Sidebar
-const hamburgerBtn   = document.getElementById('hamburgerBtn');
-const sidebar        = document.getElementById('sidebar');
-const sidebarOverlay = document.getElementById('sidebarOverlay');
-hamburgerBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); sidebarOverlay.classList.toggle('show'); });
-sidebarOverlay.addEventListener('click', () => { sidebar.classList.remove('open'); sidebarOverlay.classList.remove('show'); });
-
 // Radio card select
 function selectCard(el, group) {
 el.closest('.radio-cards').querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
@@ -280,12 +273,4 @@ try {
 
 function closeSuccess() {
 document.getElementById('successOverlay').classList.remove('show');
-}
-
-// Toast
-function showToast(msg) {
-const t = document.getElementById('toast');
-document.getElementById('toastMsg').textContent = msg;
-t.classList.add('show');
-setTimeout(() => t.classList.remove('show'), 2800);
 }

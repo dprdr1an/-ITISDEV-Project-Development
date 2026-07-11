@@ -1,6 +1,5 @@
 const taskForm = document.getElementById('taskForm');
 const projectSelect = document.getElementById('taskProject');
-const toast = document.getElementById('toast');
 
 async function loadProjects() {
     try {
@@ -146,15 +145,6 @@ async function loadTaskRecords() {
     } catch (error) {
         console.error(error);
     }
-}
-
-function showToast(message) {
-    toast.textContent = message;
-    toast.classList.add('show');
-
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 2400);
 }
 
 loadProjects();

@@ -1,17 +1,3 @@
-// Sidebar toggle
-const hamburgerBtn   = document.getElementById('hamburgerBtn');
-const sidebar        = document.getElementById('sidebar');
-const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-hamburgerBtn.addEventListener('click', () => {
-sidebar.classList.toggle('open');
-sidebarOverlay.classList.toggle('show');
-});
-sidebarOverlay.addEventListener('click', () => {
-sidebar.classList.remove('open');
-sidebarOverlay.classList.remove('show');
-});
-
 // Guidelines toggle
 document.getElementById('guidelinesToggle').addEventListener('click', function() {
 const list = document.getElementById('guidelinesList');
@@ -125,14 +111,6 @@ const checked = document.querySelectorAll('.checklist-item.checked').length;
 const pct = Math.round((checked / items.length) * 100);
 document.getElementById('checklistFill').style.width = pct + '%';
 document.getElementById('checklistCount').textContent = checked + ' / ' + items.length + ' complete';
-}
-
-// Toast
-function showToast(msg) {
-const toast = document.getElementById('toast');
-document.getElementById('toastMsg').textContent = msg;
-toast.classList.add('show');
-setTimeout(() => toast.classList.remove('show'), 2800);
 }
 
 // Save draft

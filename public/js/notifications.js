@@ -1,6 +1,5 @@
 const pills = document.querySelectorAll(".filter-pill");
 const cards = document.querySelectorAll(".notif-card");
-const toast = document.getElementById("toast");
 
 // Filter notifications
 pills.forEach((pill) => {
@@ -25,22 +24,12 @@ document.getElementById("markAllBtn").onclick = () => {
         card.classList.remove("unread");
     });
 
-    toast.textContent = "All notifications marked as read.";
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2200);
+    showToast("All notifications marked as read.");
 };
 
 // Notification action buttons
 document.querySelectorAll(".mini-btn").forEach((button) => {
     button.onclick = () => {
-        toast.textContent = `${button.textContent} selected.`;
-        toast.classList.add("show");
-
-        setTimeout(() => {
-            toast.classList.remove("show");
-        }, 2000);
+        showToast(`${button.textContent} selected.`);
     };
 });
