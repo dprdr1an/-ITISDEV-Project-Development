@@ -4,27 +4,22 @@ const projectSelect = document.getElementById('taskProject');
 async function loadProjects() {
     try {
         const response = await fetch('/api/projects');
-        const data = await response.json();
+        const result = await response.json();
 
         if (!response.ok) {
             throw new Error(
-                data.message || 'Unable to load projects.'
+                result.message || 'Unable to load projects.'
             );
         }
-
-        const projects = data.projects || data;
 
         projectSelect.innerHTML =
             '<option value="">Select project</option>';
 
-        projects.forEach((project) => {
+        result.data.forEach(project => {
             const option = document.createElement('option');
 
             option.value = project._id;
-            option.textContent =
-                project.projectName ||
-                project.title ||
-                'Unnamed Project';
+            option.textContent = project.projectName;
 
             projectSelect.appendChild(option);
         });

@@ -4,7 +4,7 @@ const taskSchema = new mongoose.Schema(
     {
         project: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Project',
+            ref: 'ProjectRequest',
             required: true
         },
 

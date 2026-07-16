@@ -109,7 +109,30 @@ const loginUser = async (req, res) => {
     }
 };
 
+// Get User
+const getUsers = async (req, res) => {
+    try {
+        const users = await User.find()
+            .select('name committee position email')
+            .sort({ name: 1 });
+
+        res.json({
+            success: true,
+            users
+        });
+
+    } catch (err) {
+        console.error(err);
+
+        res.status(500).json({
+            success: false,
+            message: 'Unable to load users.'
+        });
+    }
+};
+
 module.exports = {
     registerUser,
-    loginUser
+    loginUser,
+    getUsers
 };
