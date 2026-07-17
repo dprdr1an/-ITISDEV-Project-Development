@@ -195,44 +195,33 @@
             </div>
             <div class="status-grid">
                 <div class="stat">
-                    <div class="stat-num">
-                        3
-                    </div>
-                    <div class="stat-label">
-                        Pending
-                    </div>
+                    <div class="stat-num" id="pendingCount">0</div>
+                    <div class="stat-label">Pending</div>
                 </div>
+
                 <div class="stat">
-                    <div class="stat-num" style="color:var(--orange)">
-                        5
-                    </div>
-                    <div class="stat-label">
-                        Ongoing
-                    </div>
+                    <div class="stat-num" id="activeCount" style="color:var(--orange)">0</div>
+                    <div class="stat-label">Active</div>
                 </div>
+
                 <div class="stat">
-                    <div class="stat-num" style="color:var(--yellow)">
-                        2
-                    </div>
-                    <div class="stat-label">
-                        For Review
-                    </div>
+                    <div class="stat-num" id="reviewCount" style="color:var(--yellow)">0</div>
+                    <div class="stat-label">For Review</div>
                 </div>
+
                 <div class="stat">
-                    <div class="stat-num" style="color:var(--blue)">
-                        1
-                    </div>
-                    <div class="stat-label">
-                        Waiting for Approval
-                    </div>
+                    <div class="stat-num" id="approvalCount" style="color:var(--blue)">0</div>
+                    <div class="stat-label">For Approval</div>
                 </div>
+
                 <div class="stat">
-                    <div class="stat-num" style="color:var(--green)">
-                        8
-                    </div>
-                    <div class="stat-label">
-                        Completed
-                    </div>
+                    <div class="stat-num" id="completedCount" style="color:var(--green)">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-num" id="holdCount" style="color:var(--red)">0</div>
+                    <div class="stat-label">On Hold</div>
                 </div>
             </div>
             <section class="card">
@@ -264,213 +253,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="project-name">
-                                        DLSU Technology Summit 2026
-                                    </div>
-                                    <div class="project-meta">
-                                        Socials · Sophia R. · 78% progress
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="badge status-ongoing">
-                                        <span class="dot">
-                                        </span>
-                                        Ongoing
-                                    </span>
-                                </td>
-                                <td>
-                                    <select class="status-select">
-                                        <option>
-                                            Pending
-                                        </option>
-                                        <option selected="">
-                                            Ongoing
-                                        </option>
-                                        <option>
-                                            For Review
-                                        </option>
-                                        <option>
-                                            Waiting for Approval
-                                        </option>
-                                        <option>
-                                            Completed
-                                        </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <div class="project-meta">
-                                        Jul 8, 2026 · 2:05 PM
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="project-name">
-                                        LRT (Light Reboot Transit)
-                                    </div>
-                                    <div class="project-meta">
-                                        Creatives · Gabriel E. · 52% progress
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="badge status-review">
-                                        <span class="dot">
-                                        </span>
-                                        For Review
-                                    </span>
-                                </td>
-                                <td>
-                                    <select class="status-select">
-                                        <option>
-                                            Pending
-                                        </option>
-                                        <option>
-                                            Ongoing
-                                        </option>
-                                        <option selected="">
-                                            For Review
-                                        </option>
-                                        <option>
-                                            Waiting for Approval
-                                        </option>
-                                        <option>
-                                            Completed
-                                        </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <div class="project-meta">
-                                        Jul 7, 2026 · 6:10 PM
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="project-name">
-                                        CCS Welcome Week Promotions
-                                    </div>
-                                    <div class="project-meta">
-                                        Events · Cassandra E. · 40% progress
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="badge status-approval">
-                                        <span class="dot">
-                                        </span>
-                                        Waiting for Approval
-                                    </span>
-                                </td>
-                                <td>
-                                    <select class="status-select">
-                                        <option>
-                                            Pending
-                                        </option>
-                                        <option>
-                                            Ongoing
-                                        </option>
-                                        <option>
-                                            For Review
-                                        </option>
-                                        <option selected="">
-                                            Waiting for Approval
-                                        </option>
-                                        <option>
-                                            Completed
-                                        </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <div class="project-meta">
-                                        Jul 8, 2026 · 11:40 AM
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="project-name">
-                                        Term 3 General Assembly
-                                    </div>
-                                    <div class="project-meta">
-                                        Publications · Nicole M. · 100% progress
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="badge status-completed">
-                                        <span class="dot">
-                                        </span>
-                                        Completed
-                                    </span>
-                                </td>
-                                <td>
-                                    <select class="status-select">
-                                        <option>
-                                            Pending
-                                        </option>
-                                        <option>
-                                            Ongoing
-                                        </option>
-                                        <option>
-                                            For Review
-                                        </option>
-                                        <option>
-                                            Waiting for Approval
-                                        </option>
-                                        <option selected="">
-                                            Completed
-                                        </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <div class="project-meta">
-                                        Jul 5, 2026 · 4:30 PM
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="project-name">
-                                        Batch Recruitment Pubmats
-                                    </div>
-                                    <div class="project-meta">
-                                        Marketing · Jose Noel P. · 0% progress
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="badge status-pending">
-                                        <span class="dot">
-                                        </span>
-                                        Pending
-                                    </span>
-                                </td>
-                                <td>
-                                    <select class="status-select">
-                                        <option selected="">
-                                            Pending
-                                        </option>
-                                        <option>
-                                            Ongoing
-                                        </option>
-                                        <option>
-                                            For Review
-                                        </option>
-                                        <option>
-                                            Waiting for Approval
-                                        </option>
-                                        <option>
-                                            Completed
-                                        </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <div class="project-meta">
-                                        Not yet updated
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="projectsTableBody"></tbody>
                     </table>
                 </div>
             </section>
@@ -485,76 +268,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body history">
-                    <div>
-                        <div class="history-item">
-                            <div class="history-dot-wrap">
-                                <span class="history-dot">
-                                </span>
-                                <span class="history-line">
-                                </span>
-                            </div>
-                            <div>
-                                <div class="history-action">
-                                    DLSU Technology Summit moved to Ongoing
-                                </div>
-                                <div class="history-meta">
-                                    Francis Gabrielle B. · Jul 8, 2026 · Dashboard reflected immediately
-                                </div>
-                            </div>
-                        </div>
-                        <div class="history-item">
-                            <div class="history-dot-wrap">
-                                <span class="history-dot">
-                                </span>
-                                <span class="history-line">
-                                </span>
-                            </div>
-                            <div>
-                                <div class="history-action">
-                                    LRT moved to For Review
-                                </div>
-                                <div class="history-meta">
-                                    Gabriel E. · Jul 7, 2026 · Awaiting chairperson feedback
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="history-item">
-                            <div class="history-dot-wrap">
-                                <span class="history-dot">
-                                </span>
-                                <span class="history-line">
-                                </span>
-                            </div>
-                            <div>
-                                <div class="history-action">
-                                    Welcome Week moved to Waiting for Approval
-                                </div>
-                                <div class="history-meta">
-                                    Cassandra E. · Jul 8, 2026 · Pending DAAM approval
-                                </div>
-                            </div>
-                        </div>
-                        <div class="history-item">
-                            <div class="history-dot-wrap">
-                                <span class="history-dot">
-                                </span>
-                                <span class="history-line">
-                                </span>
-                            </div>
-                            <div>
-                                <div class="history-action">
-                                    Term 3 General Assembly marked Completed
-                                </div>
-                                <div class="history-meta">
-                                    Nicole M. · Jul 5, 2026 · Final deliverables uploaded
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="card-body history" id="historyList"></div>
             </section>
         </div>
     </div><!-- /main -->
