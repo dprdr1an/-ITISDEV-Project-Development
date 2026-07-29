@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width,initial-scale=1.0" name="viewport" />
-    <title>Task Assignment — CatchIT</title>
+    <title>My Profile — CatchIT</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap"
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/task-assignment.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 
 <body>
@@ -60,7 +60,7 @@
         </svg></div>
         <span class="nav-label">Project Requests</span>
       </a>
-      <a href="task-assignment.html" class="nav-item active" data-roles="Chairperson">
+      <a href="task-assignment.html" class="nav-item" data-roles="Chairperson">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
           <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
           <rect x="8" y="2" width="8" height="4" rx="1" />
@@ -167,7 +167,7 @@
                         ›
                     </span>
                     <span class="breadcrumb-current">
-                        Task Assignment
+                        My Profile
                     </span>
                 </div>
             </div>
@@ -186,174 +186,162 @@
         </header>
         <div class="page-content">
             <div class="page-header">
-                <div class="page-header-text">
-                    <div class="page-eyebrow">
-                        CATCH2T28 · IMC Department
-                    </div>
-
-                    <h1 class="page-title">
-                        Task Assignment Form
-                    </h1>
-
+                <div>
+                    <div class="page-eyebrow">CATCH2T28 · IMC Department</div>
+                    <h1 class="page-title">My Profile</h1>
                     <p class="page-subtitle">
-                        Assign responsibilities to one or more members and record task deadlines for monitoring.
-                        </p> 
+                        Manage your account details, profile picture and password.
+                    </p>
                 </div>
-        <div class="page-header-actions">
-            <!-- Empty if no actions -->
-        </div>
-    </div>
-            <div class="layout">
+            </div>
+
+            <div class="profile-layout">
                 <section>
-                    <form id="taskForm" novalidate="">
-                        <div class="card">
-                            <div class="card-header">
-                                <div>
-                                    <div class="card-title" id="formModeTitle">
-                                        Task Details
-                                    </div>
-                                    <div class="card-sub">
-                                        Description, project, deadline, and priority
-                                    </div>
-                                </div>
-                                <span class="badge badge-active">
-                                    Authorized users only
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label class="form-label">
-                                            Project
-                                            <span class="required">
-                                                *
-                                            </span>
-                                        </label>
-                                        <select class="form-control" id="taskProject" name="project" required="">
-                                            <option value="">
-                                                Select project
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">
-                                            Deadline
-                                            <span class="required">
-                                                *
-                                            </span>
-                                        </label>
-                                        <input class="form-control" id="taskDeadline" name="deadline" required=""
-                                            type="date" />
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label class="form-label">
-                                            Task Title
-                                            <span class="required">
-                                                *
-                                            </span>
-                                        </label>
-                                        <input class="form-control" id="taskTitle" name="title"
-                                            placeholder="e.g. Design event poster" required="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">
-                                            Priority
-                                        </label>
-                                        <select class="form-control" id="taskPriority" name="priority">
-                                            <option value="Medium">
-                                                Medium
-                                            </option>
-                                            <option value="High">
-                                                High
-                                            </option>
-                                            <option value="Low">
-                                                Low
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row cols-1">
-                                    <div class="form-group">
-                                        <label class="form-label">
-                                            Task Description
-                                            <span class="required">
-                                                *
-                                            </span>
-                                        </label>
-                                        <textarea class="form-control textarea" id="taskDescription" name="description"
-                                            placeholder="Describe what should be done, required outputs, and important notes."
-                                            required=""></textarea>
-                                    </div>
-                                </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <div class="card-title">Profile Picture</div>
+                                <div class="card-sub">JPG, PNG or WEBP up to 2 MB</div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <div>
-                                    <div class="card-title">
-                                        Assign Members
-                                    </div>
-                                    <div class="card-sub">
-                                        Select one or more members who will receive a task notification
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="member-checks" id="memberChecks">
-                                    <p class="task-meta">
-                                        Loading members...
+                        <div class="card-body">
+                            <div class="avatar-editor">
+                                <div class="avatar-preview" id="avatarPreview">U</div>
+                                <div class="avatar-editor-actions">
+                                    <input type="file" id="avatarInput" accept="image/png,image/jpeg,image/webp" hidden>
+                                    <button type="button" class="btn-secondary" id="chooseAvatarBtn">
+                                        Choose Image
+                                    </button>
+                                    <button type="button" class="btn-primary" id="uploadAvatarBtn" disabled>
+                                        Upload Picture
+                                    </button>
+                                    <p class="form-hint" id="avatarHint">
+                                        No new image selected.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-actions">
-                            <button class="btn-secondary" id="cancelEditBtn" type="button" style="display:none">
-                                Cancel Edit
-                            </button>
-                            <button class="btn-secondary" id="clearTaskBtn" type="reset">
-                                Clear
-                            </button>
-                            <button class="btn-primary" id="assignTaskBtn" type="submit">
-                                Assign Task &amp; Notify Members
-                            </button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <div class="card-title">Account Details</div>
+                                <div class="card-sub">Your name and contact email</div>
+                            </div>
                         </div>
-                    </form>
+                        <div class="card-body">
+                            <form id="profileForm" novalidate>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="firstName">
+                                            First Name <span class="required">*</span>
+                                        </label>
+                                        <input class="form-control" id="firstName" type="text" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="lastName">Last Name</label>
+                                        <input class="form-control" id="lastName" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-row cols-1">
+                                    <div class="form-group">
+                                        <label class="form-label" for="email">
+                                            DLSU Email <span class="required">*</span>
+                                        </label>
+                                        <input class="form-control" id="email" type="email" required>
+                                        <span class="form-hint">Must end in @dlsu.edu.ph</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-primary" id="saveProfileBtn">
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <div class="card-title">Change Password</div>
+                                <div class="card-sub">Minimum 8 characters</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form id="passwordForm" novalidate>
+                                <div class="form-row cols-1">
+                                    <div class="form-group">
+                                        <label class="form-label" for="currentPassword">
+                                            Current Password <span class="required">*</span>
+                                        </label>
+                                        <input class="form-control" id="currentPassword" type="password"
+                                            autocomplete="current-password" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="newPassword">
+                                            New Password <span class="required">*</span>
+                                        </label>
+                                        <input class="form-control" id="newPassword" type="password"
+                                            autocomplete="new-password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="confirmPassword">
+                                            Confirm New Password <span class="required">*</span>
+                                        </label>
+                                        <input class="form-control" id="confirmPassword" type="password"
+                                            autocomplete="new-password" required>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-primary" id="savePasswordBtn">
+                                        Update Password
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </section>
+
                 <aside>
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <div class="card-title">
-                                    Assigned Task Records
-                                </div>
-                                <div class="card-sub">
-                                    Edit, reassign or delete any assigned task
-                                </div>
+                                <div class="card-title">Organisation</div>
+                                <div class="card-sub">Set by your department — read only</div>
                             </div>
                         </div>
-                        <div class="card-body" id="taskRecords">
-                            <p class="task-meta">
-                                Loading task records...
-                            </p>
+                        <div class="card-body">
+                            <div class="profile-fact">
+                                <div class="profile-fact-label">Committee</div>
+                                <div class="profile-fact-value" id="factCommittee">—</div>
+                            </div>
+                            <div class="profile-fact">
+                                <div class="profile-fact-label">Position</div>
+                                <div class="profile-fact-value" id="factPosition">—</div>
+                            </div>
+                            <div class="profile-fact">
+                                <div class="profile-fact-label">Member Since</div>
+                                <div class="profile-fact-value" id="factSince">—</div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="notice">
-                        <strong>
-                            Acceptance criteria covered:
-                        </strong>
-                        task description, deadline, assigned member/s, notifications, update-ready assignment records,
-                        and history-ready task logs.
+                        Committee and position determine what you can access. Contact a
+                        chairperson if either needs to change.
                     </div>
                 </aside>
             </div>
         </div>
     </div>
     <div class="toast" id="toast">
-        Task assigned. Assigned members will be notified.
+        Profile updated.
     </div>
     <script src="js/common.js"></script>
-    <script src="js/task-assignment.js"></script>
+    <script src="js/profile.js"></script>
 </body>
 </html>

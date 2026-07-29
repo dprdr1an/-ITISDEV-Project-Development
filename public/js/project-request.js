@@ -220,7 +220,9 @@ return {
     priority,
     deliverables,
     additionalNotes,
-    referenceLinks: referenceLink ? [referenceLink] : []
+    referenceLinks: referenceLink ? [referenceLink] : [],
+    // Link the request to the signed-in user
+    submittedBy: window.currentUser ? window.currentUser.id : null
 };
 }
 
@@ -274,3 +276,60 @@ try {
 function closeSuccess() {
 document.getElementById('successOverlay').classList.remove('show');
 }
+/* ==========================================================
+   Chairpersons notified on submission — loaded from the API
+   instead of the previously hardcoded list.
+========================================================== */
+
+(async function loadChairpersons() {
+    const list = document.getElementById('chairpersonList');
+
+    if (!list || !window.IMC) return;
+
+    const { api, escapeHtml, generateInitials } = window.IMC;
+
+    // Reuses the avatar gradients already present in the stylesheet
+    const GRADIENTS = [
+        'linear-gradient(135deg,#F97316,#c2410c)',
+        'linear-gradient(135deg,#6366F1,#4338CA)',
+        'linear-gradient(135deg,#10B981,#059669)',
+        'linear-gradient(135deg,#F59E0B,#D97706)',
+        'linear-gradient(135deg,#8B5CF6,#6D28D9)'
+    ];
+
+    try {
+        const response = await api.get('/api/users?position=Chairperson');
+        const chairs = response.users || [];
+
+        if (!chairs.length) {
+            list.innerHTML =
+                '<p class="chair-role">No chairpersons registered yet.</p>';
+            return;
+        }
+
+        list.innerHTML = chairs
+            .map(function (chair, index) {
+                return (
+                    '<div class="chairperson-item">' +
+                    '<div class="chair-avatar" style="background:' +
+                    GRADIENTS[index % GRADIENTS.length] +
+                    ';">' +
+                    escapeHtml(generateInitials(chair.name)) +
+                    '</div>' +
+                    '<div>' +
+                    '<div class="chair-name">' +
+                    escapeHtml(chair.name) +
+                    '</div>' +
+                    '<div class="chair-role">Chairperson, ' +
+                    escapeHtml(chair.committee || '—') +
+                    '</div>' +
+                    '</div></div>'
+                );
+            })
+            .join('');
+    } catch (err) {
+        console.error(err);
+        list.innerHTML =
+            '<p class="chair-role">Unable to load chairpersons.</p>';
+    }
+})();

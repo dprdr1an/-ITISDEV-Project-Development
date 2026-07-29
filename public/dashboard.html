@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard — IMC Rollout & Project Tracking</title>
+  <title>Dashboard — CatchIT</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
 
@@ -31,55 +32,64 @@
       <div class="sidebar-section-label">Main</div>
       <a href="dashboard.html" class="nav-item active">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="7" height="7" rx="1" />
-            <rect x="14" y="3" width="7" height="7" rx="1" />
-            <rect x="3" y="14" width="7" height="7" rx="1" />
-            <rect x="14" y="14" width="7" height="7" rx="1" />
-          </svg></div>
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg></div>
         <span class="nav-label">Dashboard</span>
       </a>
       <a href="project-request.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-          </svg></div>
-        <span class="nav-label">Projects</span>
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+        </svg></div>
+        <span class="nav-label">Project Requests</span>
       </a>
-      <a href="task-assignment.html" class="nav-item">
+      <a href="task-assignment.html" class="nav-item" data-roles="Chairperson">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-            <polyline points="22 4 12 14.01 9 11.01" />
-          </svg></div>
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+          <rect x="8" y="2" width="8" height="4" rx="1" />
+          <line x1="9" y1="12" x2="15" y2="12" />
+          <line x1="9" y1="16" x2="13" y2="16" />
+        </svg></div>
+        <span class="nav-label">Task Assignment</span>
+      </a>
+      <a href="my-tasks.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg></div>
         <span class="nav-label">My Tasks</span>
       </a>
       <a href="project-status.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <line x1="18" y1="20" x2="18" y2="10" />
-            <line x1="12" y1="20" x2="12" y2="4" />
-            <line x1="6" y1="20" x2="6" y2="14" />
-          </svg></div>
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg></div>
         <span class="nav-label">Project Status</span>
       </a>
       <a href="rollout-form.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-          </svg></div>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+        </svg></div>
         <span class="nav-label">Rollout Forms</span>
       </a>
       <a href="file-repository.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <polyline points="16 16 12 12 8 16" />
-            <line x1="12" y1="12" x2="12" y2="21" />
-            <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />
-          </svg></div>
+          <polyline points="16 16 12 12 8 16" />
+          <line x1="12" y1="12" x2="12" y2="21" />
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />
+        </svg></div>
         <span class="nav-label">File Repository</span>
       </a>
       <a href="notifications.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-          </svg></div>
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg></div>
         <span class="nav-label">Notifications</span>
       </a>
 
@@ -161,12 +171,12 @@
       <div class="page-header-text">
         <div class="page-eyebrow">CATCH2T28 · IMC Department</div>
         <h1 class="page-title">
-            Good morning, <span id="username">User</span> 👋
+            <span id="greeting">Hello</span>, <span id="username">User</span> 👋
         </h1>
-        <p class="page-subtitle">Wednesday, July 1, 2026 — Here's what's happening today.</p>
+        <p class="page-subtitle" id="todayLine">Loading today's overview…</p>
       </div>
       <div class="page-header-actions">
-        <button class="btn-secondary">
+        <button class="btn-secondary" id="refreshBtn">
           <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
           Refresh
         </button>
@@ -186,12 +196,12 @@
           <div class="stat-icon" style="background: var(--orange-light);">
             <svg viewBox="0 0 24 24" style="stroke: var(--orange);"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
-          <div class="stat-change up">
+          <div class="stat-change up" id="statActiveDelta" style="display:none;">
             <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-            +2
+            <span id="statActiveDeltaVal">0</span>
           </div>
         </div>
-        <div class="stat-num" style="color: var(--orange);">12</div>
+        <div class="stat-num" style="color: var(--orange);" id="statActive">—</div>
         <div class="stat-label">Active Projects</div>
       </div>
 
@@ -202,12 +212,12 @@
           <div class="stat-icon" style="background: var(--yellow-light);">
             <svg viewBox="0 0 24 24" style="stroke: var(--yellow);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <div class="stat-change down">
-            <svg viewBox="0 0 24 24"><polyline points="18 9 12 15 6 9"/></svg>
-            -1
+          <div class="stat-change up" id="statPendingDelta" style="display:none;">
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            <span id="statPendingDeltaVal">0</span>
           </div>
         </div>
-        <div class="stat-num" style="color: var(--yellow);">5</div>
+        <div class="stat-num" style="color: var(--yellow);" id="statPending">—</div>
         <div class="stat-label">Pending Approval</div>
       </div>
 
@@ -218,9 +228,9 @@
           <div class="stat-icon" style="background: var(--red-light);">
             <svg viewBox="0 0 24 24" style="stroke: var(--red);"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
-          <span class="badge badge-review" style="font-size:0.62rem;">Urgent</span>
+          <span class="badge badge-review" style="font-size:0.62rem;" id="statOverdueTag">Urgent</span>
         </div>
-        <div class="stat-num" style="color: var(--red);">3</div>
+        <div class="stat-num" style="color: var(--red);" id="statOverdue">—</div>
         <div class="stat-label">Overdue Tasks</div>
       </div>
 
@@ -231,12 +241,12 @@
           <div class="stat-icon" style="background: var(--green-light);">
             <svg viewBox="0 0 24 24" style="stroke: var(--green);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-          <div class="stat-change up">
+          <div class="stat-change up" id="statCompletedDelta" style="display:none;">
             <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-            +5
+            <span id="statCompletedDeltaVal">0</span>
           </div>
         </div>
-        <div class="stat-num" style="color: var(--green);">28</div>
+        <div class="stat-num" style="color: var(--green);" id="statCompleted">—</div>
         <div class="stat-label">Completed</div>
       </div>
     </div>
@@ -267,107 +277,8 @@
                   <th>Progress</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="proj-name-cell">
-                      <span class="proj-dot" style="background:#F97316;"></span>
-                      <div>
-                        <div class="proj-name">DLSU Technology Summit 2026</div>
-                        <div class="proj-meta">Point: Sophia R. · 3 tasks</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="proj-committee">Socials</span></td>
-                  <td><span class="proj-due">Jun 28</span></td>
-                  <td><span class="badge badge-active">Active</span></td>
-                  <td>
-                    <div class="proj-progress">
-                      <div class="progress-pct">78%</div>
-                      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:78%;background:var(--orange);"></div></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="proj-name-cell">
-                      <span class="proj-dot" style="background:#F59E0B;"></span>
-                      <div>
-                        <div class="proj-name">LRT ("Light Reboot Transit")</div>
-                        <div class="proj-meta">Point: Gabriel E. · 5 tasks</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="proj-committee">Creatives</span></td>
-                  <td><span class="proj-due">Jul 3</span></td>
-                  <td><span class="badge badge-review">For Review</span></td>
-                  <td>
-                    <div class="proj-progress">
-                      <div class="progress-pct">52%</div>
-                      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:52%;background:var(--yellow);"></div></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="proj-name-cell">
-                      <span class="proj-dot" style="background:#6366F1;"></span>
-                      <div>
-                        <div class="proj-name">CCS Welcome Week Promotions</div>
-                        <div class="proj-meta">Point: Cassandra E. · 7 tasks</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="proj-committee">Events</span></td>
-                  <td><span class="proj-due overdue">Jun 25 ⚠</span></td>
-                  <td><span class="badge badge-approval">For Approval</span></td>
-                  <td>
-                    <div class="proj-progress">
-                      <div class="progress-pct">90%</div>
-                      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:90%;background:var(--blue);"></div></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="proj-name-cell">
-                      <span class="proj-dot" style="background:#10B981;"></span>
-                      <div>
-                        <div class="proj-name">Batch Newsletter — Term 3</div>
-                        <div class="proj-meta">Point: Jose Noel P. · 2 tasks</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="proj-committee">Publications</span></td>
-                  <td><span class="proj-due">Jul 10</span></td>
-                  <td><span class="badge badge-active">Active</span></td>
-                  <td>
-                    <div class="proj-progress">
-                      <div class="progress-pct">35%</div>
-                      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:35%;background:var(--green);"></div></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="proj-name-cell">
-                      <span class="proj-dot" style="background:#9CA3AF;"></span>
-                      <div>
-                        <div class="proj-name">CATCH2T28 End-of-Year Recap</div>
-                        <div class="proj-meta">Point: Adrian Y. · 4 tasks</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="proj-committee">IMC</span></td>
-                  <td><span class="proj-due">Jul 20</span></td>
-                  <td><span class="badge badge-pending">Pending</span></td>
-                  <td>
-                    <div class="proj-progress">
-                      <div class="progress-pct">10%</div>
-                      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:10%;background:var(--gray-400);"></div></div>
-                    </div>
-                  </td>
-                </tr>
+              <tbody id="projectsBody">
+                <tr><td colspan="5" style="padding:18px;text-align:center;color:var(--gray-400);">Loading projects…</td></tr>
               </tbody>
             </table>
           </div>
@@ -383,78 +294,8 @@
             <a href="#" class="card-action">View all →</a>
           </div>
           <div class="card-body">
-            <div class="task-item">
-              <div class="task-checkbox"><!-- unchecked --></div>
-              <div class="task-info">
-                <div class="task-name">Finalize social media captions for Summit</div>
-                <div class="task-meta">
-                  <span class="task-proj">DLSU Tech Summit 2026</span>
-                  <span class="task-due overdue">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    Overdue — Jun 29
-                  </span>
-                  <span class="task-priority priority-high">High</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="task-item">
-              <div class="task-checkbox"><!-- unchecked --></div>
-              <div class="task-info">
-                <div class="task-name">Design pubmat for Welcome Week</div>
-                <div class="task-meta">
-                  <span class="task-proj">CCS Welcome Week</span>
-                  <span class="task-due overdue">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    Today — Jul 1
-                  </span>
-                  <span class="task-priority priority-high">High</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="task-item">
-              <div class="task-checkbox"><!-- unchecked --></div>
-              <div class="task-info">
-                <div class="task-name">Draft newsletter intro text</div>
-                <div class="task-meta">
-                  <span class="task-proj">Batch Newsletter T3</span>
-                  <span class="task-due">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    Jul 5
-                  </span>
-                  <span class="task-priority priority-medium">Medium</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="task-item">
-              <div class="task-checkbox checked">
-                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="task-info">
-                <div class="task-name done">Submit rollout form for LRT campaign</div>
-                <div class="task-meta">
-                  <span class="task-proj">LRT Campaign</span>
-                  <span class="task-due">Completed Jun 30</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="task-item">
-              <div class="task-checkbox"><!-- unchecked --></div>
-              <div class="task-info">
-                <div class="task-name">Review end-of-year recap outline</div>
-                <div class="task-meta">
-                  <span class="task-proj">CATCH2T28 Recap</span>
-                  <span class="task-due">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    Jul 8
-                  </span>
-                  <span class="task-priority priority-low">Low</span>
-                </div>
-              </div>
-            </div>
+            <div id="myTasksList"><div class="notice">Loading tasks…</div></div>
+          
           </div>
         </div>
 
@@ -476,33 +317,31 @@
               <svg class="donut-svg" width="100" height="100" viewBox="0 0 100 100">
                 <!-- Donut segments via stroke-dasharray on a circle r=38, circumference≈238.76 -->
                 <circle cx="50" cy="50" r="38" fill="none" stroke="var(--gray-100)" stroke-width="14"/>
-                <!-- Done: 28/45 = 62.2% → 148.5 -->
-                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--green)" stroke-width="14"
-                  stroke-dasharray="148.5 238.76" stroke-dashoffset="59.69" stroke-linecap="butt" transform="rotate(-90 50 50)"/>
-                <!-- Active: 12/45 = 26.7% → 63.7 -->
-                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--orange)" stroke-width="14"
-                  stroke-dasharray="63.7 238.76" stroke-dashoffset="-88.81" stroke-linecap="butt" transform="rotate(-90 50 50)"/>
-                <!-- Pending: 5/45 = 11.1% → 26.5 -->
-                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--yellow)" stroke-width="14"
-                  stroke-dasharray="26.5 238.76" stroke-dashoffset="-152.51" stroke-linecap="butt" transform="rotate(-90 50 50)"/>
-                <text x="50" y="47" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="var(--gray-900)">45</text>
+                <!-- Segments are sized at runtime from real project counts -->
+                <circle id="donutCompleted" cx="50" cy="50" r="38" fill="none" stroke="var(--green)" stroke-width="14"
+                  stroke-dasharray="0 238.76" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 50 50)"/>
+                <circle id="donutActive" cx="50" cy="50" r="38" fill="none" stroke="var(--orange)" stroke-width="14"
+                  stroke-dasharray="0 238.76" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 50 50)"/>
+                <circle id="donutPending" cx="50" cy="50" r="38" fill="none" stroke="var(--yellow)" stroke-width="14"
+                  stroke-dasharray="0 238.76" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 50 50)"/>
+                <text id="donutTotal" x="50" y="47" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="var(--gray-900)">0</text>
                 <text x="50" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="6.5" fill="var(--gray-400)">TOTAL</text>
               </svg>
               <div class="donut-legend">
                 <div class="legend-item">
                   <div class="legend-dot" style="background:var(--green);"></div>
                   <span class="legend-label">Completed</span>
-                  <span class="legend-val">28</span>
+                  <span class="legend-val" id="legendCompleted">0</span>
                 </div>
                 <div class="legend-item">
                   <div class="legend-dot" style="background:var(--orange);"></div>
                   <span class="legend-label">Active</span>
-                  <span class="legend-val">12</span>
+                  <span class="legend-val" id="legendActive">0</span>
                 </div>
                 <div class="legend-item">
                   <div class="legend-dot" style="background:var(--yellow);"></div>
                   <span class="legend-label">Pending</span>
-                  <span class="legend-val">5</span>
+                  <span class="legend-val" id="legendPending">0</span>
                 </div>
               </div>
             </div>
@@ -511,13 +350,13 @@
               <div class="analytics-row">
                 <div class="analytics-mini">
                   <div class="analytics-mini-label">Completion Rate</div>
-                  <div class="analytics-mini-val">62%</div>
-                  <div class="analytics-mini-sub">↑ 8% from last term</div>
+                  <div class="analytics-mini-val" id="completionRate">—</div>
+                  <div class="analytics-mini-sub" id="completionRateSub">Completed vs all projects</div>
                 </div>
                 <div class="analytics-mini">
                   <div class="analytics-mini-label">On-Time Delivery</div>
-                  <div class="analytics-mini-val">84%</div>
-                  <div class="analytics-mini-sub">↑ 3% from last term</div>
+                  <div class="analytics-mini-val" id="onTimeRate">—</div>
+                  <div class="analytics-mini-sub" id="onTimeRateSub">Tasks finished by deadline</div>
                 </div>
               </div>
             </div>
@@ -531,50 +370,11 @@
               <div class="card-title">Notifications</div>
               <div class="card-subtitle">Recent alerts and reminders</div>
             </div>
-            <a href="#" class="card-action">Mark all read</a>
+            <a href="#" class="card-action" id="markAllReadBtn">Mark all read</a>
           </div>
           <div class="card-body">
-            <div class="notif-item">
-              <div class="notif-icon-wrap" style="background:var(--red-light);">
-                <svg viewBox="0 0 24 24" style="stroke:var(--red);"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              </div>
-              <div class="notif-text">
-                <div class="notif-msg"><strong>Overdue:</strong> "Social media captions for Summit" was due Jun 29.</div>
-                <div class="notif-time">2 hours ago</div>
-              </div>
-              <div class="notif-unread-dot"></div>
-            </div>
-
-            <div class="notif-item">
-              <div class="notif-icon-wrap" style="background:var(--orange-light);">
-                <svg viewBox="0 0 24 24" style="stroke:var(--orange);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div class="notif-text">
-                <div class="notif-msg"><strong>Sophia R.</strong> completed 3 tasks on DLSU Tech Summit 2026.</div>
-                <div class="notif-time">4 hours ago</div>
-              </div>
-              <div class="notif-unread-dot"></div>
-            </div>
-
-            <div class="notif-item">
-              <div class="notif-icon-wrap" style="background:var(--blue-light);">
-                <svg viewBox="0 0 24 24" style="stroke:var(--blue);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <div class="notif-text">
-                <div class="notif-msg"><strong>Gabriel E.</strong> left a comment on LRT Campaign.</div>
-                <div class="notif-time">Yesterday, 5:30 PM</div>
-              </div>
-            </div>
-
-            <div class="notif-item">
-              <div class="notif-icon-wrap" style="background:var(--yellow-light);">
-                <svg viewBox="0 0 24 24" style="stroke:var(--yellow);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div class="notif-text">
-                <div class="notif-msg">Rollout form for <strong>CCS Welcome Week</strong> is awaiting your approval.</div>
-                <div class="notif-time">Yesterday, 2:00 PM</div>
-              </div>
-            </div>
+            <div id="notifList"><div class="notice">Loading notifications…</div></div>
+          
           </div>
         </div>
 
@@ -587,66 +387,8 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="workload-item">
-              <div class="workload-row">
-                <div class="workload-member">
-                  <div
-                      class="member-avatar"
-                      id="workloadAvatar"
-                      style="background: linear-gradient(135deg,#F97316,#c2410c);"
-                  >
-                      U
-                  </div>
-                  <div class="workload-name" id="workloadUsername">User</div>
-                </div>
-                <div class="workload-count">4 tasks</div>
-              </div>
-              <div class="workload-bar-track"><div class="workload-bar-fill" style="width:80%;"></div></div>
-            </div>
-
-            <div class="workload-item">
-              <div class="workload-row">
-                <div class="workload-member">
-                  <div class="member-avatar" style="background: linear-gradient(135deg,#6366F1,#4338CA);">SNR</div>
-                  <div class="workload-name">Sophia N. R.</div>
-                </div>
-                <div class="workload-count">3 tasks</div>
-              </div>
-              <div class="workload-bar-track"><div class="workload-bar-fill" style="width:60%;"></div></div>
-            </div>
-
-            <div class="workload-item">
-              <div class="workload-row">
-                <div class="workload-member">
-                  <div class="member-avatar" style="background: linear-gradient(135deg,#10B981,#059669);">GBE</div>
-                  <div class="workload-name">Gabriel B. E.</div>
-                </div>
-                <div class="workload-count">3 tasks</div>
-              </div>
-              <div class="workload-bar-track"><div class="workload-bar-fill" style="width:60%;background:var(--green);"></div></div>
-            </div>
-
-            <div class="workload-item">
-              <div class="workload-row">
-                <div class="workload-member">
-                  <div class="member-avatar" style="background: linear-gradient(135deg,#F59E0B,#D97706);">CJE</div>
-                  <div class="workload-name">Cassandra J. E.</div>
-                </div>
-                <div class="workload-count">2 tasks</div>
-              </div>
-              <div class="workload-bar-track"><div class="workload-bar-fill" style="width:40%;background:var(--yellow);"></div></div>
-            </div>
-
-            <div class="workload-item">
-              <div class="workload-row">
-                <div class="workload-member">
-                  <div class="member-avatar" style="background: linear-gradient(135deg,#8B5CF6,#6D28D9);">JNP</div>
-                  <div class="workload-name">Jose Noel P.</div>
-                </div>
-                <div class="workload-count">1 task</div>
-              </div>
-              <div class="workload-bar-track"><div class="workload-bar-fill" style="width:20%;background:#8B5CF6;"></div></div>
-            </div>
+            <div id="workloadList"><div class="notice">Loading workload…</div></div>
+          
           </div>
         </div>
 

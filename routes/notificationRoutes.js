@@ -11,6 +11,11 @@ const {
 
 const router = express.Router();
 
+const { requireAuth } = require('../middleware/authMiddleware');
+
+// Every endpoint in this router requires a signed-in user
+router.use(requireAuth);
+
 // Create notification
 router.post('/', createNotification);
 

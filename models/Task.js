@@ -1,10 +1,43 @@
 const mongoose = require('mongoose');
 
+/**
+ * Current task workflow, in order. Progress moves forward through this list.
+ */
+const TASK_STATUSES = [
+    'Not Started',
+    'In Progress',
+    'Ready for Review',
+    'Completed'
+];
+
+/**
+ * Statuses used before the My Tasks module existed. Still accepted so records
+ * created earlier keep loading; normaliseStatus() maps them onto the new set.
+ */
+const LEGACY_STATUSES = [
+    'Pending',
+    'Ongoing',
+    'For Review',
+    'Waiting for Approval'
+];
+
+const LEGACY_MAP = {
+    'Pending': 'Not Started',
+    'Ongoing': 'In Progress',
+    'For Review': 'Ready for Review',
+    'Waiting for Approval': 'Ready for Review'
+};
+
+function normaliseStatus(status) {
+    if (!status) return 'Not Started';
+    return LEGACY_MAP[status] || status;
+}
+
 const taskSchema = new mongoose.Schema(
     {
         project: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Project',
+            ref: 'ProjectRequest',
             required: true
         },
 
@@ -41,14 +74,15 @@ const taskSchema = new mongoose.Schema(
 
         status: {
             type: String,
-            enum: [
-                'Pending',
-                'Ongoing',
-                'For Review',
-                'Waiting for Approval',
-                'Completed'
-            ],
-            default: 'Pending'
+            enum: TASK_STATUSES.concat(LEGACY_STATUSES),
+            default: 'Not Started'
+        },
+
+        // Set the first time a task reaches "Completed" so on-time delivery
+        // can be measured without relying on updatedAt.
+        completedAt: {
+            type: Date,
+            default: null
         },
 
         createdBy: {
@@ -61,4 +95,22 @@ const taskSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('Task', taskSchema);
+taskSchema.pre('save', function () {
+    this.status = normaliseStatus(this.status);
+
+    if (this.status === 'Completed' && !this.completedAt) {
+        this.completedAt = new Date();
+    }
+
+    if (this.status !== 'Completed') {
+        this.completedAt = null;
+    }
+});
+
+const Task = mongoose.model('Task', taskSchema);
+
+Task.TASK_STATUSES = TASK_STATUSES;
+Task.LEGACY_STATUSES = LEGACY_STATUSES;
+Task.normaliseStatus = normaliseStatus;
+
+module.exports = Task;

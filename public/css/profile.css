@@ -1,0 +1,157 @@
+/* ──────────────────────────────────────────────────────────
+   Profile
+   Reuses the shared tokens in layout.css. Only page-specific
+   pieces are declared here.
+────────────────────────────────────────────────────────── */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Stacked cards need breathing room between them. Mirrors .content-left /
+   .content-right on the dashboard so the rhythm matches the rest of the app. */
+.profile-layout > section,
+.profile-layout > aside {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* This page is form-heavy, so the shared card padding is a little tight.
+   Scoped to .profile-layout so no other page is affected. */
+.profile-layout .card-header { padding: 22px 24px 0; }
+.profile-layout .card-body { padding: 20px 24px 24px; }
+
+/* ── FORM CONTROLS (matching the other form pages) ── */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+}
+.form-row.cols-1 { grid-template-columns: 1fr; }
+
+/* The row above the buttons should not double up on spacing */
+.form-row:last-of-type { margin-bottom: 0; }
+
+.form-group { display: flex; flex-direction: column; }
+
+.form-label {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 6px;
+}
+.form-label .required { color: var(--red); }
+
+.form-control {
+    padding: 10px 12px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--gray-900);
+    background: var(--white);
+    transition: border-color 0.15s;
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--orange);
+}
+.form-control:disabled {
+    background: var(--gray-50);
+    color: var(--gray-400);
+}
+
+.form-hint {
+    font-size: 0.7rem;
+    color: var(--gray-400);
+    margin-top: 6px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+/* ── AVATAR EDITOR ── */
+.avatar-editor {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 4px 0;
+}
+
+.avatar-preview {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--orange), #c2410c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--white);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.avatar-editor-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+.avatar-editor-actions .form-hint {
+    width: 100%;
+    margin-top: 2px;
+}
+
+/* ── READ-ONLY FACTS ── */
+.profile-fact {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+.profile-fact:first-child { padding-top: 0; }
+.profile-fact:last-child { border-bottom: 0; }
+
+.profile-fact-label {
+    font-size: 0.7rem;
+    color: var(--gray-400);
+    margin-bottom: 5px;
+}
+
+.profile-fact-value {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+    .profile-layout { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 620px) {
+    .form-row { grid-template-columns: 1fr; }
+    .profile-layout .card-header { padding: 18px 18px 0; }
+    .profile-layout .card-body { padding: 16px 18px 20px; }
+    .avatar-editor { gap: 18px; }
+    .form-actions { justify-content: stretch; }
+    .form-actions .btn-primary { width: 100%; }
+}

@@ -23,6 +23,37 @@ const togglePwBtn = document.getElementById('togglePw');
 const iconShow    = document.getElementById('iconShow');
 const iconHide    = document.getElementById('iconHide');
 
+// ── Redirect handling ─────────────────────────────────────────────────────────
+
+// Pages the guard in common.js may bounce a user away from.
+const ALLOWED_REDIRECTS = [
+    'dashboard.html',
+    'project-request.html',
+    'project-status.html',
+    'rollout-form.html',
+    'task-assignment.html',
+    'my-tasks.html',
+    'file-repository.html',
+    'notifications.html',
+    'profile.html'
+];
+
+/**
+ * Resolve where to send the user after a successful login.
+ * Only same-origin page names from a known list are honoured, so a
+ * crafted ?redirect= value cannot bounce the user off-site.
+ */
+function getRedirectTarget() {
+    const requested = new URLSearchParams(window.location.search).get('redirect');
+
+    return ALLOWED_REDIRECTS.includes(requested) ? requested : 'dashboard.html';
+}
+
+// Someone already signed in has no reason to sit on the login screen
+if (window.IMC && window.IMC.isValidUser(window.IMC.getUser())) {
+    window.location.replace(getRedirectTarget());
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 /**
@@ -164,11 +195,15 @@ loginForm.addEventListener('submit', async (e) => {
         // 4b. Success — store the user object and redirect
         showMessage('Login successful. Redirecting…', 'success');
 
-        localStorage.setItem('user', JSON.stringify(data.user));
+        if (window.IMC) {
+            window.IMC.setUser(data.user);
+        } else {
+            localStorage.setItem('user', JSON.stringify(data.user));
+        }
 
         // Short delay so the success message is readable before navigating
         setTimeout(() => {
-            window.location.href = 'dashboard.html';
+            window.location.replace(getRedirectTarget());
         }, 800);
 
     } catch (err) {

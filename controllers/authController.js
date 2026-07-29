@@ -34,7 +34,14 @@ const registerUser = async (req, res) => {
         // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create user
+        // Only these two roles exist in the system
+        if (!['Chairperson', 'Executive'].includes(position)) {
+            return res.status(400).json({
+                message: 'Please select a valid position.'
+            });
+        }
+
+        // Create user (the model derives firstName/lastName from name)
         const user = new User({
             name,
             committee,
@@ -87,15 +94,24 @@ const loginUser = async (req, res) => {
             });
         }
 
-        res.status(200).json({
-            message: 'Login successful.',
-            user: {
-                id: user._id,
-                name: user.name,
-                committee: user.committee,
-                position: user.position,
-                email: user.email
+        const publicUser = user.toPublic();
+
+        // Establish the server-side session used for API authorization
+        req.session.user = publicUser;
+
+        req.session.save((err) => {
+            if (err) {
+                console.error('Session save error:', err);
+
+                return res.status(500).json({
+                    message: 'Could not start your session. Please try again.'
+                });
             }
+
+            return res.status(200).json({
+                message: 'Login successful.',
+                user: publicUser
+            });
         });
 
     } catch (error) {
@@ -109,7 +125,63 @@ const loginUser = async (req, res) => {
     }
 };
 
+// GET /auth/me — rehydrate the client from the session
+const getCurrentUser = async (req, res) => {
+    const sessionUser = req.session && req.session.user;
+
+    if (!sessionUser) {
+        return res.status(401).json({
+            message: 'Not signed in.'
+        });
+    }
+
+    try {
+        // Re-read so role or profile changes take effect without re-login
+        const user = await User.findById(sessionUser.id);
+
+        if (!user) {
+            req.session.destroy(() => undefined);
+
+            return res.status(401).json({
+                message: 'Account no longer exists.'
+            });
+        }
+
+        const publicUser = user.toPublic();
+        req.session.user = publicUser;
+
+        return res.status(200).json({ user: publicUser });
+    } catch (error) {
+        console.error('Get current user error:', error);
+
+        return res.status(500).json({ message: 'Server error.' });
+    }
+};
+
+// POST /auth/logout — destroy the session
+const logoutUser = (req, res) => {
+    if (!req.session) {
+        return res.status(200).json({ message: 'Logged out.' });
+    }
+
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Logout error:', err);
+
+            return res.status(500).json({
+                message: 'Could not end the session.'
+            });
+        }
+
+        res.clearCookie('imc.sid');
+
+        return res.status(200).json({ message: 'Logged out.' });
+    });
+};
+
 module.exports = {
     registerUser,
-    loginUser
+    loginUser,
+    getCurrentUser,
+    logoutUser
 };

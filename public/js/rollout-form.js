@@ -173,7 +173,9 @@ return {
     keyMessages:    allInputs[11]?.value || '',
     publications,
     publicityPlan,
-    checklist
+    checklist,
+    // Link the rollout to the signed-in user
+    submittedBy: window.currentUser ? window.currentUser.id : null
 };
 }
 
@@ -187,7 +189,7 @@ try {
     });
     const result = await res.json();
     if (result.success) {
-    addRevisionEntry('Draft saved', data.requestingHead || 'User', 'Form progress saved.');
+    addRevisionEntry('Draft saved', data.requestingHead || (window.currentUser && window.currentUser.name) || 'Unknown', 'Form progress saved.');
     document.getElementById('autoSaveLabel').textContent = 'Saved · just now';
     showToast('Draft saved successfully');
     } else {
@@ -221,7 +223,7 @@ try {
     const statusBadge = document.getElementById('globalStatus');
     statusBadge.className = 'status-badge status-review';
     statusBadge.innerHTML = '<span class="dot"></span> Submitted — For Review';
-    addRevisionEntry('Rollout submitted for review', data.requestingHead || 'User', 'Sent to chairpersons for review and approval.');
+    addRevisionEntry('Rollout submitted for review', data.requestingHead || (window.currentUser && window.currentUser.name) || 'Unknown', 'Sent to chairpersons for review and approval.');
     showToast('Rollout submitted! Chairpersons have been notified.');
     } else {
     showToast('Submission failed: ' + result.message);

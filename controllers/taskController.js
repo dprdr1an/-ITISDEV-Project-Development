@@ -2,6 +2,23 @@ const mongoose = require('mongoose');
 const Task = require('../models/Task');
 const Notification = require('../models/Notification');
 
+const { TASK_STATUSES, normaliseStatus } = Task;
+
+const CHAIRPERSON = 'Chairperson';
+
+function isChairperson(user) {
+    return Boolean(user && user.position === CHAIRPERSON);
+}
+
+/** True when the signed-in user is one of the task's assignees. */
+function isAssignee(task, user) {
+    if (!task || !user) return false;
+
+    return (task.assignedMembers || []).some(
+        (member) => String(member._id || member) === String(user.id)
+    );
+}
+
 // Create task
 exports.createTask = async (req, res) => {
     try {
@@ -50,7 +67,8 @@ exports.createTask = async (req, res) => {
             assignedMembers,
             deadline,
             priority: priority || 'Medium',
-            createdBy: req.body.createdBy || null
+            // Taken from the session, never from the request body
+            createdBy: req.currentUser.id
         });
 
         for (const memberId of assignedMembers) {
@@ -103,6 +121,17 @@ exports.getTasks = async (req, res) => {
             query.status = req.query.status;
         }
 
+        // Executives may only ever read their own tasks, regardless of the
+        // query string they send. Chairpersons may read everything.
+        if (!isChairperson(req.currentUser)) {
+            query.assignedMembers = req.currentUser.id;
+        }
+
+        // Explicit opt-in used by the My Tasks page
+        if (req.query.mine === 'true') {
+            query.assignedMembers = req.currentUser.id;
+        }
+
         const tasks = await Task.find(query)
             .populate('project', 'projectName title status')
             .populate(
@@ -149,6 +178,12 @@ exports.getTaskById = async (req, res) => {
             });
         }
 
+        if (!isChairperson(req.currentUser) && !isAssignee(task, req.currentUser)) {
+            return res.status(403).json({
+                message: 'You do not have access to this task.'
+            });
+        }
+
         return res.status(200).json({
             task
         });
@@ -179,15 +214,53 @@ exports.updateTask = async (req, res) => {
             });
         }
 
-        const allowedFields = [
-            'project',
-            'title',
-            'description',
-            'assignedMembers',
-            'deadline',
-            'priority',
-            'status'
-        ];
+        const chairperson = isChairperson(req.currentUser);
+        const assignee = isAssignee(task, req.currentUser);
+
+        if (!chairperson && !assignee) {
+            return res.status(403).json({
+                message: 'You do not have access to this task.'
+            });
+        }
+
+        // Chairpersons may edit and reassign. Assignees may only move their
+        // own task along the workflow — nothing else.
+        const allowedFields = chairperson
+            ? [
+                  'project',
+                  'title',
+                  'description',
+                  'assignedMembers',
+                  'deadline',
+                  'priority',
+                  'status'
+              ]
+            : ['status'];
+
+        const rejected = Object.keys(req.body).filter(
+            (field) =>
+                !allowedFields.includes(field) &&
+                req.body[field] !== undefined
+        );
+
+        if (!chairperson && rejected.length) {
+            return res.status(403).json({
+                message:
+                    'You may only update the status of a task assigned to you.'
+            });
+        }
+
+        if (req.body.status !== undefined) {
+            const nextStatus = normaliseStatus(req.body.status);
+
+            if (!TASK_STATUSES.includes(nextStatus)) {
+                return res.status(400).json({
+                    message: 'Invalid task status.'
+                });
+            }
+
+            req.body.status = nextStatus;
+        }
 
         allowedFields.forEach((field) => {
             if (req.body[field] !== undefined) {
@@ -196,6 +269,28 @@ exports.updateTask = async (req, res) => {
         });
 
         await task.save();
+
+        // Tell the chairperson who raised the task when it moves
+        if (
+            req.body.status !== undefined &&
+            task.createdBy &&
+            String(task.createdBy) !== String(req.currentUser.id)
+        ) {
+            await Notification.create({
+                recipient: task.createdBy,
+                title: 'Task status updated',
+                message:
+                    req.currentUser.name +
+                    ' moved "' +
+                    task.title +
+                    '" to ' +
+                    task.status +
+                    '.',
+                type: 'TASK_UPDATED',
+                relatedProject: task.project,
+                relatedTask: task._id
+            }).catch(() => undefined);
+        }
 
         const updatedTask = await Task.findById(task._id)
             .populate('project', 'projectName title status')
