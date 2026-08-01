@@ -877,3 +877,235 @@ select.form-control {
     background: var(--red-light);
     color: var(--red);
 }
+
+/* ── TOPBAR PANELS (calendar + notifications) ──
+   Injected once by common.js on every authenticated page. Built from the
+   same tokens as .avatar-menu so the panels feel native. */
+.topbar-panel-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.topbar-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 340px;
+    max-width: calc(100vw - 32px);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 300;
+    display: none;
+    overflow: hidden;
+}
+
+.topbar-panel.open {
+    display: block;
+    animation: panelIn 0.16s ease-out;
+}
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.topbar-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.topbar-panel-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--gray-900);
+}
+
+.topbar-panel-action {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--orange);
+    cursor: pointer;
+    transition: color 0.15s;
+}
+.topbar-panel-action:hover { color: var(--orange-dark); text-decoration: underline; }
+.topbar-panel-action:disabled { color: var(--gray-400); cursor: default; text-decoration: none; }
+
+.topbar-panel-body {
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.topbar-panel-empty {
+    padding: 28px 18px;
+    text-align: center;
+    font-size: 0.76rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+.topbar-panel-footer {
+    padding: 10px 16px;
+    border-top: 1px solid var(--gray-100);
+    text-align: center;
+}
+.topbar-panel-footer a {
+    font-size: 0.73rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-decoration: none;
+}
+.topbar-panel-footer a:hover { text-decoration: underline; }
+
+/* ── Deadline rows ── */
+.deadline-group-label {
+    padding: 10px 16px 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-400);
+    background: var(--gray-50);
+}
+
+.deadline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--gray-100);
+}
+.deadline-item:last-child { border-bottom: 0; }
+
+.deadline-rail {
+    width: 3px;
+    align-self: stretch;
+    border-radius: 2px;
+    background: var(--gray-200);
+    flex-shrink: 0;
+}
+.deadline-item.is-overdue .deadline-rail { background: var(--red); }
+.deadline-item.is-today   .deadline-rail { background: var(--orange); }
+.deadline-item.is-soon    .deadline-rail { background: var(--yellow); }
+
+.deadline-main { flex: 1; min-width: 0; }
+
+.deadline-title {
+    font-size: 0.79rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 2px;
+    word-break: break-word;
+}
+
+.deadline-project {
+    font-size: 0.71rem;
+    color: var(--gray-600);
+    margin-bottom: 5px;
+}
+
+.deadline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.68rem;
+    color: var(--gray-400);
+}
+.deadline-meta .overdue { color: var(--red); font-weight: 600; }
+
+/* ── Notification rows ── */
+.panel-notif {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--gray-100);
+    position: relative;
+    transition: background 0.15s;
+}
+.panel-notif:last-child { border-bottom: 0; }
+.panel-notif.unread { background: var(--orange-light); }
+.panel-notif:hover { background: var(--gray-50); }
+
+.panel-notif-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--gray-100);
+}
+.panel-notif-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--gray-600);
+}
+
+.panel-notif-main { flex: 1; min-width: 0; }
+
+.panel-notif-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 2px;
+    word-break: break-word;
+}
+
+.panel-notif-msg {
+    font-size: 0.72rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.panel-notif-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.67rem;
+    color: var(--gray-400);
+}
+
+.panel-notif-read {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 0.67rem;
+    font-weight: 600;
+    color: var(--orange);
+    cursor: pointer;
+}
+.panel-notif-read:hover { text-decoration: underline; }
+
+/* Keyboard focus for the clickable sidebar user card */
+.sidebar-user:focus-visible,
+.topbar-icon-btn:focus-visible,
+.topbar-avatar:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+    .topbar-panel { width: calc(100vw - 32px); right: -8px; }
+}

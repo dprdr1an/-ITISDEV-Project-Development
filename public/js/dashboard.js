@@ -19,7 +19,9 @@
         renderTableNotice,
         showToast,
         generateInitials,
-        renderUserPlaceholders
+        renderUserPlaceholders,
+        notificationPresentation,
+        notificationIcon
     } = window.IMC;
 
     const user = window.currentUser;
@@ -326,20 +328,8 @@
 
     /* ---------- Notifications ---------- */
 
-    const NOTIF_STYLES = {
-        TASK_OVERDUE: { bg: "var(--red-light)", stroke: "var(--red)" },
-        DEADLINE_REMINDER: { bg: "var(--yellow-light)", stroke: "var(--yellow)" },
-        TASK_ASSIGNED: { bg: "var(--orange-light)", stroke: "var(--orange)" },
-        TASK_UPDATED: { bg: "var(--orange-light)", stroke: "var(--orange)" },
-        PROJECT_STATUS_CHANGED: { bg: "var(--blue-light)", stroke: "var(--blue)" },
-        ROLLOUT_UPDATED: { bg: "var(--blue-light)", stroke: "var(--blue)" },
-        APPROVAL_REQUIRED: { bg: "var(--yellow-light)", stroke: "var(--yellow)" },
-        PROJECT_APPROVED: { bg: "var(--green-light)", stroke: "var(--green)" }
-    };
-
-    const BELL_PATH =
-        '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>' +
-        '<path d="M13.73 21a2 2 0 0 1-3.46 0"/>';
+    // Icon and colour mapping comes from common.js (shared with the topbar
+    // notifications panel and the Notifications page).
 
     function renderNotifications(notifications) {
         const list = document.getElementById("notifList");
@@ -352,11 +342,7 @@
 
         list.innerHTML = notifications
             .map((notification) => {
-                const style =
-                    NOTIF_STYLES[notification.type] || {
-                        bg: "var(--gray-100)",
-                        stroke: "var(--gray-400)"
-                    };
+                const style = notificationPresentation(notification.type);
 
                 const unread = notification.isRead
                     ? ""
@@ -368,9 +354,9 @@
                     style.bg +
                     ';">' +
                     '<svg viewBox="0 0 24 24" style="stroke:' +
-                    style.stroke +
+                    style.color +
                     ';">' +
-                    BELL_PATH +
+                    notificationIcon(notification.type) +
                     "</svg></div>" +
                     '<div class="notif-text">' +
                     '<div class="notif-msg"><strong>' +
@@ -521,9 +507,7 @@
             event.preventDefault();
 
             try {
-                await api.put("/api/notifications/read-all", {
-                    recipient: user.id
-                });
+                await api.put("/api/notifications/read-all");
 
                 await load();
                 showToast("All notifications marked as read.");

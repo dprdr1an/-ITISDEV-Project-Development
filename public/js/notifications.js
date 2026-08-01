@@ -14,7 +14,10 @@
         formatRelative,
         formatDateTime,
         renderNotice,
-        showToast
+        showToast,
+        notificationCategory,
+        notificationPresentation,
+        notificationIcon
     } = window.IMC;
 
     const user = window.currentUser;
@@ -23,67 +26,27 @@
 
     /* ---------- Type mapping ---------- */
 
-    // Backend notification types → the filter pills on this page
-    const TYPE_CATEGORY = {
-        DEADLINE_REMINDER: "deadline",
-        TASK_OVERDUE: "overdue",
-        TASK_ASSIGNED: "update",
-        TASK_UPDATED: "update",
-        PROJECT_STATUS_CHANGED: "update",
-        ROLLOUT_UPDATED: "update",
-        APPROVAL_REQUIRED: "approval",
-        PROJECT_APPROVED: "approval"
-    };
-
-    // Category → icon modifier class, dot colour and human label
-    const CATEGORY_STYLE = {
-        deadline: {
-            icon: "deadline",
-            color: "var(--yellow)",
-            label: "Deadline Reminder",
-            badge: "badge-preso"
-        },
-        overdue: {
-            icon: "overdue",
-            color: "var(--red)",
-            label: "Overdue Alert",
-            badge: "badge-doc"
-        },
-        update: {
-            icon: "update",
-            color: "var(--blue)",
-            label: "Rollout Update",
-            badge: "badge-photo"
-        },
-        approval: {
-            icon: "approval",
-            color: "var(--green)",
-            label: "Approval",
-            badge: "badge-pubmat"
-        }
-    };
-
-    const ICON_PATHS = {
-        deadline:
-            '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
-        overdue:
-            '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>' +
-            '<line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
-        update:
-            '<polyline points="23 4 23 10 17 10"/>' +
-            '<path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>',
-        approval:
-            '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>' +
-            '<polyline points="22 4 12 14.01 9 11.01"/>'
-    };
-
+    // Type/category/icon mapping now lives in common.js so this page and the
+    // topbar notifications panel cannot drift apart.
     function categoryOf(notification) {
-        return TYPE_CATEGORY[notification.type] || "update";
+        return notificationCategory(notification.type);
     }
 
     function styleOf(category) {
-        return CATEGORY_STYLE[category] || CATEGORY_STYLE.update;
+        // The page uses the category name as an icon modifier class
+        return Object.assign(
+            { icon: category },
+            notificationPresentation(CATEGORY_TYPE_SAMPLE[category])
+        );
     }
+
+    // Reverse lookup so styleOf(category) can reuse the shared presentation
+    const CATEGORY_TYPE_SAMPLE = {
+        deadline: "DEADLINE_REMINDER",
+        overdue: "TASK_OVERDUE",
+        update: "PROJECT_STATUS_CHANGED",
+        approval: "PROJECT_APPROVED"
+    };
 
     /* ---------- State ---------- */
 
@@ -135,7 +98,7 @@
                     '<div class="notif-icon ' +
                     style.icon +
                     '"><svg viewBox="0 0 24 24">' +
-                    ICON_PATHS[style.icon] +
+                    notificationIcon(CATEGORY_TYPE_SAMPLE[style.icon]) +
                     "</svg></div>" +
                     '<div class="notif-body">' +
                     '<div class="notif-title">' +
@@ -344,9 +307,7 @@
             markAllBtn.disabled = true;
 
             try {
-                await api.put("/api/notifications/read-all", {
-                    recipient: user.id
-                });
+                await api.put("/api/notifications/read-all");
 
                 notifications.forEach((n) => {
                     n.isRead = true;
@@ -369,10 +330,8 @@
 
     async function load() {
         try {
-            const response = await api.get(
-                "/api/notifications?recipient=" +
-                    encodeURIComponent(user.id)
-            );
+            // Scoped server-side to the signed-in user
+            const response = await api.get("/api/notifications");
 
             notifications = response.notifications || [];
 

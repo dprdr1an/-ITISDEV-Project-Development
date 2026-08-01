@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 const Notification = require('../models/Notification');
 
+/**
+ * Notifications are private to their recipient. Identity always comes from
+ * the session — a ?recipient= or body value is never trusted, otherwise any
+ * signed-in user could read or modify someone else's notifications.
+ */
+function ownsNotification(notification, user) {
+    if (!notification || !user) return false;
+
+    const recipientId =
+        notification.recipient && notification.recipient._id
+            ? notification.recipient._id
+            : notification.recipient;
+
+    return String(recipientId) === String(user.id);
+}
+
 // Create a notification
 exports.createNotification = async (req, res) => {
     try {
@@ -52,21 +68,8 @@ exports.createNotification = async (req, res) => {
 // Get all notifications
 exports.getNotifications = async (req, res) => {
     try {
-        const query = {};
-
-        if (req.query.recipient) {
-            if (
-                !mongoose.Types.ObjectId.isValid(
-                    req.query.recipient
-                )
-            ) {
-                return res.status(400).json({
-                    message: 'Invalid recipient ID.'
-                });
-            }
-
-            query.recipient = req.query.recipient;
-        }
+        // Always scoped to the signed-in user. Any ?recipient= is ignored.
+        const query = { recipient: req.currentUser.id };
 
         if (req.query.type) {
             query.type = req.query.type;
@@ -127,6 +130,12 @@ exports.getNotificationById = async (req, res) => {
             });
         }
 
+        if (!ownsNotification(notification, req.currentUser)) {
+            return res.status(403).json({
+                message: 'You do not have access to this notification.'
+            });
+        }
+
         return res.status(200).json({
             notification
         });
@@ -149,28 +158,29 @@ exports.markAsRead = async (req, res) => {
             });
         }
 
-        const notification =
-            await Notification.findByIdAndUpdate(
-                req.params.id,
-                {
-                    isRead: true,
-                    readAt: new Date()
-                },
-                {
-                    new: true,
-                    runValidators: true
-                }
-            );
+        // Read first so ownership is checked before anything is written
+        const existing = await Notification.findById(req.params.id);
 
-        if (!notification) {
+        if (!existing) {
             return res.status(404).json({
                 message: 'Notification not found.'
             });
         }
 
+        if (!ownsNotification(existing, req.currentUser)) {
+            return res.status(403).json({
+                message: 'You do not have access to this notification.'
+            });
+        }
+
+        existing.isRead = true;
+        existing.readAt = new Date();
+
+        await existing.save();
+
         return res.status(200).json({
             message: 'Notification marked as read.',
-            notification
+            notification: existing
         });
     } catch (error) {
         console.error('Mark notification as read error:', error);
@@ -185,19 +195,9 @@ exports.markAsRead = async (req, res) => {
 // Mark all notifications of one user as read
 exports.markAllAsRead = async (req, res) => {
     try {
-        const { recipient } = req.body;
-
-        if (!recipient) {
-            return res.status(400).json({
-                message: 'Recipient ID is required.'
-            });
-        }
-
-        if (!mongoose.Types.ObjectId.isValid(recipient)) {
-            return res.status(400).json({
-                message: 'Invalid recipient ID.'
-            });
-        }
+        // Recipient comes from the session; a body value is ignored so one
+        // user cannot clear another user's notifications.
+        const recipient = req.currentUser.id;
 
         const result = await Notification.updateMany(
             {
@@ -238,16 +238,21 @@ exports.deleteNotification = async (req, res) => {
             });
         }
 
-        const notification =
-            await Notification.findByIdAndDelete(
-                req.params.id
-            );
+        const notification = await Notification.findById(req.params.id);
 
         if (!notification) {
             return res.status(404).json({
                 message: 'Notification not found.'
             });
         }
+
+        if (!ownsNotification(notification, req.currentUser)) {
+            return res.status(403).json({
+                message: 'You do not have access to this notification.'
+            });
+        }
+
+        await Notification.findByIdAndDelete(req.params.id);
 
         return res.status(200).json({
             message: 'Notification deleted successfully.'

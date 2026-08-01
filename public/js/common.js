@@ -616,6 +616,80 @@
         }, 2500);
     }
 
+    /* ---------- Shared dropdown registry ---------- */
+
+    /**
+     * Every topbar dropdown (avatar menu, notifications, calendar) registers
+     * here. This gives us one outside-click handler and one Escape handler for
+     * all of them instead of a set per panel, and guarantees that opening one
+     * closes the others.
+     */
+    const dropdowns = [];
+
+    function closeAllDropdowns(except) {
+        dropdowns.forEach((entry) => {
+            if (entry !== except) entry.toggle(false);
+        });
+    }
+
+    function registerDropdown(options) {
+        const trigger = options.trigger;
+        const wrap = options.wrap;
+        const panel = options.panel;
+
+        const entry = { trigger, wrap, panel };
+
+        entry.toggle = function (open) {
+            const next =
+                open === undefined
+                    ? !panel.classList.contains("open")
+                    : open;
+
+            if (next) closeAllDropdowns(entry);
+
+            panel.classList.toggle("open", next);
+
+            if (trigger) {
+                trigger.setAttribute("aria-expanded", String(next));
+            }
+
+            // Refresh contents each time the panel is opened so the data is
+            // never stale, rather than fetching once at page load.
+            if (next && typeof options.onOpen === "function") {
+                options.onOpen();
+            }
+        };
+
+        if (trigger) {
+            trigger.addEventListener("click", (event) => {
+                event.stopPropagation();
+                entry.toggle();
+            });
+
+            trigger.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    entry.toggle();
+                }
+            });
+        }
+
+        dropdowns.push(entry);
+
+        return entry;
+    }
+
+    // One listener pair covers every registered dropdown
+    document.addEventListener("click", (event) => {
+        dropdowns.forEach((entry) => {
+            if (!entry.wrap.contains(event.target)) entry.toggle(false);
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeAllDropdowns();
+    });
+
     /* ---------- Avatar menu ---------- */
 
     const ICON_PROFILE =
@@ -670,34 +744,7 @@
         wrap.appendChild(menu);
         avatarMenu = menu;
 
-        function toggle(open) {
-            const next =
-                open === undefined ? !menu.classList.contains("open") : open;
-
-            menu.classList.toggle("open", next);
-            avatar.setAttribute("aria-expanded", String(next));
-        }
-
-        avatar.addEventListener("click", (event) => {
-            event.stopPropagation();
-            toggle();
-        });
-
-        avatar.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                toggle();
-            }
-        });
-
-        // Clicking anywhere else, or pressing Escape, closes the menu
-        document.addEventListener("click", (event) => {
-            if (!wrap.contains(event.target)) toggle(false);
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") toggle(false);
-        });
+        registerDropdown({ trigger: avatar, wrap: wrap, panel: menu });
 
         renderAvatarMenuIdentity(user);
     }
@@ -712,6 +759,392 @@
                 .filter(Boolean)
                 .join(" • ")
         );
+    }
+
+    /* ---------- Notification presentation (shared) ---------- */
+
+    // Canonical backend type -> category. Used by both this panel and the
+    // full Notifications page so the mapping lives in exactly one place.
+    const NOTIFICATION_CATEGORY = {
+        DEADLINE_REMINDER: "deadline",
+        TASK_OVERDUE: "overdue",
+        TASK_ASSIGNED: "update",
+        TASK_UPDATED: "update",
+        PROJECT_STATUS_CHANGED: "update",
+        ROLLOUT_UPDATED: "update",
+        APPROVAL_REQUIRED: "approval",
+        PROJECT_APPROVED: "approval"
+    };
+
+    const CATEGORY_PRESENTATION = {
+        deadline: { label: "Deadline Reminder", color: "var(--yellow)",
+                    bg: "var(--yellow-light)", badge: "badge-preso" },
+        overdue:  { label: "Overdue Alert", color: "var(--red)",
+                    bg: "var(--red-light)", badge: "badge-doc" },
+        update:   { label: "Update", color: "var(--blue)",
+                    bg: "var(--blue-light)", badge: "badge-photo" },
+        approval: { label: "Approval", color: "var(--green)",
+                    bg: "var(--green-light)", badge: "badge-pubmat" }
+    };
+
+    const CATEGORY_ICON = {
+        deadline: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+        overdue: '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>' +
+                 '<line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+        update: '<polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>',
+        approval: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>'
+    };
+
+    function notificationCategory(type) {
+        return NOTIFICATION_CATEGORY[type] || "update";
+    }
+
+    function notificationPresentation(type) {
+        return CATEGORY_PRESENTATION[notificationCategory(type)] ||
+            CATEGORY_PRESENTATION.update;
+    }
+
+    function notificationIcon(type) {
+        return CATEGORY_ICON[notificationCategory(type)] || CATEGORY_ICON.update;
+    }
+
+    /* ---------- Topbar panels (calendar + notifications) ---------- */
+
+    /**
+     * Wraps a topbar icon button in a dropdown panel. Mirrors how the avatar
+     * menu is built so all three behave identically on every page.
+     */
+    function buildPanel(buttonId, title, actionHtml) {
+        const button = document.getElementById(buttonId);
+
+        if (!button || !isValidUser(user)) return null;
+        if (button.closest(".topbar-panel-wrap")) return null;
+
+        const wrap = document.createElement("div");
+        wrap.className = "topbar-panel-wrap";
+
+        button.parentNode.insertBefore(wrap, button);
+        wrap.appendChild(button);
+
+        const panel = document.createElement("div");
+        panel.className = "topbar-panel";
+        panel.setAttribute("role", "dialog");
+        panel.setAttribute("aria-label", title);
+
+        panel.innerHTML =
+            '<div class="topbar-panel-header">' +
+            '<span class="topbar-panel-title">' + escapeHtml(title) + "</span>" +
+            (actionHtml || "") +
+            "</div>" +
+            '<div class="topbar-panel-body"></div>';
+
+        wrap.appendChild(panel);
+
+        return {
+            button: button,
+            wrap: wrap,
+            panel: panel,
+            body: panel.querySelector(".topbar-panel-body")
+        };
+    }
+
+    function panelMessage(body, message) {
+        body.innerHTML =
+            '<div class="topbar-panel-empty">' + escapeHtml(message) + "</div>";
+    }
+
+    /* ---------- Calendar: my upcoming deadlines ---------- */
+
+    /**
+     * Whole-day difference between a deadline and today, so "tomorrow" does
+     * not depend on the time of day the task was created.
+     */
+    function daysUntil(value) {
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return null;
+
+        const now = new Date();
+        const startToday = new Date(
+            now.getFullYear(), now.getMonth(), now.getDate()
+        );
+        const startDue = new Date(
+            date.getFullYear(), date.getMonth(), date.getDate()
+        );
+
+        return Math.round((startDue - startToday) / 86400000);
+    }
+
+    function deadlineGroupLabel(days) {
+        if (days < 0) {
+            const overdueBy = Math.abs(days);
+            return overdueBy === 1 ? "Overdue by 1 day" : "Overdue by " + overdueBy + " days";
+        }
+        if (days === 0) return "Today";
+        if (days === 1) return "Tomorrow";
+        return days + " Days Remaining";
+    }
+
+    function buildCalendarPanel() {
+        const parts = buildPanel("calendarBtn", "My Upcoming Deadlines");
+
+        if (!parts) return;
+
+        panelMessage(parts.body, "Loading your deadlines…");
+
+        async function load() {
+            try {
+                // Reuses the My Tasks endpoint; the server scopes it to the
+                // session user, so no other member's tasks can appear here.
+                const response = await api.get("/api/tasks?mine=true");
+
+                const tasks = (response.tasks || [])
+                    .filter((task) =>
+                        task.status !== "Completed" && task.deadline
+                    )
+                    .sort(
+                        (a, b) => new Date(a.deadline) - new Date(b.deadline)
+                    );
+
+                if (!tasks.length) {
+                    panelMessage(parts.body, "You have no upcoming deadlines.");
+                    return;
+                }
+
+                let html = "";
+                let lastLabel = null;
+
+                tasks.forEach((task) => {
+                    const days = daysUntil(task.deadline);
+                    const label = deadlineGroupLabel(days);
+
+                    if (label !== lastLabel) {
+                        html +=
+                            '<div class="deadline-group-label">' +
+                            escapeHtml(label) +
+                            "</div>";
+                        lastLabel = label;
+                    }
+
+                    const state =
+                        days < 0 ? " is-overdue"
+                        : days === 0 ? " is-today"
+                        : days <= 3 ? " is-soon"
+                        : "";
+
+                    const projectName =
+                        (task.project && task.project.projectName) ||
+                        "Unassigned project";
+
+                    html +=
+                        '<div class="deadline-item' + state + '">' +
+                        '<span class="deadline-rail"></span>' +
+                        '<div class="deadline-main">' +
+                        '<div class="deadline-title">' +
+                        escapeHtml(task.title) +
+                        "</div>" +
+                        '<div class="deadline-project">Project: ' +
+                        escapeHtml(projectName) +
+                        "</div>" +
+                        '<div class="deadline-meta">' +
+                        '<span class="badge ' + badgeClass(task.status) + '">' +
+                        escapeHtml(task.status) +
+                        "</span>" +
+                        "<span>Due " + escapeHtml(formatLongDate(task.deadline)) + "</span>" +
+                        '<span' + (days < 0 ? ' class="overdue"' : "") + ">" +
+                        escapeHtml(deadlineGroupLabel(days)) +
+                        "</span>" +
+                        "</div></div></div>";
+                });
+
+                html +=
+                    '<div class="topbar-panel-footer">' +
+                    '<a href="my-tasks.html">View all my tasks</a></div>';
+
+                parts.body.innerHTML = html;
+            } catch (err) {
+                console.error("Calendar panel error:", err);
+                panelMessage(parts.body, "Unable to load your deadlines.");
+            }
+        }
+
+        registerDropdown({
+            trigger: parts.button,
+            wrap: parts.wrap,
+            panel: parts.panel,
+            onOpen: load
+        });
+    }
+
+    /* ---------- Notifications panel ---------- */
+
+    function buildNotificationsPanel() {
+        const parts = buildPanel(
+            "notifBtn",
+            "Notifications",
+            '<button type="button" class="topbar-panel-action" ' +
+            'id="panelMarkAll">Mark all as read</button>'
+        );
+
+        if (!parts) return;
+
+        panelMessage(parts.body, "Loading notifications…");
+
+        const markAllBtn = parts.panel.querySelector("#panelMarkAll");
+
+        function paintUnreadDot(count) {
+            const dot = document.getElementById("notifDot");
+            if (dot) dot.hidden = !count;
+
+            if (markAllBtn) markAllBtn.disabled = !count;
+        }
+
+        function render(notifications) {
+            if (!notifications.length) {
+                panelMessage(parts.body, "You have no notifications yet.");
+                return;
+            }
+
+            parts.body.innerHTML =
+                notifications
+                    .slice(0, 12)
+                    .map((notification) => {
+                        const style = notificationPresentation(notification.type);
+
+                        const project =
+                            notification.relatedProject &&
+                            notification.relatedProject.projectName
+                                ? '<span>' +
+                                  escapeHtml(notification.relatedProject.projectName) +
+                                  "</span>"
+                                : "";
+
+                        const markBtn = notification.isRead
+                            ? ""
+                            : '<button type="button" class="panel-notif-read" ' +
+                              'data-read="' + escapeHtml(notification._id) +
+                              '">Mark as read</button>';
+
+                        return (
+                            '<div class="panel-notif' +
+                            (notification.isRead ? "" : " unread") +
+                            '">' +
+                            '<div class="panel-notif-icon" style="background:' +
+                            style.bg + ';">' +
+                            '<svg viewBox="0 0 24 24" style="stroke:' +
+                            style.color + ';">' +
+                            notificationIcon(notification.type) +
+                            "</svg></div>" +
+                            '<div class="panel-notif-main">' +
+                            '<div class="panel-notif-title">' +
+                            escapeHtml(notification.title) +
+                            "</div>" +
+                            '<div class="panel-notif-msg">' +
+                            escapeHtml(notification.message) +
+                            "</div>" +
+                            '<div class="panel-notif-meta">' +
+                            "<span>" +
+                            escapeHtml(formatRelative(notification.createdAt)) +
+                            "</span>" +
+                            project +
+                            markBtn +
+                            "</div></div></div>"
+                        );
+                    })
+                    .join("") +
+                '<div class="topbar-panel-footer">' +
+                '<a href="notifications.html">View all notifications</a></div>';
+
+            parts.body.querySelectorAll("[data-read]").forEach((button) => {
+                button.addEventListener("click", async (event) => {
+                    event.stopPropagation();
+                    button.disabled = true;
+
+                    try {
+                        await api.put(
+                            "/api/notifications/" + button.dataset.read + "/read"
+                        );
+                        await load();
+                    } catch (err) {
+                        console.error(err);
+                        showToast(err.message);
+                        button.disabled = false;
+                    }
+                });
+            });
+        }
+
+        async function load() {
+            try {
+                // Server scopes this to the session user
+                const response = await api.get("/api/notifications");
+                const notifications = response.notifications || [];
+
+                paintUnreadDot(
+                    notifications.filter((n) => !n.isRead).length
+                );
+
+                render(notifications);
+            } catch (err) {
+                console.error("Notifications panel error:", err);
+                panelMessage(parts.body, "Unable to load notifications.");
+            }
+        }
+
+        if (markAllBtn) {
+            markAllBtn.addEventListener("click", async (event) => {
+                event.stopPropagation();
+                markAllBtn.disabled = true;
+
+                try {
+                    await api.put("/api/notifications/read-all");
+                    await load();
+                    showToast("All notifications marked as read.");
+                } catch (err) {
+                    console.error(err);
+                    showToast(err.message);
+                    markAllBtn.disabled = false;
+                }
+            });
+        }
+
+        registerDropdown({
+            trigger: parts.button,
+            wrap: parts.wrap,
+            panel: parts.panel,
+            onOpen: load
+        });
+
+        // Prime the unread dot without opening the panel
+        load();
+    }
+
+    /* ---------- Sidebar user card ---------- */
+
+    /**
+     * The whole card navigates to the profile page, matching the topbar
+     * avatar's View Profile action. Defined once here rather than per page.
+     */
+    function bindSidebarUser() {
+        const card = document.querySelector(".sidebar-user");
+
+        if (!card || !isValidUser(user)) return;
+
+        card.setAttribute("role", "link");
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("title", "View my profile");
+
+        function go() {
+            window.location.href = "profile.html";
+        }
+
+        card.addEventListener("click", go);
+
+        card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                go();
+            }
+        });
     }
 
     /* ---------- Logout ---------- */
@@ -748,6 +1181,9 @@
     /* ---------- Bootstrap ---------- */
 
     buildAvatarMenu();
+    buildNotificationsPanel();
+    buildCalendarPanel();
+    bindSidebarUser();
 
     /* ---------- Public surface ---------- */
 
@@ -781,6 +1217,11 @@
         describeDeadline,
 
         // presentation
+        notificationCategory,
+        notificationPresentation,
+        notificationIcon,
+        daysUntil,
+        deadlineGroupLabel,
         badgeClass,
         statusClass,
         priorityClass,

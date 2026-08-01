@@ -11,13 +11,14 @@ const {
 
 const router = express.Router();
 
-const { requireAuth } = require('../middleware/authMiddleware');
+const { requireAuth, requireRole, ROLES } = require('../middleware/authMiddleware');
 
 // Every endpoint in this router requires a signed-in user
 router.use(requireAuth);
 
-// Create notification
-router.post('/', createNotification);
+// Create notification — addressed to another user, so chairperson only.
+// Task assignment creates its notifications internally, not through this route.
+router.post('/', requireRole(ROLES.CHAIRPERSON), createNotification);
 
 // Get all notifications
 // Example:

@@ -3,49 +3,6 @@
    Requires layout.css (shell, tokens, card, buttons, badge base).
    ============================================================ */
 
-/* ── SEARCH BAR (topbar, dashboard only) ── */
-.search-bar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gray-100);
-    border: 1px solid var(--gray-200);
-    border-radius: 9px;
-    padding: 0 14px;
-    height: 38px;
-    width: 280px;
-    transition: border-color 0.18s, box-shadow 0.18s;
-}
-
-.search-bar:focus-within {
-    border-color: var(--orange);
-    box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
-    background: var(--white);
-}
-
-.search-bar svg {
-    width: 15px;
-    height: 15px;
-    stroke: var(--gray-400);
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    flex-shrink: 0;
-}
-
-.search-bar input {
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 0.845rem;
-    color: var(--gray-800);
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-}
-
-.search-bar input::placeholder { color: var(--gray-400); }
-
 /* ── STAT CARDS ── */
 .stat-grid {
     display: grid;
@@ -483,12 +440,7 @@
     .content-right .card { flex: 1 1 300px; }
 }
 
-@media (max-width: 768px) {
-    .search-bar { width: 180px; }
-}
-
 @media (max-width: 520px) {
     .stat-grid { grid-template-columns: 1fr 1fr; }
-    .search-bar { display: none; }
     .analytics-row { grid-template-columns: 1fr; }
 }
