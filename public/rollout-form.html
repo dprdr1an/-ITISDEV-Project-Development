@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rollout Form — CatchIT</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/rollout-form.css">
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo-wrap">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <div>
+      <div class="sidebar-brand">IMC <span>Rollout</span></div>
+      <div class="sidebar-brand-sub">CATCH2T28 · DLSU</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Main</div>
+      <a href="dashboard.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg></div>
+        <span class="nav-label">Dashboard</span>
+      </a>
+      <a href="project-request.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+        </svg></div>
+        <span class="nav-label">Project Requests</span>
+      </a>
+      <a href="task-assignment.html" class="nav-item" data-roles="Chairperson">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+          <rect x="8" y="2" width="8" height="4" rx="1" />
+          <line x1="9" y1="12" x2="15" y2="12" />
+          <line x1="9" y1="16" x2="13" y2="16" />
+        </svg></div>
+        <span class="nav-label">Task Assignment</span>
+      </a>
+      <a href="my-tasks.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg></div>
+        <span class="nav-label">My Tasks</span>
+      </a>
+      <a href="project-status.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg></div>
+        <span class="nav-label">Project Status</span>
+      </a>
+      <a href="rollout-form.html" class="nav-item active">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+        </svg></div>
+        <span class="nav-label">Rollout Forms</span>
+      </a>
+      <a href="file-repository.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <polyline points="16 16 12 12 8 16" />
+          <line x1="12" y1="12" x2="12" y2="21" />
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />
+        </svg></div>
+        <span class="nav-label">File Repository</span>
+      </a>
+      <a href="notifications.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg></div>
+        <span class="nav-label">Notifications</span>
+      </a>
+
+      <div class="sidebar-section-label">Manage</div>
+      <a href="#" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg></div>
+        <span class="nav-label">Members</span>
+      </a>
+      <a href="#" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+          </svg></div>
+        <span class="nav-label">Analytics</span>
+      </a>
+      <a href="#" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg></div>
+        <span class="nav-label">Discussions</span>
+      </a>
+      <a href="register.html" class="nav-item">
+        <div class="nav-icon"><svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg></div>
+        <span class="nav-label">Register</span>
+      </a>
+    </nav>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="user-avatar" id="sidebarAvatar">U</div>
+      <div class="user-info">
+        <div class="user-name" id="sidebarUsername">User</div>
+        <div class="user-role" id="sidebarRole">Position • Committee</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>&rsaquo;</span><span class="breadcrumb-current">New IMC Rollout</span></div>
+      <span class="status-badge status-draft" id="globalStatus" style="margin-left:8px;">
+        <span class="dot"></span> Draft
+      </span>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-icon-btn" id="notifBtn" title="Notifications" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <div class="notif-dot" id="notifDot" hidden></div>
+      </div>
+      <div class="topbar-icon-btn" id="calendarBtn" title="Calendar" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div class="topbar-avatar" id="topbarAvatar" title="My Profile">U</div>
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- Steps bar -->
+    <div class="steps-bar">
+      <div class="step active" data-step="1" onclick="goStep(1)">
+        <div class="step-num"><span>1</span></div>
+        <div class="step-label">Project Details</div>
+      </div>
+      <div class="step" data-step="2" onclick="goStep(2)">
+        <div class="step-num"><span>2</span></div>
+        <div class="step-label">Publication Plan</div>
+      </div>
+      <div class="step" data-step="3" onclick="goStep(3)">
+        <div class="step-num"><span>3</span></div>
+        <div class="step-label">Publicity Plan</div>
+      </div>
+      <div class="step" data-step="4" onclick="goStep(4)">
+        <div class="step-num"><span>4</span></div>
+        <div class="step-label">Checklist</div>
+      </div>
+    </div>
+
+    <!-- Guidelines Banner -->
+    <div class="guidelines-banner">
+      <div class="guidelines-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="guidelines-body">
+        <div class="guidelines-title">IMC Rollout Guidelines</div>
+        <div class="guidelines-text">Complete <strong>all sections</strong> thoroughly. Incomplete or placeholder-filled forms will not be processed. Notify any chairperson immediately if revisions are made.</div>
+        <button class="guidelines-toggle" id="guidelinesToggle">Show all reminders ↓</button>
+        <ol class="guidelines-list" id="guidelinesList">
+          <li>Complete all sections with relevant details — timelines, content, and key information.</li>
+          <li>For big projects (series of postings): consolidate all required publication content and add additional tables as needed.</li>
+          <li>Provide a clear and detailed publicity plan to ensure smooth execution and DAAM approval.</li>
+          <li>Notify any chairperson <strong>immediately</strong> if revisions are made after submission.</li>
+          <li>Incomplete submissions will be placed on hold.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ── SECTION 1: Project Details ── -->
+    <div class="form-card" id="section1">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Project Details</div>
+          <div class="form-card-sub">Basic information about the project and its key people</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Project Name <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="e.g. DLSU Technology Summit 2026" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Committee <span class="required">*</span></label>
+            <select class="form-control">
+              <option value="" disabled selected>Select committee</option>
+              <option>Creatives</option>
+              <option>Marketing</option>
+              <option>Media Productions</option>
+              <option>Events</option>
+              <option>Publications</option>
+              <option>Human Resources</option>
+              <option>Finance</option>
+              <option>IMC (Cross-committee)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row cols-3">
+          <div class="form-group">
+            <label class="form-label">Project Type <span class="required">*</span></label>
+            <select class="form-control">
+              <option value="" disabled selected>Select type</option>
+              <option>Event Promotion</option>
+              <option>Publication / Pubmat</option>
+              <option>Digital Campaign</option>
+              <option>Video / Reel</option>
+              <option>General Announcement</option>
+              <option>Series of Postings</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Target Platform <span class="required">*</span></label>
+            <select class="form-control">
+              <option value="" disabled selected>Select platform</option>
+              <option>Facebook</option>
+              <option>Instagram</option>
+              <option>Facebook + Instagram</option>
+              <option>TikTok</option>
+              <option>All Platforms</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priority Level</label>
+            <select class="form-control">
+              <option value="" disabled selected>Select priority</option>
+              <option>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Requesting Head / Officer <span class="required">*</span></label>
+            <input type="text" class="form-control" id="requestingHead" placeholder="Full name and position" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Point Person(s) <span class="required">*</span></label>
+            <div class="tag-input-wrap" id="pointPersonWrap">
+              <input type="text" class="tag-real-input" placeholder="Type name and press Enter…" id="pointPersonInput" />
+            </div>
+            <span class="form-hint">Press Enter to add multiple people</span>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Rollout Start Date <span class="required">*</span></label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Rollout End Date / Posting Date <span class="required">*</span></label>
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">DAAM Submission Deadline <span class="required">*</span></label>
+            <input type="date" class="form-control" />
+            <span class="form-hint">Deadline for submitting materials for DAAM approval</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Event / Campaign Date</label>
+            <input type="date" class="form-control" />
+            <span class="form-hint">If applicable (event this rollout is promoting)</span>
+          </div>
+        </div>
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Project Description / Objective <span class="required">*</span></label>
+            <textarea class="form-control textarea" placeholder="Briefly describe the project, its goal, and the target audience. What are we trying to communicate?"></textarea>
+          </div>
+        </div>
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Key Messages / Talking Points</label>
+            <textarea class="form-control textarea" placeholder="List the main messages or themes that should be reflected in all materials for this project."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2: Publication Plan ── -->
+    <div class="form-card" id="section2">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Publication Plan</div>
+          <div class="form-card-sub">List each pubmat, caption, or asset needed for this rollout</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-bottom:14px;">For series postings, add one row per publication. Each row represents one deliverable that needs to be created and posted.</p>
+
+        <div class="pub-table-wrap">
+          <table class="pub-table" id="pubTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th style="min-width:160px;">Publication Title / Description</th>
+                <th style="min-width:120px;">Material Type</th>
+                <th style="min-width:110px;">Posting Date</th>
+                <th style="min-width:110px;">Posting Time</th>
+                <th style="min-width:180px;">Caption / Copy Notes</th>
+                <th style="min-width:120px;">Assigned To</th>
+                <th style="min-width:90px;">Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="pubTableBody">
+              <tr>
+                <td style="color:var(--gray-400);font-size:0.78rem;font-weight:600;">1</td>
+                <td><input type="text" placeholder="e.g. Event poster — main visual" /></td>
+                <td>
+                  <select>
+                    <option value="" disabled selected>Type</option>
+                    <option>Static Post</option>
+                    <option>Carousel</option>
+                    <option>Story</option>
+                    <option>Reel / Video</option>
+                    <option>Caption Only</option>
+                    <option>Infographic</option>
+                    <option>Cover Photo</option>
+                  </select>
+                </td>
+                <td><input type="date" /></td>
+                <td><input type="time" /></td>
+                <td><textarea placeholder="Caption notes, hashtags, tone…"></textarea></td>
+                <td><input type="text" placeholder="Member name" /></td>
+                <td>
+                  <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>For Review</option>
+                    <option>Done</option>
+                  </select>
+                </td>
+                <td><button class="del-row-btn" onclick="delPubRow(this)" title="Remove row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></td>
+              </tr>
+              <tr>
+                <td style="color:var(--gray-400);font-size:0.78rem;font-weight:600;">2</td>
+                <td><input type="text" placeholder="e.g. Countdown story — Day 1" /></td>
+                <td>
+                  <select>
+                    <option value="" disabled selected>Type</option>
+                    <option>Static Post</option>
+                    <option>Carousel</option>
+                    <option>Story</option>
+                    <option>Reel / Video</option>
+                    <option>Caption Only</option>
+                    <option>Infographic</option>
+                    <option>Cover Photo</option>
+                  </select>
+                </td>
+                <td><input type="date" /></td>
+                <td><input type="time" /></td>
+                <td><textarea placeholder="Caption notes, hashtags, tone…"></textarea></td>
+                <td><input type="text" placeholder="Member name" /></td>
+                <td>
+                  <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>For Review</option>
+                    <option>Done</option>
+                  </select>
+                </td>
+                <td><button class="del-row-btn" onclick="delPubRow(this)" title="Remove row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="add-row-btn" onclick="addPubRow()">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add publication
+        </button>
+
+        <hr class="section-divider" />
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Additional Notes for Creatives / Media</label>
+            <textarea class="form-control textarea" placeholder="Branding guidelines, color palette, reference materials, tone of voice, or any other direction for the team producing the materials."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3: Publicity Plan ── -->
+    <div class="form-card" id="section3">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Publicity Plan</div>
+          <div class="form-card-sub">Timeline of activities and tasks to execute this rollout</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <p style="font-size:0.82rem;color:var(--gray-600);margin-bottom:16px;">Provide a clear and detailed plan to ensure smooth execution and DAAM approval. Include all key milestones from design briefing to final posting.</p>
+
+        <div id="publicityRows">
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Activity / milestone (e.g. Send design brief to Creatives)" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="e.g. Submit to DAAM for approval" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="="18"/></svg></button>
+          </div>
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="e.g. Review and final approval by chairperson" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+          <div class="timeline-row">
+            <input type="date" class="form-control" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="e.g. Post goes live on all platforms" style="height:38px;" />
+            <input type="text" class="form-control" placeholder="Person responsible" style="height:38px;" />
+            <button class="del-row-btn" onclick="this.closest('.timeline-row').remove()" title="Remove"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+          <button class="add-row-btn" onclick="addPublicityRow()">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add activity
+          </button>
+          <span style="font-size:0.72rem;color:var(--gray-400);">Date · Activity · Person responsible</span>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label">Coordination Notes</label>
+            <textarea class="form-control textarea" placeholder="Any coordination needed with other committees (Events, Finance, etc.), external parties, or special approvals required."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: Checklist ── -->
+    <div class="form-card" id="section4">
+      <div class="form-card-header">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <div class="form-card-title">Pre-Submission Checklist</div>
+          <div class="form-card-sub">Ensure all deliverables are complete before submitting</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="checklist-progress">
+          <div class="checklist-progress-bar">
+            <div class="checklist-progress-fill" id="checklistFill" style="width:0%"></div>
+          </div>
+          <span class="checklist-progress-label" id="checklistCount">0 / 8 complete</span>
+        </div>
+
+        <div class="checklist-grid" id="checklistGrid">
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Project details filled in completely</div>
+              <div class="check-sub">Name, committee, type, dates, objective</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Point person(s) assigned</div>
+              <div class="check-sub">At least one responsible member named</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Publication plan complete</div>
+              <div class="check-sub">All pubmats listed with dates and assignees</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Captions / copy notes provided</div>
+              <div class="check-sub">Each publication has content direction</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Publicity plan is complete</div>
+              <div class="check-sub">Key milestones with dates and people</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">DAAM submission deadline set</div>
+              <div class="check-sub">Allows enough lead time for approval</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">No placeholder text remaining</div>
+              <div class="check-sub">All fields have real, finalized content</div>
+            </div>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div class="check-label">Ready for chairperson review</div>
+              <div class="check-sub">Confirmed with point person before submitting</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- Revision Log -->
+        <div style="margin-bottom:8px;">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;font-weight:700;color:var(--gray-900);margin-bottom:2px;">Revision & Update Log</div>
+          <div style="font-size:0.75rem;color:var(--gray-400);">Automatically recorded — all changes are tracked here</div>
+        </div>
+
+        <div id="revisionLog">
+          <div class="notice" style="font-size:0.78rem;color:var(--gray-400);padding:10px 0;">No revisions yet — this log fills in as you save or submit.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STICKY FORM ACTIONS ── -->
+    <div class="form-actions">
+      <div class="form-actions-left">
+        <a href="dashboard.html" class="btn-ghost">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          Back
+        </a>
+        <span style="font-size:0.78rem;color:var(--gray-400);" id="autoSaveLabel">Auto-saved · just now</span>
+      </div>
+      <div class="form-actions-right">
+        <button class="btn-secondary" onclick="saveDraft()">
+          <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Save Draft
+        </button>
+        <button class="btn-primary" onclick="submitRollout()">
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Submit Rollout
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /page-content -->
+</div><!-- /main -->
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <span id="toastMsg">Saved!</span>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/rollout-form.js"></script>
+
+</body>
+</html>

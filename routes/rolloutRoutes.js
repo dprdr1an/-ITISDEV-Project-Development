@@ -1,0 +1,36 @@
+const express = require('express');
+const router  = express.Router();
+
+const { requireAuth } = require('../middleware/authMiddleware');
+
+// Every endpoint in this router requires a signed-in user
+router.use(requireAuth);
+
+const {
+    saveRollout,
+    getAllRollouts,
+    getRolloutById,
+    getRolloutRevisions,
+    updateRollout,
+    updateRolloutStatus
+} = require('../controllers/rolloutController');
+
+// GET  /api/rollouts       — list all rollout forms (optional ?status=&committee=)
+router.get('/',       getAllRollouts);
+
+// POST /api/rollouts       — save draft or submit rollout
+router.post('/',      saveRollout);
+
+// GET  /api/rollouts/:id   — get one rollout form
+router.get('/:id',    getRolloutById);
+
+// GET  /api/rollouts/:id/revisions — full revision & update log
+router.get('/:id/revisions', getRolloutRevisions);
+
+// PATCH /api/rollouts/:id  — update / save revisions
+router.patch('/:id',  updateRollout);
+
+// PATCH /api/rollouts/:id/status — approve or reject
+router.patch('/:id/status', updateRolloutStatus);
+
+module.exports = router;

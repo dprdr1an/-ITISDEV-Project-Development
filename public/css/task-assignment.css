@@ -1,0 +1,109 @@
+/* ============================================================
+   task-assignment.css — TASK ASSIGNMENT PAGE ONLY
+   Requires layout.css (shell, tokens, cards, forms, buttons, toast).
+   ============================================================ */
+
+/* ── PAGE LAYOUT ── */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 20px;
+}
+
+/* Cards stack vertically on this page (dashboard uses grid gap instead) */
+.card { margin-bottom: 20px; }
+
+/* ── MEMBER CHECKLIST ── */
+.member-checks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.member-check {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.member-check:has(input:checked) {
+    border-color: var(--orange);
+    background: var(--orange-light);
+}
+
+.member-check input { accent-color: var(--orange); }
+
+/* ── ASSIGNED TASK RECORDS ── */
+.task-item {
+    display: flex;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.task-item:last-child { border-bottom: 0; }
+
+/* larger, gradient-filled avatar in task records */
+.member-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.65rem;
+    background: linear-gradient(135deg, var(--orange), #c2410c);
+}
+
+.task-name {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.task-meta {
+    font-size: 0.72rem;
+    color: var(--gray-400);
+    margin-top: 3px;
+}
+
+/* ── BADGE COLOURS (base .badge lives in layout.css) ── */
+.badge-pending { background: var(--yellow-light); color: #92400E; }
+.badge-active  { background: var(--orange-light); color: var(--orange-dark); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .member-checks { grid-template-columns: 1fr; }
+}
+/* ── RECORD ACTIONS (edit / reassign / delete) ── */
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.task-action {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--orange);
+    cursor: pointer;
+    transition: color 0.15s;
+}
+.task-action:hover { color: var(--orange-dark); text-decoration: underline; }
+.task-action.danger { color: var(--red); }
+.task-action.danger:hover { color: var(--red); }
+
+/* Highlights the record currently loaded into the form */
+.task-item.editing {
+    background: var(--orange-light);
+    border-radius: var(--radius-sm);
+    padding-left: 10px;
+    padding-right: 10px;
+}
