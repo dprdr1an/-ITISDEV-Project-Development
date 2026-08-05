@@ -32,6 +32,8 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.set('trust proxy', 1);
+
 // Server-side session — the source of truth for authorization.
 // The client's localStorage copy only drives the UI.
 app.use(session({
