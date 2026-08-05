@@ -17,7 +17,11 @@
         describeDeadline,
         formatLongDate,
         renderNotice,
-        showToast
+        showToast,
+        buildQueryString,
+        createFilterController,
+        populateSelect,
+        emptyResultMessage
     } = window.IMC;
 
     const user = window.currentUser;
@@ -32,16 +36,20 @@
         "Completed"
     ];
 
+    const PRIORITIES = ["High", "Medium", "Low"];
+
+    // `allTasks` drives the counters and stays unfiltered, so the headline
+    // numbers describe your whole workload rather than the current view.
+    let allTasks = [];
     let tasks = [];
-    let activeFilter = "all";
 
     /* ---------- Counters ---------- */
 
     function renderCounts() {
         const count = (status) =>
-            tasks.filter((task) => task.status === status).length;
+            allTasks.filter((task) => task.status === status).length;
 
-        const overdue = tasks.filter((task) => {
+        const overdue = allTasks.filter((task) => {
             if (task.status === "Completed" || !task.deadline) return false;
             return new Date(task.deadline) < new Date();
         }).length;
@@ -66,17 +74,15 @@
         const list = document.getElementById("myTaskList");
         if (!list) return;
 
-        const visible =
-            activeFilter === "all"
-                ? tasks
-                : tasks.filter((task) => task.status === activeFilter);
+        const visible = tasks;
 
         if (!visible.length) {
             renderNotice(
                 list,
-                tasks.length
-                    ? "No tasks in this category."
-                    : "You have no assigned tasks right now."
+                emptyResultMessage(
+                    filters.isFiltering(),
+                    "You have no assigned tasks right now."
+                )
             );
             return;
         }
@@ -193,8 +199,7 @@
 
                         select.dataset.previous = status;
 
-                        renderCounts();
-                        renderTasks();
+                        await load();
 
                         showToast("Status updated to " + status + ".");
                     } catch (err) {
@@ -210,8 +215,12 @@
             });
     }
 
-    /* ---------- Filters ---------- */
+    /* ---------- Search & Filter ---------- */
 
+    const statusField = document.getElementById("taskStatus");
+
+    // The existing pills stay the status control; they just write into the
+    // hidden field so search, status, priority and dates form one query.
     document.querySelectorAll(".filter-pill").forEach((pill) => {
         pill.addEventListener("click", () => {
             document
@@ -219,23 +228,75 @@
                 .forEach((p) => p.classList.remove("active"));
 
             pill.classList.add("active");
-            activeFilter = pill.dataset.filter;
 
-            renderTasks();
+            if (statusField) {
+                statusField.value = pill.dataset.filter || "";
+            }
+
+            // Call the controller directly rather than dispatching a
+            // synthetic event at our own listener.
+            filters.refresh();
         });
     });
+
+    async function refreshList(params) {
+        try {
+            // mine=true keeps the scope explicit; the server also forces it
+            const query = Object.assign({ mine: "true" },
+                params || filters.params());
+
+            const response = await api.get(
+                "/api/tasks" + buildQueryString(query)
+            );
+
+            tasks = response.tasks || [];
+
+            renderTasks();
+        } catch (err) {
+            console.error(err);
+            renderNotice("myTaskList", "Unable to load your tasks.");
+            showToast(err.message);
+        }
+    }
+
+    const filters = createFilterController({
+        controls: {
+            search:       { id: "taskSearch", debounce: true },
+            status:       { id: "taskStatus" },
+            priority:     { id: "taskPriority" },
+            deadlineFrom: { id: "taskDeadlineFrom" },
+            deadlineTo:   { id: "taskDeadlineTo" }
+        },
+        clearButtonId: "clearTaskFilters",
+        onChange: refreshList
+    });
+
+    // Clearing must also reset the pills, which live outside the controller
+    const clearBtn = document.getElementById("clearTaskFilters");
+
+    if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+            document
+                .querySelectorAll(".filter-pill")
+                .forEach((p, index) =>
+                    p.classList.toggle("active", index === 0)
+                );
+        });
+    }
 
     /* ---------- Load ---------- */
 
     async function load() {
         try {
-            // mine=true keeps the scope explicit; the server also forces it
+            // Unfiltered fetch backs the counters and the priority dropdown
             const response = await api.get("/api/tasks?mine=true");
 
-            tasks = response.tasks || [];
+            allTasks = response.tasks || [];
 
             renderCounts();
-            renderTasks();
+            populateSelect("taskPriority", PRIORITIES, "All Priorities");
+
+            await refreshList();
         } catch (err) {
             console.error(err);
             renderNotice("myTaskList", "Unable to load your tasks.");

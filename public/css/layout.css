@@ -1109,3 +1109,204 @@ select.form-control {
 @media (max-width: 520px) {
     .topbar-panel { width: calc(100vw - 32px); right: -8px; }
 }
+
+/* ── SEARCH & FILTER BAR ──
+   Shared by every list page (project status, my tasks, task assignment,
+   file repository, notifications, project requests). Moved here from
+   project-status.css so the six pages cannot drift apart. */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px 16px;
+}
+
+.filter-bar .form-control {
+    flex: 1 1 150px;
+}
+
+.filter-date-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    flex: 1 1 150px;
+}
+
+.filter-date-label .form-control {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* Standalone bar (not inside a card) needs its own breathing room */
+.filter-bar.standalone {
+    padding: 0;
+    margin-bottom: 18px;
+}
+
+/* Search input with a leading magnifier */
+.filter-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 1 220px;
+}
+.filter-search svg {
+    position: absolute;
+    left: 11px;
+    width: 14px;
+    height: 14px;
+    stroke: var(--gray-400);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+.filter-search .form-control {
+    padding-left: 32px;
+    width: 100%;
+}
+
+/* Result count / "showing X of Y" line */
+.filter-result-note {
+    font-size: 0.72rem;
+    color: var(--gray-400);
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .filter-bar { padding: 0 16px 14px; }
+    .filter-bar.standalone { padding: 0; }
+    .filter-result-note { margin-left: 0; }
+}
+
+/* ── ROW LINK ──
+   Small inline action inside a table row or list row (e.g. "Discuss"). */
+.row-link {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.71rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+.row-link:hover { color: var(--orange-dark); text-decoration: underline; }
+
+/* ══════════════════════════════════════════════════════════
+   UI CONSISTENCY PASS
+   Normalises spacing that had drifted between pages. Scoped to
+   existing classes only — no colours or typography changed.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Search & filter bars ──
+   Every control on a filter bar shares one height and radius so
+   inputs, selects and buttons line up on a single baseline. */
+.filter-bar .form-control,
+.filter-bar .btn-secondary,
+.filter-bar .btn-primary {
+    height: 38px;
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+}
+
+.filter-bar .form-control {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: 0;
+}
+
+.filter-bar .btn-secondary,
+.filter-bar .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 0 16px;
+    white-space: nowrap;
+}
+
+/* Date inputs render taller than text inputs in some browsers */
+.filter-bar input[type="date"] { line-height: 1; }
+
+/* Keeps the label and its control on one baseline */
+.filter-date-label { min-width: 0; }
+.filter-date-label > span { white-space: nowrap; }
+
+/* A filter bar sitting directly under a card header shouldn't
+   double up on the header's bottom padding. */
+.card-header + .filter-bar { padding-top: 14px; }
+
+@media (max-width: 620px) {
+    /* Stack rather than squeeze on narrow screens */
+    .filter-bar { gap: 8px; }
+    .filter-bar .form-control,
+    .filter-search,
+    .filter-date-label { flex: 1 1 100%; }
+    .filter-bar .btn-secondary,
+    .filter-bar .btn-primary { flex: 1 1 100%; }
+    .filter-result-note { width: 100%; text-align: left; }
+}
+
+/* ── Cards ── */
+.card + .card { margin-top: 20px; }
+
+/* ── Tables ──
+   Badges and inline actions align on the same baseline as text. */
+.table-wrap table { width: 100%; border-collapse: collapse; }
+
+.table-wrap th {
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.table-wrap td { vertical-align: middle; }
+
+.table-wrap td .badge,
+.status-table td .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    vertical-align: middle;
+}
+
+/* Consistent gap between row actions across pages */
+.quick-actions,
+.task-actions,
+.member-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ── Forms ── */
+.form-group + .form-group { margin-top: 0; }
+.form-label { display: block; }
+.form-actions { align-items: center; }
+
+/* Selects should match text inputs rather than sitting a pixel taller */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px;
+    padding-right: 30px;
+}
+
+/* ── Responsive safety ──
+   Long unbroken strings (emails, filenames, URLs) shouldn't push a
+   card wider than its column. */
+.card, .form-card { min-width: 0; }
+.page-content { min-width: 0; }
+
+@media (max-width: 620px) {
+    .page-header { gap: 14px; }
+    .card + .card { margin-top: 16px; }
+}

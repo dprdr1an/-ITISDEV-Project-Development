@@ -33,14 +33,9 @@
 
             <div class="form-group">
                 <label>Committee</label>
-                <select id="committee">
+                <!-- Populated from the shared committee constants -->
+                <select id="committee" data-committee-select data-placeholder="Select Committee">
                     <option value="">Select Committee</option>
-                    <option>Creatives</option>
-                    <option>Marketing</option>
-                    <option>Media Coverage</option>
-                    <option>Documentation</option>
-                    <option>External Relations</option>
-                    <option>Logistics</option>
                 </select>
             </div>
 
@@ -79,7 +74,8 @@
     </div>
 </div>
 
-<script src="js/common.js"></script>
+<script src="js/constants.js"></script>
+    <script src="js/common.js"></script>
 <script src="js/register.js"></script>
 
 </body>

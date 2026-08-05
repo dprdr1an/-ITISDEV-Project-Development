@@ -1,0 +1,136 @@
+/* ──────────────────────────────────────────────────────────
+   Discussions
+   Uses the shared tokens in layout.css; only the thread and
+   composer are declared here.
+────────────────────────────────────────────────────────── */
+
+.discussion-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* ── THREAD ── */
+.thread {
+    padding: 18px 20px;
+    max-height: 52vh;
+    min-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid var(--gray-100);
+}
+
+.thread-empty,
+.thread-loading {
+    margin: auto;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+    padding: 24px 12px;
+}
+
+.msg {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.msg-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--orange), #c2410c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--white);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.msg-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.msg-body { flex: 1; min-width: 0; }
+
+.msg-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+}
+
+.msg-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.msg-role {
+    font-size: 0.68rem;
+    color: var(--gray-400);
+}
+
+.msg-time {
+    font-size: 0.67rem;
+    color: var(--gray-400);
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.msg-text {
+    font-size: 0.8rem;
+    color: var(--gray-700);
+    line-height: 1.6;
+    /* User-authored text: wrap long words rather than overflowing the card */
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* The signed-in user's own messages */
+.msg.is-mine .msg-text {
+    background: var(--orange-light);
+    border-radius: var(--radius-sm);
+    padding: 8px 11px;
+}
+
+/* Optimistic message awaiting the server */
+.msg.is-pending { opacity: 0.55; }
+
+/* ── COMPOSER ── */
+.composer {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 14px 20px 18px;
+    border-top: 1px solid var(--gray-100);
+}
+
+.composer-input {
+    flex: 1;
+    resize: vertical;
+    min-height: 42px;
+    max-height: 160px;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.composer .btn-primary { flex-shrink: 0; }
+
+@media (max-width: 620px) {
+    .thread { padding: 14px 16px; max-height: 46vh; }
+    .composer { padding: 12px 16px 16px; }
+    .msg-time { margin-left: 0; width: 100%; }
+}

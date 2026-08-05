@@ -14,7 +14,12 @@
         formatDateTime,
         renderNotice,
         renderTableNotice,
-        showToast
+        showToast,
+        buildQueryString,
+        createFilterController,
+        populateSelect,
+        populateCommitteeSelect,
+        emptyResultMessage
     } = window.IMC;
 
     const user = window.currentUser;
@@ -112,6 +117,8 @@
                     escapeHtml(project.projectName) +
                     "</div>" +
                     '<div class="project-meta">' + meta + "</div>" +
+                    '<a class="row-link" href="discussions.html?project=' +
+                    escapeHtml(project._id) + '">Discuss</a>' +
                     "</td>" +
                     "<td>" +
                     '<span class="badge ' + statusClass(project.status) + '">' +
@@ -248,8 +255,9 @@
     /* ---------- Load ---------- */
 
     async function fetchProjects(params) {
-        const query = params ? "?" + new URLSearchParams(params).toString() : "";
-        const response = await api.get("/api/projects" + query);
+        const response = await api.get(
+            "/api/projects" + buildQueryString(params)
+        );
         return response.data || [];
     }
 
@@ -263,75 +271,38 @@
 
     /* ---------- Search & Filter ---------- */
 
-    const filterSearch         = document.getElementById("filterSearch");
-    const filterCommittee      = document.getElementById("filterCommittee");
-    const filterAssignedMember = document.getElementById("filterAssignedMember");
-    const filterStatus         = document.getElementById("filterStatus");
-    const filterDeadlineFrom   = document.getElementById("filterDeadlineFrom");
-    const filterDeadlineTo     = document.getElementById("filterDeadlineTo");
-    const clearFiltersBtn      = document.getElementById("clearFiltersBtn");
-
-    /** Fills the committee dropdown with whatever committees actually
-     *  appear in the data, so it never drifts out of sync with real values. */
-    function populateCommitteeOptions(projects) {
-        if (!filterCommittee) return;
-
-        const current = filterCommittee.value;
-        const committees = Array.from(
-            new Set(projects.map((p) => p.committee).filter(Boolean))
-        ).sort();
-
-        filterCommittee.innerHTML =
-            '<option value="">All Committees</option>' +
-            committees
-                .map(
-                    (c) =>
-                        '<option value="' + escapeHtml(c) + '">' +
-                        escapeHtml(c) +
-                        "</option>"
-                )
-                .join("");
-
-        if (committees.includes(current)) filterCommittee.value = current;
+    /** Committee options come from the data so the dropdown never offers a
+     *  value that cannot match anything. */
+    function populateCommitteeOptions() {
+        // Official structure, not whatever happens to be in the data
+        populateCommitteeSelect("filterCommittee", {
+            placeholder: "All Committees"
+        });
     }
 
     function populateStatusOptions() {
-        if (!filterStatus) return;
-
-        filterStatus.innerHTML =
-            '<option value="">All Statuses</option>' +
-            STATUS_OPTIONS.map(
-                (s) => '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + "</option>"
-            ).join("");
+        populateSelect("filterStatus", STATUS_OPTIONS, "All Statuses");
     }
 
-    /** Reads the current filter-bar inputs into a query-param object,
-     *  omitting anything left blank so filters combine (AND) cleanly. */
-    function buildFilterParams() {
-        const params = {};
-
-        if (filterSearch && filterSearch.value.trim())
-            params.search = filterSearch.value.trim();
-        if (filterCommittee && filterCommittee.value)
-            params.committee = filterCommittee.value;
-        if (filterAssignedMember && filterAssignedMember.value.trim())
-            params.assignedMember = filterAssignedMember.value.trim();
-        if (filterStatus && filterStatus.value)
-            params.status = filterStatus.value;
-        if (filterDeadlineFrom && filterDeadlineFrom.value)
-            params.deadlineFrom = filterDeadlineFrom.value;
-        if (filterDeadlineTo && filterDeadlineTo.value)
-            params.deadlineTo = filterDeadlineTo.value;
-
-        return params;
-    }
-
-    /** Re-fetches just the table using the current filters. Counts and
-     *  the revision-history feed stay based on the full, unfiltered set —
+    /** Re-fetches just the table using the current filters. Counts and the
+     *  revision-history feed stay based on the full, unfiltered set —
      *  filtering narrows what you're looking at, not the overall totals. */
-    async function refreshTable() {
+    async function refreshTable(params) {
         try {
-            const projects = await fetchProjects(buildFilterParams());
+            const projects = await fetchProjects(params || filters.params());
+
+            if (!projects.length) {
+                renderTableNotice(
+                    "statusBody",
+                    emptyResultMessage(
+                        filters.isFiltering(),
+                        "No projects to track yet."
+                    ),
+                    4
+                );
+                return;
+            }
+
             renderRows(projects);
         } catch (err) {
             console.error(err);
@@ -340,43 +311,27 @@
         }
     }
 
-    // Debounce free-text inputs so we're not firing a request per
-    // keystroke — selects/dates apply immediately since there's no typing.
-    function debounce(fn, delay) {
-        let timer;
-        return (...args) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => fn(...args), delay);
-        };
-    }
-
-    const debouncedRefresh = debounce(refreshTable, 300);
-
-    if (filterSearch) filterSearch.addEventListener("input", debouncedRefresh);
-    if (filterAssignedMember) filterAssignedMember.addEventListener("input", debouncedRefresh);
-    if (filterCommittee) filterCommittee.addEventListener("change", refreshTable);
-    if (filterStatus) filterStatus.addEventListener("change", refreshTable);
-    if (filterDeadlineFrom) filterDeadlineFrom.addEventListener("change", refreshTable);
-    if (filterDeadlineTo) filterDeadlineTo.addEventListener("change", refreshTable);
-
-    if (clearFiltersBtn) {
-        clearFiltersBtn.addEventListener("click", () => {
-            if (filterSearch) filterSearch.value = "";
-            if (filterCommittee) filterCommittee.value = "";
-            if (filterAssignedMember) filterAssignedMember.value = "";
-            if (filterStatus) filterStatus.value = "";
-            if (filterDeadlineFrom) filterDeadlineFrom.value = "";
-            if (filterDeadlineTo) filterDeadlineTo.value = "";
-            refreshTable();
-        });
-    }
+    // Every control is read on each refresh, so search and filters always
+    // preserve one another. Free-text inputs debounce; selects apply at once.
+    const filters = createFilterController({
+        controls: {
+            search:         { id: "filterSearch", debounce: true },
+            committee:      { id: "filterCommittee" },
+            assignedMember: { id: "filterAssignedMember", debounce: true },
+            status:         { id: "filterStatus" },
+            deadlineFrom:   { id: "filterDeadlineFrom" },
+            deadlineTo:     { id: "filterDeadlineTo" }
+        },
+        clearButtonId: "clearFiltersBtn",
+        onChange: refreshTable
+    });
 
     async function load() {
         try {
             const projects = await fetchProjects();
 
             renderCounts(projects);
-            populateCommitteeOptions(projects);
+            populateCommitteeOptions();
             populateStatusOptions();
 
             historyLog = buildHistoryFromProjects(projects);

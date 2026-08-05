@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const User = require('../models/User');
+const Task = require('../models/Task');
+
+const { matchAnyField, addClause } = require('./utils/queryHelpers');
 
 // GET /api/users — list members (passwords never returned)
 exports.getUsers = async (req, res) => {
@@ -14,14 +17,37 @@ exports.getUsers = async (req, res) => {
             filter.position = req.query.position;
         }
 
+        // Member directory search — name or email
+        addClause(filter, matchAnyField(req.query.search, ['name', 'email']));
+
         const users = await User.find(filter)
             .select('name firstName lastName email committee position avatarUrl createdAt')
-            .sort({ name: 1 });
+            .sort({ name: 1 })
+            .lean();
+
+        // Active (not yet completed) task counts, in one grouped query rather
+        // than one count per member.
+        const counts = await Task.aggregate([
+            { $match: { status: { $ne: 'Completed' } } },
+            { $unwind: '$assignedMembers' },
+            { $group: { _id: '$assignedMembers', count: { $sum: 1 } } }
+        ]);
+
+        const countByUser = counts.reduce((acc, row) => {
+            acc[String(row._id)] = row.count;
+            return acc;
+        }, {});
+
+        const withCounts = users.map((user) =>
+            Object.assign({}, user, {
+                activeTaskCount: countByUser[String(user._id)] || 0
+            })
+        );
 
         return res.status(200).json({
             success: true,
-            count: users.length,
-            users
+            count: withCounts.length,
+            users: withCounts
         });
     } catch (error) {
         console.error('Get users error:', error);

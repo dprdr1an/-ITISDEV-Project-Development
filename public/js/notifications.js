@@ -17,7 +17,10 @@
         showToast,
         notificationCategory,
         notificationPresentation,
-        notificationIcon
+        notificationIcon,
+        buildQueryString,
+        createFilterController,
+        emptyResultMessage
     } = window.IMC;
 
     const user = window.currentUser;
@@ -50,6 +53,9 @@
 
     /* ---------- State ---------- */
 
+    // Declared before renderCards()/load() read it
+    let notifFilters = null;
+
     let notifications = [];
     let activeFilter = "all";
 
@@ -67,11 +73,13 @@
                   );
 
         if (!visible.length) {
+            const narrowed =
+                activeFilter !== "all" ||
+                (notifFilters && notifFilters.isFiltering());
+
             renderNotice(
                 list,
-                notifications.length
-                    ? "No notifications in this category."
-                    : "You have no notifications yet."
+                emptyResultMessage(narrowed, "You have no notifications yet.")
             );
             return;
         }
@@ -326,12 +334,35 @@
         });
     }
 
+    /* ---------- Search & Filter ---------- */
+
+    // `search` matches the notification title/message, `isRead` maps to the
+    // All / Unread / Read select. Both are server-side; the category pills
+    // stay client-side so the two compose rather than conflict.
+    notifFilters = createFilterController({
+        controls: {
+            search: { id: "notifSearch", debounce: true },
+            isRead: { id: "notifReadState" }
+        },
+        clearButtonId: "clearNotifFilters",
+        onChange: function () {
+            return load();
+        }
+    });
+
     /* ---------- Load ---------- */
 
     async function load() {
         try {
-            // Scoped server-side to the signed-in user
-            const response = await api.get("/api/notifications");
+            // Scoped server-side to the signed-in user. Search and the
+            // read/unread state are applied by the API; the category pills
+            // below narrow the returned set further.
+            const response = await api.get(
+                "/api/notifications" +
+                    buildQueryString(
+                        notifFilters ? notifFilters.params() : {}
+                    )
+            );
 
             notifications = response.notifications || [];
 

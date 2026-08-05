@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 
 const ProjectFile = require("../models/ProjectFile");
 
+const { matchAnyField, addClause } = require("./utils/queryHelpers");
+
 // POST /api/files/upload
 exports.uploadFile = async (req, res) => {
     try {
@@ -72,6 +74,13 @@ exports.getFiles = async (req, res) => {
 
         if (req.query.category) filter.category = req.query.category;
         if (req.query.folder) filter.folder = req.query.folder;
+
+        // Filename search — matches the name the user uploaded, and the
+        // folder label so "raw photos" finds things filed under it.
+        addClause(
+            filter,
+            matchAnyField(req.query.search, ["originalName", "folder"])
+        );
 
         const files = await ProjectFile.find(filter)
             .populate("project", "projectName status")

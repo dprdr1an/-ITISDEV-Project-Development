@@ -70,7 +70,68 @@
      * Pull the authoritative record so the form never shows a stale
      * localStorage copy, and so createdAt is available.
      */
+    /**
+     * Members links here as profile.html?user=<id>. Viewing someone else
+     * shows the same page read-only — editing stays self-service, which the
+     * API enforces regardless of what the UI allows.
+     */
+    const requestedId = new URLSearchParams(window.location.search).get("user");
+    const viewingOther =
+        Boolean(requestedId) && String(requestedId) !== String(user.id);
+
+    function applyReadOnly(activeUser) {
+        const heading = document.querySelector(".page-title");
+        const subtitle = document.querySelector(".page-subtitle");
+
+        if (heading) heading.textContent = activeUser.name || "Member Profile";
+        if (subtitle) {
+            subtitle.textContent =
+                "Viewing a team member's profile. Only they can edit it.";
+        }
+
+        const crumb = document.querySelector(".breadcrumb-current");
+        if (crumb) crumb.textContent = "Member Profile";
+
+        // Hide every editing affordance; the API refuses these anyway
+        ["profileForm", "passwordForm"].forEach((id) => {
+            const form = document.getElementById(id);
+            const card = form && form.closest(".card");
+            if (card) card.remove();
+        });
+
+        const avatarActions = document.querySelector(".avatar-editor-actions");
+        if (avatarActions) avatarActions.remove();
+
+        const avatarCardSub = document.querySelector(".card-sub");
+        if (avatarCardSub) avatarCardSub.textContent = "Profile picture";
+    }
+
     async function loadProfile() {
+        if (viewingOther) {
+            try {
+                const response = await api.get("/api/users/" + requestedId);
+                const other = response.user;
+
+                if (!other) {
+                    showToast("Member not found.");
+                    return;
+                }
+
+                const shaped = Object.assign({}, other, { id: other._id });
+
+                populate(shaped);
+                applyReadOnly(shaped);
+
+                const since = document.getElementById("factSince");
+                if (since) since.textContent = formatLongDate(other.createdAt);
+            } catch (err) {
+                console.error(err);
+                showToast(err.message);
+            }
+
+            return;
+        }
+
         populate(user);
 
         try {

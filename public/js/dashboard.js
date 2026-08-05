@@ -144,6 +144,8 @@
                     "<div>" +
                     '<div class="proj-name">' + escapeHtml(project.projectName) + "</div>" +
                     '<div class="proj-meta">' + point + taskLabel + "</div>" +
+                    '<a class="row-link" href="discussions.html?project=' +
+                    escapeHtml(project._id) + '">Discuss</a>' +
                     "</div></div></td>" +
                     '<td><span class="proj-committee">' +
                     escapeHtml(project.committee || "—") +

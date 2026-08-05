@@ -63,6 +63,39 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
     }
 }));
 
+// Shared constants, generated from config/constants.js so the committee
+// structure exists in exactly one place. Declared before express.static
+// because there is deliberately no public/js/constants.js on disk.
+app.get('/js/constants.js', (req, res) => {
+    const {
+        COMMITTEE_STRUCTURE,
+        COMMITTEE_OPTIONS,
+        COMMITTEE_VALUES,
+        COMMITTEE_NAMES,
+        POSITIONS
+    } = require('./config/constants');
+
+    res.type('application/javascript');
+    res.set('Cache-Control', 'no-cache');
+
+    res.send(
+        '/* Generated from config/constants.js — do not edit by hand. */\n' +
+        'window.IMC_CONSTANTS = ' +
+        JSON.stringify(
+            {
+                COMMITTEE_STRUCTURE,
+                COMMITTEE_OPTIONS,
+                COMMITTEE_VALUES,
+                COMMITTEE_NAMES,
+                POSITIONS
+            },
+            null,
+            4
+        ) +
+        ';\n'
+    );
+});
+
 // Serve static files from /public
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -82,6 +115,10 @@ app.use('/api/tasks', require('./routes/taskRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 
 app.use('/api/dashboard', require('./routes/dashboardRoutes'));
+
+app.use('/api/discussions', require('./routes/discussionRoutes'));
+
+app.use('/api/ai', require('./routes/aiRoutes'));
 
 // Unknown API routes must fail as JSON, not as the landing page
 app.use('/api', (req, res) => {

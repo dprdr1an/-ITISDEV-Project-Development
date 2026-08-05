@@ -20,7 +20,11 @@
         renderNotice,
         showToast,
         ROLES,
-        hasRole
+        hasRole,
+        buildQueryString,
+        createFilterController,
+        populateSelect,
+        emptyResultMessage
     } = window.IMC;
 
     const user = window.currentUser;
@@ -42,6 +46,17 @@
     // Populated when editing an existing task; null while creating
     let editingTaskId = null;
     let cachedTasks = [];
+
+    // Declared up front: loadTaskRecords() reads this and is referenced by
+    // handlers defined above the controller's own definition.
+    let recordFilters = null;
+
+    const RECORD_STATUSES = [
+        "Not Started",
+        "In Progress",
+        "Ready for Review",
+        "Completed"
+    ];
 
     /* ---------- Projects ---------- */
 
@@ -94,6 +109,13 @@
                 return;
             }
 
+            // Same fetch also backs the "filter by assignee" dropdown
+            populateSelect(
+                "recordMember",
+                members.map((m) => ({ value: m._id, label: m.name })),
+                "All Assignees"
+            );
+
             memberChecks.innerHTML = members
                 .map((member) => {
                     const role = [member.position, member.committee]
@@ -144,16 +166,27 @@
 
     /* ---------- Records ---------- */
 
-    async function loadTaskRecords() {
+    async function loadTaskRecords(params) {
         if (!taskRecords) return;
 
         try {
-            const response = await api.get("/api/tasks");
+            const query = params ||
+                (recordFilters ? recordFilters.params() : {});
+
+            const response = await api.get(
+                "/api/tasks" + buildQueryString(query)
+            );
 
             cachedTasks = response.tasks || [];
 
             if (!cachedTasks.length) {
-                renderNotice(taskRecords, "No tasks assigned yet.");
+                renderNotice(
+                    taskRecords,
+                    emptyResultMessage(
+                        recordFilters && recordFilters.isFiltering(),
+                        "No tasks assigned yet."
+                    )
+                );
                 return;
             }
 
@@ -432,10 +465,27 @@
         });
     }
 
+    /* ---------- Search & Filter ---------- */
+
+    // `search` matches task title/description, `assignee` matches an assigned
+    // member's name, `member` is an exact assignee id — all server-side.
+    recordFilters = createFilterController({
+        controls: {
+            search:   { id: "recordSearch", debounce: true },
+            assignee: { id: "recordAssignee", debounce: true },
+            member:   { id: "recordMember" },
+            status:   { id: "recordStatus" }
+        },
+        clearButtonId: "clearRecordFilters",
+        onChange: loadTaskRecords
+    });
+
     /* ---------- Init ---------- */
+
+    populateSelect("recordStatus", RECORD_STATUSES, "All Statuses");
 
     // Members must exist before an edit can tick the right boxes
     loadProjects();
-    loadMembers().then(loadTaskRecords);
+    loadMembers().then(() => loadTaskRecords());
 
 })();

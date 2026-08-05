@@ -4,22 +4,18 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width,initial-scale=1.0" name="viewport" />
-    <title>Project Status — CatchIT</title>
+    <title>Members — CatchIT</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap"
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/project-status.css">
+    <link rel="stylesheet" href="css/members.css">
 </head>
 
 <body>
-
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-<!-- ── SIDEBAR ── -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo-wrap">
@@ -80,7 +76,7 @@
         </svg></div>
         <span class="nav-label">My Tasks</span>
       </a>
-      <a href="project-status.html" class="nav-item active">
+      <a href="project-status.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
           <line x1="18" y1="20" x2="18" y2="10" />
           <line x1="12" y1="20" x2="12" y2="4" />
@@ -112,7 +108,7 @@
       </a>
 
       <div class="sidebar-section-label">Manage</div>
-      <a href="members.html" class="nav-item">
+      <a href="members.html" class="nav-item active">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
           <circle cx="9" cy="7" r="4" />
@@ -144,17 +140,13 @@
             </div>
         </div>
     </aside>
-
-    <!-- ── MAIN ── -->
     <div class="main">
-
-        <!-- Topbar -->
         <header class="topbar">
           <div class="topbar-left">
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
               <span></span><span></span><span></span>
             </button>
-            <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>&rsaquo;</span><span class="breadcrumb-current">Project Status Tracker</span></div>
+            <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>&rsaquo;</span><span class="breadcrumb-current">Members</span></div>
           </div>
           <div class="topbar-right">
             <div class="topbar-icon-btn" id="notifBtn" title="Notifications" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
@@ -170,140 +162,53 @@
         <div class="page-content">
             <div class="page-header">
                 <div>
-                    <div class="page-eyebrow">
-                        CATCH2T28 · IMC Department
-                    </div>
-                    <h1 class="page-title">
-                        Project Status Tracker
-                    </h1>
+                    <div class="page-eyebrow">CATCH2T28 · IMC Department</div>
+                    <h1 class="page-title">Members</h1>
                     <p class="page-subtitle">
-                        Monitor project progress, view status labels, and update project movement in real time.
+                        Team directory for the IMC Department.
                     </p>
                 </div>
-                <button class="btn-primary" id="refreshBtn">
-                    Reflect Changes in Dashboard
-                </button>
+                <!-- Registration lives here now; chairperson-only -->
+                <a class="btn-primary" href="register.html"
+                   id="registerMemberBtn" data-roles="Chairperson">
+                    Register New Member
+                </a>
             </div>
-            <div class="status-grid">
-                <div class="stat">
-                    <div class="stat-num" id="statPending">
-                        —
-                    </div>
-                    <div class="stat-label">
-                        Pending
-                    </div>
-                </div>
-                <div class="stat">
-                    <div class="stat-num" style="color:var(--orange)" id="statOngoing">
-                        —
-                    </div>
-                    <div class="stat-label">
-                        Ongoing
-                    </div>
-                </div>
-                <div class="stat">
-                    <div class="stat-num" style="color:var(--yellow)" id="statReview">
-                        —
-                    </div>
-                    <div class="stat-label">
-                        For Review
-                    </div>
-                </div>
-                <div class="stat">
-                    <div class="stat-num" style="color:var(--blue)" id="statApproval">
-                        —
-                    </div>
-                    <div class="stat-label">
-                        Waiting for Approval
-                    </div>
-                </div>
-                <div class="stat">
-                    <div class="stat-num" style="color:var(--green)" id="statCompleted">
-                        —
-                    </div>
-                    <div class="stat-label">
-                        Completed
-                    </div>
-                </div>
+
+            <div class="filter-bar standalone">
+                <span class="filter-search">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" class="form-control" id="memberSearch"
+                           placeholder="Search name or email…">
+                </span>
+                <select class="form-control" id="memberCommittee" style="max-width:200px;">
+                    <option value="">All Committees</option>
+                </select>
+                <select class="form-control" id="memberPosition" style="max-width:180px;">
+                    <option value="">All Positions</option>
+                </select>
+                <button class="btn-secondary" id="clearMemberFilters" type="button">Clear</button>
+                <span class="filter-result-note" id="memberCount"></span>
             </div>
+
             <section class="card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">
-                            Project Status List
-                        </div>
-                        <div class="card-sub">
-                            Authorized users can update status labels
-                        </div>
+                        <div class="card-title">Team Directory</div>
+                        <div class="card-sub">Click a member to view their profile</div>
                     </div>
                 </div>
-                <div class="filter-bar" id="filterBar">
-                    <input type="text" class="form-control" id="filterSearch" placeholder="Search by project name…" style="max-width:220px;">
-                    <select class="form-control" id="filterCommittee" style="max-width:170px;">
-                        <option value="">All Committees</option>
-                    </select>
-                    <input type="text" class="form-control" id="filterAssignedMember" placeholder="Assigned member…" style="max-width:170px;">
-                    <select class="form-control" id="filterStatus" style="max-width:160px;">
-                        <option value="">All Statuses</option>
-                    </select>
-                    <label class="filter-date-label">
-                        From
-                        <input type="date" class="form-control" id="filterDeadlineFrom">
-                    </label>
-                    <label class="filter-date-label">
-                        To
-                        <input type="date" class="form-control" id="filterDeadlineTo">
-                    </label>
-                    <button class="btn-secondary" id="clearFiltersBtn" type="button">Clear</button>
-                </div>
-                <div class="card-body table-wrap">
-                    <table class="status-table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Project
-                                </th>
-                                <th>
-                                    Current Status
-                                </th>
-                                <th>
-                                    Update Status
-                                </th>
-                                <th>
-                                    Last Updated
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="statusBody">
-                            <tr><td colspan="4" style="padding:18px;text-align:center;color:var(--gray-400);">Loading projects…</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <section class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">
-                            Status Update History
-                        </div>
-                        <div class="card-sub">
-                            The system keeps a record of each status change
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body history">
-                    <div id="historyList"><div class="notice">Loading history…</div></div>
+                <div class="card-body" id="memberList">
+                    <p class="task-meta">Loading members…</p>
                 </div>
             </section>
         </div>
-    </div><!-- /main -->
-    <div class="toast" id="toast">
-        Status changed and reflected in the dashboard.
     </div>
-
-<script src="js/constants.js"></script>
+    <div class="toast" id="toast">
+        Directory updated.
+    </div>
+    <script src="js/constants.js"></script>
     <script src="js/common.js"></script>
-<script src="js/project-status.js"></script>
-
+    <script src="js/members.js"></script>
 </body>
 </html>

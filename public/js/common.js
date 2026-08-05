@@ -44,7 +44,12 @@
      * this map only stops the page from rendering.
      */
     const PAGE_ROLES = {
-        "task-assignment.html": [ROLES.CHAIRPERSON]
+        "task-assignment.html": [ROLES.CHAIRPERSON],
+
+        // Registration moved under Members. It stays reachable when signed
+        // out (the login page links to it, and the first account has to be
+        // created somehow), but a signed-in Executive may not open it.
+        "register.html": [ROLES.CHAIRPERSON]
     };
 
     function currentPage() {
@@ -460,6 +465,297 @@
             '" style="padding:18px;text-align:center;color:var(--gray-400);">' +
             escapeHtml(message) +
             "</td></tr>";
+    }
+
+    /* ---------- Committee constants ---------- */
+
+    /**
+     * Committee data comes from /js/constants.js, which the server
+     * generates from config/constants.js. Nothing here hardcodes a list.
+     */
+    const CONSTANTS = window.IMC_CONSTANTS || {};
+
+    const COMMITTEE_OPTIONS = CONSTANTS.COMMITTEE_OPTIONS || [];
+    const COMMITTEE_VALUES = CONSTANTS.COMMITTEE_VALUES || [];
+    const COMMITTEE_NAMES = CONSTANTS.COMMITTEE_NAMES || [];
+    const POSITIONS = CONSTANTS.POSITIONS || ["Chairperson", "Executive"];
+
+    /**
+     * Fills a <select> with the official committees, grouped by parent so
+     * repeated sub-committee names ("Administrative" under both Project
+     * Management and Human Resources) stay distinguishable.
+     *
+     * Any element carrying data-committee-select is filled automatically;
+     * data-placeholder sets the first option's label.
+     */
+    function populateCommitteeSelect(select, options) {
+        const el =
+            typeof select === "string"
+                ? document.getElementById(select)
+                : select;
+
+        if (!el || !COMMITTEE_OPTIONS.length) return;
+
+        const settings = options || {};
+        const current = el.value;
+
+        const placeholder =
+            settings.placeholder ||
+            el.getAttribute("data-placeholder") ||
+            "Select committee";
+
+        // Group options under their parent committee
+        const groups = [];
+
+        COMMITTEE_OPTIONS.forEach((option) => {
+            let group = groups.find((g) => g.name === option.group);
+
+            if (!group) {
+                group = { name: option.group, items: [] };
+                groups.push(group);
+            }
+
+            group.items.push(option);
+        });
+
+        const markup = groups
+            .map((group) => {
+                // A standalone committee needs no optgroup wrapper
+                if (
+                    group.items.length === 1 &&
+                    group.items[0].value === group.name
+                ) {
+                    return (
+                        '<option value="' +
+                        escapeHtml(group.name) +
+                        '">' +
+                        escapeHtml(group.name) +
+                        "</option>"
+                    );
+                }
+
+                return (
+                    '<optgroup label="' +
+                    escapeHtml(group.name) +
+                    '">' +
+                    group.items
+                        .map(
+                            (item) =>
+                                '<option value="' +
+                                escapeHtml(item.value) +
+                                '">' +
+                                escapeHtml(item.label) +
+                                "</option>"
+                        )
+                        .join("") +
+                    "</optgroup>"
+                );
+            })
+            .join("");
+
+        el.innerHTML =
+            '<option value="">' + escapeHtml(placeholder) + "</option>" + markup;
+
+        // Keep a prior selection if it is still a valid committee
+        if (current && COMMITTEE_VALUES.indexOf(current) !== -1) {
+            el.value = current;
+        }
+    }
+
+    /** Fills every [data-committee-select] on the page. */
+    function populateAllCommitteeSelects() {
+        document
+            .querySelectorAll("[data-committee-select]")
+            .forEach((select) => populateCommitteeSelect(select));
+    }
+
+    /* ---------- Search & filter (shared) ---------- */
+
+    /**
+     * Delays a call until the caller stops firing it. Used so typing in a
+     * search box issues one request instead of one per keystroke.
+     */
+    function debounce(fn, delay) {
+        let timer;
+
+        return function () {
+            const args = arguments;
+
+            clearTimeout(timer);
+            timer = setTimeout(() => fn.apply(null, args), delay || 300);
+        };
+    }
+
+    /** Serialises a params object, dropping blanks so filters combine cleanly. */
+    function buildQueryString(params) {
+        const query = new URLSearchParams();
+
+        Object.keys(params || {}).forEach((key) => {
+            const value = params[key];
+
+            if (value === undefined || value === null) return;
+
+            const text = String(value).trim();
+
+            if (text !== "") query.set(key, text);
+        });
+
+        const out = query.toString();
+
+        return out ? "?" + out : "";
+    }
+
+    /**
+     * Wires a set of search/filter controls to a single refresh function.
+     *
+     * One definition drives every page: each control declares the query
+     * param it maps to, free-text inputs are debounced while selects and
+     * dates apply immediately, and every control is read on each refresh so
+     * search and filters always preserve one another.
+     *
+     *   createFilterController({
+     *       controls: {
+     *           search:   { id: "taskSearch", debounce: true },
+     *           status:   { id: "taskStatus" },
+     *           priority: { id: "taskPriority" }
+     *       },
+     *       clearButtonId: "clearFiltersBtn",
+     *       onChange: refreshList
+     *   })
+     *
+     * Returns { params(), refresh(), clear(), isFiltering() }.
+     */
+    function createFilterController(config) {
+        const controls = config.controls || {};
+        const onChange = config.onChange;
+
+        // param name -> element (missing elements are skipped, so a page
+        // can adopt a subset of controls without extra branching)
+        const bound = {};
+
+        Object.keys(controls).forEach((param) => {
+            const spec = controls[param];
+            const el = document.getElementById(
+                typeof spec === "string" ? spec : spec.id
+            );
+
+            if (el) bound[param] = { el: el, spec: spec };
+        });
+
+        function params() {
+            const out = {};
+
+            Object.keys(bound).forEach((param) => {
+                const value = bound[param].el.value;
+
+                if (value !== undefined && String(value).trim() !== "") {
+                    out[param] = String(value).trim();
+                }
+            });
+
+            return out;
+        }
+
+        function isFiltering() {
+            return Object.keys(params()).length > 0;
+        }
+
+        function refresh() {
+            if (typeof onChange === "function") return onChange(params());
+        }
+
+        const debounced = debounce(refresh, config.delay || 300);
+
+        Object.keys(bound).forEach((param) => {
+            const entry = bound[param];
+            const el = entry.el;
+            const wantsDebounce =
+                typeof entry.spec === "object" && entry.spec.debounce;
+
+            if (wantsDebounce) {
+                el.addEventListener("input", debounced);
+            } else {
+                el.addEventListener("change", refresh);
+            }
+
+            // Enter should apply immediately rather than wait out the debounce
+            if (el.tagName === "INPUT") {
+                el.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        refresh();
+                    }
+                });
+            }
+        });
+
+        function clear() {
+            Object.keys(bound).forEach((param) => {
+                bound[param].el.value = "";
+            });
+
+            return refresh();
+        }
+
+        const clearBtn = config.clearButtonId
+            ? document.getElementById(config.clearButtonId)
+            : null;
+
+        if (clearBtn) clearBtn.addEventListener("click", clear);
+
+        return { params: params, refresh: refresh, clear: clear,
+                 isFiltering: isFiltering };
+    }
+
+    /**
+     * Fills a <select> with options derived from the data currently loaded,
+     * so a filter never offers a value that cannot match anything. Keeps the
+     * user's current choice selected when it still exists.
+     */
+    function populateSelect(id, values, allLabel) {
+        const select = document.getElementById(id);
+
+        if (!select) return;
+
+        const current = select.value;
+        const list = Array.from(new Set(values.filter(Boolean)));
+
+        select.innerHTML =
+            '<option value="">' +
+            escapeHtml(allLabel || "All") +
+            "</option>" +
+            list
+                .map((item) => {
+                    const value = typeof item === "object" ? item.value : item;
+                    const label = typeof item === "object" ? item.label : item;
+
+                    return (
+                        '<option value="' + escapeHtml(value) + '">' +
+                        escapeHtml(label) +
+                        "</option>"
+                    );
+                })
+                .join("");
+
+        // Restore the previous selection if it survived the refresh
+        const stillThere = list.some(
+            (item) =>
+                String(typeof item === "object" ? item.value : item) ===
+                String(current)
+        );
+
+        if (stillThere) select.value = current;
+    }
+
+    /**
+     * Standard message for an empty result set. Distinguishes "nothing
+     * matched your filters" from "there is nothing here yet", because the
+     * two call for different user actions.
+     */
+    function emptyResultMessage(isFiltering, emptyText) {
+        return isFiltering
+            ? "No results found."
+            : emptyText || "Nothing to show yet.";
     }
 
     /* ---------- Shared user placeholders ---------- */
@@ -1180,6 +1476,7 @@
 
     /* ---------- Bootstrap ---------- */
 
+    populateAllCommitteeSelects();
     buildAvatarMenu();
     buildNotificationsPanel();
     buildCalendarPanel();
@@ -1227,6 +1524,21 @@
         priorityClass,
         renderNotice,
         renderTableNotice,
+
+        // constants
+        COMMITTEE_OPTIONS,
+        COMMITTEE_VALUES,
+        COMMITTEE_NAMES,
+        POSITIONS,
+        populateCommitteeSelect,
+        populateAllCommitteeSelects,
+
+        // search & filter
+        debounce,
+        buildQueryString,
+        createFilterController,
+        populateSelect,
+        emptyResultMessage,
         showToast,
 
         // network

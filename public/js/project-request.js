@@ -333,3 +333,144 @@ document.getElementById('successOverlay').classList.remove('show');
             '<p class="chair-role">Unable to load chairpersons.</p>';
     }
 })();
+
+/* ==========================================================
+   Submitted Requests — browse, search & filter
+   Reuses GET /api/projects (search matches projectName or the
+   description/objective field) and the shared filter controller
+   in common.js. No new endpoint, no duplicated search logic.
+========================================================== */
+
+(function browseRequests() {
+    const list = document.getElementById('requestList');
+
+    if (!list || !window.IMC) return;
+
+    const {
+        api,
+        escapeHtml,
+        badgeClass,
+        formatLongDate,
+        buildQueryString,
+        createFilterController,
+        populateSelect,
+        populateCommitteeSelect,
+        emptyResultMessage,
+        renderNotice,
+        showToast
+    } = window.IMC;
+
+    // Matches the ProjectRequest schema's status enum
+    const STATUS_OPTIONS = [
+        'Pending',
+        'Active',
+        'For Review',
+        'For Approval',
+        'Completed',
+        'On Hold'
+    ];
+
+    // Declared before load() reads it
+    let filters = null;
+
+    function renderRows(projects) {
+        if (!projects.length) {
+            renderNotice(
+                list,
+                emptyResultMessage(
+                    filters && filters.isFiltering(),
+                    'No project requests have been submitted yet.'
+                )
+            );
+            return;
+        }
+
+        list.innerHTML = projects
+            .map(function (project) {
+                const submitted =
+                    project.submittedBy && project.submittedBy.name
+                        ? ' · ' + escapeHtml(project.submittedBy.name)
+                        : '';
+
+                return (
+                    '<div class="request-row">' +
+                    '<div class="request-main">' +
+                    '<div class="request-name">' +
+                    escapeHtml(project.projectName) +
+                    '</div>' +
+                    '<div class="request-objective">' +
+                    escapeHtml(project.description || '') +
+                    '</div>' +
+                    '<div class="request-meta">' +
+                    '<span>' + escapeHtml(project.committee || '—') + '</span>' +
+                    (project.refNumber
+                        ? '<span>' + escapeHtml(project.refNumber) + '</span>'
+                        : '') +
+                    '<span>' +
+                    escapeHtml(formatLongDate(project.createdAt)) +
+                    submitted +
+                    '</span>' +
+                    '</div></div>' +
+                    '<div class="request-side">' +
+                    '<span class="badge ' + badgeClass(project.status) + '">' +
+                    escapeHtml(project.status) +
+                    '</span>' +
+                    '<a class="row-link" href="discussions.html?project=' +
+                    escapeHtml(project._id) + '">Discuss</a>' +
+                    '</div></div>'
+                );
+            })
+            .join('');
+    }
+
+    function setCount(shown) {
+        const note = document.getElementById('requestCount');
+
+        if (note) {
+            note.textContent =
+                shown === 1 ? '1 request' : shown + ' requests';
+        }
+    }
+
+    async function refresh(params) {
+        try {
+            const response = await api.get(
+                '/api/projects' +
+                    buildQueryString(params || (filters ? filters.params() : {}))
+            );
+
+            const projects = response.data || [];
+
+            renderRows(projects);
+            setCount(projects.length);
+
+            return projects;
+        } catch (err) {
+            console.error(err);
+            renderNotice(list, 'Unable to load submitted requests.');
+            showToast(err.message);
+            return [];
+        }
+    }
+
+    filters = createFilterController({
+        controls: {
+            search:    { id: 'requestSearch', debounce: true },
+            status:    { id: 'requestStatus' },
+            committee: { id: 'requestCommittee' }
+        },
+        clearButtonId: 'clearRequestFilters',
+        onChange: refresh
+    });
+
+    (async function init() {
+        populateSelect('requestStatus', STATUS_OPTIONS, 'All Statuses');
+
+        // Official structure, shared with every other committee dropdown
+        populateCommitteeSelect('requestCommittee', {
+            placeholder: 'All Committees'
+        });
+
+        await refresh({});
+    })();
+})();

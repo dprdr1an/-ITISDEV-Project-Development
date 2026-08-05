@@ -91,35 +91,20 @@
       </a>
 
       <div class="sidebar-section-label">Manage</div>
-      <a href="#" class="nav-item">
+      <a href="members.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg></div>
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg></div>
         <span class="nav-label">Members</span>
       </a>
-      <a href="#" class="nav-item">
+      <a href="discussions.html" class="nav-item">
         <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <line x1="18" y1="20" x2="18" y2="10" />
-            <line x1="12" y1="20" x2="12" y2="4" />
-            <line x1="6" y1="20" x2="6" y2="14" />
-          </svg></div>
-        <span class="nav-label">Analytics</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg></div>
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg></div>
         <span class="nav-label">Discussions</span>
-      </a>
-      <a href="register.html" class="nav-item">
-        <div class="nav-icon"><svg viewBox="0 0 24 24">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg></div>
-        <span class="nav-label">Register</span>
       </a>
     </nav>
   <div class="sidebar-footer">
@@ -214,17 +199,10 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Requesting Committee <span class="required">*</span></label>
-                <select class="form-control trackable">
-                  <option value="" disabled selected>Select your committee</option>
-                  <option>Creatives</option>
-                  <option>Marketing</option>
-                  <option>Media Productions</option>
-                  <option>Events</option>
-                  <option>Publications</option>
-                  <option>Human Resources</option>
-                  <option>Finance</option>
-                  <option>Academic Affairs</option>
-                  <option>External Affairs</option>
+                <!-- Populated from the shared committee constants -->
+                <select class="form-control trackable" id="projCommittee"
+                        data-committee-select data-placeholder="Select your committee">
+                  <option value="">Select your committee</option>
                 </select>
               </div>
             </div>
@@ -550,6 +528,11 @@
         <span class="autosave-label" id="autosaveLabel">Auto-saved · just now</span>
       </div>
       <div class="form-actions-right">
+        <!-- AI assistant; revealed only when the server reports it is configured -->
+        <button class="btn-secondary" type="button" id="sparkIdeaBtn" hidden>
+          <svg viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z"/></svg>
+          Spark an Idea
+        </button>
         <button class="btn-secondary" onclick="saveDraft()">
           <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
           Save Draft
@@ -560,6 +543,34 @@
         </button>
       </div>
     </div>
+
+    <!-- Browse submitted requests. Additive: the form above is untouched. -->
+    <section class="card" id="browseRequests" style="margin-top:24px;">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Submitted Requests</div>
+          <div class="card-sub">Search past requests by title or objective</div>
+        </div>
+        <span class="filter-result-note" id="requestCount"></span>
+      </div>
+      <div class="filter-bar">
+        <span class="filter-search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="form-control" id="requestSearch"
+                 placeholder="Search title or objective…">
+        </span>
+        <select class="form-control" id="requestStatus" style="max-width:170px;">
+          <option value="">All Statuses</option>
+        </select>
+        <select class="form-control" id="requestCommittee" style="max-width:180px;">
+          <option value="">All Committees</option>
+        </select>
+        <button class="btn-secondary" id="clearRequestFilters" type="button">Clear</button>
+      </div>
+      <div class="card-body" id="requestList">
+        <p class="chair-role">Loading submitted requests…</p>
+      </div>
+    </section>
 
   </div><!-- /page-content -->
 </div><!-- /main -->
@@ -593,8 +604,138 @@
   <span id="toastMsg">Saved!</span>
 </div>
 
-<script src="js/common.js"></script>
+
+<!-- ── AI ASSISTANT MODAL ── -->
+<div class="ai-modal-overlay" id="aiModal" hidden>
+  <div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+
+    <div class="ai-modal-header">
+      <div>
+        <div class="ai-modal-title" id="aiModalTitle">✨ Spark an Idea</div>
+        <div class="ai-modal-sub">Answer a few questions and the AI Project Planning Assistant will draft a CATCH2T28 proposal.</div>
+      </div>
+      <button class="ai-modal-close" type="button" id="aiCloseBtn" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="ai-modal-body">
+
+      <!-- Step 1: the brief -->
+      <form id="aiBriefForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="aiProjectType">
+              Project / Event Type <span class="required">*</span>
+            </label>
+            <select class="form-control" id="aiProjectType">
+              <option value="">Select a type</option>
+              <option>Seminar</option>
+              <option>Workshop</option>
+              <option>Recruitment</option>
+              <option>Academic Support</option>
+              <option>Community Engagement</option>
+              <option>Leadership Development</option>
+              <option>Competition</option>
+              <option>Organization Activity</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="aiParticipants">
+              Target Participants <span class="required">*</span>
+            </label>
+            <input class="form-control" id="aiParticipants" list="aiParticipantOptions"
+                   placeholder="e.g. Frosh, CCS Students" autocomplete="off">
+            <datalist id="aiParticipantOptions">
+              <option value="Frosh"></option>
+              <option value="Sophomores"></option>
+              <option value="Juniors"></option>
+              <option value="Seniors"></option>
+              <option value="CCS Students"></option>
+              <option value="Executive Officers"></option>
+              <option value="Student Leaders"></option>
+            </datalist>
+          </div>
+        </div>
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label" for="aiProblem">
+              What student problem are you trying to solve? <span class="required">*</span>
+            </label>
+            <input class="form-control" id="aiProblem" list="aiProblemOptions"
+                   placeholder="e.g. Frosh struggle to meet classmates." autocomplete="off">
+            <datalist id="aiProblemOptions">
+              <option value="Frosh struggle to meet classmates."></option>
+              <option value="Students need academic support."></option>
+              <option value="Students are experiencing burnout."></option>
+              <option value="Executive Officers need leadership development."></option>
+              <option value="Students lack engagement."></option>
+              <option value="Students need networking opportunities."></option>
+            </datalist>
+          </div>
+        </div>
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label" for="aiGoal">
+              Goal / Objective <span class="required">*</span>
+            </label>
+            <textarea class="form-control textarea" id="aiGoal" rows="3"
+                      placeholder="What should this project achieve?"></textarea>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="aiScale">Estimated Participants</label>
+            <input class="form-control" id="aiScale" placeholder="Optional — e.g. 120">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="aiBudget">Budget</label>
+            <input class="form-control" id="aiBudget" placeholder="Optional — e.g. PHP 15,000">
+          </div>
+        </div>
+
+        <div class="form-row cols-1">
+          <div class="form-group">
+            <label class="form-label" for="aiNotes">Additional Notes</label>
+            <textarea class="form-control textarea" id="aiNotes" rows="2"
+                      placeholder="Optional — constraints, venue, partners…"></textarea>
+          </div>
+        </div>
+      </form>
+
+      <!-- Step 2: generating -->
+      <div class="ai-loading" id="aiLoading" hidden>
+        <div class="ai-spinner" aria-hidden="true"></div>
+        <div class="ai-loading-text">Generating proposal…</div>
+        <div class="ai-loading-sub">This usually takes a few seconds.</div>
+      </div>
+
+      <!-- Step 3: preview -->
+      <div class="ai-preview" id="aiPreview" hidden></div>
+
+      <!-- Error -->
+      <div class="ai-error" id="aiError" hidden></div>
+
+    </div>
+
+    <div class="ai-modal-footer">
+      <button class="btn-ghost" type="button" id="aiCancelBtn">Cancel</button>
+      <div class="ai-footer-right">
+        <button class="btn-secondary" type="button" id="aiRegenerateBtn" hidden>Generate Again</button>
+        <button class="btn-primary" type="button" id="aiGenerateBtn">Generate Proposal</button>
+        <button class="btn-primary" type="button" id="aiUseBtn" hidden>Use Suggestion</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/constants.js"></script>
+    <script src="js/common.js"></script>
 <script src="js/project-request.js"></script>
+<script src="js/ai-assistant.js"></script>
 
 </body>
 </html>

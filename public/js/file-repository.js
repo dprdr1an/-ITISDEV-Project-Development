@@ -14,7 +14,11 @@
         formatShortDate,
         renderNotice,
         renderTableNotice,
-        showToast
+        showToast,
+        buildQueryString,
+        createFilterController,
+        populateSelect,
+        emptyResultMessage
     } = window.IMC;
 
     const user = window.currentUser;
@@ -363,32 +367,44 @@
         });
     }
 
-    let activeCategory = "";
+    /* ---------- Search & Filter ---------- */
 
-    async function loadFiles() {
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    // Declared before loadFiles() reads it, so the reference is never
+    // evaluated in the temporal dead zone.
+    let fileFilters = null;
+
+    async function loadFiles(params) {
         if (!filesBody) return;
 
         try {
-            const params = [];
-
-            if (projectFilter && projectFilter.value) {
-                params.push(
-                    "project=" + encodeURIComponent(projectFilter.value)
-                );
-            }
-
-            if (activeCategory) {
-                params.push(
-                    "category=" + encodeURIComponent(activeCategory)
-                );
-            }
+            const query = params ||
+                (fileFilters ? fileFilters.params() : {});
 
             const response = await api.get(
-                "/api/files" + (params.length ? "?" + params.join("&") : "")
+                "/api/files" + buildQueryString(query)
             );
 
-            renderFiles(response.files || []);
+            const files = response.files || [];
+
+            if (!files.length) {
+                renderTableNotice(
+                    filesBody,
+                    emptyResultMessage(
+                        fileFilters && fileFilters.isFiltering(),
+                        "No files stored yet. Upload a file to get started."
+                    ),
+                    5
+                );
+            } else {
+                renderFiles(files);
+            }
+
+            // Folder tallies stay global so they describe the repository,
+            // not the current view.
             renderFolderCounts(response.categoryCounts || {});
+            syncFolderCards();
         } catch (err) {
             console.error(err);
             renderTableNotice(filesBody, "Unable to load files.", 5);
@@ -396,36 +412,60 @@
         }
     }
 
-    if (projectFilter) {
-        projectFilter.addEventListener("change", loadFiles);
+    fileFilters = createFilterController({
+        controls: {
+            search:   { id: "fileSearch", debounce: true },
+            project:  { id: "projectFilter" },
+            category: { id: "categoryFilter" }
+        },
+        clearButtonId: "clearFileFilters",
+        onChange: loadFiles
+    });
+
+    /** Keeps the folder cards visually in step with the category select. */
+    function syncFolderCards() {
+        const active = categoryFilter ? categoryFilter.value : "";
+
+        document.querySelectorAll(".folder-card[data-category]").forEach(
+            (card) =>
+                card.classList.toggle(
+                    "active",
+                    Boolean(active) && card.dataset.category === active
+                )
+        );
     }
 
-    // Folder cards act as category filters; clicking the active one clears it
+    // Folder cards remain a shortcut for the category filter; clicking the
+    // active one clears it. They drive the same select rather than a second
+    // piece of state.
     document.querySelectorAll(".folder-card[data-category]").forEach((card) => {
         card.addEventListener("click", () => {
+            if (!categoryFilter) return;
+
             const category = card.dataset.category;
 
-            activeCategory = activeCategory === category ? "" : category;
+            categoryFilter.value =
+                categoryFilter.value === category ? "" : category;
 
-            document
-                .querySelectorAll(".folder-card")
-                .forEach((c) => c.classList.remove("active"));
-
-            if (activeCategory) card.classList.add("active");
+            fileFilters.refresh();
 
             showToast(
-                activeCategory
-                    ? "Showing " + activeCategory + " files."
+                categoryFilter.value
+                    ? "Showing " + categoryFilter.value + " files."
                     : "Showing all files."
             );
-
-            loadFiles();
         });
     });
 
     /* ---------- Init ---------- */
 
+    populateSelect(
+        "categoryFilter",
+        Object.keys(CATEGORY_BADGE),
+        "All categories"
+    );
+
     renderQueue();
-    loadProjects().then(loadFiles);
+    loadProjects().then(() => loadFiles());
 
 })();

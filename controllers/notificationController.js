@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Notification = require('../models/Notification');
 
+const { matchAnyField, addClause } = require('./utils/queryHelpers');
+
 /**
  * Notifications are private to their recipient. Identity always comes from
  * the session — a ?recipient= or body value is never trusted, otherwise any
@@ -75,9 +77,12 @@ exports.getNotifications = async (req, res) => {
             query.type = req.query.type;
         }
 
-        if (req.query.isRead !== undefined) {
+        if (req.query.isRead !== undefined && req.query.isRead !== '') {
             query.isRead = req.query.isRead === 'true';
         }
+
+        // Free-text search across the notification's own wording
+        addClause(query, matchAnyField(req.query.search, ['title', 'message']));
 
         const notifications = await Notification.find(query)
             .populate('recipient', 'name email committee position')

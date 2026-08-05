@@ -1,6 +1,11 @@
 const ProjectRequest = require('../models/ProjectRequest');
 const { diffFields, summariseChanges } = require('./utils/diffRevision');
-const { containsRegex } = require('./utils/queryHelpers');
+const {
+    containsRegex,
+    matchAnyField,
+    addClause,
+    dateRange
+} = require('./utils/queryHelpers');
 
 // POST /api/projects — Submit a new project request
 const submitProject = async (req, res) => {
@@ -36,6 +41,7 @@ const submitProject = async (req, res) => {
 //
 // Query params (all optional, all combinable — AND'd together):
 //   search          — partial, case-insensitive match on projectName
+//                      or description (the "objective" field in the UI)
 //   committee       — exact match
 //   status          — exact match
 //   priority        — exact match
@@ -61,20 +67,18 @@ const getAllProjects = async (req, res) => {
         if (committee) filter.committee = committee;
         if (priority)  filter.priority  = priority;
 
-        if (search) {
-            filter.projectName = containsRegex(search);
-        }
+        // Title or objective. addClause keeps this AND'd with the
+        // assignedMember search below instead of one $or clobbering the other.
+        addClause(filter, matchAnyField(search, ['projectName', 'description']));
 
         if (assignedMember) {
             const re = containsRegex(assignedMember);
-            filter.$or = [{ pointPersons: re }, { requestingHead: re }];
+            addClause(filter, {
+                $or: [{ pointPersons: re }, { requestingHead: re }]
+            });
         }
 
-        if (deadlineFrom || deadlineTo) {
-            filter.eventDate = {};
-            if (deadlineFrom) filter.eventDate.$gte = new Date(deadlineFrom);
-            if (deadlineTo)   filter.eventDate.$lte = new Date(deadlineTo);
-        }
+        addClause(filter, dateRange('eventDate', deadlineFrom, deadlineTo));
 
         const projects = await ProjectRequest.find(filter)
             .populate('submittedBy', 'name email committee position')

@@ -368,3 +368,266 @@
 @media (max-width: 540px) {
     .side-panel { grid-template-columns: 1fr; }
 }
+/* ── SUBMITTED REQUESTS (browse & search) ──
+   Compact rows rather than a table, so this reuses the shared tokens
+   without pulling in the status-table styles from another page. */
+.request-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+.request-row:last-child { border-bottom: 0; }
+
+.request-main { flex: 1; min-width: 0; }
+
+.request-name {
+    font-size: 0.845rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 3px;
+    word-break: break-word;
+}
+
+.request-objective {
+    font-size: 0.76rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.request-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.71rem;
+    color: var(--gray-400);
+}
+
+.request-side { flex-shrink: 0; text-align: right; }
+
+@media (max-width: 620px) {
+    .request-row { flex-direction: column; }
+    .request-side { text-align: left; }
+}
+
+/* ──────────────────────────────────────────────────────────
+   AI ASSISTANT MODAL ("Spark an Idea")
+   Built from the existing tokens — no new colours or fonts.
+────────────────────────────────────────────────────────── */
+
+#sparkIdeaBtn svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ai-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 400;
+    animation: aiFade 0.16s ease-out;
+}
+.ai-modal-overlay[hidden] { display: none; }
+
+@keyframes aiFade { from { opacity: 0; } to { opacity: 1; } }
+
+.ai-modal {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 660px;
+    max-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: aiRise 0.18s ease-out;
+}
+
+@keyframes aiRise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.ai-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.ai-modal-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gray-900);
+}
+
+.ai-modal-sub {
+    font-size: 0.76rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin-top: 3px;
+}
+
+.ai-modal-close {
+    background: none;
+    border: 0;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--gray-400);
+    cursor: pointer;
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+.ai-modal-close:hover { color: var(--gray-900); }
+
+.ai-modal-body {
+    padding: 20px 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.ai-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 24px 18px;
+    border-top: 1px solid var(--gray-100);
+    flex-wrap: wrap;
+}
+
+.ai-footer-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    flex-wrap: wrap;
+}
+
+/* ── LOADING ── */
+.ai-loading {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.ai-spinner {
+    width: 34px;
+    height: 34px;
+    margin: 0 auto 16px;
+    border: 3px solid var(--gray-200);
+    border-top-color: var(--orange);
+    border-radius: 50%;
+    animation: aiSpin 0.8s linear infinite;
+}
+
+@keyframes aiSpin { to { transform: rotate(360deg); } }
+
+.ai-loading-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.ai-loading-sub {
+    font-size: 0.74rem;
+    color: var(--gray-400);
+    margin-top: 4px;
+}
+
+/* ── PREVIEW ── */
+.ai-preview-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+}
+
+.ai-preview-pitch {
+    font-size: 0.83rem;
+    color: var(--orange-dark);
+    font-weight: 600;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    overflow-wrap: anywhere;
+}
+
+.ai-section { margin-bottom: 16px; }
+
+.ai-section-label {
+    font-size: 0.67rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-400);
+    margin-bottom: 5px;
+}
+
+.ai-section-body {
+    font-size: 0.8rem;
+    color: var(--gray-700);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.ai-section-body ul {
+    margin: 0;
+    padding-left: 18px;
+}
+.ai-section-body li { margin-bottom: 3px; }
+
+.ai-committee {
+    display: flex;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+.ai-committee:last-child { border-bottom: 0; }
+.ai-committee strong { color: var(--gray-900); flex-shrink: 0; }
+.ai-committee span { color: var(--gray-600); }
+
+/* ── ERROR ── */
+.ai-error {
+    padding: 18px;
+    border: 1px solid var(--red);
+    background: var(--red-light);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    color: var(--red);
+    line-height: 1.55;
+}
+
+@media (max-width: 620px) {
+    .ai-modal-overlay { padding: 12px; }
+    .ai-modal { max-height: calc(100vh - 24px); }
+    .ai-modal-header, .ai-modal-body { padding-left: 18px; padding-right: 18px; }
+    .ai-modal-footer { padding-left: 18px; padding-right: 18px; }
+    .ai-footer-right { width: 100%; }
+    .ai-footer-right .btn-primary,
+    .ai-footer-right .btn-secondary { flex: 1 1 auto; justify-content: center; }
+}

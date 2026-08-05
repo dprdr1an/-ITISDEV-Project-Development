@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 const Task = require('../models/Task');
 const Notification = require('../models/Notification');
+const User = require('../models/User');
+
+const {
+    matchAnyField,
+    addClause,
+    dateRange
+} = require('./utils/queryHelpers');
 
 const { TASK_STATUSES, normaliseStatus } = Task;
 
@@ -105,6 +112,19 @@ exports.createTask = async (req, res) => {
 };
 
 // Get all tasks
+// GET /api/tasks — list, search & filter tasks
+//
+// Query params (all optional, all combinable — AND'd together):
+//   mine           — 'true' scopes to the signed-in user (My Tasks)
+//   project        — exact project id
+//   member         — exact assignee id (Task Assignment "filter by assignee")
+//   status         — exact match
+//   priority       — exact match
+//   search         — partial, case-insensitive match on title or description
+//   assignee       — partial, case-insensitive match on an assigned
+//                    member's name or email (Task Assignment)
+//   deadlineFrom   — deadline >= this date (ISO string)
+//   deadlineTo     — deadline <= end of this date (ISO string)
 exports.getTasks = async (req, res) => {
     try {
         const query = {};
@@ -119,6 +139,41 @@ exports.getTasks = async (req, res) => {
 
         if (req.query.status) {
             query.status = req.query.status;
+        }
+
+        if (req.query.priority) {
+            query.priority = req.query.priority;
+        }
+
+        addClause(
+            query,
+            matchAnyField(req.query.search, ['title', 'description'])
+        );
+
+        addClause(
+            query,
+            dateRange('deadline', req.query.deadlineFrom, req.query.deadlineTo)
+        );
+
+        // Searching by assignee name means resolving names to ids first,
+        // since assignedMembers stores references rather than text.
+        if (req.query.assignee && String(req.query.assignee).trim()) {
+            const nameClause = matchAnyField(req.query.assignee, [
+                'name',
+                'email'
+            ]);
+
+            const matches = await User.find(nameClause).select('_id').lean();
+
+            // No matching member means no matching tasks, so short-circuit
+            // rather than letting an empty $in match nothing silently.
+            query.assignedMembers = query.assignedMembers
+                ? query.assignedMembers
+                : { $in: matches.map((u) => u._id) };
+
+            if (!matches.length) {
+                return res.status(200).json({ count: 0, tasks: [] });
+            }
         }
 
         // Executives may only ever read their own tasks, regardless of the
