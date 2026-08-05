@@ -71,6 +71,8 @@ app.use('/auth', require('./routes/authRoutes'));
 
 app.use('/api/projects', require('./routes/projectRoutes'));
 
+app.use('/api/discussions', require('./routes/discussionRoutes'));
+
 app.use('/api/rollouts', require('./routes/rolloutRoutes'));
 
 app.use('/api/files', require('./routes/fileRoutes'));

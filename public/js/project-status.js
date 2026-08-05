@@ -36,6 +36,12 @@
     // Persisting history needs a backend collection — see the notes.
     const historyLog = [];
 
+    // Holds the MongoDB ID of the project whose discussion is currently displayed.
+    let selectedDiscussionProject = null;
+
+    // Used for the title above the discussion feed.
+    let discussionProjectName = "";
+
     /* ---------- Counters ---------- */
 
     function renderCounts(projects) {
@@ -98,7 +104,10 @@
                     "</span>" +
                     "</td>" +
                     '<td><select class="status-select">' + options + "</select></td>" +
-                    '<td><div class="project-meta">' +
+                    '<td>' + '<button class="btn-secondary discussion-btn" ' + // Allows the user to open the discussion thread associated with this project
+                    'data-project="' + escapeHtml(project._id) + '" ' +
+                    'data-name="' + escapeHtml(project.projectName) + '">' +
+                    'Discussion' + '</button>' + '</td>' + '<td><div class="project-meta">' +
                     escapeHtml(formatDateTime(project.updatedAt)) +
                     "</div></td>" +
                     "</tr>"
@@ -107,6 +116,7 @@
             .join("");
 
         bindSelects();
+        bindDiscussionButtons();
     }
 
     function bindSelects() {
@@ -166,6 +176,216 @@
                     select.disabled = false;
                 }
             });
+        });
+    }
+
+    // Every project row contains a Discussion button.
+    // Clicking it loads the discussion feed for that project.
+    function bindDiscussionButtons() {
+        document.querySelectorAll(".discussion-btn")
+
+        .forEach(button => {
+
+            button.addEventListener("click", async () => {
+                selectedDiscussionProject =
+                    button.dataset.project;
+                discussionProjectName =
+                    button.dataset.name;
+
+                /*
+                Update the title shown above the
+                discussion feed.
+                */
+                document.getElementById(
+                    "discussionProjectTitle"
+                ).textContent = discussionProjectName;
+
+                /*
+                Load every discussion update belonging
+                to this project.
+                */
+                await loadDiscussion();
+            });
+
+        });
+    }
+
+    /* ---------- Discussion ---------- */
+
+    async function loadDiscussion() {
+        if (!selectedDiscussionProject)
+            return;
+        const container = document.getElementById(
+            "discussionContainer"
+        );
+        container.innerHTML =
+            '<div class="notice">Loading discussions...</div>';
+        try {
+            const response = await api.get(
+                "/api/discussions/project/" +
+                selectedDiscussionProject
+            );
+            const discussions = response.data || [];
+            renderDiscussion(discussions);
+        }
+        catch (err) {
+            console.error(err);
+            container.innerHTML =
+                '<div class="notice">Unable to load discussion.</div>';
+        }
+    }
+
+    function renderDiscussion(discussions) {
+        const container =
+            document.getElementById("discussionContainer");
+        if (!discussions.length) {
+            container.innerHTML =
+                '<div class="notice">' +
+                'No discussion has been posted yet.' +
+                '</div>';
+            return;
+        }
+        container.innerHTML = discussions.map(discussion => {
+            const comments = (discussion.comments || [])
+                .map(comment =>
+                    '<div class="discussion-comment">' +
+                    '<strong>' +
+                    escapeHtml(comment.author?.name || "Unknown") +
+                    '</strong><br>' +
+                    escapeHtml(comment.message) +
+                    '</div>'
+                ).join("");
+            return `
+            <div class="discussion-card">
+                <div class="discussion-header">
+                    <strong>
+                        ${escapeHtml(discussion.author?.name || "Unknown")}
+                    </strong>
+                    <span>
+                        ${escapeHtml(
+                            formatDateTime(discussion.createdAt)
+                        )}
+                    </span>
+                </div>
+                <div class="discussion-update">
+                    ${escapeHtml(discussion.update)}
+                </div>
+                <hr>
+                <div class="discussion-comments">
+                    ${comments}
+                </div>
+                <hr>
+                <textarea
+                    class="comment-input"
+                    rows="2"
+                    placeholder="Write a comment..."
+                ></textarea>
+                <br>
+                <button
+                    class="btn-secondary comment-btn"
+                    data-id="${discussion._id}">
+                    Comment
+                </button>
+            </div>
+            `;
+        }).join("");
+        bindCommentButtons();
+    }
+
+    function bindCommentButtons() {
+        document
+            .querySelectorAll(".comment-btn")
+            .forEach(button => {
+                button.addEventListener("click", async () => {
+                    const card =
+                        button.closest(".discussion-card");
+                    const textarea =
+                        card.querySelector(".comment-input");
+                    const message =
+                        textarea.value.trim();
+                    if (!message.length) {
+                        showToast(
+                            "Please enter a comment."
+                        );
+                        return;
+                    }
+                    button.disabled = true;
+                    try {
+                        await api.post(
+                            "/api/discussions/" +
+                            button.dataset.id +
+                            "/comments",
+                            {
+                                message
+                            }
+                        );
+                        textarea.value = "";
+                        await loadDiscussion();
+                        showToast(
+                            "Comment added."
+                        );
+                    }
+                    catch (err) {
+                        console.error(err);
+                        showToast(err.message);
+                    }
+                    finally {
+                        button.disabled = false;
+                    }
+                });
+            });
+    }
+
+    function initializeDiscussionPost() {
+        const button = document.getElementById(
+            "postDiscussionBtn"
+        );
+        if (!button)
+            return;
+        button.addEventListener("click", async () => {
+            if (!selectedDiscussionProject) {
+                showToast(
+                    "Select a project first."
+                );
+                return;
+            }
+            const textarea =
+                document.getElementById(
+                    "discussionInput"
+                );
+            const update =
+                textarea.value.trim();
+            if (!update.length) {
+                showToast(
+                    "Please enter a project update."
+                );
+                return;
+            }
+            button.disabled = true;
+            try {
+                await api.post(
+                    "/api/discussions",
+                    {
+                        project:
+                            selectedDiscussionProject,
+                        update
+                    }
+                );
+                textarea.value = "";
+                await loadDiscussion();
+                showToast(
+                    "Project update posted."
+                );
+            }
+            catch (err) {
+                console.error(err);
+                showToast(
+                    err.message
+                );
+            }
+            finally {
+                button.disabled = false;
+            }
         });
     }
 
@@ -246,6 +466,7 @@
     }
 
     renderHistory();
+    initializeDiscussionPost();
     load();
 
 })();

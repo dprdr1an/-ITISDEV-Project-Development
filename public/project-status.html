@@ -265,6 +265,10 @@
                                 <th>
                                     Update Status
                                 </th>
+                                <!-- Allows users to open the discussion thread of a project -->
+                                <th>
+                                    Discussion
+                                </th>
                                 <th>
                                     Last Updated
                                 </th>
@@ -291,6 +295,48 @@
                     <div id="historyList"><div class="notice">Loading history…</div></div>
                 </div>
             </section>
+
+            <!-- Project Discussion-->
+
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">
+                            Project Discussion
+                        </div>
+                        <div class="card-sub">
+                            Share updates and collaborate with members.
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Displays the currently selected project -->
+                    <h3 id="discussionProjectTitle">
+                        No Project Selected
+                    </h3>
+                    <!-- Users write project updates here -->
+                    <textarea
+                        id="discussionInput"
+                        class="discussion-input"
+                        rows="4"
+                        placeholder="Post a project update..."
+                    ></textarea>
+                    <br><br>
+                    <button
+                        id="postDiscussionBtn"
+                        class="btn-primary">
+                        Post Update
+                    </button>
+                    <hr style="margin:25px 0;">
+                    <!-- Discussion history is rendered here dynamically -->
+                    <div id="discussionContainer">
+                        <div class="notice">
+                            Select a project to view discussions.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div><!-- /main -->
     <div class="toast" id="toast">
