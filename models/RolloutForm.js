@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const revisionSchema = require('./revisionSchema');
 
 const publicationSchema = new mongoose.Schema({
     title:       { type: String },
@@ -18,13 +19,6 @@ const publicityPlanSchema = new mongoose.Schema({
     date:       { type: Date },
     activity:   { type: String },
     personResponsible: { type: String }
-});
-
-const revisionSchema = new mongoose.Schema({
-    action:    { type: String },
-    madeBy:    { type: String },
-    note:      { type: String },
-    timestamp: { type: Date, default: Date.now }
 });
 
 const rolloutFormSchema = new mongoose.Schema(

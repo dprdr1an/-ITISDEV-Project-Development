@@ -252,6 +252,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="filter-bar" id="filterBar">
+                    <input type="text" class="form-control" id="filterSearch" placeholder="Search by project name…" style="max-width:220px;">
+                    <select class="form-control" id="filterCommittee" style="max-width:170px;">
+                        <option value="">All Committees</option>
+                    </select>
+                    <input type="text" class="form-control" id="filterAssignedMember" placeholder="Assigned member…" style="max-width:170px;">
+                    <select class="form-control" id="filterStatus" style="max-width:160px;">
+                        <option value="">All Statuses</option>
+                    </select>
+                    <label class="filter-date-label">
+                        From
+                        <input type="date" class="form-control" id="filterDeadlineFrom">
+                    </label>
+                    <label class="filter-date-label">
+                        To
+                        <input type="date" class="form-control" id="filterDeadlineTo">
+                    </label>
+                    <button class="btn-secondary" id="clearFiltersBtn" type="button">Clear</button>
+                </div>
                 <div class="card-body table-wrap">
                     <table class="status-table">
                         <thead>

@@ -10,7 +10,9 @@ const {
     submitProject,
     getAllProjects,
     getProjectById,
+    updateProject,
     updateProjectStatus,
+    getProjectRevisions,
     deleteProject
 } = require('../controllers/projectController');
 
@@ -22,6 +24,12 @@ router.post('/',      submitProject);
 
 // GET  /api/projects/:id   — get one project
 router.get('/:id',    getProjectById);
+
+// GET  /api/projects/:id/revisions — full revision & update log
+router.get('/:id/revisions', getProjectRevisions);
+
+// PATCH /api/projects/:id  — edit project details
+router.patch('/:id',  updateProject);
 
 // PATCH /api/projects/:id/status — update status
 router.patch('/:id/status', updateProjectStatus);

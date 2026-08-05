@@ -1,4 +1,5 @@
 const RolloutForm = require('../models/RolloutForm');
+const { diffFields, summariseChanges } = require('./utils/diffRevision');
 
 // POST /api/rollouts — Save or submit a rollout form
 const saveRollout = async (req, res) => {
@@ -12,10 +13,12 @@ const saveRollout = async (req, res) => {
 
         const rollout = new RolloutForm(formData);
 
-        // Add initial revision log entry
+        // Add initial revision log entry. Identity comes from the signed-in
+        // session, not from client input.
         rollout.revisions.push({
             action: submit ? 'Rollout submitted for review' : 'Draft saved',
-            madeBy: formData.requestingHead || 'Unknown',
+            madeBy: req.currentUser.name,
+            userId: req.currentUser.id,
             note: submit
                 ? 'Sent to chairpersons for review and approval.'
                 : 'Form progress saved as draft.'
@@ -26,7 +29,8 @@ const saveRollout = async (req, res) => {
         res.status(201).json({
             success: true,
             message: submit ? 'Rollout submitted successfully.' : 'Draft saved.',
-            id: rollout._id
+            id: rollout._id,
+            revision: rollout.revisions[rollout.revisions.length - 1]
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
@@ -68,10 +72,29 @@ const getRolloutById = async (req, res) => {
     }
 };
 
+// GET /api/rollouts/:id/revisions — Full revision/update log for a rollout
+const getRolloutRevisions = async (req, res) => {
+    try {
+        const rollout = await RolloutForm.findById(req.params.id).select('revisions projectName');
+
+        if (!rollout) {
+            return res.status(404).json({ success: false, message: 'Rollout not found.' });
+        }
+
+        const revisions = [...rollout.revisions].sort(
+            (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+        );
+
+        res.json({ success: true, data: revisions });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
 // PATCH /api/rollouts/:id — Update a rollout (edit draft or add revision)
 const updateRollout = async (req, res) => {
     try {
-        const { revisionNote, madeBy, ...updateData } = req.body;
+        const { revisionNote, ...updateData } = req.body;
 
         const rollout = await RolloutForm.findById(req.params.id);
 
@@ -79,14 +102,19 @@ const updateRollout = async (req, res) => {
             return res.status(404).json({ success: false, message: 'Rollout not found.' });
         }
 
+        const before = rollout.toObject();
+        const changes = diffFields(before, updateData);
+
         // Apply updates
         Object.assign(rollout, updateData);
 
-        // Log the revision
+        // Log the revision — identity from the session, content from the diff
         rollout.revisions.push({
             action: 'Rollout updated',
-            madeBy: madeBy || 'Unknown',
-            note: revisionNote || 'Fields updated.'
+            madeBy: req.currentUser.name,
+            userId: req.currentUser.id,
+            changes,
+            note: revisionNote || summariseChanges(changes) || 'Fields updated.'
         });
 
         await rollout.save();
@@ -100,7 +128,7 @@ const updateRollout = async (req, res) => {
 // PATCH /api/rollouts/:id/status — Approve or reject a rollout
 const updateRolloutStatus = async (req, res) => {
     try {
-        const { status, madeBy, note } = req.body;
+        const { status, note } = req.body;
 
         const rollout = await RolloutForm.findById(req.params.id);
 
@@ -108,11 +136,15 @@ const updateRolloutStatus = async (req, res) => {
             return res.status(404).json({ success: false, message: 'Rollout not found.' });
         }
 
+        const previousStatus = rollout.status;
         rollout.status = status;
+
         rollout.revisions.push({
             action: `Status changed to "${status}"`,
-            madeBy: madeBy || 'Chairperson',
-            note: note || ''
+            madeBy: req.currentUser.name,
+            userId: req.currentUser.id,
+            changes: [{ field: 'status', from: previousStatus, to: status }],
+            note: note || `status: ${previousStatus} \u2192 ${status}`
         });
 
         await rollout.save();
@@ -127,6 +159,7 @@ module.exports = {
     saveRollout,
     getAllRollouts,
     getRolloutById,
+    getRolloutRevisions,
     updateRollout,
     updateRolloutStatus
 };

@@ -7,6 +7,37 @@
 .page-header { }
 .card { margin-bottom: 20px; }
 
+/* ── SEARCH & FILTER BAR ── */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px 16px;
+}
+
+.filter-bar .form-control {
+    flex: 1 1 150px;
+}
+
+.filter-date-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    flex: 1 1 150px;
+}
+
+.filter-date-label .form-control {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .filter-bar { padding: 0 16px 14px; }
+}
+
 /* ── STATUS CARDS ── */
 .status-grid {
     display: grid;
@@ -154,6 +185,13 @@
     font-size: 0.72rem;
     color: var(--gray-400);
     margin-top: 3px;
+}
+
+.history-note {
+    font-size: 0.78rem;
+    color: var(--gray-600);
+    margin-top: 4px;
+    font-style: italic;
 }
 
 /* ── RESPONSIVE ── */

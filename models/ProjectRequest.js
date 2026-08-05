@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const revisionSchema = require('./revisionSchema');
 
 const deliverableSchema = new mongoose.Schema({
     description: { type: String, required: true },
@@ -41,7 +42,11 @@ const projectRequestSchema = new mongoose.Schema(
         ref: 'User'
     },
 
-    refNumber: { type: String, unique: true }
+    refNumber: { type: String, unique: true },
+
+    // Revision & Update Log — every create/edit/status-change is appended
+    // here by the controller. Never exposed for deletion.
+    revisions: [revisionSchema]
 },
 {
     timestamps: true
@@ -55,5 +60,15 @@ projectRequestSchema.pre('save', async function () {
         this.refNumber = `IMC-${year}-${String(count + 1).padStart(4, '0')}`;
     }
 });
+
+// Indexes backing Search & Filter (projectName search, committee/status
+// filters, assignedMember lookup, deadline range) so query time stays
+// well under the 3-second target as the collection grows.
+projectRequestSchema.index({ projectName: 1 });
+projectRequestSchema.index({ committee: 1 });
+projectRequestSchema.index({ status: 1 });
+projectRequestSchema.index({ eventDate: 1 });
+projectRequestSchema.index({ pointPersons: 1 });
+projectRequestSchema.index({ requestingHead: 1 });
 
 module.exports = mongoose.model('ProjectRequest', projectRequestSchema);

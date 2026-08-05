@@ -189,7 +189,7 @@ try {
     });
     const result = await res.json();
     if (result.success) {
-    addRevisionEntry('Draft saved', data.requestingHead || (window.currentUser && window.currentUser.name) || 'Unknown', 'Form progress saved.');
+    addRevisionEntry(result.revision);
     document.getElementById('autoSaveLabel').textContent = 'Saved · just now';
     showToast('Draft saved successfully');
     } else {
@@ -223,7 +223,7 @@ try {
     const statusBadge = document.getElementById('globalStatus');
     statusBadge.className = 'status-badge status-review';
     statusBadge.innerHTML = '<span class="dot"></span> Submitted — For Review';
-    addRevisionEntry('Rollout submitted for review', data.requestingHead || (window.currentUser && window.currentUser.name) || 'Unknown', 'Sent to chairpersons for review and approval.');
+    addRevisionEntry(result.revision);
     showToast('Rollout submitted! Chairpersons have been notified.');
     } else {
     showToast('Submission failed: ' + result.message);
@@ -233,11 +233,27 @@ try {
 }
 }
 
-// Add revision entry
-function addRevisionEntry(action, author, note) {
+// Escape untrusted text before it goes into innerHTML
+function escapeHtml(str) {
+return String(str == null ? '' : str).replace(/[&<>"']/g, (c) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+}[c]));
+}
+
+// Append a revision entry using the record the server actually persisted
+// (real signed-in user, real timestamp, real note) — never client-guessed data.
+function addRevisionEntry(revision) {
+if (!revision) return;
+
 const log = document.getElementById('revisionLog');
-const now = new Date();
-const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+// First real entry replaces the "no revisions yet" placeholder
+const placeholder = log.querySelector('.notice');
+if (placeholder) placeholder.remove();
+
+const when = new Date(revision.timestamp || Date.now());
+const time = when.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
 const div = document.createElement('div');
 div.className = 'revision-item';
 div.style.opacity = '0';
@@ -247,9 +263,9 @@ div.innerHTML = `
     <div class="revision-line"></div>
     </div>
     <div class="revision-body">
-    <div class="revision-action">${action}</div>
-    <div class="revision-meta">${author} · Today, ${time}</div>
-    ${note ? `<div class="revision-note">${note}</div>` : ''}
+    <div class="revision-action">${escapeHtml(revision.action)}</div>
+    <div class="revision-meta">${escapeHtml(revision.madeBy)} · ${time}</div>
+    ${revision.note ? `<div class="revision-note">${escapeHtml(revision.note)}</div>` : ''}
     </div>
 `;
 log.appendChild(div);

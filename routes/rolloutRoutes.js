@@ -10,6 +10,7 @@ const {
     saveRollout,
     getAllRollouts,
     getRolloutById,
+    getRolloutRevisions,
     updateRollout,
     updateRolloutStatus
 } = require('../controllers/rolloutController');
@@ -22,6 +23,9 @@ router.post('/',      saveRollout);
 
 // GET  /api/rollouts/:id   — get one rollout form
 router.get('/:id',    getRolloutById);
+
+// GET  /api/rollouts/:id/revisions — full revision & update log
+router.get('/:id/revisions', getRolloutRevisions);
 
 // PATCH /api/rollouts/:id  — update / save revisions
 router.patch('/:id',  updateRollout);
