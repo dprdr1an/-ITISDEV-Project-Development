@@ -1,5 +1,5 @@
 /* ==========================================================
-   Gemini service — server-side only.
+   Ollama service — server-side only.
 
    The API key is read from process.env and never leaves the server;
    the browser talks to /api/ai/* instead.
@@ -9,7 +9,7 @@ const OLLAMA_HOST =
     process.env.OLLAMA_HOST || "http://localhost:11434";
 
 const OLLAMA_MODEL =
-    process.env.OLLAMA_MODEL || "qwen3:8b";
+    process.env.OLLAMA_MODEL || "qwen2.5:7b";
 
 const { COMMITTEE_STRUCTURE } = require("../config/constants");
 
@@ -150,7 +150,7 @@ function buildPrompt(brief) {
 }
 
 /**
- * Calls Gemini and returns the parsed proposal.
+ * Calls Ollama and returns the parsed proposal.
  * Throws an Error carrying a `status` so the controller can map it.
  */
 async function generateProposal(brief) {
@@ -184,7 +184,7 @@ async function generateProposal(brief) {
         ]
     };
 
-    // Abort rather than hang the request if Gemini is slow
+    // Abort rather than hang the request if Ollama is slow
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 180000);
 
@@ -226,7 +226,7 @@ async function generateProposal(brief) {
 
         // Logged for operators; the client gets a friendly message
         console.error(
-            'Gemini API error:',
+            'Ollama API error:',
             response.status,
             detail || '(no detail)'
         );
@@ -256,7 +256,7 @@ async function generateProposal(brief) {
     try {
         return JSON.parse(text);
     } catch (err) {
-        console.error('Gemini returned unparseable JSON:', text.slice(0, 300));
+        console.error('Ollama returned unparseable JSON:', text.slice(0, 300));
 
         const error = new Error(
             'The AI assistant returned an unexpected format. Please try again.'

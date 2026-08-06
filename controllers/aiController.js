@@ -1,9 +1,9 @@
 /* ==========================================================
-   AI Assistant — thin controller over the Gemini service.
+   AI Assistant — thin controller over the Ollama service.
    Validation lives here; the API key never leaves the server.
 ========================================================== */
 
-const { generateProposal, isConfigured } = require('../services/geminiService');
+const { generateProposal, isConfigured } = require('../services/ollamaService');
 
 const MAX_FIELD = 500;
 
