@@ -1,4 +1,7 @@
+const mongoose = require('mongoose');
+
 const ProjectRequest = require('../models/ProjectRequest');
+const User = require('../models/User');
 const { diffFields, summariseChanges } = require('./utils/diffRevision');
 const {
     containsRegex,
@@ -7,10 +10,63 @@ const {
     dateRange
 } = require('./utils/queryHelpers');
 
+/**
+ * Resolves who the project is being requested for.
+ *
+ * `requestingHeadUser` is an optional member id sent when the submitter used
+ * "on behalf of another Executive". It is verified against the database here
+ * rather than trusted, and the display name is taken from that record so the
+ * stored name and reference can never disagree.
+ *
+ * Falls back to the free-text `requestingHead` so existing clients and legacy
+ * records keep working unchanged.
+ */
+async function resolveRequestingHead(body, currentUser) {
+    const id = body.requestingHeadUser;
+
+    if (id) {
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            const error = new Error('Invalid requesting head selected.');
+            error.status = 400;
+            throw error;
+        }
+
+        const member = await User.findById(id).select('name position');
+
+        if (!member) {
+            const error = new Error('The selected requesting head no longer exists.');
+            error.status = 400;
+            throw error;
+        }
+
+        return {
+            requestingHead: member.name,
+            requestingHeadUser: member._id,
+            onBehalf: String(member._id) !== String(currentUser.id)
+        };
+    }
+
+    // No member selected: keep whatever name was typed, unlinked.
+    return {
+        requestingHead: String(body.requestingHead || '').trim(),
+        requestingHeadUser: null,
+        onBehalf: false
+    };
+}
+
 // POST /api/projects — Submit a new project request
 const submitProject = async (req, res) => {
     try {
+        const head = await resolveRequestingHead(req.body, req.currentUser);
+
         const project = new ProjectRequest(req.body);
+
+        // Both are set from trusted sources, never the raw body:
+        //   submittedBy    — whoever is signed in and clicked Submit
+        //   requestingHead — the Executive responsible for the project
+        project.submittedBy = req.currentUser.id;
+        project.requestingHead = head.requestingHead;
+        project.requestingHeadUser = head.requestingHeadUser;
 
         // Revision & Update Log — first entry records creation. The user
         // comes from the signed-in session, never from the request body.
@@ -18,7 +74,10 @@ const submitProject = async (req, res) => {
             action: 'Project request submitted',
             madeBy: req.currentUser.name,
             userId: req.currentUser.id,
-            note: 'Project request created.'
+            note: head.onBehalf
+                ? 'Project request created on behalf of ' +
+                  head.requestingHead + '.'
+                : 'Project request created.'
         });
 
         await project.save();
@@ -30,7 +89,7 @@ const submitProject = async (req, res) => {
             id: project._id
         });
     } catch (error) {
-        res.status(400).json({
+        res.status(error.status || 400).json({
             success: false,
             message: error.message
         });
@@ -82,6 +141,7 @@ const getAllProjects = async (req, res) => {
 
         const projects = await ProjectRequest.find(filter)
             .populate('submittedBy', 'name email committee position')
+            .populate('requestingHeadUser', 'name email committee position')
             .sort({ createdAt: -1 });
 
         res.json({ success: true, data: projects });
@@ -94,7 +154,8 @@ const getAllProjects = async (req, res) => {
 const getProjectById = async (req, res) => {
     try {
         const project = await ProjectRequest.findById(req.params.id)
-            .populate('submittedBy', 'name email committee position');
+            .populate('submittedBy', 'name email committee position')
+            .populate('requestingHeadUser', 'name email committee position');
 
         if (!project) {
             return res.status(404).json({ success: false, message: 'Project not found.' });
@@ -117,6 +178,22 @@ const updateProject = async (req, res) => {
 
         const { note, ...updateData } = req.body;
 
+        // submittedBy records who originally filed the request — it is part of
+        // the audit trail and is never rewritten by an edit.
+        delete updateData.submittedBy;
+
+        // Re-resolve the requesting head so the stored name and reference
+        // stay in step when an editor changes who it is assigned to.
+        if (
+            updateData.requestingHeadUser !== undefined ||
+            updateData.requestingHead !== undefined
+        ) {
+            const head = await resolveRequestingHead(updateData, req.currentUser);
+
+            updateData.requestingHead = head.requestingHead;
+            updateData.requestingHeadUser = head.requestingHeadUser;
+        }
+
         const before = project.toObject();
         const changes = diffFields(before, updateData);
 
@@ -138,7 +215,7 @@ const updateProject = async (req, res) => {
 
         res.json({ success: true, data: project });
     } catch (error) {
-        res.status(400).json({ success: false, message: error.message });
+        res.status(error.status || 400).json({ success: false, message: error.message });
     }
 };
 

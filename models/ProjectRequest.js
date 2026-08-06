@@ -14,7 +14,19 @@ const projectRequestSchema = new mongoose.Schema(
     targetPlatform: { type: String },
     priority:       { type: String, enum: ['High', 'Medium', 'Low'], default: 'Medium' },
 
+    // Free-text name of the Executive responsible for the project. Kept as
+    // the display value so records created before requestingHeadUser existed
+    // still render unchanged.
     requestingHead: { type: String, required: true },
+
+    // Structured counterpart: set when the requesting head is a known member.
+    // Optional, so legacy records remain valid.
+    requestingHeadUser: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        default: null
+    },
+
     pointPersons:   [{ type: String }],
 
     startDate:      { type: Date },
@@ -70,5 +82,6 @@ projectRequestSchema.index({ status: 1 });
 projectRequestSchema.index({ eventDate: 1 });
 projectRequestSchema.index({ pointPersons: 1 });
 projectRequestSchema.index({ requestingHead: 1 });
+projectRequestSchema.index({ requestingHeadUser: 1 });
 
 module.exports = mongoose.model('ProjectRequest', projectRequestSchema);

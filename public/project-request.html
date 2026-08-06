@@ -280,8 +280,34 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Requesting Head / Officer <span class="required">*</span></label>
-                <input type="text" class="form-control trackable" placeholder="Your full name and position" />
+                <label class="form-label" for="requestingHeadDisplay">
+                  Requesting Head / Officer <span class="required">*</span>
+                </label>
+
+                <!-- Default: the signed-in user, shown locked. Populated by
+                     project-request.js from the session in common.js. -->
+                <input type="text" class="form-control trackable"
+                       id="requestingHeadDisplay"
+                       placeholder="Your full name and position" readonly />
+
+                <!-- Shown instead of the locked field when submitting for
+                     someone else. Populated from the Members API. -->
+                <select class="form-control" id="requestingHeadSelect" hidden>
+                  <option value="">Select an Executive…</option>
+                </select>
+
+                <!-- The chosen member's id travels with the form so the
+                     server can store a real reference, not just a name. -->
+                <input type="hidden" id="requestingHeadUser" value="" />
+
+                <label class="onbehalf-toggle" for="onBehalfToggle">
+                  <input type="checkbox" id="onBehalfToggle" />
+                  <span>Submit this request on behalf of another Executive</span>
+                </label>
+
+                <span class="form-hint" id="requestingHeadHint">
+                  Defaults to you. Your account is still recorded as the submitter.
+                </span>
               </div>
               <div class="form-group">
                 <label class="form-label">Point Person(s) <span class="required">*</span></label>
@@ -643,17 +669,16 @@
             <label class="form-label" for="aiParticipants">
               Target Participants <span class="required">*</span>
             </label>
-            <input class="form-control" id="aiParticipants" list="aiParticipantOptions"
-                   placeholder="e.g. Frosh, CCS Students" autocomplete="off">
-            <datalist id="aiParticipantOptions">
-              <option value="Frosh"></option>
-              <option value="Sophomores"></option>
-              <option value="Juniors"></option>
-              <option value="Seniors"></option>
-              <option value="CCS Students"></option>
-              <option value="Executive Officers"></option>
-              <option value="Student Leaders"></option>
-            </datalist>
+            <select class="form-control" id="aiParticipants">
+              <option value="">Select participants</option>
+              <option>Frosh</option>
+              <option>Sophomores</option>
+              <option>Juniors</option>
+              <option>Seniors</option>
+              <option>CCS Students</option>
+              <option>Executive Officers</option>
+              <option>Chairpersons</option>
+          </select>
           </div>
         </div>
 
@@ -662,16 +687,17 @@
             <label class="form-label" for="aiProblem">
               What student problem are you trying to solve? <span class="required">*</span>
             </label>
-            <input class="form-control" id="aiProblem" list="aiProblemOptions"
-                   placeholder="e.g. Frosh struggle to meet classmates." autocomplete="off">
-            <datalist id="aiProblemOptions">
-              <option value="Frosh struggle to meet classmates."></option>
-              <option value="Students need academic support."></option>
-              <option value="Students are experiencing burnout."></option>
-              <option value="Executive Officers need leadership development."></option>
-              <option value="Students lack engagement."></option>
-              <option value="Students need networking opportunities."></option>
-            </datalist>
+            <select class="form-control" id="aiProblem">
+              <option value="">Select a problem</option>
+              <option>Academic Support</option>
+              <option>Student Engagement</option>
+              <option>Mental Health & Wellness</option>
+              <option>Leadership Development</option>
+              <option>Career Preparation</option>
+              <option>Community Building</option>
+              <option>Student Resources</option>
+              <option>Other</option>
+          </select>
           </div>
         </div>
 

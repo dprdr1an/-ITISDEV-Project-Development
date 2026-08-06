@@ -49,7 +49,26 @@ REFERENCE PROJECTS (for inspiration on tone and scope only — never copy them):
 - "LeadWare: Upgrading Your Officer OS" — leadership seminar, Executive Officer development, team management.
 - "LRT (Light Reboot Transit)" — academic support, reviewer sharing, student mentors, helping students transition back after Independent Learning Week, student welfare.
 
-Generate similarly meaningful, student-centered ideas. Be concise, practical and implementation-ready. Prefer concrete specifics over vague ambition.`;
+Generate similarly meaningful, student-centered ideas. Be concise, practical and implementation-ready. Prefer concrete specifics over vague ambition.
+
+Keep responses concise.
+
+- Project title: under 10 words.
+- Elevator pitch: 1 sentence.
+- Project description: maximum 80 words.
+- Objectives: exactly 3 bullet points.
+- Committee recommendations: maximum 4 committees.
+- Deliverables: maximum 4 items.
+
+Return ONLY valid JSON.
+
+Recommend only the committees that are genuinely needed.
+
+Do not recommend Documentations unless the project requires document-making. Documentations is not meedia coverage, it is paperwork.
+
+Do not recommend every committee.
+
+Most projects only need 2–4 committees.`;
 
 /**
  * Shape the model must return. Asking for JSON directly is what lets the
@@ -75,12 +94,9 @@ const RESPONSE_SCHEMA = {
                 required: ['committee', 'reason']
             }
         },
-        suggestedTimeline: { type: 'string' },
         estimatedScale: { type: 'string' },
         suggestedDeliverables: { type: 'array', items: { type: 'string' } },
         suggestedRolloutMaterials: { type: 'array', items: { type: 'string' } },
-        potentialRisks: { type: 'array', items: { type: 'string' } },
-        successMetrics: { type: 'array', items: { type: 'string' } },
         whyItFits: { type: 'string' }
     },
     required: [
@@ -91,12 +107,9 @@ const RESPONSE_SCHEMA = {
         'objectives',
         'targetParticipants',
         'recommendedCommittees',
-        'suggestedTimeline',
         'estimatedScale',
         'suggestedDeliverables',
         'suggestedRolloutMaterials',
-        'potentialRisks',
-        'successMetrics',
         'whyItFits'
     ]
 };
@@ -153,6 +166,12 @@ async function generateProposal(brief) {
         model: OLLAMA_MODEL,
         stream: false,
         format: RESPONSE_SCHEMA,
+
+        options: {
+            temperature: 0.2,
+            num_predict: 450
+        },
+
         messages: [
             {
                 role: "system",

@@ -3,12 +3,7 @@
    Requires layout.css (shell, tokens, cards, forms, buttons, toast).
    ============================================================ */
 
-/* ── PAGE LAYOUT ── */
-.layout {
-    display: grid;
-    grid-template-columns: 1fr 330px;
-    gap: 20px;
-}
+/* Page layout uses the shared .page-layout grid in layout.css */
 
 /* Cards stack vertically on this page (dashboard uses grid gap instead) */
 .card { margin-bottom: 20px; }
@@ -74,7 +69,7 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-    .layout { grid-template-columns: 1fr; }
+    /* .page-layout stacking is handled by layout.css */
     .member-checks { grid-template-columns: 1fr; }
 }
 /* ── RECORD ACTIONS (edit / reassign / delete) ── */

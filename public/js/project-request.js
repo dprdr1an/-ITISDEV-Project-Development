@@ -185,10 +185,13 @@ const allSelects   = Array.from(document.querySelectorAll('.form-col select'));
 const allDates     = Array.from(document.querySelectorAll('.form-col input[type="date"]'));
 const allTextareas = Array.from(document.querySelectorAll('.form-col textarea'));
 
-// text inputs: [0]=projName (use id), [1]=requestingHead, [2]=referenceLink
-const requestingHead = allInputs.find(i =>
-    i.placeholder && i.placeholder.toLowerCase().includes('full name')
-)?.value.trim() || '';
+// Requesting head comes from its own module: either the signed-in user
+// (default) or the Executive chosen via "on behalf of".
+const head = window.RequestingHead
+    ? window.RequestingHead.getValue()
+    : { requestingHead: '', requestingHeadUser: null };
+
+const requestingHead = head.requestingHead;
 
 const referenceLink = allInputs.find(i =>
     i.placeholder && i.placeholder.toLowerCase().includes('google drive')
@@ -213,6 +216,8 @@ return {
     description:    document.getElementById('projDesc').value.trim(),
     keyMessages,
     requestingHead,
+    // Structured reference for the audit trail; the server verifies it
+    requestingHeadUser: head.requestingHeadUser,
     pointPersons,
     startDate:      startDate   || null,
     postingDate:    postingDate || null,
@@ -227,6 +232,12 @@ return {
 }
 
 async function saveDraft() {
+const headError = window.RequestingHead && window.RequestingHead.validate();
+if (headError) {
+    showToast(headError);
+    return;
+}
+
 const data = collectFormData();
 try {
     const res = await fetch('/api/projects', {
@@ -249,6 +260,12 @@ async function submitRequest() {
 const pct = parseInt(document.getElementById('progressPct').textContent);
 if (pct < 30) {
     showToast('Please fill in the required fields before submitting.');
+    return;
+}
+
+const headError = window.RequestingHead && window.RequestingHead.validate();
+if (headError) {
+    showToast(headError);
     return;
 }
 
@@ -473,4 +490,259 @@ document.getElementById('successOverlay').classList.remove('show');
 
         await refresh({});
     })();
+})();
+
+/* ==========================================================
+   Requesting Head — defaults to the signed-in user, with an
+   opt-in to file on behalf of another Executive.
+
+   submittedBy   → always the authenticated user (set server-side)
+   requestingHead → the Executive responsible for the project
+
+   Exposed as window.RequestingHead so collectFormData() reads one
+   source of truth, and so an edit flow can restore stored state.
+========================================================== */
+
+window.RequestingHead = (function () {
+    'use strict';
+
+    const display  = document.getElementById('requestingHeadDisplay');
+    const select   = document.getElementById('requestingHeadSelect');
+    const hidden   = document.getElementById('requestingHeadUser');
+    const toggle   = document.getElementById('onBehalfToggle');
+    const hint     = document.getElementById('requestingHeadHint');
+
+    // Page has the old markup (or the field is absent) — stay inert
+    if (!display || !select || !hidden || !toggle) {
+        return {
+            getValue: function () {
+                return {
+                    requestingHead: display ? display.value.trim() : '',
+                    requestingHeadUser: null
+                };
+            },
+            setFromProject: function () {},
+            isOnBehalf: function () { return false; }
+        };
+    }
+
+    const IMC  = window.IMC || {};
+    const user = window.currentUser || null;
+
+    // Executives loaded from the Members API, cached for the toggle
+    let executives = [];
+    let loaded = false;
+
+    /** "Adrian Yap — Executive · Logistics" */
+    function describe(person) {
+        if (!person) return '';
+
+        const role = [person.position, person.committee]
+            .filter(Boolean)
+            .join(' · ');
+
+        return role ? person.name + ' — ' + role : person.name;
+    }
+
+    function showSelf() {
+        display.hidden = false;
+        select.hidden = true;
+
+        display.value = user ? describe(user) : '';
+        hidden.value = user ? user.id : '';
+
+        if (hint) {
+            hint.textContent =
+                'Defaults to you. Your account is still recorded as the submitter.';
+        }
+    }
+
+    function showPicker() {
+        display.hidden = true;
+        select.hidden = false;
+
+        // .trackable counts this field by value; clear it so an unfinished
+        // selection doesn't inflate the progress bar.
+        display.value = '';
+
+        if (hint) {
+            hint.textContent =
+                'You will still be recorded as the submitter of this request.';
+        }
+    }
+
+    /**
+     * Loads selectable Executives from the existing Members API.
+     * Reuses IMC.api so the session cookie and error handling are shared.
+     */
+    async function loadExecutives() {
+        if (loaded) return executives;
+
+        try {
+            const response = await IMC.api.get('/api/users?position=Executive');
+
+            executives = response.users || [];
+            loaded = true;
+
+            const current = hidden.value;
+
+            select.innerHTML =
+                '<option value="">Select an Executive…</option>' +
+                executives
+                    .map(function (person) {
+                        return '<option value="' + IMC.escapeHtml(person._id) + '">' +
+                            IMC.escapeHtml(describe(person)) + '</option>';
+                    })
+                    .join('');
+
+            // Keep a pre-selected head (edit mode) if still listed
+            if (current && executives.some(function (p) {
+                return String(p._id) === String(current);
+            })) {
+                select.value = current;
+            }
+        } catch (err) {
+            console.error('Could not load Executives:', err);
+
+            select.innerHTML =
+                '<option value="">Unable to load members</option>';
+
+            if (IMC.showToast) IMC.showToast(err.message);
+        }
+
+        return executives;
+    }
+
+    toggle.addEventListener('change', async function () {
+        if (toggle.checked) {
+            showPicker();
+            await loadExecutives();
+
+            // Nothing chosen yet — clear so validation catches an empty pick
+            if (!select.value) hidden.value = '';
+        } else {
+            // Reverting restores the signed-in user
+            select.value = '';
+            showSelf();
+        }
+
+        if (typeof window.updateProgress === 'function') window.updateProgress();
+    });
+
+    select.addEventListener('change', function () {
+        hidden.value = select.value || '';
+
+        // Mirror the choice into the tracked field so progress reflects it
+        const chosen = executives.find(function (p) {
+            return String(p._id) === String(select.value);
+        });
+
+        display.value = chosen ? describe(chosen) : '';
+
+        if (typeof window.updateProgress === 'function') window.updateProgress();
+    });
+
+    // Show the signed-in user immediately
+    showSelf();
+
+    return {
+        /** Current head, in the shape collectFormData() submits. */
+        getValue: function () {
+            if (toggle.checked) {
+                const chosen = executives.find(function (p) {
+                    return String(p._id) === String(select.value);
+                });
+
+                return {
+                    requestingHead: chosen ? chosen.name : '',
+                    requestingHeadUser: select.value || null
+                };
+            }
+
+            return {
+                requestingHead: user ? user.name : display.value.trim(),
+                requestingHeadUser: user ? user.id : null
+            };
+        },
+
+        isOnBehalf: function () {
+            return toggle.checked;
+        },
+
+        /** null when valid, otherwise a message to show the user. */
+        validate: function () {
+            if (toggle.checked && !select.value) {
+                return 'Please select the Executive this request is for.';
+            }
+
+            if (!toggle.checked && !user) {
+                return 'Could not identify the requesting head. Please sign in again.';
+            }
+
+            return null;
+        },
+
+        /**
+         * Restores state from a stored record, for an edit flow.
+         * Ticks the box and preselects the member only when the request
+         * was filed for somebody other than its submitter.
+         */
+        setFromProject: async function (project) {
+            if (!project) return;
+
+            const headId =
+                project.requestingHeadUser && project.requestingHeadUser._id
+                    ? project.requestingHeadUser._id
+                    : project.requestingHeadUser;
+
+            const submitterId =
+                project.submittedBy && project.submittedBy._id
+                    ? project.submittedBy._id
+                    : project.submittedBy;
+
+            const differs =
+                headId && submitterId &&
+                String(headId) !== String(submitterId);
+
+            if (!differs) {
+                toggle.checked = false;
+                showSelf();
+
+                // Legacy record with only a typed name and no reference
+                if (!headId && project.requestingHead) {
+                    display.value = project.requestingHead;
+                    hidden.value = '';
+                }
+
+                return;
+            }
+
+            toggle.checked = true;
+            showPicker();
+
+            hidden.value = String(headId);
+
+            await loadExecutives();
+
+            select.value = String(headId);
+
+            // Stored head is no longer an Executive (role changed or removed):
+            // keep them selectable so an edit doesn't silently reassign.
+            if (select.value !== String(headId)) {
+                const label = project.requestingHeadUser &&
+                    project.requestingHeadUser.name
+                        ? describe(project.requestingHeadUser)
+                        : project.requestingHead;
+
+                select.insertAdjacentHTML(
+                    'beforeend',
+                    '<option value="' + IMC.escapeHtml(String(headId)) + '">' +
+                    IMC.escapeHtml(label || 'Current requesting head') +
+                    '</option>'
+                );
+
+                select.value = String(headId);
+            }
+        }
+    };
 })();

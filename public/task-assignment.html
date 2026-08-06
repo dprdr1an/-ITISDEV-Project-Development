@@ -160,6 +160,7 @@
           </div>
         </header>
         <div class="page-content">
+            <form id="taskForm" novalidate="">
             <div class="page-header">
                 <div class="page-header-text">
                     <div class="page-eyebrow">
@@ -178,9 +179,8 @@
             <!-- Empty if no actions -->
         </div>
     </div>
-            <div class="layout">
+            <div class="page-layout">
                 <section>
-                    <form id="taskForm" novalidate="">
                         <div class="card">
                             <div class="card-header">
                                 <div>
@@ -283,18 +283,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-actions">
-                            <button class="btn-secondary" id="cancelEditBtn" type="button" style="display:none">
-                                Cancel Edit
-                            </button>
-                            <button class="btn-secondary" id="clearTaskBtn" type="reset">
-                                Clear
-                            </button>
-                            <button class="btn-primary" id="assignTaskBtn" type="submit">
-                                Assign Task &amp; Notify Members
-                            </button>
-                        </div>
-                    </form>
                 </section>
                 <aside>
                     <div class="card">
@@ -338,9 +326,29 @@
                         and history-ready task logs.
                     </div>
                 </aside>
+            </div><!-- /page-layout -->
+
+            <!-- Form Actions — sibling of .page-layout so the bar spans
+                 the full width beneath both columns (same as Project Requests) -->
+            <div class="form-actions">
+                <div class="form-actions-left">
+                    <button class="btn-secondary" id="cancelEditBtn" type="button" style="display:none">
+                        Cancel Edit
+                    </button>
+                </div>
+                <div class="form-actions-right">
+                    <button class="btn-secondary" id="clearTaskBtn" type="reset">
+                        Clear
+                    </button>
+                    <button class="btn-primary" id="assignTaskBtn" type="submit">
+                        Assign Task &amp; Notify Members
+                    </button>
+                </div>
             </div>
-        </div>
-    </div>
+
+            </form>
+        </div><!-- /page-content -->
+    </div><!-- /main -->
     <div class="toast" id="toast">
         Task assigned. Assigned members will be notified.
     </div>

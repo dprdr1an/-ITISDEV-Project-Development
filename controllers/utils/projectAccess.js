@@ -12,7 +12,8 @@ const CHAIRPERSON = 'Chairperson';
 /**
  * A user belongs to a project when any of these hold:
  *   - they submitted the request
- *   - they are named as requesting head or a point person
+ *   - they are the linked requesting head, or are named as
+ *     requesting head or a point person
  *   - they have a task assigned on the project
  *   - the project belongs to their committee
  *   - they are a Chairperson (department-wide oversight)
@@ -32,6 +33,16 @@ async function canAccessProject(project, user) {
             : project.submittedBy;
 
     if (submittedBy && String(submittedBy) === String(user.id)) {
+        return true;
+    }
+
+    // Explicit reference beats name matching: survives a rename.
+    const headUser =
+        project.requestingHeadUser && project.requestingHeadUser._id
+            ? project.requestingHeadUser._id
+            : project.requestingHeadUser;
+
+    if (headUser && String(headUser) === String(user.id)) {
         return true;
     }
 

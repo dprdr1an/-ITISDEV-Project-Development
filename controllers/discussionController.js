@@ -52,7 +52,7 @@ async function loadPermittedProject(projectId, user, res) {
 const getMyProjects = async (req, res) => {
     try {
         const projects = await ProjectRequest.find()
-            .select("projectName committee status submittedBy requestingHead pointPersons")
+            .select("projectName committee status submittedBy requestingHead requestingHeadUser pointPersons")
             .sort({ createdAt: -1 })
             .lean();
 

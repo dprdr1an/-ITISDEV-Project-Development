@@ -700,6 +700,20 @@ select.form-control {
 .add-row-btn:hover { border-color: var(--orange); color: var(--orange); }
 .add-row-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
 
+/* ── SHARED TWO-COLUMN FORM LAYOUT ──
+   Main form column plus a side panel. The action bar below is a sibling
+   of this grid, not a child, so it spans the full width of both columns.
+   Shared by Project Requests and Task Assignment. */
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+}
+
+@media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+}
+
 /* ── SHARED STICKY FORM ACTIONS BAR ── */
 .form-actions {
     display: flex;
