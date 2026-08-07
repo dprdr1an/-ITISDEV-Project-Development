@@ -43,15 +43,11 @@
 
 .task-item:last-child { border-bottom: 0; }
 
-/* Assignee avatars are rendered into an unstyled wrapper <div>, which is a
-   block container — so multiple .member-avatar elements (themselves
-   display:flex, hence block-level) stack with no spacing between them.
-   Laying the wrapper out as a flex row gives a proper avatar group. */
-.task-item > div:first-child {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    flex-shrink: 0;
+/* Assignee avatars stack vertically in normal block flow with no margins,
+   so consecutive ones touch. Space only the ones that follow another —
+   a single avatar is untouched, and the container's layout is unchanged. */
+.task-item .member-avatar + .member-avatar {
+    margin-top: 7px;
 }
 
 /* larger, gradient-filled avatar in task records */
