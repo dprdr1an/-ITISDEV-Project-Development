@@ -1,0 +1,1144 @@
+[
+  {
+    "projectRef": "IMC-2026-0001",
+    "projectName": "CATCH2T28 General Assembly — Term 1",
+    "committee": "Project Management — Activities",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Facebook, Instagram",
+    "priority": "High",
+    "requestingHead": "Ivy Lopez",
+    "pointPersons": [
+      "Zeny Macaraeg",
+      "Lorenzo Santiago",
+      "Owen Salazar"
+    ],
+    "startDate": "2026-02-21T09:00:00.000Z",
+    "endDate": "2026-03-22T09:00:00.000Z",
+    "daamDeadline": "2026-03-04T09:00:00.000Z",
+    "eventDate": "2026-03-19T09:00:00.000Z",
+    "description": "Batch-wide assembly opening Term 1. Introduces the incoming Executive Board, presents the term calendar, and gathers feedback on batch priorities through a live pulse survey.",
+    "keyMessages": "One batch, one direction. Know your officers, know your term.",
+    "publications": [
+      {
+        "title": "CATCH2T28 General Assembly — Teaser",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-03-05T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Owen Salazar",
+        "status": "Done"
+      },
+      {
+        "title": "CATCH2T28 General Assembly — Teaser",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-03-07T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Ivy Lopez",
+        "status": "Done"
+      },
+      {
+        "title": "CATCH2T28 General Assembly — Recap",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-03-08T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Credit the Media Productions team in the closing frame.",
+        "assignedTo": "Lorenzo Santiago",
+        "status": "Done"
+      }
+    ],
+    "creativesNotes": "Match the visual identity used in the last rollout for consistency.",
+    "publicityPlan": [
+      {
+        "date": "2026-03-09T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Ivy Lopez"
+      },
+      {
+        "date": "2026-03-04T09:00:00.000Z",
+        "activity": "Coordinate reposting with other committee accounts",
+        "personResponsible": "Zeny Macaraeg"
+      }
+    ],
+    "coordinationNotes": "Logistics confirmed venue and equipment. No further action needed.",
+    "status": "Approved",
+    "submittedByEmail": "ivy_lopez@dlsu.edu.ph",
+    "checklist": [
+      "publicationPlan",
+      "projectDetails",
+      "budgetCleared",
+      "publicityPlan",
+      "creativesBriefed",
+      "daamSubmitted"
+    ],
+    "createdAt": "2026-02-24T11:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-02-23T09:00:00.000Z"
+      },
+      {
+        "action": "Status changed to Approved",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "Approved"
+          }
+        ],
+        "note": "Approved for release.",
+        "timestamp": "2026-03-08T11:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0003",
+    "projectName": "Frosh Welcome Week 2026",
+    "committee": "Project Management — Activities",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, TikTok",
+    "priority": "High",
+    "requestingHead": "Kaila Hernandez",
+    "pointPersons": [
+      "Lorenzo Santiago"
+    ],
+    "startDate": "2026-03-21T09:00:00.000Z",
+    "endDate": "2026-04-22T09:00:00.000Z",
+    "daamDeadline": "2026-04-04T09:00:00.000Z",
+    "eventDate": "2026-04-18T09:00:00.000Z",
+    "description": "Week-long onboarding for Frosh entering CCS. Includes campus orientation walks, org fair booths, and small-group mixers designed so Frosh meet classmates outside their block.",
+    "keyMessages": "Your first week should not feel like your hardest.",
+    "publications": [
+      {
+        "title": "Frosh Welcome Week 2026 — Recap",
+        "materialType": "Caption Only",
+        "postingDate": "2026-03-29T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Ivy Lopez",
+        "status": "Done"
+      },
+      {
+        "title": "Frosh Welcome Week 2026 — Reminder",
+        "materialType": "Feed Pubmat",
+        "postingDate": "2026-04-04T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Lorenzo Santiago",
+        "status": "Done"
+      },
+      {
+        "title": "Frosh Welcome Week 2026 — Announcement",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-04-08T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Credit the Media Productions team in the closing frame.",
+        "assignedTo": "Zeny Macaraeg",
+        "status": "Done"
+      }
+    ],
+    "creativesNotes": "Keep the batch logo lockup bottom-right on every asset.",
+    "publicityPlan": [
+      {
+        "date": "2026-04-05T09:00:00.000Z",
+        "activity": "Booth setup at the CCS lobby",
+        "personResponsible": "Kaila Hernandez"
+      },
+      {
+        "date": "2026-03-31T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Zeny Macaraeg"
+      },
+      {
+        "date": "2026-04-07T09:00:00.000Z",
+        "activity": "Coordinate reposting with other committee accounts",
+        "personResponsible": "Zeny Macaraeg"
+      }
+    ],
+    "coordinationNotes": "Documentation will collect all assets after the event.",
+    "status": "Approved",
+    "submittedByEmail": "ivy_lopez@dlsu.edu.ph",
+    "checklist": [
+      "budgetCleared",
+      "daamSubmitted",
+      "publicationPlan",
+      "projectDetails",
+      "publicityPlan",
+      "creativesBriefed"
+    ],
+    "createdAt": "2026-03-24T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-03-25T13:00:00.000Z"
+      },
+      {
+        "action": "Status changed to Approved",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "Approved"
+          }
+        ],
+        "note": "Approved for release.",
+        "timestamp": "2026-04-09T16:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0005",
+    "projectName": "Mental Health Awareness Campaign",
+    "committee": "Student Welfare",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Instagram, Facebook",
+    "priority": "High",
+    "requestingHead": "Karl Duterte",
+    "pointPersons": [
+      "Dominic Fernandez"
+    ],
+    "startDate": "2026-04-12T09:00:00.000Z",
+    "endDate": "2026-05-14T09:00:00.000Z",
+    "daamDeadline": "2026-04-28T09:00:00.000Z",
+    "eventDate": "2026-05-10T09:00:00.000Z",
+    "description": "Awareness campaign addressing academic burnout during midterms. Features counselor-led talks, an anonymous submissions wall, and a rest-corner installation in the CCS lobby.",
+    "keyMessages": "Rest is part of the work.",
+    "publications": [
+      {
+        "title": "Mental Health Awareness Campaign — Teaser",
+        "materialType": "Carousel Post",
+        "postingDate": "2026-04-24T09:00:00.000Z",
+        "postingTime": "18:30",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Lance Javier",
+        "status": "Done"
+      },
+      {
+        "title": "Mental Health Awareness Campaign — Day-of Post",
+        "materialType": "Feed Pubmat",
+        "postingDate": "2026-04-26T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Dominic Fernandez",
+        "status": "Done"
+      },
+      {
+        "title": "Mental Health Awareness Campaign — Announcement",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-04-25T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Karl Duterte",
+        "status": "Done"
+      },
+      {
+        "title": "Mental Health Awareness Campaign — Announcement",
+        "materialType": "Recap Reel",
+        "postingDate": "2026-04-30T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Keep it short. Lead with the date and the venue.",
+        "assignedTo": "Lance Javier",
+        "status": "Done"
+      },
+      {
+        "title": "Mental Health Awareness Campaign — Reminder",
+        "materialType": "Caption Only",
+        "postingDate": "2026-05-01T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Karl Duterte",
+        "status": "Done"
+      }
+    ],
+    "creativesNotes": "Export feed assets at 1080x1350 and stories at 1080x1920.",
+    "publicityPlan": [
+      {
+        "date": "2026-04-26T09:00:00.000Z",
+        "activity": "Send reminder blast to the batch group chat",
+        "personResponsible": "Vince Ferrer"
+      },
+      {
+        "date": "2026-05-01T09:00:00.000Z",
+        "activity": "Cross-post to the batch Discord announcements channel",
+        "personResponsible": "Karl Duterte"
+      },
+      {
+        "date": "2026-05-03T09:00:00.000Z",
+        "activity": "Booth setup at the CCS lobby",
+        "personResponsible": "Vince Ferrer"
+      },
+      {
+        "date": "2026-04-26T09:00:00.000Z",
+        "activity": "Send reminder blast to the batch group chat",
+        "personResponsible": "Dominic Fernandez"
+      }
+    ],
+    "coordinationNotes": "Documentation will collect all assets after the event.",
+    "status": "Approved",
+    "submittedByEmail": "mary_juana@dlsu.edu.ph",
+    "checklist": [
+      "creativesBriefed",
+      "publicityPlan",
+      "daamSubmitted",
+      "projectDetails",
+      "budgetCleared",
+      "publicationPlan"
+    ],
+    "createdAt": "2026-04-14T13:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Mary Juana",
+        "userEmail": "mary_juana@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-04-16T16:00:00.000Z"
+      },
+      {
+        "action": "Status changed to Approved",
+        "madeBy": "Mary Juana",
+        "userEmail": "mary_juana@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "Approved"
+          }
+        ],
+        "note": "Approved for release.",
+        "timestamp": "2026-05-01T11:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0006",
+    "projectName": "Batch Merch Launch — Season 1",
+    "committee": "Integrated Marketing Communications (IMC) — Marketing",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, Shopee",
+    "priority": "Medium",
+    "requestingHead": "Erylle Galinato",
+    "pointPersons": [
+      "Ursula Duterte"
+    ],
+    "startDate": "2026-04-20T09:00:00.000Z",
+    "endDate": "2026-05-23T09:00:00.000Z",
+    "daamDeadline": "2026-05-08T09:00:00.000Z",
+    "eventDate": "2026-05-18T09:00:00.000Z",
+    "description": "Design, pre-order, and distribution of the first batch merchandise line. Includes sizing surveys, supplier canvassing, and a launch teaser series.",
+    "keyMessages": "Wear the batch. Carry the years.",
+    "publications": [
+      {
+        "title": "Batch Merch Launch — Reminder",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-05-02T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Erylle Galinato",
+        "status": "Done"
+      },
+      {
+        "title": "Batch Merch Launch — Reminder",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-04-30T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Erylle Galinato",
+        "status": "Done"
+      },
+      {
+        "title": "Batch Merch Launch — Reminder",
+        "materialType": "Feed Pubmat",
+        "postingDate": "2026-04-30T09:00:00.000Z",
+        "postingTime": "18:30",
+        "captionNotes": "Credit the Media Productions team in the closing frame.",
+        "assignedTo": "Ursula Duterte",
+        "status": "Done"
+      },
+      {
+        "title": "Batch Merch Launch — Reminder",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-05-06T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Erylle Galinato",
+        "status": "Done"
+      },
+      {
+        "title": "Batch Merch Launch — Announcement",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-05-09T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Emman Hernandez",
+        "status": "Done"
+      }
+    ],
+    "creativesNotes": "Keep the batch logo lockup bottom-right on every asset.",
+    "publicityPlan": [
+      {
+        "date": "2026-05-03T09:00:00.000Z",
+        "activity": "Story countdown starting three days before",
+        "personResponsible": "Isabel Marquez"
+      },
+      {
+        "date": "2026-05-02T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Emman Hernandez"
+      },
+      {
+        "date": "2026-05-09T09:00:00.000Z",
+        "activity": "Coordinate reposting with other committee accounts",
+        "personResponsible": "Ursula Duterte"
+      }
+    ],
+    "coordinationNotes": "External Relations handling partner communication directly.",
+    "status": "Approved",
+    "submittedByEmail": "erylle_galinato@dlsu.edu.ph",
+    "checklist": [
+      "projectDetails",
+      "publicityPlan",
+      "publicationPlan",
+      "daamSubmitted",
+      "budgetCleared",
+      "creativesBriefed"
+    ],
+    "createdAt": "2026-04-24T12:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Erylle Galinato",
+        "userEmail": "erylle_galinato@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-04-23T12:00:00.000Z"
+      },
+      {
+        "action": "Status changed to Approved",
+        "madeBy": "Erylle Galinato",
+        "userEmail": "erylle_galinato@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "Approved"
+          }
+        ],
+        "note": "Approved for release.",
+        "timestamp": "2026-05-10T16:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0007",
+    "projectName": "Animo Pride Week Coverage",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, YouTube",
+    "priority": "Medium",
+    "requestingHead": "Cris Dela Cruz",
+    "pointPersons": [
+      "Emman Yabut",
+      "Wilson Mangubat"
+    ],
+    "startDate": "2026-05-04T09:00:00.000Z",
+    "endDate": "2026-06-05T09:00:00.000Z",
+    "daamDeadline": "2026-05-20T09:00:00.000Z",
+    "eventDate": "2026-06-01T09:00:00.000Z",
+    "description": "Full media coverage of Animo Pride Week, producing daily recap reels, a highlight film, and a photo archive turned over to the Documentation committee.",
+    "keyMessages": "If it happened, the batch should be able to see it.",
+    "publications": [
+      {
+        "title": "Animo Pride Week Coverage — Recap",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-05-17T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Credit the Media Productions team in the closing frame.",
+        "assignedTo": "Emman Yabut",
+        "status": "Done"
+      },
+      {
+        "title": "Animo Pride Week Coverage — Reminder",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-05-22T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Keep it short. Lead with the date and the venue.",
+        "assignedTo": "Mikaela Valdez",
+        "status": "Done"
+      },
+      {
+        "title": "Animo Pride Week Coverage — Reminder",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-05-22T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Stella Yabut",
+        "status": "Done"
+      }
+    ],
+    "creativesNotes": "Match the visual identity used in the last rollout for consistency.",
+    "publicityPlan": [
+      {
+        "date": "2026-05-25T09:00:00.000Z",
+        "activity": "Cross-post to the batch Discord announcements channel",
+        "personResponsible": "Stella Yabut"
+      },
+      {
+        "date": "2026-05-18T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Cris Dela Cruz"
+      }
+    ],
+    "coordinationNotes": "External Relations handling partner communication directly.",
+    "status": "Approved",
+    "submittedByEmail": "cris_delacruz@dlsu.edu.ph",
+    "checklist": [
+      "publicityPlan",
+      "projectDetails",
+      "budgetCleared",
+      "creativesBriefed",
+      "daamSubmitted",
+      "publicationPlan"
+    ],
+    "createdAt": "2026-05-05T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Cris Dela Cruz",
+        "userEmail": "cris_delacruz@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-05-05T09:00:00.000Z"
+      },
+      {
+        "action": "Status changed to Approved",
+        "madeBy": "Cris Dela Cruz",
+        "userEmail": "cris_delacruz@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "Approved"
+          }
+        ],
+        "note": "Approved for release.",
+        "timestamp": "2026-05-25T13:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0011",
+    "projectName": "DLSU Technology Summit 2026 Pubmat Series",
+    "committee": "Integrated Marketing Communications (IMC) — Creatives",
+    "projectType": "Seminar",
+    "targetPlatform": "Instagram, Facebook, LinkedIn",
+    "priority": "High",
+    "requestingHead": "Kirsten Palomo",
+    "pointPersons": [
+      "Therese Montemayor",
+      "Xandra Galang",
+      "Andrei Ubaldo"
+    ],
+    "startDate": "2026-06-29T09:00:00.000Z",
+    "endDate": "2026-08-31T09:00:00.000Z",
+    "daamDeadline": "2026-08-16T09:00:00.000Z",
+    "eventDate": "2026-08-28T09:00:00.000Z",
+    "description": "Complete publication material set for the Technology Summit, covering the announcement teaser, speaker cards, program schedule, and post-event recap layouts.",
+    "keyMessages": "Build what the industry is building. Learn from who is building it.",
+    "publications": [
+      {
+        "title": "DLSU Technology Summit 2026 Pubmat Series — Teaser",
+        "materialType": "Recap Reel",
+        "postingDate": "2026-08-04T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Keep it short. Lead with the date and the venue.",
+        "assignedTo": "Xandra Galang",
+        "status": "Done"
+      },
+      {
+        "title": "DLSU Technology Summit 2026 Pubmat Series — Teaser",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-08-08T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Danielle Concepcion",
+        "status": "Done"
+      },
+      {
+        "title": "DLSU Technology Summit 2026 Pubmat Series — Teaser",
+        "materialType": "Speaker Card",
+        "postingDate": "2026-08-16T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Andrei Ubaldo",
+        "status": "Done"
+      },
+      {
+        "title": "DLSU Technology Summit 2026 Pubmat Series — Announcement",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-08-17T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Keep it short. Lead with the date and the venue.",
+        "assignedTo": "Andrei Ubaldo",
+        "status": "Done"
+      }
+    ],
+    "creativesNotes": "Match the visual identity used in the last rollout for consistency.",
+    "publicityPlan": [
+      {
+        "date": "2026-08-10T09:00:00.000Z",
+        "activity": "Booth setup at the CCS lobby",
+        "personResponsible": "Aaliyah Cajucom"
+      },
+      {
+        "date": "2026-08-13T09:00:00.000Z",
+        "activity": "Coordinate reposting with other committee accounts",
+        "personResponsible": "Danielle Concepcion"
+      },
+      {
+        "date": "2026-08-14T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Xandra Galang"
+      }
+    ],
+    "coordinationNotes": "Documentation will collect all assets after the event.",
+    "status": "Approved",
+    "submittedByEmail": "kirsten_palomo@dlsu.edu.ph",
+    "checklist": [
+      "budgetCleared",
+      "creativesBriefed",
+      "publicityPlan",
+      "publicationPlan",
+      "projectDetails",
+      "daamSubmitted"
+    ],
+    "createdAt": "2026-07-02T09:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Kirsten Palomo",
+        "userEmail": "kirsten_palomo@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-07-01T16:00:00.000Z"
+      },
+      {
+        "action": "Status changed to Approved",
+        "madeBy": "Kirsten Palomo",
+        "userEmail": "kirsten_palomo@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "Approved"
+          }
+        ],
+        "note": "Approved for release.",
+        "timestamp": "2026-08-18T17:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0014",
+    "projectName": "Exam Week Care Packages",
+    "committee": "Student Welfare",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Instagram",
+    "priority": "Medium",
+    "requestingHead": "Anton Soriano",
+    "pointPersons": [
+      "Karl Duterte"
+    ],
+    "startDate": "2026-07-13T09:00:00.000Z",
+    "endDate": "2026-09-02T09:00:00.000Z",
+    "daamDeadline": "2026-08-15T09:00:00.000Z",
+    "eventDate": "2026-08-26T09:00:00.000Z",
+    "description": "Distribution of care packages during finals week, assembled from sponsor donations and containing study snacks, stationery, and handwritten notes from officers.",
+    "keyMessages": "Small things, right when they are needed.",
+    "publications": [
+      {
+        "title": "Exam Week Care Packages — Teaser",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-08-14T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Anton Soriano",
+        "status": "Pending"
+      },
+      {
+        "title": "Exam Week Care Packages — Day-of Post",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-08-13T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Dominic Fernandez",
+        "status": "In Progress"
+      },
+      {
+        "title": "Exam Week Care Packages — Announcement",
+        "materialType": "Recap Reel",
+        "postingDate": "2026-08-14T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Credit the Media Productions team in the closing frame.",
+        "assignedTo": "Anton Soriano",
+        "status": "Pending"
+      },
+      {
+        "title": "Exam Week Care Packages — Recap",
+        "materialType": "Carousel Post",
+        "postingDate": "2026-08-20T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Karl Duterte",
+        "status": "Pending"
+      }
+    ],
+    "creativesNotes": "Use the Term 1 palette. Do not introduce new typefaces.",
+    "publicityPlan": [
+      {
+        "date": "2026-08-17T09:00:00.000Z",
+        "activity": "Cross-post to the batch Discord announcements channel",
+        "personResponsible": "Vince Ferrer"
+      },
+      {
+        "date": "2026-08-13T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Lance Javier"
+      },
+      {
+        "date": "2026-08-19T09:00:00.000Z",
+        "activity": "Coordinate reposting with other committee accounts",
+        "personResponsible": "Anton Soriano"
+      }
+    ],
+    "coordinationNotes": "Logistics confirmed venue and equipment. No further action needed.",
+    "status": "For Review",
+    "submittedByEmail": "mary_juana@dlsu.edu.ph",
+    "checklist": [
+      "projectDetails",
+      "publicationPlan",
+      "daamSubmitted"
+    ],
+    "createdAt": "2026-07-15T14:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Mary Juana",
+        "userEmail": "mary_juana@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-07-16T11:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0015",
+    "projectName": "Industry Partners Night",
+    "committee": "External Relations",
+    "projectType": "Leadership Development",
+    "targetPlatform": "LinkedIn, Facebook",
+    "priority": "High",
+    "requestingHead": "Lennard Lee",
+    "pointPersons": [
+      "Stella Ilagan",
+      "Erika Samonte"
+    ],
+    "startDate": "2026-07-17T09:00:00.000Z",
+    "endDate": "2026-09-19T09:00:00.000Z",
+    "daamDeadline": "2026-08-29T09:00:00.000Z",
+    "eventDate": "2026-09-13T09:00:00.000Z",
+    "description": "Networking evening connecting graduating students with partner companies. Covers partner solicitation, deck preparation, venue logistics, and post-event follow-through.",
+    "keyMessages": "Meet the people who will be reviewing your resume.",
+    "publications": [
+      {
+        "title": "Industry Partners Night — Teaser",
+        "materialType": "Recap Reel",
+        "postingDate": "2026-08-27T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Lennard Lee",
+        "status": "Pending"
+      },
+      {
+        "title": "Industry Partners Night — Announcement",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-08-30T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Credit the Media Productions team in the closing frame.",
+        "assignedTo": "Katrina Alonzo",
+        "status": "Pending"
+      },
+      {
+        "title": "Industry Partners Night — Day-of Post",
+        "materialType": "Recap Reel",
+        "postingDate": "2026-09-01T09:00:00.000Z",
+        "postingTime": "18:30",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Katrina Alonzo",
+        "status": "Pending"
+      }
+    ],
+    "creativesNotes": "Match the visual identity used in the last rollout for consistency.",
+    "publicityPlan": [
+      {
+        "date": "2026-09-03T09:00:00.000Z",
+        "activity": "Send reminder blast to the batch group chat",
+        "personResponsible": "Rowena Velasco"
+      },
+      {
+        "date": "2026-08-30T09:00:00.000Z",
+        "activity": "Coordinate reposting with other committee accounts",
+        "personResponsible": "Rowena Velasco"
+      },
+      {
+        "date": "2026-08-30T09:00:00.000Z",
+        "activity": "Booth setup at the CCS lobby",
+        "personResponsible": "Katrina Alonzo"
+      },
+      {
+        "date": "2026-09-03T09:00:00.000Z",
+        "activity": "Cross-post to the batch Discord announcements channel",
+        "personResponsible": "Lennard Lee"
+      }
+    ],
+    "coordinationNotes": "External Relations handling partner communication directly.",
+    "status": "Submitted",
+    "submittedByEmail": "lennard_lee@dlsu.edu.ph",
+    "checklist": [
+      "publicityPlan",
+      "projectDetails",
+      "budgetCleared"
+    ],
+    "createdAt": "2026-07-21T14:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Lennard Lee",
+        "userEmail": "lennard_lee@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-07-18T13:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0017",
+    "projectName": "Green Week: Sustainability Drive",
+    "committee": "External Relations",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Instagram, Facebook",
+    "priority": "Medium",
+    "requestingHead": "Tomas Yabut",
+    "pointPersons": [
+      "Stella Ilagan"
+    ],
+    "startDate": "2026-07-23T09:00:00.000Z",
+    "endDate": "2026-09-16T09:00:00.000Z",
+    "daamDeadline": "2026-08-27T09:00:00.000Z",
+    "eventDate": "2026-09-09T09:00:00.000Z",
+    "description": "Week-long sustainability initiative with a campus clean-up, a thrift-swap booth, and a partnership with a local recycling cooperative.",
+    "keyMessages": "Small habits, campus scale.",
+    "publications": [
+      {
+        "title": "Green Week: Sustainability Drive — Recap",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-08-19T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Stella Ilagan",
+        "status": "In Progress"
+      },
+      {
+        "title": "Green Week: Sustainability Drive — Announcement",
+        "materialType": "Recap Reel",
+        "postingDate": "2026-08-22T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Erika Samonte",
+        "status": "In Progress"
+      },
+      {
+        "title": "Green Week: Sustainability Drive — Day-of Post",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-08-22T09:00:00.000Z",
+        "postingTime": "18:30",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Katrina Alonzo",
+        "status": "Pending"
+      },
+      {
+        "title": "Green Week: Sustainability Drive — Announcement",
+        "materialType": "Feed Pubmat",
+        "postingDate": "2026-08-30T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Rowena Velasco",
+        "status": "In Progress"
+      },
+      {
+        "title": "Green Week: Sustainability Drive — Announcement",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-08-31T09:00:00.000Z",
+        "postingTime": "12:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Tomas Yabut",
+        "status": "Pending"
+      }
+    ],
+    "creativesNotes": "Match the visual identity used in the last rollout for consistency.",
+    "publicityPlan": [
+      {
+        "date": "2026-08-26T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Rowena Velasco"
+      },
+      {
+        "date": "2026-08-27T09:00:00.000Z",
+        "activity": "Story countdown starting three days before",
+        "personResponsible": "Rowena Velasco"
+      }
+    ],
+    "coordinationNotes": "External Relations handling partner communication directly.",
+    "status": "For Review",
+    "submittedByEmail": "lennard_lee@dlsu.edu.ph",
+    "checklist": [
+      "publicationPlan",
+      "projectDetails"
+    ],
+    "createdAt": "2026-07-26T11:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Lennard Lee",
+        "userEmail": "lennard_lee@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-07-25T14:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0020",
+    "projectName": "LeadWare: Upgrading Your Officer OS",
+    "committee": "Human Resources — Activities",
+    "projectType": "Leadership Development",
+    "targetPlatform": "Zoom, Facebook",
+    "priority": "High",
+    "requestingHead": "Patricia Sarmiento",
+    "pointPersons": [
+      "Aldrin Gonzales",
+      "Clarisse Pascual",
+      "Julia Ramos"
+    ],
+    "startDate": "2026-07-29T09:00:00.000Z",
+    "endDate": "2026-09-29T09:00:00.000Z",
+    "daamDeadline": "2026-09-11T09:00:00.000Z",
+    "eventDate": "2026-09-25T09:00:00.000Z",
+    "description": "Leadership seminar for Executive Officers covering delegation, running effective meetings, and managing committee workload without burning out.",
+    "keyMessages": "Lead the way you wish you had been led.",
+    "publications": [
+      {
+        "title": "LeadWare: Upgrading Your Officer OS — Teaser",
+        "materialType": "Carousel Post",
+        "postingDate": "2026-09-05T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Clarisse Pascual",
+        "status": "Done"
+      },
+      {
+        "title": "LeadWare: Upgrading Your Officer OS — Recap",
+        "materialType": "Story Pubmat",
+        "postingDate": "2026-09-09T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Julia Ramos",
+        "status": "Done"
+      },
+      {
+        "title": "LeadWare: Upgrading Your Officer OS — Day-of Post",
+        "materialType": "Speaker Card",
+        "postingDate": "2026-09-14T09:00:00.000Z",
+        "postingTime": "17:00",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Julia Ramos",
+        "status": "Done"
+      }
+    ],
+    "creativesNotes": "Export feed assets at 1080x1350 and stories at 1080x1920.",
+    "publicityPlan": [
+      {
+        "date": "2026-09-08T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Aldrin Gonzales"
+      },
+      {
+        "date": "2026-09-16T09:00:00.000Z",
+        "activity": "Coordinate reposting with other committee accounts",
+        "personResponsible": "Julia Ramos"
+      },
+      {
+        "date": "2026-09-08T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Grace Domingo"
+      },
+      {
+        "date": "2026-09-15T09:00:00.000Z",
+        "activity": "Cross-post to the batch Discord announcements channel",
+        "personResponsible": "Aldrin Gonzales"
+      }
+    ],
+    "coordinationNotes": "Logistics confirmed venue and equipment. No further action needed.",
+    "status": "Approved",
+    "submittedByEmail": "clarisse_pascual@dlsu.edu.ph",
+    "checklist": [
+      "creativesBriefed",
+      "daamSubmitted",
+      "projectDetails",
+      "publicityPlan",
+      "publicationPlan",
+      "budgetCleared"
+    ],
+    "createdAt": "2026-07-30T16:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Clarisse Pascual",
+        "userEmail": "clarisse_pascual@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-08-01T12:00:00.000Z"
+      },
+      {
+        "action": "Status changed to Approved",
+        "madeBy": "Clarisse Pascual",
+        "userEmail": "clarisse_pascual@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "Approved"
+          }
+        ],
+        "note": "Approved for release.",
+        "timestamp": "2026-09-15T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "projectRef": "IMC-2026-0023",
+    "projectName": "Year-End Recognition Night",
+    "committee": "Project Management — Activities",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, Facebook",
+    "priority": "High",
+    "requestingHead": "Owen Salazar",
+    "pointPersons": [
+      "Lorenzo Santiago",
+      "Ivy Lopez",
+      "Kaila Hernandez"
+    ],
+    "startDate": "2026-08-06T09:00:00.000Z",
+    "endDate": "2026-10-31T09:00:00.000Z",
+    "daamDeadline": "2026-10-18T09:00:00.000Z",
+    "eventDate": "2026-10-29T09:00:00.000Z",
+    "description": "Closing ceremony recognizing officer contributions across the academic year, including awards, a retrospective video, and turnover of committee documentation.",
+    "keyMessages": "Close the year properly. People noticed.",
+    "publications": [
+      {
+        "title": "Year-End Recognition Night — Day-of Post",
+        "materialType": "Teaser Video",
+        "postingDate": "2026-10-11T09:00:00.000Z",
+        "postingTime": "09:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Ivy Lopez",
+        "status": "Pending"
+      },
+      {
+        "title": "Year-End Recognition Night — Reminder",
+        "materialType": "Feed Pubmat",
+        "postingDate": "2026-10-09T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Include the registration link in the story sticker.",
+        "assignedTo": "Lorenzo Santiago",
+        "status": "Pending"
+      },
+      {
+        "title": "Year-End Recognition Night — Teaser",
+        "materialType": "Caption Only",
+        "postingDate": "2026-10-09T09:00:00.000Z",
+        "postingTime": "20:00",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Owen Salazar",
+        "status": "Pending"
+      },
+      {
+        "title": "Year-End Recognition Night — Reminder",
+        "materialType": "Carousel Post",
+        "postingDate": "2026-10-17T09:00:00.000Z",
+        "postingTime": "18:30",
+        "captionNotes": "Batch voice, not formal. No corporate phrasing.",
+        "assignedTo": "Lorenzo Santiago",
+        "status": "Pending"
+      },
+      {
+        "title": "Year-End Recognition Night — Teaser",
+        "materialType": "Caption Only",
+        "postingDate": "2026-10-19T09:00:00.000Z",
+        "postingTime": "18:30",
+        "captionNotes": "Tag the partner accounts in the first comment, not the caption.",
+        "assignedTo": "Kaila Hernandez",
+        "status": "Pending"
+      }
+    ],
+    "creativesNotes": "Export feed assets at 1080x1350 and stories at 1080x1920.",
+    "publicityPlan": [
+      {
+        "date": "2026-10-18T09:00:00.000Z",
+        "activity": "Send reminder blast to the batch group chat",
+        "personResponsible": "Ivy Lopez"
+      },
+      {
+        "date": "2026-10-14T09:00:00.000Z",
+        "activity": "Partner accounts to share the announcement post",
+        "personResponsible": "Zeny Macaraeg"
+      },
+      {
+        "date": "2026-10-12T09:00:00.000Z",
+        "activity": "Send reminder blast to the batch group chat",
+        "personResponsible": "Lorenzo Santiago"
+      }
+    ],
+    "coordinationNotes": "Documentation will collect all assets after the event.",
+    "status": "Draft",
+    "submittedByEmail": "ivy_lopez@dlsu.edu.ph",
+    "checklist": [
+      "daamSubmitted",
+      "projectDetails",
+      "publicationPlan"
+    ],
+    "createdAt": "2026-08-09T13:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Rollout form created",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [],
+        "note": "Rollout form drafted for this project.",
+        "timestamp": "2026-08-10T15:00:00.000Z"
+      }
+    ]
+  }
+]

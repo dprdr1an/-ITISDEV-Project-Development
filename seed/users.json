@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Kirsten Palomo",
+    "email": "kirsten_palomo@dlsu.edu.ph",
+    "committee": "Creatives",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Erylle Galinato",
+    "email": "erylle_galinato@dlsu.edu.ph",
+    "committee": "Marketing",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Caesar Gomez",
+    "email": "caesar_gomez@dlsu.edu.ph",
+    "committee": "Development",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Shawn Tan",
+    "email": "shawn_tan@dlsu.edu.ph",
+    "committee": "Research",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ella De Guzman",
+    "email": "ella_deguzman@dlsu.edu.ph",
+    "committee": "Documentation",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Cris Dela Cruz",
+    "email": "cris_delacruz@dlsu.edu.ph",
+    "committee": "Media Productions",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Rbee Maagma",
+    "email": "rbee_maagma@dlsu.edu.ph",
+    "committee": "Student Services",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Lennard Lee",
+    "email": "lennard_lee@dlsu.edu.ph",
+    "committee": "External Relations",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Angel Tan",
+    "email": "angel_tan@dlsu.edu.ph",
+    "committee": "Logistics",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Andy Lim",
+    "email": "andy_lim@dlsu.edu.ph",
+    "committee": "Administrative",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Mary Juana",
+    "email": "mary_juana@dlsu.edu.ph",
+    "committee": "Student Welfare",
+    "position": "Chairperson",
+    "password": "catchit2026"
+  }
+]

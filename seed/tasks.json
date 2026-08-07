@@ -1,0 +1,2440 @@
+[
+  {
+    "taskKey": "T-0001",
+    "projectRef": "IMC-2026-0001",
+    "title": "Write caption pack for CATCH2T28 General Assembly",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "zeny_macaraeg@dlsu.edu.ph",
+      "ivy_lopez@dlsu.edu.ph",
+      "kaila_hernandez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-02-25T13:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-02-21T17:58:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-24T09:30:00.000Z"
+  },
+  {
+    "taskKey": "T-0002",
+    "projectRef": "IMC-2026-0001",
+    "title": "Secure partner confirmations for CATCH2T28 General Assembly",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "ivy_lopez@dlsu.edu.ph",
+      "zeny_macaraeg@dlsu.edu.ph",
+      "lorenzo_santiago@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-04T15:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-01T15:15:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-24T15:57:00.000Z"
+  },
+  {
+    "taskKey": "T-0003",
+    "projectRef": "IMC-2026-0001",
+    "title": "Prepare program flow and script for CATCH2T28 General Assembly",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "lorenzo_santiago@dlsu.edu.ph",
+      "ivy_lopez@dlsu.edu.ph",
+      "zeny_macaraeg@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-11T18:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-03-11T12:20:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-21T13:35:00.000Z"
+  },
+  {
+    "taskKey": "T-0004",
+    "projectRef": "IMC-2026-0001",
+    "title": "Book venue and confirm equipment for CATCH2T28 General Assembly",
+    "description": "Coordinate with Logistics on venue availability, seating, and audio-visual requirements. Confirm the booking in writing.",
+    "assignedMemberEmails": [
+      "ivy_lopez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-16T20:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-18T12:36:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-22T11:28:00.000Z"
+  },
+  {
+    "taskKey": "T-0005",
+    "projectRef": "IMC-2026-0001",
+    "title": "Draft CATCH2T28 General Assembly announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "ivy_lopez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-23T16:30:00.000Z",
+    "priority": "Medium",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-21T12:54:00.000Z"
+  },
+  {
+    "taskKey": "T-0006",
+    "projectRef": "IMC-2026-0001",
+    "title": "Consolidate registration list for CATCH2T28 General Assembly",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "owen_salazar@dlsu.edu.ph",
+      "kaila_hernandez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-26T15:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-03-27T09:29:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-23T12:47:00.000Z"
+  },
+  {
+    "taskKey": "T-0007",
+    "projectRef": "IMC-2026-0001",
+    "title": "Schedule posting calendar for CATCH2T28 General Assembly",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "owen_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-04T19:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-04-05T13:37:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-23T11:23:00.000Z"
+  },
+  {
+    "taskKey": "T-0008",
+    "projectRef": "IMC-2026-0001",
+    "title": "Draft post-event documentation for CATCH2T28 General Assembly",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "zeny_macaraeg@dlsu.edu.ph",
+      "ivy_lopez@dlsu.edu.ph",
+      "owen_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-09T19:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-04-07T14:06:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-23T13:04:00.000Z"
+  },
+  {
+    "taskKey": "T-0009",
+    "projectRef": "IMC-2026-0002",
+    "title": "Coordinate with Documentation for LRT (Light Reboot Transit)",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "rbee_maagma@dlsu.edu.ph",
+      "rico_zamora@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-07T20:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-05T09:25:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-03-01T10:02:00.000Z"
+  },
+  {
+    "taskKey": "T-0010",
+    "projectRef": "IMC-2026-0002",
+    "title": "Schedule posting calendar for LRT (Light Reboot Transit)",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "rico_lopez@dlsu.edu.ph",
+      "marco_flores@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-11T13:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-12T09:15:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-03-02T10:10:00.000Z"
+  },
+  {
+    "taskKey": "T-0011",
+    "projectRef": "IMC-2026-0002",
+    "title": "Draft post-event documentation for LRT (Light Reboot Transit)",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "rico_lopez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-18T14:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-20T11:42:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-03-03T16:44:00.000Z"
+  },
+  {
+    "taskKey": "T-0012",
+    "projectRef": "IMC-2026-0002",
+    "title": "Run feedback survey for LRT (Light Reboot Transit)",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "ysabel_ramos@dlsu.edu.ph",
+      "rbee_maagma@dlsu.edu.ph",
+      "clarisse_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-25T20:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-21T15:59:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-03-03T13:47:00.000Z"
+  },
+  {
+    "taskKey": "T-0013",
+    "projectRef": "IMC-2026-0002",
+    "title": "Shoot and edit recap reel for LRT (Light Reboot Transit)",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "clarisse_salazar@dlsu.edu.ph",
+      "ysabel_ramos@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-30T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-03-26T16:52:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-03-01T13:46:00.000Z"
+  },
+  {
+    "taskKey": "T-0014",
+    "projectRef": "IMC-2026-0002",
+    "title": "Secure partner confirmations for LRT (Light Reboot Transit)",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "clarisse_salazar@dlsu.edu.ph",
+      "marco_flores@dlsu.edu.ph",
+      "ysabel_ramos@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-03T13:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-04-03T12:05:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-03-03T16:45:00.000Z"
+  },
+  {
+    "taskKey": "T-0015",
+    "projectRef": "IMC-2026-0003",
+    "title": "Draft post-event documentation for Frosh Welcome Week 2026",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "zeny_macaraeg@dlsu.edu.ph"
+    ],
+    "deadline": "2026-03-27T19:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-26T15:10:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-03-24T13:58:00.000Z"
+  },
+  {
+    "taskKey": "T-0016",
+    "projectRef": "IMC-2026-0003",
+    "title": "Draft Frosh Welcome Week 2026 announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "owen_salazar@dlsu.edu.ph",
+      "kaila_hernandez@dlsu.edu.ph",
+      "ivy_lopez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-01T20:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-03-28T17:55:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-03-22T13:51:00.000Z"
+  },
+  {
+    "taskKey": "T-0017",
+    "projectRef": "IMC-2026-0003",
+    "title": "Shoot and edit recap reel for Frosh Welcome Week 2026",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "lorenzo_santiago@dlsu.edu.ph",
+      "ivy_lopez@dlsu.edu.ph",
+      "owen_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-08T12:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-04-10T10:25:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-03-24T11:47:00.000Z"
+  },
+  {
+    "taskKey": "T-0018",
+    "projectRef": "IMC-2026-0003",
+    "title": "Review and approve materials for Frosh Welcome Week 2026",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "owen_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-13T16:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-04-10T09:04:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-03-24T16:02:00.000Z"
+  },
+  {
+    "taskKey": "T-0019",
+    "projectRef": "IMC-2026-0003",
+    "title": "Schedule posting calendar for Frosh Welcome Week 2026",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "ivy_lopez@dlsu.edu.ph",
+      "lorenzo_santiago@dlsu.edu.ph",
+      "zeny_macaraeg@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-18T19:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-04-14T10:25:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-03-23T12:43:00.000Z"
+  },
+  {
+    "taskKey": "T-0020",
+    "projectRef": "IMC-2026-0003",
+    "title": "Design speaker cards for Frosh Welcome Week 2026",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "zeny_macaraeg@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-26T17:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-04-23T11:16:00.000Z",
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-03-23T13:53:00.000Z"
+  },
+  {
+    "taskKey": "T-0021",
+    "projectRef": "IMC-2026-0004",
+    "title": "Coordinate with Documentation for CCS Recruitment Week",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "lance_espino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-02T20:30:00.000Z",
+    "priority": "Low",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "rico_samonte@dlsu.edu.ph",
+    "createdAt": "2026-04-01T16:13:00.000Z"
+  },
+  {
+    "taskKey": "T-0022",
+    "projectRef": "IMC-2026-0004",
+    "title": "Secure partner confirmations for CCS Recruitment Week",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "dominic_gabriel@dlsu.edu.ph",
+      "lance_espino@dlsu.edu.ph",
+      "andrei_sarmiento@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-10T12:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-04-10T14:26:00.000Z",
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-03-30T10:09:00.000Z"
+  },
+  {
+    "taskKey": "T-0023",
+    "projectRef": "IMC-2026-0004",
+    "title": "Write caption pack for CCS Recruitment Week",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "lance_espino@dlsu.edu.ph",
+      "dominic_gabriel@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-16T19:30:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-04-14T15:44:00.000Z",
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-03-30T16:27:00.000Z"
+  },
+  {
+    "taskKey": "T-0024",
+    "projectRef": "IMC-2026-0004",
+    "title": "Prepare budget breakdown for CCS Recruitment Week",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "dominic_gabriel@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-22T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-04-20T18:17:00.000Z",
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-03-30T12:57:00.000Z"
+  },
+  {
+    "taskKey": "T-0025",
+    "projectRef": "IMC-2026-0004",
+    "title": "Turn over photo archive for CCS Recruitment Week",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "dominic_gabriel@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-27T14:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-04-24T15:15:00.000Z",
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-04-01T15:27:00.000Z"
+  },
+  {
+    "taskKey": "T-0026",
+    "projectRef": "IMC-2026-0005",
+    "title": "Shoot and edit recap reel for Mental Health Awareness Campaign",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "karl_duterte@dlsu.edu.ph",
+      "anton_soriano@dlsu.edu.ph",
+      "lance_javier@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-17T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-04-17T16:50:00.000Z",
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-04-14T10:29:00.000Z"
+  },
+  {
+    "taskKey": "T-0027",
+    "projectRef": "IMC-2026-0005",
+    "title": "Secure partner confirmations for Mental Health Awareness Campaign",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "lance_javier@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-21T16:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-04-20T17:59:00.000Z",
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-04-14T10:17:00.000Z"
+  },
+  {
+    "taskKey": "T-0028",
+    "projectRef": "IMC-2026-0005",
+    "title": "Draft post-event documentation for Mental Health Awareness Campaign",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "lance_javier@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-27T13:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-04-29T15:49:00.000Z",
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-04-15T16:30:00.000Z"
+  },
+  {
+    "taskKey": "T-0029",
+    "projectRef": "IMC-2026-0005",
+    "title": "Run feedback survey for Mental Health Awareness Campaign",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "anton_soriano@dlsu.edu.ph",
+      "lance_javier@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-04T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-03T10:35:00.000Z",
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-04-12T09:43:00.000Z"
+  },
+  {
+    "taskKey": "T-0030",
+    "projectRef": "IMC-2026-0005",
+    "title": "Prepare program flow and script for Mental Health Awareness Campaign",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "mary_juana@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-12T17:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-05-14T09:02:00.000Z",
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-04-12T12:37:00.000Z"
+  },
+  {
+    "taskKey": "T-0031",
+    "projectRef": "IMC-2026-0006",
+    "title": "Design speaker cards for Batch Merch Launch",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "mikaela_padilla@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-24T14:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-04-20T09:28:00.000Z",
+    "createdByEmail": "erylle_galinato@dlsu.edu.ph",
+    "createdAt": "2026-04-22T09:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0032",
+    "projectRef": "IMC-2026-0006",
+    "title": "Schedule posting calendar for Batch Merch Launch",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "erylle_galinato@dlsu.edu.ph",
+      "emman_hernandez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-04-29T14:00:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-04-30T14:25:00.000Z",
+    "createdByEmail": "erylle_galinato@dlsu.edu.ph",
+    "createdAt": "2026-04-21T14:59:00.000Z"
+  },
+  {
+    "taskKey": "T-0033",
+    "projectRef": "IMC-2026-0006",
+    "title": "Turn over photo archive for Batch Merch Launch",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "mikaela_padilla@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-07T20:30:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-05-09T12:47:00.000Z",
+    "createdByEmail": "erylle_galinato@dlsu.edu.ph",
+    "createdAt": "2026-04-23T09:10:00.000Z"
+  },
+  {
+    "taskKey": "T-0034",
+    "projectRef": "IMC-2026-0006",
+    "title": "Prepare budget breakdown for Batch Merch Launch",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "emman_hernandez@dlsu.edu.ph",
+      "ursula_duterte@dlsu.edu.ph",
+      "mikaela_padilla@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-13T14:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-14T10:25:00.000Z",
+    "createdByEmail": "erylle_galinato@dlsu.edu.ph",
+    "createdAt": "2026-04-20T12:35:00.000Z"
+  },
+  {
+    "taskKey": "T-0035",
+    "projectRef": "IMC-2026-0006",
+    "title": "Run feedback survey for Batch Merch Launch",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "isabel_marquez@dlsu.edu.ph",
+      "mikaela_padilla@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-20T15:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-17T18:07:00.000Z",
+    "createdByEmail": "emman_hernandez@dlsu.edu.ph",
+    "createdAt": "2026-04-23T12:30:00.000Z"
+  },
+  {
+    "taskKey": "T-0036",
+    "projectRef": "IMC-2026-0006",
+    "title": "Draft Batch Merch Launch announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "emman_hernandez@dlsu.edu.ph",
+      "erylle_galinato@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-26T19:30:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-05-26T12:41:00.000Z",
+    "createdByEmail": "isabel_marquez@dlsu.edu.ph",
+    "createdAt": "2026-04-23T14:42:00.000Z"
+  },
+  {
+    "taskKey": "T-0037",
+    "projectRef": "IMC-2026-0007",
+    "title": "Shoot and edit recap reel for Animo Pride Week Coverage",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "eloisa_santos@dlsu.edu.ph",
+      "wilson_mangubat@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-07T20:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-05-04T14:11:00.000Z",
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-05T10:16:00.000Z"
+  },
+  {
+    "taskKey": "T-0038",
+    "projectRef": "IMC-2026-0007",
+    "title": "Design speaker cards for Animo Pride Week Coverage",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "cris_delacruz@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-16T16:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-14T13:21:00.000Z",
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-04T14:17:00.000Z"
+  },
+  {
+    "taskKey": "T-0039",
+    "projectRef": "IMC-2026-0007",
+    "title": "Consolidate registration list for Animo Pride Week Coverage",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "stella_yabut@dlsu.edu.ph",
+      "mikaela_valdez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-21T14:00:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-05-23T15:54:00.000Z",
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-07T12:47:00.000Z"
+  },
+  {
+    "taskKey": "T-0040",
+    "projectRef": "IMC-2026-0007",
+    "title": "Coordinate with Documentation for Animo Pride Week Coverage",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "mikaela_valdez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-26T15:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-24T11:58:00.000Z",
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-05T11:14:00.000Z"
+  },
+  {
+    "taskKey": "T-0041",
+    "projectRef": "IMC-2026-0007",
+    "title": "Prepare budget breakdown for Animo Pride Week Coverage",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "mikaela_valdez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-02T19:00:00.000Z",
+    "priority": "High",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-07T09:56:00.000Z"
+  },
+  {
+    "taskKey": "T-0042",
+    "projectRef": "IMC-2026-0007",
+    "title": "Draft Animo Pride Week Coverage announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "cris_delacruz@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-09T15:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-11T15:08:00.000Z",
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-07T15:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0043",
+    "projectRef": "IMC-2026-0007",
+    "title": "Write caption pack for Animo Pride Week Coverage",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "cris_delacruz@dlsu.edu.ph",
+      "mikaela_valdez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-14T18:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-11T16:18:00.000Z",
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-04T11:00:00.000Z"
+  },
+  {
+    "taskKey": "T-0044",
+    "projectRef": "IMC-2026-0008",
+    "title": "Schedule posting calendar for Internal Audit Cycle",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "xandra_mangubat@dlsu.edu.ph",
+      "althea_sarmiento@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-16T15:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-17T17:59:00.000Z",
+    "createdByEmail": "christian_jacinto@dlsu.edu.ph",
+    "createdAt": "2026-05-12T16:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0045",
+    "projectRef": "IMC-2026-0008",
+    "title": "Consolidate registration list for Internal Audit Cycle",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "isabel_robles@dlsu.edu.ph",
+      "christian_jacinto@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-21T12:00:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-05-19T18:27:00.000Z",
+    "createdByEmail": "christian_jacinto@dlsu.edu.ph",
+    "createdAt": "2026-05-10T11:26:00.000Z"
+  },
+  {
+    "taskKey": "T-0046",
+    "projectRef": "IMC-2026-0008",
+    "title": "Coordinate with Documentation for Internal Audit Cycle",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "isabel_robles@dlsu.edu.ph",
+      "luisa_valdez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-28T19:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-05-26T15:47:00.000Z",
+    "createdByEmail": "christian_jacinto@dlsu.edu.ph",
+    "createdAt": "2026-05-10T12:18:00.000Z"
+  },
+  {
+    "taskKey": "T-0047",
+    "projectRef": "IMC-2026-0008",
+    "title": "Prepare budget breakdown for Internal Audit Cycle",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "xandra_mangubat@dlsu.edu.ph",
+      "althea_sarmiento@dlsu.edu.ph",
+      "christian_jacinto@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-02T12:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-30T16:15:00.000Z",
+    "createdByEmail": "christian_jacinto@dlsu.edu.ph",
+    "createdAt": "2026-05-11T11:00:00.000Z"
+  },
+  {
+    "taskKey": "T-0048",
+    "projectRef": "IMC-2026-0008",
+    "title": "Draft post-event documentation for Internal Audit Cycle",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "isabel_robles@dlsu.edu.ph",
+      "luisa_valdez@dlsu.edu.ph",
+      "xandra_mangubat@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-08T20:00:00.000Z",
+    "priority": "High",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "christian_jacinto@dlsu.edu.ph",
+    "createdAt": "2026-05-10T09:18:00.000Z"
+  },
+  {
+    "taskKey": "T-0049",
+    "projectRef": "IMC-2026-0008",
+    "title": "Run feedback survey for Internal Audit Cycle",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "christian_jacinto@dlsu.edu.ph",
+      "luisa_valdez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-15T17:00:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-06-14T12:37:00.000Z",
+    "createdByEmail": "christian_jacinto@dlsu.edu.ph",
+    "createdAt": "2026-05-12T10:21:00.000Z"
+  },
+  {
+    "taskKey": "T-0050",
+    "projectRef": "IMC-2026-0009",
+    "title": "Prepare budget breakdown for CATCH2T28 Financial Transparency Report",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "gabriel_villanueva@dlsu.edu.ph",
+      "paulo_villanueva@dlsu.edu.ph",
+      "lance_concepcion@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-20T20:30:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-05-21T10:08:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-16T11:48:00.000Z"
+  },
+  {
+    "taskKey": "T-0051",
+    "projectRef": "IMC-2026-0009",
+    "title": "Shoot and edit recap reel for CATCH2T28 Financial Transparency Report",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "yuri_bautista@dlsu.edu.ph",
+      "erika_ocampo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-25T14:00:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-05-25T11:58:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-17T14:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0052",
+    "projectRef": "IMC-2026-0009",
+    "title": "Run feedback survey for CATCH2T28 Financial Transparency Report",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "yuri_bautista@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-31T19:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-28T14:19:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-16T14:42:00.000Z"
+  },
+  {
+    "taskKey": "T-0053",
+    "projectRef": "IMC-2026-0009",
+    "title": "Coordinate with Documentation for CATCH2T28 Financial Transparency Report",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "lance_concepcion@dlsu.edu.ph",
+      "paulo_villanueva@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-08T12:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-06T16:34:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-17T10:23:00.000Z"
+  },
+  {
+    "taskKey": "T-0054",
+    "projectRef": "IMC-2026-0009",
+    "title": "Schedule posting calendar for CATCH2T28 Financial Transparency Report",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "lance_concepcion@dlsu.edu.ph",
+      "erika_ocampo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-13T16:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-06-13T09:02:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-17T15:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0055",
+    "projectRef": "IMC-2026-0009",
+    "title": "Design speaker cards for CATCH2T28 Financial Transparency Report",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "gabriel_villanueva@dlsu.edu.ph",
+      "lance_concepcion@dlsu.edu.ph",
+      "yuri_bautista@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-19T16:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-19T18:26:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-16T12:07:00.000Z"
+  },
+  {
+    "taskKey": "T-0056",
+    "projectRef": "IMC-2026-0009",
+    "title": "Write caption pack for CATCH2T28 Financial Transparency Report",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "paulo_villanueva@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-27T19:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-28T10:08:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-16T09:55:00.000Z"
+  },
+  {
+    "taskKey": "T-0057",
+    "projectRef": "IMC-2026-0009",
+    "title": "Draft post-event documentation for CATCH2T28 Financial Transparency Report",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "paulo_villanueva@dlsu.edu.ph",
+      "gabriel_villanueva@dlsu.edu.ph",
+      "yuri_bautista@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-03T19:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-07-05T15:26:00.000Z",
+    "createdByEmail": "paulo_villanueva@dlsu.edu.ph",
+    "createdAt": "2026-05-19T11:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0058",
+    "projectRef": "IMC-2026-0010",
+    "title": "Turn over photo archive for Kumustahan: Batch Check-In Sessions",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "hannah_alonzo@dlsu.edu.ph",
+      "althea_hernandez@dlsu.edu.ph",
+      "jacob_espino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-29T15:30:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-05-27T09:41:00.000Z",
+    "createdByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-05-25T15:06:00.000Z"
+  },
+  {
+    "taskKey": "T-0059",
+    "projectRef": "IMC-2026-0010",
+    "title": "Consolidate registration list for Kumustahan: Batch Check-In Sessions",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "jacob_espino@dlsu.edu.ph",
+      "hannah_alonzo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-02T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-04T17:50:00.000Z",
+    "createdByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-05-24T12:15:00.000Z"
+  },
+  {
+    "taskKey": "T-0060",
+    "projectRef": "IMC-2026-0010",
+    "title": "Schedule posting calendar for Kumustahan: Batch Check-In Sessions",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "aldrin_aquino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-08T20:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-09T09:26:00.000Z",
+    "createdByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-05-26T14:04:00.000Z"
+  },
+  {
+    "taskKey": "T-0061",
+    "projectRef": "IMC-2026-0010",
+    "title": "Secure partner confirmations for Kumustahan: Batch Check-In Sessions",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "aldrin_aquino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-14T14:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-16T16:08:00.000Z",
+    "createdByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-05-25T13:55:00.000Z"
+  },
+  {
+    "taskKey": "T-0062",
+    "projectRef": "IMC-2026-0010",
+    "title": "Draft post-event documentation for Kumustahan: Batch Check-In Sessions",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "althea_hernandez@dlsu.edu.ph",
+      "jacob_espino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-21T16:00:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-06-19T11:19:00.000Z",
+    "createdByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-05-25T11:42:00.000Z"
+  },
+  {
+    "taskKey": "T-0063",
+    "projectRef": "IMC-2026-0011",
+    "title": "Book venue and confirm equipment for DLSU Technology Summit 2026 Pubmat Series",
+    "description": "Coordinate with Logistics on venue availability, seating, and audio-visual requirements. Confirm the booking in writing.",
+    "assignedMemberEmails": [
+      "xandra_galang@dlsu.edu.ph",
+      "aaliyah_cajucom@dlsu.edu.ph",
+      "andrei_ubaldo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-10T13:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-07-06T14:58:00.000Z",
+    "createdByEmail": "kirsten_palomo@dlsu.edu.ph",
+    "createdAt": "2026-07-01T09:57:00.000Z"
+  },
+  {
+    "taskKey": "T-0064",
+    "projectRef": "IMC-2026-0011",
+    "title": "Secure partner confirmations for DLSU Technology Summit 2026 Pubmat Series",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "xandra_galang@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-20T18:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-17T18:32:00.000Z",
+    "createdByEmail": "kirsten_palomo@dlsu.edu.ph",
+    "createdAt": "2026-07-01T12:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0065",
+    "projectRef": "IMC-2026-0011",
+    "title": "Prepare program flow and script for DLSU Technology Summit 2026 Pubmat Series",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "xandra_galang@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-02T13:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-31T18:14:00.000Z",
+    "createdByEmail": "andrei_ubaldo@dlsu.edu.ph",
+    "createdAt": "2026-06-29T15:02:00.000Z"
+  },
+  {
+    "taskKey": "T-0066",
+    "projectRef": "IMC-2026-0011",
+    "title": "Coordinate with Documentation for DLSU Technology Summit 2026 Pubmat Series",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "kirsten_palomo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-16T13:00:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "kirsten_palomo@dlsu.edu.ph",
+    "createdAt": "2026-06-29T09:22:00.000Z"
+  },
+  {
+    "taskKey": "T-0067",
+    "projectRef": "IMC-2026-0011",
+    "title": "Write caption pack for DLSU Technology Summit 2026 Pubmat Series",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "danielle_concepcion@dlsu.edu.ph",
+      "therese_montemayor@dlsu.edu.ph",
+      "andrei_ubaldo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-25T14:30:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "therese_montemayor@dlsu.edu.ph",
+    "createdAt": "2026-06-30T15:09:00.000Z"
+  },
+  {
+    "taskKey": "T-0068",
+    "projectRef": "IMC-2026-0012",
+    "title": "Secure partner confirmations for Academic Support Hub Rollout",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "marco_flores@dlsu.edu.ph",
+      "rico_lopez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-13T15:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-13T11:44:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-07-07T12:42:00.000Z"
+  },
+  {
+    "taskKey": "T-0069",
+    "projectRef": "IMC-2026-0012",
+    "title": "Shoot and edit recap reel for Academic Support Hub Rollout",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "rbee_maagma@dlsu.edu.ph",
+      "clarisse_salazar@dlsu.edu.ph",
+      "ysabel_ramos@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-21T20:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-17T15:27:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-07-06T15:00:00.000Z"
+  },
+  {
+    "taskKey": "T-0070",
+    "projectRef": "IMC-2026-0012",
+    "title": "Book venue and confirm equipment for Academic Support Hub Rollout",
+    "description": "Coordinate with Logistics on venue availability, seating, and audio-visual requirements. Confirm the booking in writing.",
+    "assignedMemberEmails": [
+      "ysabel_ramos@dlsu.edu.ph",
+      "clarisse_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-26T20:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-22T17:10:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-07-08T09:26:00.000Z"
+  },
+  {
+    "taskKey": "T-0071",
+    "projectRef": "IMC-2026-0012",
+    "title": "Turn over photo archive for Academic Support Hub Rollout",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "clarisse_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-03T18:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-08-03T14:04:00.000Z",
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-07-08T12:45:00.000Z"
+  },
+  {
+    "taskKey": "T-0072",
+    "projectRef": "IMC-2026-0012",
+    "title": "Consolidate registration list for Academic Support Hub Rollout",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "marco_flores@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-11T17:00:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "clarisse_salazar@dlsu.edu.ph",
+    "createdAt": "2026-07-06T14:21:00.000Z"
+  },
+  {
+    "taskKey": "T-0073",
+    "projectRef": "IMC-2026-0012",
+    "title": "Prepare budget breakdown for Academic Support Hub Rollout",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "rbee_maagma@dlsu.edu.ph",
+      "ysabel_ramos@dlsu.edu.ph",
+      "rico_zamora@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-20T12:30:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-07-06T11:34:00.000Z"
+  },
+  {
+    "taskKey": "T-0074",
+    "projectRef": "IMC-2026-0012",
+    "title": "Design speaker cards for Academic Support Hub Rollout",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "marco_flores@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-30T20:00:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-07-06T13:10:00.000Z"
+  },
+  {
+    "taskKey": "T-0075",
+    "projectRef": "IMC-2026-0012",
+    "title": "Prepare program flow and script for Academic Support Hub Rollout",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "clarisse_salazar@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-04T12:00:00.000Z",
+    "priority": "High",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "rico_zamora@dlsu.edu.ph",
+    "createdAt": "2026-07-08T12:15:00.000Z"
+  },
+  {
+    "taskKey": "T-0076",
+    "projectRef": "IMC-2026-0013",
+    "title": "Draft CatchIT Platform Pilot Deployment announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "monica_reyes@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-18T19:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-20T10:59:00.000Z",
+    "createdByEmail": "caesar_gomez@dlsu.edu.ph",
+    "createdAt": "2026-07-10T13:38:00.000Z"
+  },
+  {
+    "taskKey": "T-0077",
+    "projectRef": "IMC-2026-0013",
+    "title": "Review and approve materials for CatchIT Platform Pilot Deployment",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "monica_yabut@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-26T14:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-26T17:30:00.000Z",
+    "createdByEmail": "caesar_gomez@dlsu.edu.ph",
+    "createdAt": "2026-07-09T14:28:00.000Z"
+  },
+  {
+    "taskKey": "T-0078",
+    "projectRef": "IMC-2026-0013",
+    "title": "Book venue and confirm equipment for CatchIT Platform Pilot Deployment",
+    "description": "Coordinate with Logistics on venue availability, seating, and audio-visual requirements. Confirm the booking in writing.",
+    "assignedMemberEmails": [
+      "monica_yabut@dlsu.edu.ph",
+      "caesar_gomez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-05T20:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-08-01T14:21:00.000Z",
+    "createdByEmail": "caesar_gomez@dlsu.edu.ph",
+    "createdAt": "2026-07-10T16:40:00.000Z"
+  },
+  {
+    "taskKey": "T-0079",
+    "projectRef": "IMC-2026-0013",
+    "title": "Run feedback survey for CatchIT Platform Pilot Deployment",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "jacob_salazar@dlsu.edu.ph",
+      "caesar_gomez@dlsu.edu.ph",
+      "monica_reyes@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-13T18:30:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "caesar_gomez@dlsu.edu.ph",
+    "createdAt": "2026-07-12T15:45:00.000Z"
+  },
+  {
+    "taskKey": "T-0080",
+    "projectRef": "IMC-2026-0013",
+    "title": "Design speaker cards for CatchIT Platform Pilot Deployment",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "jacob_salazar@dlsu.edu.ph",
+      "caesar_gomez@dlsu.edu.ph",
+      "monica_yabut@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-22T13:30:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "caesar_gomez@dlsu.edu.ph",
+    "createdAt": "2026-07-11T13:50:00.000Z"
+  },
+  {
+    "taskKey": "T-0081",
+    "projectRef": "IMC-2026-0013",
+    "title": "Consolidate registration list for CatchIT Platform Pilot Deployment",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "monica_reyes@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-30T20:30:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "caesar_gomez@dlsu.edu.ph",
+    "createdAt": "2026-07-09T13:15:00.000Z"
+  },
+  {
+    "taskKey": "T-0082",
+    "projectRef": "IMC-2026-0013",
+    "title": "Secure partner confirmations for CatchIT Platform Pilot Deployment",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "caesar_gomez@dlsu.edu.ph",
+      "monica_yabut@dlsu.edu.ph",
+      "monica_reyes@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-09T19:00:00.000Z",
+    "priority": "Medium",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "caesar_gomez@dlsu.edu.ph",
+    "createdAt": "2026-07-11T09:14:00.000Z"
+  },
+  {
+    "taskKey": "T-0083",
+    "projectRef": "IMC-2026-0014",
+    "title": "Run feedback survey for Exam Week Care Packages",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "vince_ferrer@dlsu.edu.ph",
+      "anton_soriano@dlsu.edu.ph",
+      "mary_juana@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-17T19:30:00.000Z",
+    "priority": "Medium",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-07-14T09:21:00.000Z"
+  },
+  {
+    "taskKey": "T-0084",
+    "projectRef": "IMC-2026-0014",
+    "title": "Book venue and confirm equipment for Exam Week Care Packages",
+    "description": "Coordinate with Logistics on venue availability, seating, and audio-visual requirements. Confirm the booking in writing.",
+    "assignedMemberEmails": [
+      "mary_juana@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-27T18:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-24T11:06:00.000Z",
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-07-13T13:03:00.000Z"
+  },
+  {
+    "taskKey": "T-0085",
+    "projectRef": "IMC-2026-0014",
+    "title": "Draft post-event documentation for Exam Week Care Packages",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "lance_javier@dlsu.edu.ph",
+      "mary_juana@dlsu.edu.ph",
+      "karl_duterte@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-01T13:00:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-07-15T11:33:00.000Z"
+  },
+  {
+    "taskKey": "T-0086",
+    "projectRef": "IMC-2026-0014",
+    "title": "Shoot and edit recap reel for Exam Week Care Packages",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "dominic_fernandez@dlsu.edu.ph",
+      "vince_ferrer@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-09T19:30:00.000Z",
+    "priority": "High",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-07-15T15:41:00.000Z"
+  },
+  {
+    "taskKey": "T-0087",
+    "projectRef": "IMC-2026-0014",
+    "title": "Coordinate with Documentation for Exam Week Care Packages",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "vince_ferrer@dlsu.edu.ph",
+      "karl_duterte@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-15T13:00:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-07-15T13:27:00.000Z"
+  },
+  {
+    "taskKey": "T-0088",
+    "projectRef": "IMC-2026-0014",
+    "title": "Prepare budget breakdown for Exam Week Care Packages",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "lance_javier@dlsu.edu.ph",
+      "anton_soriano@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-21T16:00:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "mary_juana@dlsu.edu.ph",
+    "createdAt": "2026-07-16T10:37:00.000Z"
+  },
+  {
+    "taskKey": "T-0089",
+    "projectRef": "IMC-2026-0015",
+    "title": "Draft post-event documentation for Industry Partners Night",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "erika_samonte@dlsu.edu.ph",
+      "stella_ilagan@dlsu.edu.ph",
+      "tomas_yabut@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-24T15:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-07-22T14:25:00.000Z",
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-18T09:38:00.000Z"
+  },
+  {
+    "taskKey": "T-0090",
+    "projectRef": "IMC-2026-0015",
+    "title": "Book venue and confirm equipment for Industry Partners Night",
+    "description": "Coordinate with Logistics on venue availability, seating, and audio-visual requirements. Confirm the booking in writing.",
+    "assignedMemberEmails": [
+      "rowena_velasco@dlsu.edu.ph",
+      "stella_ilagan@dlsu.edu.ph",
+      "tomas_yabut@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-04T19:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-07-31T11:56:00.000Z",
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-18T14:10:00.000Z"
+  },
+  {
+    "taskKey": "T-0091",
+    "projectRef": "IMC-2026-0015",
+    "title": "Draft Industry Partners Night announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "lennard_lee@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-15T19:30:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-19T15:18:00.000Z"
+  },
+  {
+    "taskKey": "T-0092",
+    "projectRef": "IMC-2026-0015",
+    "title": "Prepare budget breakdown for Industry Partners Night",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "katrina_alonzo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-26T17:00:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-18T12:15:00.000Z"
+  },
+  {
+    "taskKey": "T-0093",
+    "projectRef": "IMC-2026-0015",
+    "title": "Review and approve materials for Industry Partners Night",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "tomas_yabut@dlsu.edu.ph",
+      "erika_samonte@dlsu.edu.ph",
+      "lennard_lee@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-05T12:30:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-19T13:22:00.000Z"
+  },
+  {
+    "taskKey": "T-0094",
+    "projectRef": "IMC-2026-0015",
+    "title": "Schedule posting calendar for Industry Partners Night",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "rowena_velasco@dlsu.edu.ph",
+      "stella_ilagan@dlsu.edu.ph",
+      "katrina_alonzo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-13T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-18T16:49:00.000Z"
+  },
+  {
+    "taskKey": "T-0095",
+    "projectRef": "IMC-2026-0016",
+    "title": "Consolidate registration list for Batch Documentation Archive Migration",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "ian_villanueva@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-26T16:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-07-26T10:21:00.000Z",
+    "createdByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-21T11:52:00.000Z"
+  },
+  {
+    "taskKey": "T-0096",
+    "projectRef": "IMC-2026-0016",
+    "title": "Review and approve materials for Batch Documentation Archive Migration",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "ella_deguzman@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-03T15:30:00.000Z",
+    "priority": "Low",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-22T16:03:00.000Z"
+  },
+  {
+    "taskKey": "T-0097",
+    "projectRef": "IMC-2026-0016",
+    "title": "Turn over photo archive for Batch Documentation Archive Migration",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "ella_deguzman@dlsu.edu.ph",
+      "hannah_galang@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-14T16:30:00.000Z",
+    "priority": "Low",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-21T10:43:00.000Z"
+  },
+  {
+    "taskKey": "T-0098",
+    "projectRef": "IMC-2026-0016",
+    "title": "Write caption pack for Batch Documentation Archive Migration",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "ella_deguzman@dlsu.edu.ph",
+      "hannah_galang@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-22T19:30:00.000Z",
+    "priority": "Low",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-19T14:10:00.000Z"
+  },
+  {
+    "taskKey": "T-0099",
+    "projectRef": "IMC-2026-0016",
+    "title": "Shoot and edit recap reel for Batch Documentation Archive Migration",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "nicole_cruz@dlsu.edu.ph",
+      "hannah_galang@dlsu.edu.ph",
+      "aaliyah_legaspi@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-02T20:30:00.000Z",
+    "priority": "Low",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-21T09:48:00.000Z"
+  },
+  {
+    "taskKey": "T-0100",
+    "projectRef": "IMC-2026-0016",
+    "title": "Run feedback survey for Batch Documentation Archive Migration",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "nicole_cruz@dlsu.edu.ph",
+      "ian_villanueva@dlsu.edu.ph",
+      "aaliyah_legaspi@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-09T15:30:00.000Z",
+    "priority": "Low",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-21T16:15:00.000Z"
+  },
+  {
+    "taskKey": "T-0101",
+    "projectRef": "IMC-2026-0016",
+    "title": "Schedule posting calendar for Batch Documentation Archive Migration",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "ella_deguzman@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-17T12:30:00.000Z",
+    "priority": "Medium",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-22T14:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0102",
+    "projectRef": "IMC-2026-0017",
+    "title": "Schedule posting calendar for Green Week: Sustainability Drive",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "stella_ilagan@dlsu.edu.ph",
+      "erika_samonte@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-31T16:00:00.000Z",
+    "priority": "Low",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "tomas_yabut@dlsu.edu.ph",
+    "createdAt": "2026-07-23T15:26:00.000Z"
+  },
+  {
+    "taskKey": "T-0103",
+    "projectRef": "IMC-2026-0017",
+    "title": "Prepare budget breakdown for Green Week: Sustainability Drive",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "lennard_lee@dlsu.edu.ph",
+      "erika_samonte@dlsu.edu.ph",
+      "rowena_velasco@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-06T19:30:00.000Z",
+    "priority": "Low",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-26T12:48:00.000Z"
+  },
+  {
+    "taskKey": "T-0104",
+    "projectRef": "IMC-2026-0017",
+    "title": "Shoot and edit recap reel for Green Week: Sustainability Drive",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "lennard_lee@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-14T18:00:00.000Z",
+    "priority": "Medium",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-25T10:48:00.000Z"
+  },
+  {
+    "taskKey": "T-0105",
+    "projectRef": "IMC-2026-0017",
+    "title": "Prepare program flow and script for Green Week: Sustainability Drive",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "lennard_lee@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-22T20:00:00.000Z",
+    "priority": "Low",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-23T13:25:00.000Z"
+  },
+  {
+    "taskKey": "T-0106",
+    "projectRef": "IMC-2026-0017",
+    "title": "Coordinate with Documentation for Green Week: Sustainability Drive",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "tomas_yabut@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-30T13:30:00.000Z",
+    "priority": "Low",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-25T13:36:00.000Z"
+  },
+  {
+    "taskKey": "T-0107",
+    "projectRef": "IMC-2026-0017",
+    "title": "Review and approve materials for Green Week: Sustainability Drive",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "rowena_velasco@dlsu.edu.ph",
+      "katrina_alonzo@dlsu.edu.ph",
+      "stella_ilagan@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-08T19:30:00.000Z",
+    "priority": "Low",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-26T09:41:00.000Z"
+  },
+  {
+    "taskKey": "T-0108",
+    "projectRef": "IMC-2026-0018",
+    "title": "Shoot and edit recap reel for Officer Onboarding Handbook",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "dominic_gabriel@dlsu.edu.ph",
+      "lance_espino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-31T20:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-08-01T15:29:00.000Z",
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-07-28T11:56:00.000Z"
+  },
+  {
+    "taskKey": "T-0109",
+    "projectRef": "IMC-2026-0018",
+    "title": "Draft post-event documentation for Officer Onboarding Handbook",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "dominic_gabriel@dlsu.edu.ph",
+      "lance_espino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-11T18:30:00.000Z",
+    "priority": "Low",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "rico_samonte@dlsu.edu.ph",
+    "createdAt": "2026-07-28T09:52:00.000Z"
+  },
+  {
+    "taskKey": "T-0110",
+    "projectRef": "IMC-2026-0018",
+    "title": "Turn over photo archive for Officer Onboarding Handbook",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "dominic_gabriel@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-20T16:00:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-07-26T14:01:00.000Z"
+  },
+  {
+    "taskKey": "T-0111",
+    "projectRef": "IMC-2026-0018",
+    "title": "Consolidate registration list for Officer Onboarding Handbook",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "dominic_gabriel@dlsu.edu.ph",
+      "andrei_sarmiento@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-28T14:30:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-07-28T14:29:00.000Z"
+  },
+  {
+    "taskKey": "T-0112",
+    "projectRef": "IMC-2026-0018",
+    "title": "Prepare program flow and script for Officer Onboarding Handbook",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "clarisse_lazaro@dlsu.edu.ph",
+      "dominic_gabriel@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-05T14:00:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "dominic_gabriel@dlsu.edu.ph",
+    "createdAt": "2026-07-27T16:01:00.000Z"
+  },
+  {
+    "taskKey": "T-0113",
+    "projectRef": "IMC-2026-0018",
+    "title": "Review and approve materials for Officer Onboarding Handbook",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "clarisse_lazaro@dlsu.edu.ph",
+      "andrei_sarmiento@dlsu.edu.ph",
+      "dominic_gabriel@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-15T20:00:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "rico_samonte@dlsu.edu.ph",
+    "createdAt": "2026-07-28T13:14:00.000Z"
+  },
+  {
+    "taskKey": "T-0114",
+    "projectRef": "IMC-2026-0019",
+    "title": "Run feedback survey for Student Engagement Survey",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "bianca_mendoza@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-31T16:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-07-30T15:32:00.000Z",
+    "createdByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-28T12:15:00.000Z"
+  },
+  {
+    "taskKey": "T-0115",
+    "projectRef": "IMC-2026-0019",
+    "title": "Review and approve materials for Student Engagement Survey",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "shawn_tan@dlsu.edu.ph",
+      "grace_hidalgo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-07T17:00:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-08-08T14:07:00.000Z",
+    "createdByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-28T12:05:00.000Z"
+  },
+  {
+    "taskKey": "T-0116",
+    "projectRef": "IMC-2026-0019",
+    "title": "Write caption pack for Student Engagement Survey",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "ivy_montemayor@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-16T12:30:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-27T16:13:00.000Z"
+  },
+  {
+    "taskKey": "T-0117",
+    "projectRef": "IMC-2026-0019",
+    "title": "Prepare budget breakdown for Student Engagement Survey",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "lance_dimalanta@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-23T14:30:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-27T11:07:00.000Z"
+  },
+  {
+    "taskKey": "T-0118",
+    "projectRef": "IMC-2026-0019",
+    "title": "Shoot and edit recap reel for Student Engagement Survey",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "grace_hidalgo@dlsu.edu.ph",
+      "bianca_mendoza@dlsu.edu.ph",
+      "clarisse_ubaldo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-28T16:00:00.000Z",
+    "priority": "Low",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-29T13:42:00.000Z"
+  },
+  {
+    "taskKey": "T-0119",
+    "projectRef": "IMC-2026-0019",
+    "title": "Draft Student Engagement Survey announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "ivy_montemayor@dlsu.edu.ph",
+      "lance_dimalanta@dlsu.edu.ph",
+      "grace_hidalgo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-05T16:00:00.000Z",
+    "priority": "Medium",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-29T09:22:00.000Z"
+  },
+  {
+    "taskKey": "T-0120",
+    "projectRef": "IMC-2026-0019",
+    "title": "Design speaker cards for Student Engagement Survey",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "shawn_tan@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-13T20:30:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "grace_hidalgo@dlsu.edu.ph",
+    "createdAt": "2026-07-30T16:44:00.000Z"
+  },
+  {
+    "taskKey": "T-0121",
+    "projectRef": "IMC-2026-0019",
+    "title": "Prepare program flow and script for Student Engagement Survey",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "grace_hidalgo@dlsu.edu.ph",
+      "lance_dimalanta@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-18T19:00:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-29T16:27:00.000Z"
+  },
+  {
+    "taskKey": "T-0122",
+    "projectRef": "IMC-2026-0020",
+    "title": "Run feedback survey for LeadWare: Upgrading Your Officer OS",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "aldrin_gonzales@dlsu.edu.ph",
+      "patricia_sarmiento@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-10T19:00:00.000Z",
+    "priority": "High",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "clarisse_pascual@dlsu.edu.ph",
+    "createdAt": "2026-07-30T09:25:00.000Z"
+  },
+  {
+    "taskKey": "T-0123",
+    "projectRef": "IMC-2026-0020",
+    "title": "Shoot and edit recap reel for LeadWare: Upgrading Your Officer OS",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "clarisse_pascual@dlsu.edu.ph",
+      "julia_ramos@dlsu.edu.ph",
+      "patricia_sarmiento@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-19T17:30:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "clarisse_pascual@dlsu.edu.ph",
+    "createdAt": "2026-07-29T12:19:00.000Z"
+  },
+  {
+    "taskKey": "T-0124",
+    "projectRef": "IMC-2026-0020",
+    "title": "Coordinate with Documentation for LeadWare: Upgrading Your Officer OS",
+    "description": "Align with the Documentation committee on what records are required and when they are due.",
+    "assignedMemberEmails": [
+      "clarisse_pascual@dlsu.edu.ph",
+      "aldrin_gonzales@dlsu.edu.ph",
+      "patricia_sarmiento@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-02T17:00:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "clarisse_pascual@dlsu.edu.ph",
+    "createdAt": "2026-08-01T15:06:00.000Z"
+  },
+  {
+    "taskKey": "T-0125",
+    "projectRef": "IMC-2026-0020",
+    "title": "Secure partner confirmations for LeadWare: Upgrading Your Officer OS",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "grace_domingo@dlsu.edu.ph",
+      "aldrin_gonzales@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-12T20:30:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "clarisse_pascual@dlsu.edu.ph",
+    "createdAt": "2026-07-29T16:55:00.000Z"
+  },
+  {
+    "taskKey": "T-0126",
+    "projectRef": "IMC-2026-0020",
+    "title": "Write caption pack for LeadWare: Upgrading Your Officer OS",
+    "description": "Prepare platform-specific captions covering the announcement, reminder, and day-of posts. Keep the batch voice and avoid corporate phrasing.",
+    "assignedMemberEmails": [
+      "clarisse_pascual@dlsu.edu.ph",
+      "aldrin_gonzales@dlsu.edu.ph",
+      "julia_ramos@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-25T15:00:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "clarisse_pascual@dlsu.edu.ph",
+    "createdAt": "2026-07-29T09:53:00.000Z"
+  },
+  {
+    "taskKey": "T-0127",
+    "projectRef": "IMC-2026-0021",
+    "title": "Run feedback survey for Alumni Mentorship Program",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "hannah_alonzo@dlsu.edu.ph",
+      "katrina_ubaldo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-03T16:00:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-08-03T10:32:00.000Z"
+  },
+  {
+    "taskKey": "T-0128",
+    "projectRef": "IMC-2026-0021",
+    "title": "Prepare program flow and script for Alumni Mentorship Program",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "jacob_espino@dlsu.edu.ph"
+    ],
+    "deadline": "2026-10-04T12:00:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-08-05T10:00:00.000Z"
+  },
+  {
+    "taskKey": "T-0129",
+    "projectRef": "IMC-2026-0022",
+    "title": "Turn over photo archive for Logistics Equipment Inventory System",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "angel_tan@dlsu.edu.ph",
+      "samantha_villanueva@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-24T14:00:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "angel_tan@dlsu.edu.ph",
+    "createdAt": "2026-08-06T14:04:00.000Z"
+  },
+  {
+    "taskKey": "T-0130",
+    "projectRef": "IMC-2026-0022",
+    "title": "Draft post-event documentation for Logistics Equipment Inventory System",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "sofia_zamora@dlsu.edu.ph",
+      "hannah_abad@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-19T20:00:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "angel_tan@dlsu.edu.ph",
+    "createdAt": "2026-08-06T11:23:00.000Z"
+  },
+  {
+    "taskKey": "T-0131",
+    "projectRef": "IMC-2026-0022",
+    "title": "Schedule posting calendar for Logistics Equipment Inventory System",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "angel_tan@dlsu.edu.ph"
+    ],
+    "deadline": "2026-10-12T20:30:00.000Z",
+    "priority": "Low",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "angel_tan@dlsu.edu.ph",
+    "createdAt": "2026-08-04T11:55:00.000Z"
+  },
+  {
+    "taskKey": "T-0132",
+    "projectRef": "IMC-2026-0023",
+    "title": "Prepare program flow and script for Year-End Recognition Night",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "ivy_lopez@dlsu.edu.ph",
+      "kaila_hernandez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-31T14:30:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-08-07T11:29:00.000Z"
+  },
+  {
+    "taskKey": "T-0133",
+    "projectRef": "IMC-2026-0023",
+    "title": "Shoot and edit recap reel for Year-End Recognition Night",
+    "description": "Capture footage during the event and cut a sixty-second recap for Instagram. Include committee credits in the closing frame.",
+    "assignedMemberEmails": [
+      "kaila_hernandez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-28T17:30:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-08-07T11:12:00.000Z"
+  },
+  {
+    "taskKey": "T-0134",
+    "projectRef": "IMC-2026-0023",
+    "title": "Prepare budget breakdown for Year-End Recognition Night",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "owen_salazar@dlsu.edu.ph",
+      "zeny_macaraeg@dlsu.edu.ph",
+      "lorenzo_santiago@dlsu.edu.ph"
+    ],
+    "deadline": "2026-10-26T13:00:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-08-07T10:46:00.000Z"
+  },
+  {
+    "taskKey": "T-0135",
+    "projectRef": "IMC-2026-0024",
+    "title": "Prepare budget breakdown for Inter-Batch Sports Fest Coverage",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "stella_yabut@dlsu.edu.ph",
+      "eloisa_santos@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-14T13:00:00.000Z",
+    "priority": "Low",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "wilson_mangubat@dlsu.edu.ph",
+    "createdAt": "2026-06-19T12:10:00.000Z"
+  },
+  {
+    "taskKey": "T-0136",
+    "projectRef": "IMC-2026-0024",
+    "title": "Prepare program flow and script for Inter-Batch Sports Fest Coverage",
+    "description": "Draft the minute-by-minute program flow and the hosting script. Circulate to the hosts two days before.",
+    "assignedMemberEmails": [
+      "wilson_mangubat@dlsu.edu.ph",
+      "cris_delacruz@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-08T13:30:00.000Z",
+    "priority": "Medium",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-06-19T13:38:00.000Z"
+  },
+  {
+    "taskKey": "T-0137",
+    "projectRef": "IMC-2026-0024",
+    "title": "Draft Inter-Batch Sports Fest Coverage announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "eloisa_santos@dlsu.edu.ph",
+      "emman_yabut@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-02T13:00:00.000Z",
+    "priority": "Low",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-06-21T10:44:00.000Z"
+  },
+  {
+    "taskKey": "T-0138",
+    "projectRef": "IMC-2026-0025",
+    "title": "Turn over photo archive for Frosh Buddy System Pilot",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "rbee_maagma@dlsu.edu.ph",
+      "rico_lopez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-21T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-06-25T10:16:00.000Z"
+  },
+  {
+    "taskKey": "T-0139",
+    "projectRef": "IMC-2026-0025",
+    "title": "Book venue and confirm equipment for Frosh Buddy System Pilot",
+    "description": "Coordinate with Logistics on venue availability, seating, and audio-visual requirements. Confirm the booking in writing.",
+    "assignedMemberEmails": [
+      "rbee_maagma@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-21T19:00:00.000Z",
+    "priority": "High",
+    "status": "In Progress",
+    "completedAt": null,
+    "createdByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-06-27T14:02:00.000Z"
+  },
+  {
+    "taskKey": "T-0140",
+    "projectRef": "IMC-2026-0025",
+    "title": "Schedule posting calendar for Frosh Buddy System Pilot",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "rbee_maagma@dlsu.edu.ph",
+      "rico_lopez@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-20T20:00:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "rico_lopez@dlsu.edu.ph",
+    "createdAt": "2026-06-28T09:55:00.000Z"
+  },
+  {
+    "taskKey": "T-0141",
+    "projectRef": "IMC-2026-0026",
+    "title": "Consolidate registration list for Batch Records and Turnover System",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "raine_cabrera@dlsu.edu.ph",
+      "ian_velasco@dlsu.edu.ph"
+    ],
+    "deadline": "2026-07-22T12:00:00.000Z",
+    "priority": "Low",
+    "status": "Completed",
+    "completedAt": "2026-07-24T09:20:00.000Z",
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-07-11T12:17:00.000Z"
+  },
+  {
+    "taskKey": "T-0142",
+    "projectRef": "IMC-2026-0026",
+    "title": "Run feedback survey for Batch Records and Turnover System",
+    "description": "Deploy the post-activity feedback form, monitor responses for three days, and summarize the results.",
+    "assignedMemberEmails": [
+      "andy_lim@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-01T19:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-08-01T15:00:00.000Z",
+    "createdByEmail": "raine_cabrera@dlsu.edu.ph",
+    "createdAt": "2026-07-12T13:27:00.000Z"
+  },
+  {
+    "taskKey": "T-0143",
+    "projectRef": "IMC-2026-0026",
+    "title": "Draft Batch Records and Turnover System announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "ian_velasco@dlsu.edu.ph",
+      "andy_lim@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-14T14:30:00.000Z",
+    "priority": "Medium",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-07-11T14:50:00.000Z"
+  },
+  {
+    "taskKey": "T-0144",
+    "projectRef": "IMC-2026-0026",
+    "title": "Schedule posting calendar for Batch Records and Turnover System",
+    "description": "Lay out the posting schedule across platforms and confirm there are no conflicts with other committees.",
+    "assignedMemberEmails": [
+      "andy_lim@dlsu.edu.ph",
+      "nadine_velasco@dlsu.edu.ph"
+    ],
+    "deadline": "2026-08-25T14:00:00.000Z",
+    "priority": "High",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-07-13T12:37:00.000Z"
+  },
+  {
+    "taskKey": "T-0145",
+    "projectRef": "IMC-2026-0026",
+    "title": "Review and approve materials for Batch Records and Turnover System",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "pablo_castillo@dlsu.edu.ph",
+      "ian_velasco@dlsu.edu.ph",
+      "ysabel_lacsamana@dlsu.edu.ph"
+    ],
+    "deadline": "2026-09-06T17:30:00.000Z",
+    "priority": "Medium",
+    "status": "Not Started",
+    "completedAt": null,
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-07-12T09:57:00.000Z"
+  },
+  {
+    "taskKey": "T-0146",
+    "projectRef": "IMC-2026-0027",
+    "title": "Draft post-event documentation for Committee Performance Review",
+    "description": "Write the post-event report covering attendance, budget utilization, what worked, and what should change next cycle.",
+    "assignedMemberEmails": [
+      "andy_lim@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-01T15:30:00.000Z",
+    "priority": "High",
+    "status": "Completed",
+    "completedAt": "2026-05-01T13:29:00.000Z",
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-04-29T11:08:00.000Z"
+  },
+  {
+    "taskKey": "T-0147",
+    "projectRef": "IMC-2026-0027",
+    "title": "Draft Committee Performance Review announcement pubmat",
+    "description": "Produce the announcement pubmat set for feed and story formats, following the batch visual identity. Submit for chairperson review before scheduling.",
+    "assignedMemberEmails": [
+      "raine_cabrera@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-08T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-07T17:52:00.000Z",
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-04-28T15:52:00.000Z"
+  },
+  {
+    "taskKey": "T-0148",
+    "projectRef": "IMC-2026-0027",
+    "title": "Design speaker cards for Committee Performance Review",
+    "description": "Produce individual speaker cards using the approved template. Verify names, titles, and affiliations against the confirmation emails.",
+    "assignedMemberEmails": [
+      "raine_cabrera@dlsu.edu.ph",
+      "nadine_velasco@dlsu.edu.ph",
+      "ian_velasco@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-14T18:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-16T14:20:00.000Z",
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-04-29T12:56:00.000Z"
+  },
+  {
+    "taskKey": "T-0149",
+    "projectRef": "IMC-2026-0027",
+    "title": "Prepare budget breakdown for Committee Performance Review",
+    "description": "Itemize expected costs per line item and route to the Treasurer for review. Flag anything requiring a purchase request.",
+    "assignedMemberEmails": [
+      "andy_lim@dlsu.edu.ph",
+      "ian_velasco@dlsu.edu.ph",
+      "raine_cabrera@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-21T16:30:00.000Z",
+    "priority": "Low",
+    "status": "Ready for Review",
+    "completedAt": null,
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-04-30T12:03:00.000Z"
+  },
+  {
+    "taskKey": "T-0150",
+    "projectRef": "IMC-2026-0027",
+    "title": "Review and approve materials for Committee Performance Review",
+    "description": "Review all submitted materials against the rollout checklist and either approve or return with specific revisions.",
+    "assignedMemberEmails": [
+      "andy_lim@dlsu.edu.ph",
+      "pablo_castillo@dlsu.edu.ph"
+    ],
+    "deadline": "2026-05-27T16:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-05-25T09:36:00.000Z",
+    "createdByEmail": "pablo_castillo@dlsu.edu.ph",
+    "createdAt": "2026-04-28T15:25:00.000Z"
+  },
+  {
+    "taskKey": "T-0151",
+    "projectRef": "IMC-2026-0027",
+    "title": "Secure partner confirmations for Committee Performance Review",
+    "description": "Follow up with prospective partners, confirm participation in writing, and collect their logo assets.",
+    "assignedMemberEmails": [
+      "nadine_velasco@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-01T19:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-01T15:42:00.000Z",
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-04-29T11:02:00.000Z"
+  },
+  {
+    "taskKey": "T-0152",
+    "projectRef": "IMC-2026-0027",
+    "title": "Consolidate registration list for Committee Performance Review",
+    "description": "Clean the registration responses, remove duplicates, and produce the final attendee list for the day-of team.",
+    "assignedMemberEmails": [
+      "andy_lim@dlsu.edu.ph",
+      "nadine_velasco@dlsu.edu.ph",
+      "raine_cabrera@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-07T19:00:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-06T12:51:00.000Z",
+    "createdByEmail": "nadine_velasco@dlsu.edu.ph",
+    "createdAt": "2026-05-01T14:38:00.000Z"
+  },
+  {
+    "taskKey": "T-0153",
+    "projectRef": "IMC-2026-0027",
+    "title": "Turn over photo archive for Committee Performance Review",
+    "description": "Sort, cull, and upload the event photos to the shared archive using the agreed naming convention.",
+    "assignedMemberEmails": [
+      "raine_cabrera@dlsu.edu.ph"
+    ],
+    "deadline": "2026-06-12T16:30:00.000Z",
+    "priority": "Medium",
+    "status": "Completed",
+    "completedAt": "2026-06-09T18:18:00.000Z",
+    "createdByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-05-01T13:12:00.000Z"
+  }
+]

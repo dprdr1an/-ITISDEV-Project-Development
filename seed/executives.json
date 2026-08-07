@@ -1,0 +1,597 @@
+[
+  {
+    "name": "Raine Cabrera",
+    "email": "raine_cabrera@dlsu.edu.ph",
+    "committee": "Project Management — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Nadine Velasco",
+    "email": "nadine_velasco@dlsu.edu.ph",
+    "committee": "Project Management — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Pablo Castillo",
+    "email": "pablo_castillo@dlsu.edu.ph",
+    "committee": "Project Management — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ian Velasco",
+    "email": "ian_velasco@dlsu.edu.ph",
+    "committee": "Project Management — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ysabel Lacsamana",
+    "email": "ysabel_lacsamana@dlsu.edu.ph",
+    "committee": "Project Management — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ivy Lopez",
+    "email": "ivy_lopez@dlsu.edu.ph",
+    "committee": "Project Management — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Kaila Hernandez",
+    "email": "kaila_hernandez@dlsu.edu.ph",
+    "committee": "Project Management — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Lorenzo Santiago",
+    "email": "lorenzo_santiago@dlsu.edu.ph",
+    "committee": "Project Management — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Zeny Macaraeg",
+    "email": "zeny_macaraeg@dlsu.edu.ph",
+    "committee": "Project Management — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Owen Salazar",
+    "email": "owen_salazar@dlsu.edu.ph",
+    "committee": "Project Management — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Christian Jacinto",
+    "email": "christian_jacinto@dlsu.edu.ph",
+    "committee": "Finance — Auditor",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Althea Sarmiento",
+    "email": "althea_sarmiento@dlsu.edu.ph",
+    "committee": "Finance — Auditor",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Isabel Robles",
+    "email": "isabel_robles@dlsu.edu.ph",
+    "committee": "Finance — Auditor",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Luisa Valdez",
+    "email": "luisa_valdez@dlsu.edu.ph",
+    "committee": "Finance — Auditor",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Xandra Mangubat",
+    "email": "xandra_mangubat@dlsu.edu.ph",
+    "committee": "Finance — Auditor",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Paulo Villanueva",
+    "email": "paulo_villanueva@dlsu.edu.ph",
+    "committee": "Finance — Treasurer",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Lance Concepcion",
+    "email": "lance_concepcion@dlsu.edu.ph",
+    "committee": "Finance — Treasurer",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Gabriel Villanueva",
+    "email": "gabriel_villanueva@dlsu.edu.ph",
+    "committee": "Finance — Treasurer",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Erika Ocampo",
+    "email": "erika_ocampo@dlsu.edu.ph",
+    "committee": "Finance — Treasurer",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Yuri Bautista",
+    "email": "yuri_bautista@dlsu.edu.ph",
+    "committee": "Finance — Treasurer",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Aaliyah Legaspi",
+    "email": "aaliyah_legaspi@dlsu.edu.ph",
+    "committee": "Documentation",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ian Villanueva",
+    "email": "ian_villanueva@dlsu.edu.ph",
+    "committee": "Documentation",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Hannah Galang",
+    "email": "hannah_galang@dlsu.edu.ph",
+    "committee": "Documentation",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Jasmine Reyes",
+    "email": "jasmine_reyes@dlsu.edu.ph",
+    "committee": "Documentation",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Nicole Cruz",
+    "email": "nicole_cruz@dlsu.edu.ph",
+    "committee": "Documentation",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Xandra Galang",
+    "email": "xandra_galang@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Creatives",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Danielle Concepcion",
+    "email": "danielle_concepcion@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Creatives",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Therese Montemayor",
+    "email": "therese_montemayor@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Creatives",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Aaliyah Cajucom",
+    "email": "aaliyah_cajucom@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Creatives",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Andrei Ubaldo",
+    "email": "andrei_ubaldo@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Creatives",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Emman Hernandez",
+    "email": "emman_hernandez@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Marketing",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Lorenzo Duterte",
+    "email": "lorenzo_duterte@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Marketing",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ursula Duterte",
+    "email": "ursula_duterte@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Marketing",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Mikaela Padilla",
+    "email": "mikaela_padilla@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Marketing",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Isabel Marquez",
+    "email": "isabel_marquez@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Marketing",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Emman Yabut",
+    "email": "emman_yabut@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Stella Yabut",
+    "email": "stella_yabut@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Wilson Mangubat",
+    "email": "wilson_mangubat@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Eloisa Santos",
+    "email": "eloisa_santos@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Mikaela Valdez",
+    "email": "mikaela_valdez@dlsu.edu.ph",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Erika Samonte",
+    "email": "erika_samonte@dlsu.edu.ph",
+    "committee": "External Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Katrina Alonzo",
+    "email": "katrina_alonzo@dlsu.edu.ph",
+    "committee": "External Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Tomas Yabut",
+    "email": "tomas_yabut@dlsu.edu.ph",
+    "committee": "External Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Stella Ilagan",
+    "email": "stella_ilagan@dlsu.edu.ph",
+    "committee": "External Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Rowena Velasco",
+    "email": "rowena_velasco@dlsu.edu.ph",
+    "committee": "External Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Aldrin Aquino",
+    "email": "aldrin_aquino@dlsu.edu.ph",
+    "committee": "Internal Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Hannah Alonzo",
+    "email": "hannah_alonzo@dlsu.edu.ph",
+    "committee": "Internal Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Katrina Ubaldo",
+    "email": "katrina_ubaldo@dlsu.edu.ph",
+    "committee": "Internal Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Jacob Espino",
+    "email": "jacob_espino@dlsu.edu.ph",
+    "committee": "Internal Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Althea Hernandez",
+    "email": "althea_hernandez@dlsu.edu.ph",
+    "committee": "Internal Relations",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Rico Zamora",
+    "email": "rico_zamora@dlsu.edu.ph",
+    "committee": "Student Services",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ysabel Ramos",
+    "email": "ysabel_ramos@dlsu.edu.ph",
+    "committee": "Student Services",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Rico Lopez",
+    "email": "rico_lopez@dlsu.edu.ph",
+    "committee": "Student Services",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Marco Flores",
+    "email": "marco_flores@dlsu.edu.ph",
+    "committee": "Student Services",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Clarisse Salazar",
+    "email": "clarisse_salazar@dlsu.edu.ph",
+    "committee": "Student Services",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Grace Hidalgo",
+    "email": "grace_hidalgo@dlsu.edu.ph",
+    "committee": "Research & Development — Research",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Lance Dimalanta",
+    "email": "lance_dimalanta@dlsu.edu.ph",
+    "committee": "Research & Development — Research",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Clarisse Ubaldo",
+    "email": "clarisse_ubaldo@dlsu.edu.ph",
+    "committee": "Research & Development — Research",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Bianca Mendoza",
+    "email": "bianca_mendoza@dlsu.edu.ph",
+    "committee": "Research & Development — Research",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ivy Montemayor",
+    "email": "ivy_montemayor@dlsu.edu.ph",
+    "committee": "Research & Development — Research",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Monica Yabut",
+    "email": "monica_yabut@dlsu.edu.ph",
+    "committee": "Research & Development — Development",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Ursula Quiambao",
+    "email": "ursula_quiambao@dlsu.edu.ph",
+    "committee": "Research & Development — Development",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Jacob Salazar",
+    "email": "jacob_salazar@dlsu.edu.ph",
+    "committee": "Research & Development — Development",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Monica Reyes",
+    "email": "monica_reyes@dlsu.edu.ph",
+    "committee": "Research & Development — Development",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Monica Cruz",
+    "email": "monica_cruz@dlsu.edu.ph",
+    "committee": "Research & Development — Development",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Anton Soriano",
+    "email": "anton_soriano@dlsu.edu.ph",
+    "committee": "Student Welfare",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Dominic Fernandez",
+    "email": "dominic_fernandez@dlsu.edu.ph",
+    "committee": "Student Welfare",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Karl Duterte",
+    "email": "karl_duterte@dlsu.edu.ph",
+    "committee": "Student Welfare",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Vince Ferrer",
+    "email": "vince_ferrer@dlsu.edu.ph",
+    "committee": "Student Welfare",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Lance Javier",
+    "email": "lance_javier@dlsu.edu.ph",
+    "committee": "Student Welfare",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Samantha Villanueva",
+    "email": "samantha_villanueva@dlsu.edu.ph",
+    "committee": "Logistics",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Vince Jacinto",
+    "email": "vince_jacinto@dlsu.edu.ph",
+    "committee": "Logistics",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Sofia Zamora",
+    "email": "sofia_zamora@dlsu.edu.ph",
+    "committee": "Logistics",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Fidel Villanueva",
+    "email": "fidel_villanueva@dlsu.edu.ph",
+    "committee": "Logistics",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Hannah Abad",
+    "email": "hannah_abad@dlsu.edu.ph",
+    "committee": "Logistics",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Dominic Gabriel",
+    "email": "dominic_gabriel@dlsu.edu.ph",
+    "committee": "Human Resources — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Andrei Sarmiento",
+    "email": "andrei_sarmiento@dlsu.edu.ph",
+    "committee": "Human Resources — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Lance Espino",
+    "email": "lance_espino@dlsu.edu.ph",
+    "committee": "Human Resources — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Clarisse Lazaro",
+    "email": "clarisse_lazaro@dlsu.edu.ph",
+    "committee": "Human Resources — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Rico Samonte",
+    "email": "rico_samonte@dlsu.edu.ph",
+    "committee": "Human Resources — Administrative",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Clarisse Pascual",
+    "email": "clarisse_pascual@dlsu.edu.ph",
+    "committee": "Human Resources — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Patricia Sarmiento",
+    "email": "patricia_sarmiento@dlsu.edu.ph",
+    "committee": "Human Resources — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Julia Ramos",
+    "email": "julia_ramos@dlsu.edu.ph",
+    "committee": "Human Resources — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Grace Domingo",
+    "email": "grace_domingo@dlsu.edu.ph",
+    "committee": "Human Resources — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  },
+  {
+    "name": "Aldrin Gonzales",
+    "email": "aldrin_gonzales@dlsu.edu.ph",
+    "committee": "Human Resources — Activities",
+    "position": "Executive",
+    "password": "catchit2026"
+  }
+]

@@ -1,0 +1,2374 @@
+[
+  {
+    "refNumber": "IMC-2026-0001",
+    "projectName": "CATCH2T28 General Assembly — Term 1",
+    "committee": "Project Management — Activities",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Facebook, Instagram",
+    "priority": "High",
+    "requestingHeadEmail": "ivy_lopez@dlsu.edu.ph",
+    "requestingHead": "Ivy Lopez",
+    "pointPersons": [
+      "Zeny Macaraeg",
+      "Lorenzo Santiago",
+      "Owen Salazar"
+    ],
+    "startDate": "2026-02-21T09:00:00.000Z",
+    "postingDate": "2026-03-11T09:00:00.000Z",
+    "eventDate": "2026-03-19T09:00:00.000Z",
+    "description": "Batch-wide assembly opening Term 1. Introduces the incoming Executive Board, presents the term calendar, and gathers feedback on batch priorities through a live pulse survey.",
+    "keyMessages": "One batch, one direction. Know your officers, know your term.",
+    "deliverables": [
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Needs DAAM approval before any material goes live.",
+    "status": "Completed",
+    "submittedByEmail": "ivy_lopez@dlsu.edu.ph",
+    "createdAt": "2026-02-19T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-02-19T10:08:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-02-26T11:34:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-03-03T17:23:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Kaila Hernandez",
+        "userEmail": "kaila_hernandez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-03-09T11:03:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-03-14T12:27:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0002",
+    "projectName": "LRT (Light Reboot Transit) — Term 1",
+    "committee": "Student Services",
+    "projectType": "Academic Support",
+    "targetPlatform": "Facebook, Discord",
+    "priority": "High",
+    "requestingHeadEmail": "ysabel_ramos@dlsu.edu.ph",
+    "requestingHead": "Ysabel Ramos",
+    "pointPersons": [
+      "Rico Zamora"
+    ],
+    "startDate": "2026-03-01T09:00:00.000Z",
+    "postingDate": "2026-03-23T09:00:00.000Z",
+    "eventDate": "2026-03-31T09:00:00.000Z",
+    "description": "Academic support drive helping students transition back after Independent Learning Week. Pairs student mentors with mentees, consolidates reviewers per course, and runs three consultation nights.",
+    "keyMessages": "Reboot gently. You do not have to catch up alone.",
+    "deliverables": [
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-lrt-light-reboot-transit-term-1"
+    ],
+    "attachments": [],
+    "additionalNotes": "Needs DAAM approval before any material goes live.",
+    "status": "Completed",
+    "submittedByEmail": "ysabel_ramos@dlsu.edu.ph",
+    "createdAt": "2026-02-27T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Ysabel Ramos",
+        "userEmail": "ysabel_ramos@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-02-27T10:45:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Rbee Maagma",
+        "userEmail": "rbee_maagma@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-03-07T09:07:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Rbee Maagma",
+        "userEmail": "rbee_maagma@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-03-13T15:15:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Clarisse Salazar",
+        "userEmail": "clarisse_salazar@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-03-19T09:41:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Clarisse Salazar",
+        "userEmail": "clarisse_salazar@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-03-25T16:03:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0003",
+    "projectName": "Frosh Welcome Week 2026",
+    "committee": "Project Management — Activities",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, TikTok",
+    "priority": "High",
+    "requestingHeadEmail": "kaila_hernandez@dlsu.edu.ph",
+    "requestingHead": "Kaila Hernandez",
+    "pointPersons": [
+      "Lorenzo Santiago"
+    ],
+    "startDate": "2026-03-21T09:00:00.000Z",
+    "postingDate": "2026-04-10T09:00:00.000Z",
+    "eventDate": "2026-04-18T09:00:00.000Z",
+    "description": "Week-long onboarding for Frosh entering CCS. Includes campus orientation walks, org fair booths, and small-group mixers designed so Frosh meet classmates outside their block.",
+    "keyMessages": "Your first week should not feel like your hardest.",
+    "deliverables": [
+      {
+        "description": "Program flow and script",
+        "category": "Document"
+      },
+      {
+        "description": "Venue and equipment checklist",
+        "category": "Document"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Coordinate with Logistics for venue booking at least two weeks ahead.",
+    "status": "Completed",
+    "submittedByEmail": "kaila_hernandez@dlsu.edu.ph",
+    "createdAt": "2026-03-19T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Kaila Hernandez",
+        "userEmail": "kaila_hernandez@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-03-19T10:19:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Zeny Macaraeg",
+        "userEmail": "zeny_macaraeg@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-03-27T16:07:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Lorenzo Santiago",
+        "userEmail": "lorenzo_santiago@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-04-01T09:35:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-04-07T11:20:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Ivy Lopez",
+        "userEmail": "ivy_lopez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-04-12T17:23:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0004",
+    "projectName": "CCS Recruitment Week",
+    "committee": "Human Resources — Administrative",
+    "projectType": "Recruitment",
+    "targetPlatform": "Facebook, Instagram",
+    "priority": "Medium",
+    "requestingHeadEmail": "rico_samonte@dlsu.edu.ph",
+    "requestingHead": "Rico Samonte",
+    "pointPersons": [
+      "Andrei Sarmiento",
+      "Clarisse Lazaro",
+      "Lance Espino"
+    ],
+    "startDate": "2026-03-29T09:00:00.000Z",
+    "postingDate": "2026-04-20T09:00:00.000Z",
+    "eventDate": "2026-04-26T09:00:00.000Z",
+    "description": "Recruitment cycle for new Executive Officers across all committees. Covers application processing, panel interviews, and onboarding of accepted applicants.",
+    "keyMessages": "Find your committee. Build your batch.",
+    "deliverables": [
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Program flow and script",
+        "category": "Document"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      },
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-ccs-recruitment-week"
+    ],
+    "attachments": [],
+    "additionalNotes": "Budget still pending Treasurer confirmation; proceed with planning only.",
+    "status": "Completed",
+    "submittedByEmail": "rico_samonte@dlsu.edu.ph",
+    "createdAt": "2026-03-27T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Rico Samonte",
+        "userEmail": "rico_samonte@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-03-27T10:18:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Dominic Gabriel",
+        "userEmail": "dominic_gabriel@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-04-04T12:34:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Clarisse Lazaro",
+        "userEmail": "clarisse_lazaro@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-04-09T16:11:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Rico Samonte",
+        "userEmail": "rico_samonte@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-04-15T10:48:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Andrei Sarmiento",
+        "userEmail": "andrei_sarmiento@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-04-20T15:44:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0005",
+    "projectName": "Mental Health Awareness Campaign",
+    "committee": "Student Welfare",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Instagram, Facebook",
+    "priority": "High",
+    "requestingHeadEmail": "karl_duterte@dlsu.edu.ph",
+    "requestingHead": "Karl Duterte",
+    "pointPersons": [
+      "Dominic Fernandez"
+    ],
+    "startDate": "2026-04-12T09:00:00.000Z",
+    "postingDate": "2026-05-04T09:00:00.000Z",
+    "eventDate": "2026-05-10T09:00:00.000Z",
+    "description": "Awareness campaign addressing academic burnout during midterms. Features counselor-led talks, an anonymous submissions wall, and a rest-corner installation in the CCS lobby.",
+    "keyMessages": "Rest is part of the work.",
+    "deliverables": [
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Registration form and tracker",
+        "category": "Document"
+      },
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Budget still pending Treasurer confirmation; proceed with planning only.",
+    "status": "Completed",
+    "submittedByEmail": "karl_duterte@dlsu.edu.ph",
+    "createdAt": "2026-04-10T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Karl Duterte",
+        "userEmail": "karl_duterte@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-04-10T10:06:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Mary Juana",
+        "userEmail": "mary_juana@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-04-18T14:39:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Vince Ferrer",
+        "userEmail": "vince_ferrer@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-04-23T14:29:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Karl Duterte",
+        "userEmail": "karl_duterte@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-04-29T10:25:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Mary Juana",
+        "userEmail": "mary_juana@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-05-04T09:27:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0006",
+    "projectName": "Batch Merch Launch — Season 1",
+    "committee": "Integrated Marketing Communications (IMC) — Marketing",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, Shopee",
+    "priority": "Medium",
+    "requestingHeadEmail": "erylle_galinato@dlsu.edu.ph",
+    "requestingHead": "Erylle Galinato",
+    "pointPersons": [
+      "Ursula Duterte"
+    ],
+    "startDate": "2026-04-20T09:00:00.000Z",
+    "postingDate": "2026-05-12T09:00:00.000Z",
+    "eventDate": "2026-05-18T09:00:00.000Z",
+    "description": "Design, pre-order, and distribution of the first batch merchandise line. Includes sizing surveys, supplier canvassing, and a launch teaser series.",
+    "keyMessages": "Wear the batch. Carry the years.",
+    "deliverables": [
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-batch-merch-launch-season-1"
+    ],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "Completed",
+    "submittedByEmail": "erylle_galinato@dlsu.edu.ph",
+    "createdAt": "2026-04-18T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Erylle Galinato",
+        "userEmail": "erylle_galinato@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-04-18T10:37:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Ursula Duterte",
+        "userEmail": "ursula_duterte@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-04-26T15:50:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Mikaela Padilla",
+        "userEmail": "mikaela_padilla@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-05-01T12:47:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Erylle Galinato",
+        "userEmail": "erylle_galinato@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-05-07T12:07:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Isabel Marquez",
+        "userEmail": "isabel_marquez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-05-12T11:50:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0007",
+    "projectName": "Animo Pride Week Coverage",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, YouTube",
+    "priority": "Medium",
+    "requestingHeadEmail": "cris_delacruz@dlsu.edu.ph",
+    "requestingHead": "Cris Dela Cruz",
+    "pointPersons": [
+      "Emman Yabut",
+      "Wilson Mangubat"
+    ],
+    "startDate": "2026-05-04T09:00:00.000Z",
+    "postingDate": "2026-05-26T09:00:00.000Z",
+    "eventDate": "2026-06-01T09:00:00.000Z",
+    "description": "Full media coverage of Animo Pride Week, producing daily recap reels, a highlight film, and a photo archive turned over to the Documentation committee.",
+    "keyMessages": "If it happened, the batch should be able to see it.",
+    "deliverables": [
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      },
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      },
+      {
+        "description": "Venue and equipment checklist",
+        "category": "Document"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "Completed",
+    "submittedByEmail": "cris_delacruz@dlsu.edu.ph",
+    "createdAt": "2026-05-02T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Cris Dela Cruz",
+        "userEmail": "cris_delacruz@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-05-02T10:25:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Cris Dela Cruz",
+        "userEmail": "cris_delacruz@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-05-10T17:57:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Mikaela Valdez",
+        "userEmail": "mikaela_valdez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-05-15T17:04:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Eloisa Santos",
+        "userEmail": "eloisa_santos@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-05-21T15:03:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Cris Dela Cruz",
+        "userEmail": "cris_delacruz@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-05-26T12:28:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0008",
+    "projectName": "Internal Audit Cycle — Term 1",
+    "committee": "Finance — Auditor",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Internal",
+    "priority": "Medium",
+    "requestingHeadEmail": "althea_sarmiento@dlsu.edu.ph",
+    "requestingHead": "Althea Sarmiento",
+    "pointPersons": [
+      "Isabel Robles",
+      "Luisa Valdez",
+      "Christian Jacinto"
+    ],
+    "startDate": "2026-05-10T09:00:00.000Z",
+    "postingDate": "2026-05-30T09:00:00.000Z",
+    "eventDate": "2026-06-05T09:00:00.000Z",
+    "description": "End-of-term audit of all committee liquidations. Reviews receipts, reconciles budget variance per project, and produces the audit findings memo for the Executive Board.",
+    "keyMessages": "Every peso accounted for, every project explainable.",
+    "deliverables": [
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Registration form and tracker",
+        "category": "Document"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "Completed",
+    "submittedByEmail": "althea_sarmiento@dlsu.edu.ph",
+    "createdAt": "2026-05-08T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Althea Sarmiento",
+        "userEmail": "althea_sarmiento@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-05-08T10:29:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Isabel Robles",
+        "userEmail": "isabel_robles@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-05-15T11:49:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Luisa Valdez",
+        "userEmail": "luisa_valdez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-05-20T09:05:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Christian Jacinto",
+        "userEmail": "christian_jacinto@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-05-26T15:49:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Luisa Valdez",
+        "userEmail": "luisa_valdez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-05-31T12:04:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0009",
+    "projectName": "CATCH2T28 Financial Transparency Report",
+    "committee": "Finance — Treasurer",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Facebook",
+    "priority": "Medium",
+    "requestingHeadEmail": "paulo_villanueva@dlsu.edu.ph",
+    "requestingHead": "Paulo Villanueva",
+    "pointPersons": [
+      "Lance Concepcion",
+      "Erika Ocampo",
+      "Yuri Bautista"
+    ],
+    "startDate": "2026-05-16T09:00:00.000Z",
+    "postingDate": "2026-06-07T09:00:00.000Z",
+    "eventDate": "2026-06-13T09:00:00.000Z",
+    "description": "Public-facing summary of batch finances for Term 1, presenting collections, disbursements, and remaining balance in a format readable by non-finance students.",
+    "keyMessages": "You funded this. Here is where it went.",
+    "deliverables": [
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Registration form and tracker",
+        "category": "Document"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      },
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Budget still pending Treasurer confirmation; proceed with planning only.",
+    "status": "Completed",
+    "submittedByEmail": "lance_concepcion@dlsu.edu.ph",
+    "createdAt": "2026-05-14T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Lance Concepcion",
+        "userEmail": "lance_concepcion@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created on behalf of Paulo Villanueva.",
+        "timestamp": "2026-05-14T10:11:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Paulo Villanueva",
+        "userEmail": "paulo_villanueva@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-05-22T16:25:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Gabriel Villanueva",
+        "userEmail": "gabriel_villanueva@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-05-27T10:39:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Lance Concepcion",
+        "userEmail": "lance_concepcion@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-06-02T16:56:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Lance Concepcion",
+        "userEmail": "lance_concepcion@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-06-07T12:39:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0010",
+    "projectName": "Kumustahan: Batch Check-In Sessions",
+    "committee": "Internal Relations",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Discord, Zoom",
+    "priority": "Low",
+    "requestingHeadEmail": "aldrin_aquino@dlsu.edu.ph",
+    "requestingHead": "Aldrin Aquino",
+    "pointPersons": [
+      "Althea Hernandez"
+    ],
+    "startDate": "2026-05-24T09:00:00.000Z",
+    "postingDate": "2026-06-11T09:00:00.000Z",
+    "eventDate": "2026-06-17T09:00:00.000Z",
+    "description": "Recurring small-group check-ins between officers and batch members, surfacing concerns that do not reach formal channels and feeding them to the relevant committees.",
+    "keyMessages": "Kumusta ka talaga? Not just the requirements.",
+    "deliverables": [
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      },
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Coordinate with Logistics for venue booking at least two weeks ahead.",
+    "status": "Completed",
+    "submittedByEmail": "aldrin_aquino@dlsu.edu.ph",
+    "createdAt": "2026-05-22T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Aldrin Aquino",
+        "userEmail": "aldrin_aquino@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-05-22T10:21:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Jacob Espino",
+        "userEmail": "jacob_espino@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-05-29T13:26:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Aldrin Aquino",
+        "userEmail": "aldrin_aquino@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-06-03T17:41:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Althea Hernandez",
+        "userEmail": "althea_hernandez@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-06-07T13:33:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Aldrin Aquino",
+        "userEmail": "aldrin_aquino@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-06-12T16:39:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0011",
+    "projectName": "DLSU Technology Summit 2026 Pubmat Series",
+    "committee": "Integrated Marketing Communications (IMC) — Creatives",
+    "projectType": "Seminar",
+    "targetPlatform": "Instagram, Facebook, LinkedIn",
+    "priority": "High",
+    "requestingHeadEmail": "kirsten_palomo@dlsu.edu.ph",
+    "requestingHead": "Kirsten Palomo",
+    "pointPersons": [
+      "Therese Montemayor",
+      "Xandra Galang",
+      "Andrei Ubaldo"
+    ],
+    "startDate": "2026-06-29T09:00:00.000Z",
+    "postingDate": "2026-08-20T09:00:00.000Z",
+    "eventDate": "2026-08-28T09:00:00.000Z",
+    "description": "Complete publication material set for the Technology Summit, covering the announcement teaser, speaker cards, program schedule, and post-event recap layouts.",
+    "keyMessages": "Build what the industry is building. Learn from who is building it.",
+    "deliverables": [
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      },
+      {
+        "description": "Venue and equipment checklist",
+        "category": "Document"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Documentation to be turned over within one week of the event.",
+    "status": "Active",
+    "submittedByEmail": "kirsten_palomo@dlsu.edu.ph",
+    "createdAt": "2026-06-27T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Kirsten Palomo",
+        "userEmail": "kirsten_palomo@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-06-27T10:46:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Danielle Concepcion",
+        "userEmail": "danielle_concepcion@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-07-29T11:21:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0012",
+    "projectName": "Academic Support Hub Rollout",
+    "committee": "Student Services",
+    "projectType": "Academic Support",
+    "targetPlatform": "Discord, Notion",
+    "priority": "High",
+    "requestingHeadEmail": "rico_zamora@dlsu.edu.ph",
+    "requestingHead": "Rico Zamora",
+    "pointPersons": [
+      "Marco Flores",
+      "Rico Lopez"
+    ],
+    "startDate": "2026-07-05T09:00:00.000Z",
+    "postingDate": "2026-08-26T09:00:00.000Z",
+    "eventDate": "2026-09-03T09:00:00.000Z",
+    "description": "Standing academic support hub consolidating reviewers, past exams, and consultation schedules per course into one maintained directory for the whole batch.",
+    "keyMessages": "One place to look before you panic.",
+    "deliverables": [
+      {
+        "description": "Program flow and script",
+        "category": "Document"
+      },
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "Active",
+    "submittedByEmail": "rico_zamora@dlsu.edu.ph",
+    "createdAt": "2026-07-03T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Rico Zamora",
+        "userEmail": "rico_zamora@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-03T10:46:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Rbee Maagma",
+        "userEmail": "rbee_maagma@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-04T11:32:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0013",
+    "projectName": "CatchIT Platform Pilot Deployment",
+    "committee": "Research & Development — Development",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Internal",
+    "priority": "High",
+    "requestingHeadEmail": "monica_cruz@dlsu.edu.ph",
+    "requestingHead": "Monica Cruz",
+    "pointPersons": [
+      "Monica Reyes"
+    ],
+    "startDate": "2026-07-09T09:00:00.000Z",
+    "postingDate": "2026-08-30T09:00:00.000Z",
+    "eventDate": "2026-09-07T09:00:00.000Z",
+    "description": "Pilot rollout of the CatchIT task and rollout management system to the IMC department, including officer onboarding, feedback collection, and defect triage.",
+    "keyMessages": "Stop losing work in group chats.",
+    "deliverables": [
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "Active",
+    "submittedByEmail": "monica_cruz@dlsu.edu.ph",
+    "createdAt": "2026-07-07T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Monica Cruz",
+        "userEmail": "monica_cruz@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-07T10:51:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Jacob Salazar",
+        "userEmail": "jacob_salazar@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-08T17:57:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0014",
+    "projectName": "Exam Week Care Packages",
+    "committee": "Student Welfare",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Instagram",
+    "priority": "Medium",
+    "requestingHeadEmail": "anton_soriano@dlsu.edu.ph",
+    "requestingHead": "Anton Soriano",
+    "pointPersons": [
+      "Karl Duterte"
+    ],
+    "startDate": "2026-07-13T09:00:00.000Z",
+    "postingDate": "2026-08-22T09:00:00.000Z",
+    "eventDate": "2026-08-26T09:00:00.000Z",
+    "description": "Distribution of care packages during finals week, assembled from sponsor donations and containing study snacks, stationery, and handwritten notes from officers.",
+    "keyMessages": "Small things, right when they are needed.",
+    "deliverables": [
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Documentation to be turned over within one week of the event.",
+    "status": "Active",
+    "submittedByEmail": "anton_soriano@dlsu.edu.ph",
+    "createdAt": "2026-07-11T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Anton Soriano",
+        "userEmail": "anton_soriano@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-11T10:49:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Mary Juana",
+        "userEmail": "mary_juana@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-04T17:19:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0015",
+    "projectName": "Industry Partners Night",
+    "committee": "External Relations",
+    "projectType": "Leadership Development",
+    "targetPlatform": "LinkedIn, Facebook",
+    "priority": "High",
+    "requestingHeadEmail": "lennard_lee@dlsu.edu.ph",
+    "requestingHead": "Lennard Lee",
+    "pointPersons": [
+      "Stella Ilagan",
+      "Erika Samonte"
+    ],
+    "startDate": "2026-07-17T09:00:00.000Z",
+    "postingDate": "2026-09-05T09:00:00.000Z",
+    "eventDate": "2026-09-13T09:00:00.000Z",
+    "description": "Networking evening connecting graduating students with partner companies. Covers partner solicitation, deck preparation, venue logistics, and post-event follow-through.",
+    "keyMessages": "Meet the people who will be reviewing your resume.",
+    "deliverables": [
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Venue and equipment checklist",
+        "category": "Document"
+      },
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      },
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Coordinate with Logistics for venue booking at least two weeks ahead.",
+    "status": "Active",
+    "submittedByEmail": "lennard_lee@dlsu.edu.ph",
+    "createdAt": "2026-07-15T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Lennard Lee",
+        "userEmail": "lennard_lee@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-15T10:59:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Lennard Lee",
+        "userEmail": "lennard_lee@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-15T10:16:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0016",
+    "projectName": "Batch Documentation Archive Migration",
+    "committee": "Documentation",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Google Drive",
+    "priority": "Low",
+    "requestingHeadEmail": "ella_deguzman@dlsu.edu.ph",
+    "requestingHead": "Ella De Guzman",
+    "pointPersons": [
+      "Aaliyah Legaspi",
+      "Ian Villanueva"
+    ],
+    "startDate": "2026-07-19T09:00:00.000Z",
+    "postingDate": "2026-09-11T09:00:00.000Z",
+    "eventDate": "2026-09-17T09:00:00.000Z",
+    "description": "Migration of three terms of scattered documentation into a single structured archive with a consistent naming convention and per-project folders.",
+    "keyMessages": "If it is not filed, it did not happen.",
+    "deliverables": [
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Coordinate with Logistics for venue booking at least two weeks ahead.",
+    "status": "Active",
+    "submittedByEmail": "ella_deguzman@dlsu.edu.ph",
+    "createdAt": "2026-07-17T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Ella De Guzman",
+        "userEmail": "ella_deguzman@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-17T10:58:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Ella De Guzman",
+        "userEmail": "ella_deguzman@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-18T17:14:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0017",
+    "projectName": "Green Week: Sustainability Drive",
+    "committee": "External Relations",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Instagram, Facebook",
+    "priority": "Medium",
+    "requestingHeadEmail": "tomas_yabut@dlsu.edu.ph",
+    "requestingHead": "Tomas Yabut",
+    "pointPersons": [
+      "Stella Ilagan"
+    ],
+    "startDate": "2026-07-23T09:00:00.000Z",
+    "postingDate": "2026-09-03T09:00:00.000Z",
+    "eventDate": "2026-09-09T09:00:00.000Z",
+    "description": "Week-long sustainability initiative with a campus clean-up, a thrift-swap booth, and a partnership with a local recycling cooperative.",
+    "keyMessages": "Small habits, campus scale.",
+    "deliverables": [
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      },
+      {
+        "description": "Program flow and script",
+        "category": "Document"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Needs DAAM approval before any material goes live.",
+    "status": "For Review",
+    "submittedByEmail": "tomas_yabut@dlsu.edu.ph",
+    "createdAt": "2026-07-21T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Tomas Yabut",
+        "userEmail": "tomas_yabut@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-21T10:59:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Stella Ilagan",
+        "userEmail": "stella_ilagan@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-08T15:57:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Lennard Lee",
+        "userEmail": "lennard_lee@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-08-24T16:29:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0018",
+    "projectName": "Officer Onboarding Handbook",
+    "committee": "Human Resources — Administrative",
+    "projectType": "Leadership Development",
+    "targetPlatform": "Internal",
+    "priority": "Medium",
+    "requestingHeadEmail": "lance_espino@dlsu.edu.ph",
+    "requestingHead": "Lance Espino",
+    "pointPersons": [
+      "Clarisse Lazaro",
+      "Rico Samonte",
+      "Andrei Sarmiento"
+    ],
+    "startDate": "2026-07-25T09:00:00.000Z",
+    "postingDate": "2026-09-07T09:00:00.000Z",
+    "eventDate": "2026-09-15T09:00:00.000Z",
+    "description": "Written handbook covering committee responsibilities, escalation paths, and documentation standards, produced so new officers stop relying on word of mouth.",
+    "keyMessages": "Know what you signed up for, on day one.",
+    "deliverables": [
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Venue and equipment checklist",
+        "category": "Document"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-officer-onboarding-handbook"
+    ],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "For Review",
+    "submittedByEmail": "lance_espino@dlsu.edu.ph",
+    "createdAt": "2026-07-23T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Lance Espino",
+        "userEmail": "lance_espino@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-23T10:31:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Dominic Gabriel",
+        "userEmail": "dominic_gabriel@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-11T12:15:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Lance Espino",
+        "userEmail": "lance_espino@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-08-29T13:43:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0019",
+    "projectName": "Student Engagement Survey — Term 2",
+    "committee": "Research & Development — Research",
+    "projectType": "Academic Support",
+    "targetPlatform": "Google Forms",
+    "priority": "Medium",
+    "requestingHeadEmail": "shawn_tan@dlsu.edu.ph",
+    "requestingHead": "Shawn Tan",
+    "pointPersons": [
+      "Clarisse Ubaldo",
+      "Grace Hidalgo",
+      "Bianca Mendoza"
+    ],
+    "startDate": "2026-07-27T09:00:00.000Z",
+    "postingDate": "2026-09-09T09:00:00.000Z",
+    "eventDate": "2026-09-21T09:00:00.000Z",
+    "description": "Batch-wide survey measuring engagement with organization activities, identifying which committees students feel disconnected from and why.",
+    "keyMessages": "We cannot fix what we have not measured.",
+    "deliverables": [
+      {
+        "description": "Registration form and tracker",
+        "category": "Document"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-student-engagement-survey-term-2"
+    ],
+    "attachments": [],
+    "additionalNotes": "Coordinate with Logistics for venue booking at least two weeks ahead.",
+    "status": "For Approval",
+    "submittedByEmail": "shawn_tan@dlsu.edu.ph",
+    "createdAt": "2026-07-25T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Shawn Tan",
+        "userEmail": "shawn_tan@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-25T10:52:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Grace Hidalgo",
+        "userEmail": "grace_hidalgo@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-10T11:38:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Lance Dimalanta",
+        "userEmail": "lance_dimalanta@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-08-24T14:54:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Ivy Montemayor",
+        "userEmail": "ivy_montemayor@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-09-07T09:09:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0020",
+    "projectName": "LeadWare: Upgrading Your Officer OS",
+    "committee": "Human Resources — Activities",
+    "projectType": "Leadership Development",
+    "targetPlatform": "Zoom, Facebook",
+    "priority": "High",
+    "requestingHeadEmail": "patricia_sarmiento@dlsu.edu.ph",
+    "requestingHead": "Patricia Sarmiento",
+    "pointPersons": [
+      "Aldrin Gonzales",
+      "Clarisse Pascual",
+      "Julia Ramos"
+    ],
+    "startDate": "2026-07-29T09:00:00.000Z",
+    "postingDate": "2026-09-17T09:00:00.000Z",
+    "eventDate": "2026-09-25T09:00:00.000Z",
+    "description": "Leadership seminar for Executive Officers covering delegation, running effective meetings, and managing committee workload without burning out.",
+    "keyMessages": "Lead the way you wish you had been led.",
+    "deliverables": [
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Program flow and script",
+        "category": "Document"
+      },
+      {
+        "description": "Announcement pubmat set (feed + story)",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-leadware-upgrading-your-officer-os"
+    ],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "For Approval",
+    "submittedByEmail": "patricia_sarmiento@dlsu.edu.ph",
+    "createdAt": "2026-07-27T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Patricia Sarmiento",
+        "userEmail": "patricia_sarmiento@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-27T10:12:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Clarisse Pascual",
+        "userEmail": "clarisse_pascual@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-13T12:55:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Clarisse Pascual",
+        "userEmail": "clarisse_pascual@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-08-27T15:18:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Clarisse Pascual",
+        "userEmail": "clarisse_pascual@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-09-11T14:21:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0021",
+    "projectName": "Alumni Mentorship Program",
+    "committee": "Internal Relations",
+    "projectType": "Leadership Development",
+    "targetPlatform": "LinkedIn, Discord",
+    "priority": "Medium",
+    "requestingHeadEmail": "jacob_espino@dlsu.edu.ph",
+    "requestingHead": "Jacob Espino",
+    "pointPersons": [
+      "Althea Hernandez",
+      "Hannah Alonzo",
+      "Katrina Ubaldo"
+    ],
+    "startDate": "2026-08-02T09:00:00.000Z",
+    "postingDate": "2026-09-29T09:00:00.000Z",
+    "eventDate": "2026-10-07T09:00:00.000Z",
+    "description": "Structured mentorship pairing graduating students with CCS alumni working in industry, running over eight weeks with guided checkpoints.",
+    "keyMessages": "The batch does not end at graduation.",
+    "deliverables": [
+      {
+        "description": "Registration form and tracker",
+        "category": "Document"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Program flow and script",
+        "category": "Document"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Documentation to be turned over within one week of the event.",
+    "status": "Pending",
+    "submittedByEmail": "jacob_espino@dlsu.edu.ph",
+    "createdAt": "2026-07-31T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Jacob Espino",
+        "userEmail": "jacob_espino@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-31T10:35:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0022",
+    "projectName": "Logistics Equipment Inventory System",
+    "committee": "Logistics",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Internal",
+    "priority": "Low",
+    "requestingHeadEmail": "angel_tan@dlsu.edu.ph",
+    "requestingHead": "Angel Tan",
+    "pointPersons": [
+      "Vince Jacinto",
+      "Hannah Abad"
+    ],
+    "startDate": "2026-08-04T09:00:00.000Z",
+    "postingDate": "2026-10-05T09:00:00.000Z",
+    "eventDate": "2026-10-13T09:00:00.000Z",
+    "description": "Inventory and borrowing system for batch equipment, replacing the current sign-out sheet with a tracked record of condition and accountability.",
+    "keyMessages": "Know what we own before we rent it again.",
+    "deliverables": [
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      },
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-logistics-equipment-inventory-system"
+    ],
+    "attachments": [],
+    "additionalNotes": "Coordinate with Logistics for venue booking at least two weeks ahead.",
+    "status": "Pending",
+    "submittedByEmail": "angel_tan@dlsu.edu.ph",
+    "createdAt": "2026-08-02T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Angel Tan",
+        "userEmail": "angel_tan@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-08-02T10:20:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0023",
+    "projectName": "Year-End Recognition Night",
+    "committee": "Project Management — Activities",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Instagram, Facebook",
+    "priority": "High",
+    "requestingHeadEmail": "owen_salazar@dlsu.edu.ph",
+    "requestingHead": "Owen Salazar",
+    "pointPersons": [
+      "Lorenzo Santiago",
+      "Ivy Lopez",
+      "Kaila Hernandez"
+    ],
+    "startDate": "2026-08-06T09:00:00.000Z",
+    "postingDate": "2026-10-21T09:00:00.000Z",
+    "eventDate": "2026-10-29T09:00:00.000Z",
+    "description": "Closing ceremony recognizing officer contributions across the academic year, including awards, a retrospective video, and turnover of committee documentation.",
+    "keyMessages": "Close the year properly. People noticed.",
+    "deliverables": [
+      {
+        "description": "Caption pack for all platforms",
+        "category": "Caption"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-year-end-recognition-night"
+    ],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "Pending",
+    "submittedByEmail": "owen_salazar@dlsu.edu.ph",
+    "createdAt": "2026-08-04T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Owen Salazar",
+        "userEmail": "owen_salazar@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-08-04T10:42:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0024",
+    "projectName": "Inter-Batch Sports Fest Coverage",
+    "committee": "Integrated Marketing Communications (IMC) — Media Productions",
+    "projectType": "Competition",
+    "targetPlatform": "Instagram, YouTube",
+    "priority": "Low",
+    "requestingHeadEmail": "cris_delacruz@dlsu.edu.ph",
+    "requestingHead": "Cris Dela Cruz",
+    "pointPersons": [
+      "Mikaela Valdez",
+      "Emman Yabut",
+      "Eloisa Santos"
+    ],
+    "startDate": "2026-06-19T09:00:00.000Z",
+    "postingDate": "2026-08-28T09:00:00.000Z",
+    "eventDate": "2026-09-05T09:00:00.000Z",
+    "description": "Planned media coverage of the inter-batch sports festival. Paused pending confirmation of the athletics calendar from the college.",
+    "keyMessages": "Coverage ready the moment the schedule lands.",
+    "deliverables": [
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-inter-batch-sports-fest-coverage"
+    ],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "On Hold",
+    "submittedByEmail": "wilson_mangubat@dlsu.edu.ph",
+    "createdAt": "2026-06-17T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Wilson Mangubat",
+        "userEmail": "wilson_mangubat@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created on behalf of Cris Dela Cruz.",
+        "timestamp": "2026-06-17T10:21:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Emman Yabut",
+        "userEmail": "emman_yabut@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-07-15T09:24:00.000Z"
+      },
+      {
+        "action": "Status changed to On Hold",
+        "madeBy": "Cris Dela Cruz",
+        "userEmail": "cris_delacruz@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "On Hold"
+          }
+        ],
+        "note": "Paused pending external confirmation.",
+        "timestamp": "2026-08-10T14:09:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0025",
+    "projectName": "Frosh Buddy System Pilot",
+    "committee": "Student Services",
+    "projectType": "Community Engagement",
+    "targetPlatform": "Discord",
+    "priority": "Medium",
+    "requestingHeadEmail": "rbee_maagma@dlsu.edu.ph",
+    "requestingHead": "Rbee Maagma",
+    "pointPersons": [
+      "Marco Flores"
+    ],
+    "startDate": "2026-06-25T09:00:00.000Z",
+    "postingDate": "2026-09-13T09:00:00.000Z",
+    "eventDate": "2026-09-21T09:00:00.000Z",
+    "description": "Pilot pairing Frosh with upperclassmen buddies for their first term. On hold while Student Welfare reviews the screening process for buddy volunteers.",
+    "keyMessages": "Nobody should spend their first term guessing.",
+    "deliverables": [
+      {
+        "description": "Venue and equipment checklist",
+        "category": "Document"
+      },
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-frosh-buddy-system-pilot"
+    ],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "On Hold",
+    "submittedByEmail": "rbee_maagma@dlsu.edu.ph",
+    "createdAt": "2026-06-23T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Rbee Maagma",
+        "userEmail": "rbee_maagma@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-06-23T10:50:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Rbee Maagma",
+        "userEmail": "rbee_maagma@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-07-24T17:08:00.000Z"
+      },
+      {
+        "action": "Status changed to On Hold",
+        "madeBy": "Clarisse Salazar",
+        "userEmail": "clarisse_salazar@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "On Hold"
+          }
+        ],
+        "note": "Paused pending external confirmation.",
+        "timestamp": "2026-08-23T12:44:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0026",
+    "projectName": "Batch Records and Turnover System",
+    "committee": "Project Management — Administrative",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Internal",
+    "priority": "Medium",
+    "requestingHeadEmail": "raine_cabrera@dlsu.edu.ph",
+    "requestingHead": "Raine Cabrera",
+    "pointPersons": [
+      "Andy Lim"
+    ],
+    "startDate": "2026-07-11T09:00:00.000Z",
+    "postingDate": "2026-09-01T09:00:00.000Z",
+    "eventDate": "2026-09-09T09:00:00.000Z",
+    "description": "Standardized turnover process for all committees, covering the records each committee must hand over, the format they are filed in, and the deadline relative to end of term.",
+    "keyMessages": "Turnover should take an afternoon, not a week of chasing.",
+    "deliverables": [
+      {
+        "description": "Speaker card series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Venue and equipment checklist",
+        "category": "Document"
+      },
+      {
+        "description": "Event recap reel (60 seconds)",
+        "category": "Media"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      }
+    ],
+    "referenceLinks": [],
+    "attachments": [],
+    "additionalNotes": "Creatives requested final copy three days before posting date.",
+    "status": "Active",
+    "submittedByEmail": "raine_cabrera@dlsu.edu.ph",
+    "createdAt": "2026-07-09T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Raine Cabrera",
+        "userEmail": "raine_cabrera@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-07-09T10:46:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Andy Lim",
+        "userEmail": "andy_lim@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-08-10T12:11:00.000Z"
+      }
+    ]
+  },
+  {
+    "refNumber": "IMC-2026-0027",
+    "projectName": "Committee Performance Review — Term 1",
+    "committee": "Project Management — Administrative",
+    "projectType": "Organization Activity",
+    "targetPlatform": "Internal",
+    "priority": "Medium",
+    "requestingHeadEmail": "andy_lim@dlsu.edu.ph",
+    "requestingHead": "Andy Lim",
+    "pointPersons": [
+      "Pablo Castillo",
+      "Ian Velasco"
+    ],
+    "startDate": "2026-04-28T09:00:00.000Z",
+    "postingDate": "2026-05-20T09:00:00.000Z",
+    "eventDate": "2026-05-26T09:00:00.000Z",
+    "description": "End-of-term review of every committee against its stated deliverables, producing a consolidated report for the Executive Board and recommendations for Term 2 staffing.",
+    "keyMessages": "Measure the term honestly so the next one is planned better.",
+    "deliverables": [
+      {
+        "description": "Sponsor deck",
+        "category": "Presentation"
+      },
+      {
+        "description": "Teaser countdown series",
+        "category": "Pubmat"
+      },
+      {
+        "description": "Photo archive turnover",
+        "category": "Photo"
+      },
+      {
+        "description": "Post-event documentation report",
+        "category": "Document"
+      },
+      {
+        "description": "Feedback survey and results summary",
+        "category": "Document"
+      }
+    ],
+    "referenceLinks": [
+      "https://drive.google.com/drive/folders/catch2t28-committee-performance-review-term-1"
+    ],
+    "attachments": [],
+    "additionalNotes": "",
+    "status": "Completed",
+    "submittedByEmail": "andy_lim@dlsu.edu.ph",
+    "createdAt": "2026-04-26T10:00:00.000Z",
+    "revisions": [
+      {
+        "action": "Project request submitted",
+        "madeBy": "Andy Lim",
+        "userEmail": "andy_lim@dlsu.edu.ph",
+        "changes": [],
+        "note": "Project request created.",
+        "timestamp": "2026-04-26T10:25:00.000Z"
+      },
+      {
+        "action": "Status changed to Active",
+        "madeBy": "Nadine Velasco",
+        "userEmail": "nadine_velasco@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Pending",
+            "to": "Active"
+          }
+        ],
+        "note": "Moved from Pending to Active.",
+        "timestamp": "2026-05-04T13:13:00.000Z"
+      },
+      {
+        "action": "Status changed to For Review",
+        "madeBy": "Ian Velasco",
+        "userEmail": "ian_velasco@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "Active",
+            "to": "For Review"
+          }
+        ],
+        "note": "Moved from Active to For Review.",
+        "timestamp": "2026-05-09T11:05:00.000Z"
+      },
+      {
+        "action": "Status changed to For Approval",
+        "madeBy": "Raine Cabrera",
+        "userEmail": "raine_cabrera@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Review",
+            "to": "For Approval"
+          }
+        ],
+        "note": "Moved from For Review to For Approval.",
+        "timestamp": "2026-05-15T17:57:00.000Z"
+      },
+      {
+        "action": "Status changed to Completed",
+        "madeBy": "Andy Lim",
+        "userEmail": "andy_lim@dlsu.edu.ph",
+        "changes": [
+          {
+            "field": "status",
+            "from": "For Approval",
+            "to": "Completed"
+          }
+        ],
+        "note": "Moved from For Approval to Completed.",
+        "timestamp": "2026-05-20T14:50:00.000Z"
+      }
+    ]
+  }
+]
