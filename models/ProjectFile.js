@@ -31,6 +31,7 @@ const projectFileSchema = new mongoose.Schema(
             "Caption",
             "Presentation",
             "Document",
+            "Rollout Form",
             "Other"
         ],
         default: "Other"

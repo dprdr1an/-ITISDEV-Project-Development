@@ -569,6 +569,469 @@
             .forEach((select) => populateCommitteeSelect(select));
     }
 
+    /* ---------- Member picker (shared) ---------- */
+
+    /**
+     * Members are fetched once per page and shared by every picker, so a
+     * form with several people fields makes one request, not several.
+     */
+    let memberCache = null;
+
+    async function loadMembers(query) {
+        if (memberCache) return memberCache;
+
+        const response = await api.get('/api/users' + (query || ''));
+
+        memberCache = response.users || [];
+        return memberCache;
+    }
+
+    /** "Adrian Yap — Executive · Logistics" — matches the Requesting Head selector. */
+    function describeMember(person) {
+        if (!person) return '';
+
+        const role = [person.position, person.committee]
+            .filter(Boolean)
+            .join(' · ');
+
+        return role ? person.name + ' — ' + role : person.name;
+    }
+
+    /**
+     * Turns a `.tag-input-wrap` into a multi-select member picker.
+     *
+     * The existing tag chrome is kept exactly as-is; only the free-text
+     * input is swapped for a <select> of real members, so selections can
+     * carry an ObjectId while still displaying a name.
+     *
+     *   IMC.createMemberPicker({ wrapId: 'pointPersonWrap',
+     *                            inputId: 'pointPersonInput',
+     *                            onChange: updateProgress })
+     *
+     * Returns { getValue(), setValue(), isEmpty(), reload() } where
+     * getValue() yields { names: [...], ids: [...] } in display order.
+     */
+    function createMemberPicker(options) {
+        const config = options || {};
+        const wrap = document.getElementById(config.wrapId);
+        const input = document.getElementById(config.inputId);
+
+        // Page uses the old markup — expose an inert picker so callers
+        // can be written without defensive branches.
+        if (!wrap || !input) {
+            return {
+                getValue: function () { return { names: [], ids: [] }; },
+                setValue: function () {},
+                isEmpty: function () { return true; },
+                reload: function () { return Promise.resolve([]); }
+            };
+        }
+
+        // Replace the text input with a select, preserving its classes so
+        // the tag-input styling is untouched.
+        const select = document.createElement('select');
+        select.id = input.id;
+        select.className = input.className;
+        select.setAttribute('aria-label', config.label || 'Add a member');
+        select.innerHTML = '<option value="">Loading members…</option>';
+
+        input.parentNode.replaceChild(select, input);
+
+        let members = [];
+
+        function currentIds() {
+            return Array.prototype.map.call(
+                wrap.querySelectorAll('.tag[data-user-id]'),
+                function (tag) { return tag.getAttribute('data-user-id'); }
+            );
+        }
+
+        /** Hides members already added so the same person cannot be picked twice. */
+        function renderOptions() {
+            const chosen = currentIds();
+
+            select.innerHTML =
+                '<option value="">' +
+                escapeHtml(config.placeholder || 'Add a member…') +
+                '</option>' +
+                members
+                    .filter(function (m) {
+                        return chosen.indexOf(String(m._id)) === -1;
+                    })
+                    .map(function (m) {
+                        return '<option value="' + escapeHtml(m._id) + '">' +
+                            escapeHtml(describeMember(m)) + '</option>';
+                    })
+                    .join('');
+        }
+
+        function addTag(member) {
+            const tag = document.createElement('span');
+
+            tag.className = 'tag';
+            tag.setAttribute('data-user-id', String(member._id));
+            tag.setAttribute('data-user-name', member.name);
+
+            // Name only in the chip; the role is visible in the dropdown
+            tag.appendChild(document.createTextNode(member.name + ' '));
+
+            const remove = document.createElement('button');
+            remove.type = 'button';
+            remove.className = 'tag-remove';
+            remove.textContent = '✕';
+            remove.addEventListener('click', function () {
+                tag.remove();
+                renderOptions();
+                if (typeof config.onChange === 'function') config.onChange();
+            });
+
+            tag.appendChild(remove);
+            wrap.insertBefore(tag, select);
+        }
+
+        select.addEventListener('change', function () {
+            const chosen = members.find(function (m) {
+                return String(m._id) === String(select.value);
+            });
+
+            if (!chosen) return;
+
+            addTag(chosen);
+            renderOptions();
+            select.value = '';
+
+            if (typeof config.onChange === 'function') config.onChange();
+        });
+
+        async function reload() {
+            try {
+                members = await loadMembers(config.query);
+                renderOptions();
+            } catch (err) {
+                console.error('Could not load members:', err);
+                select.innerHTML = '<option value="">Unable to load members</option>';
+                if (typeof showToast === 'function') showToast(err.message);
+            }
+
+            return members;
+        }
+
+        reload();
+
+        return {
+            /** { names, ids } — names stay in sync with ids by construction. */
+            getValue: function () {
+                const tags = wrap.querySelectorAll('.tag[data-user-id]');
+
+                return {
+                    names: Array.prototype.map.call(tags, function (t) {
+                        return t.getAttribute('data-user-name');
+                    }),
+                    ids: Array.prototype.map.call(tags, function (t) {
+                        return t.getAttribute('data-user-id');
+                    })
+                };
+            },
+
+            /**
+             * Restores a stored selection. Accepts member ids; falls back to
+             * matching on name so records saved before ids were stored still
+             * populate the picker.
+             */
+            setValue: async function (ids, names) {
+                await reload();
+
+                wrap.querySelectorAll('.tag').forEach(function (t) { t.remove(); });
+
+                (ids || []).forEach(function (id) {
+                    const m = members.find(function (x) {
+                        return String(x._id) === String(id);
+                    });
+                    if (m) addTag(m);
+                });
+
+                if (!(ids || []).length) {
+                    (names || []).forEach(function (name) {
+                        const m = members.find(function (x) {
+                            return x.name === name;
+                        });
+                        if (m) addTag(m);
+                    });
+                }
+
+                renderOptions();
+            },
+
+            isEmpty: function () {
+                return wrap.querySelectorAll('.tag[data-user-id]').length === 0;
+            },
+
+            reload: reload
+        };
+    }
+
+    /* ---------- Requesting Head selector (shared) ---------- */
+
+    /**
+     * Requesting Head selector — defaults to the signed-in user, with an
+     * opt-in to file on behalf of another Executive.
+     *
+     *   submittedBy    -> always the authenticated user (set server-side)
+     *   requestingHead -> the Executive responsible for the record
+     *
+     * Shared by Project Requests and Rollout Forms so the two cannot drift.
+     * Element ids default to the Project Request markup; pass overrides to
+     * reuse it elsewhere.
+     *
+     *   IMC.createRequestingHead({ onChange: updateProgress,
+     *                              selfHint: '...', pickerHint: '...' })
+     *
+     * Returns { getValue(), isOnBehalf(), validate(), setFromProject() }.
+     */
+    function createRequestingHead(options) {
+            const config = options || {};
+
+            const display  = document.getElementById(config.displayId || 'requestingHeadDisplay');
+            const select   = document.getElementById(config.selectId  || 'requestingHeadSelect');
+            const hidden   = document.getElementById(config.hiddenId  || 'requestingHeadUser');
+            const toggle   = document.getElementById(config.toggleId  || 'onBehalfToggle');
+            const hint     = document.getElementById(config.hintId    || 'requestingHeadHint');
+
+        // Page has the old markup (or the field is absent) — stay inert
+        if (!display || !select || !hidden || !toggle) {
+            return {
+                getValue: function () {
+                    return {
+                        requestingHead: display ? display.value.trim() : '',
+                        requestingHeadUser: null
+                    };
+                },
+                setFromProject: function () {},
+                isOnBehalf: function () { return false; }
+            };
+    }
+
+        const user = getUser();
+
+        // Executives loaded from the Members API, cached for the toggle
+        let executives = [];
+        let loaded = false;
+
+    /** "Adrian Yap — Executive · Logistics" */
+        function describe(person) {
+            if (!person) return '';
+
+            const role = [person.position, person.committee]
+                .filter(Boolean)
+                .join(' · ');
+
+            return role ? person.name + ' — ' + role : person.name;
+    }
+
+        function showSelf() {
+            display.hidden = false;
+            select.hidden = true;
+
+            display.value = user ? describe(user) : '';
+            hidden.value = user ? user.id : '';
+
+            if (hint) {
+                hint.textContent = config.selfHint ||
+                    'Defaults to you. Your account is still recorded as the submitter.';
+            }
+    }
+
+        function showPicker() {
+            display.hidden = true;
+            select.hidden = false;
+
+            // .trackable counts this field by value; clear it so an unfinished
+            // selection doesn't inflate the progress bar.
+            display.value = '';
+
+            if (hint) {
+                hint.textContent = config.pickerHint ||
+                    'You will still be recorded as the submitter of this request.';
+            }
+    }
+
+    /**
+     * Loads selectable Executives from the existing Members API.
+     * Reuses IMC.api so the session cookie and error handling are shared.
+     */
+        async function loadExecutives() {
+            if (loaded) return executives;
+
+            try {
+                const response = await api.get('/api/users?position=Executive');
+
+                executives = response.users || [];
+                loaded = true;
+
+                const current = hidden.value;
+
+                select.innerHTML =
+                    '<option value="">Select an Executive…</option>' +
+                    executives
+                        .map(function (person) {
+                            return '<option value="' + escapeHtml(person._id) + '">' +
+                                escapeHtml(describe(person)) + '</option>';
+                        })
+                        .join('');
+
+                // Keep a pre-selected head (edit mode) if still listed
+                if (current && executives.some(function (p) {
+                    return String(p._id) === String(current);
+                })) {
+                    select.value = current;
+                }
+            } catch (err) {
+                console.error('Could not load Executives:', err);
+
+                select.innerHTML =
+                    '<option value="">Unable to load members</option>';
+
+                showToast(err.message);
+            }
+
+            return executives;
+    }
+
+        toggle.addEventListener('change', async function () {
+            if (toggle.checked) {
+                showPicker();
+                await loadExecutives();
+
+                // Nothing chosen yet — clear so validation catches an empty pick
+                if (!select.value) hidden.value = '';
+            } else {
+                // Reverting restores the signed-in user
+                select.value = '';
+                showSelf();
+            }
+
+            if (typeof config.onChange === 'function') config.onChange();
+        });
+
+        select.addEventListener('change', function () {
+            hidden.value = select.value || '';
+
+            // Mirror the choice into the tracked field so progress reflects it
+            const chosen = executives.find(function (p) {
+                return String(p._id) === String(select.value);
+            });
+
+            display.value = chosen ? describe(chosen) : '';
+
+            if (typeof config.onChange === 'function') config.onChange();
+        });
+
+        // Show the signed-in user immediately
+        showSelf();
+
+        return {
+            /** Current head, in the shape collectFormData() submits. */
+            getValue: function () {
+                if (toggle.checked) {
+                    const chosen = executives.find(function (p) {
+                        return String(p._id) === String(select.value);
+                    });
+
+                    return {
+                        requestingHead: chosen ? chosen.name : '',
+                        requestingHeadUser: select.value || null
+                    };
+                }
+
+                return {
+                    requestingHead: user ? user.name : display.value.trim(),
+                    requestingHeadUser: user ? user.id : null
+                };
+            },
+
+            isOnBehalf: function () {
+                return toggle.checked;
+            },
+
+            /** null when valid, otherwise a message to show the user. */
+            validate: function () {
+                if (toggle.checked && !select.value) {
+                    return config.pickError ||
+                        'Please select the Executive this request is for.';
+                }
+
+                if (!toggle.checked && !user) {
+                    return 'Could not identify the requesting head. Please sign in again.';
+                }
+
+                return null;
+            },
+
+            /**
+             * Restores state from a stored record, for an edit flow.
+             * Ticks the box and preselects the member only when the request
+             * was filed for somebody other than its submitter.
+             */
+            setFromProject: async function (project) {
+                if (!project) return;
+
+                const headId =
+                    project.requestingHeadUser && project.requestingHeadUser._id
+                        ? project.requestingHeadUser._id
+                        : project.requestingHeadUser;
+
+                const submitterId =
+                    project.submittedBy && project.submittedBy._id
+                        ? project.submittedBy._id
+                        : project.submittedBy;
+
+                const differs =
+                    headId && submitterId &&
+                    String(headId) !== String(submitterId);
+
+                if (!differs) {
+                    toggle.checked = false;
+                    showSelf();
+
+                    // Legacy record with only a typed name and no reference
+                    if (!headId && project.requestingHead) {
+                        display.value = project.requestingHead;
+                        hidden.value = '';
+                    }
+
+                    return;
+                }
+
+                toggle.checked = true;
+                showPicker();
+
+                hidden.value = String(headId);
+
+                await loadExecutives();
+
+                select.value = String(headId);
+
+                // Stored head is no longer an Executive (role changed or removed):
+                // keep them selectable so an edit doesn't silently reassign.
+                if (select.value !== String(headId)) {
+                    const label = project.requestingHeadUser &&
+                        project.requestingHeadUser.name
+                            ? describe(project.requestingHeadUser)
+                            : project.requestingHead;
+
+                    select.insertAdjacentHTML(
+                        'beforeend',
+                        '<option value="' + escapeHtml(String(headId)) + '">' +
+                        escapeHtml(label || 'Current requesting head') +
+                        '</option>'
+                    );
+
+                    select.value = String(headId);
+                }
+            }
+        };
+    }
+
     /* ---------- Search & filter (shared) ---------- */
 
     /**
@@ -1531,6 +1994,10 @@
         COMMITTEE_NAMES,
         POSITIONS,
         populateCommitteeSelect,
+        createMemberPicker,
+        createRequestingHead,
+        describeMember,
+        loadMembers,
         populateAllCommitteeSelects,
 
         // search & filter

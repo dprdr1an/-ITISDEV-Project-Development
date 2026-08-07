@@ -31,7 +31,31 @@ const rolloutFormSchema = new mongoose.Schema(
     priority:       { type: String, enum: ['High', 'Medium', 'Low'] },
 
     requestingHead: { type: String },
+
+    // Structured counterpart, set when the requesting head was chosen from
+    // the member list. Optional, so existing rollout forms stay valid.
+    requestingHeadUser: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        default: null
+    },
+
+    // Display names (canonical, backwards compatible) plus their structured
+    // counterparts when chosen from the member list.
     pointPersons:   [{ type: String }],
+    pointPersonUsers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+
+    // Rollout forms previously linked to a project by name only, which left
+    // generated files with nothing to attach to. Optional so existing forms
+    // stay valid; resolved from projectName on submit when not supplied.
+    project: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ProjectRequest',
+        default: null
+    },
 
     startDate:      { type: Date },
     endDate:        { type: Date },

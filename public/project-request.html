@@ -278,7 +278,7 @@
           </div>
           <div class="form-card-body">
 
-            <div class="form-row">
+            <div class="form-row cols-people">
               <div class="form-group">
                 <label class="form-label" for="requestingHeadDisplay">
                   Requesting Head / Officer <span class="required">*</span>
@@ -311,10 +311,11 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Point Person(s) <span class="required">*</span></label>
+                <!-- Replaced by a member picker at runtime (IMC.createMemberPicker) -->
                 <div class="tag-input-wrap" id="pointPersonWrap">
-                  <input type="text" class="tag-real-input" placeholder="Type name, press Enter to add…" id="pointPersonInput" />
+                  <input type="text" class="tag-real-input" placeholder="Loading members…" id="pointPersonInput" />
                 </div>
-                <span class="form-hint">The member(s) responsible for coordinating this project</span>
+                <span class="form-hint">Select the member(s) responsible for coordinating this project</span>
               </div>
             </div>
 

@@ -21,6 +21,27 @@ const {
  * Falls back to the free-text `requestingHead` so existing clients and legacy
  * records keep working unchanged.
  */
+/**
+ * Filters a list of member ids down to those that actually exist,
+ * preserving order and removing duplicates. Returns [] for anything
+ * unusable, so a malformed payload cannot write dangling references.
+ */
+async function resolveMemberIds(ids) {
+    if (!Array.isArray(ids) || !ids.length) return [];
+
+    const valid = ids
+        .map(String)
+        .filter((id) => mongoose.Types.ObjectId.isValid(id))
+        .filter((id, i, all) => all.indexOf(id) === i);
+
+    if (!valid.length) return [];
+
+    const found = await User.find({ _id: { $in: valid } }).select('_id').lean();
+    const existing = new Set(found.map((u) => String(u._id)));
+
+    return valid.filter((id) => existing.has(id));
+}
+
 async function resolveRequestingHead(body, currentUser) {
     const id = body.requestingHeadUser;
 
@@ -60,6 +81,11 @@ const submitProject = async (req, res) => {
         const head = await resolveRequestingHead(req.body, req.currentUser);
 
         const project = new ProjectRequest(req.body);
+
+        // Point person references are validated the same way the requesting
+        // head is: only ids that resolve to real members are stored, so a
+        // stale client value cannot write a dangling reference.
+        project.pointPersonUsers = await resolveMemberIds(req.body.pointPersonUsers);
 
         // Both are set from trusted sources, never the raw body:
         //   submittedBy    — whoever is signed in and clicked Submit
@@ -192,6 +218,12 @@ const updateProject = async (req, res) => {
 
             updateData.requestingHead = head.requestingHead;
             updateData.requestingHeadUser = head.requestingHeadUser;
+        }
+
+        // Same validation on edit as on creation
+        if (updateData.pointPersonUsers !== undefined) {
+            updateData.pointPersonUsers =
+                await resolveMemberIds(updateData.pointPersonUsers);
         }
 
         const before = project.toObject();

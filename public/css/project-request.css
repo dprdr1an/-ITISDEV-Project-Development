@@ -630,33 +630,3 @@
     .ai-footer-right .btn-secondary { flex: 1 1 auto; justify-content: center; }
 }
 
-/* ── REQUESTING HEAD: "on behalf of" toggle ──
-   Uses the existing form tokens; no new colours or fonts. */
-.onbehalf-toggle {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 9px;
-    font-size: 0.76rem;
-    color: var(--gray-700);
-    cursor: pointer;
-    user-select: none;
-}
-
-.onbehalf-toggle input {
-    accent-color: var(--orange);
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.onbehalf-toggle:hover { color: var(--gray-900); }
-
-/* The locked default reads as information, not a disabled input */
-#requestingHeadDisplay[readonly] {
-    background: var(--gray-50);
-    color: var(--gray-700);
-    cursor: default;
-}
-#requestingHeadDisplay[readonly]:focus { border-color: var(--gray-200); }

@@ -18,22 +18,54 @@ const section = document.getElementById('section' + n);
 if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// Tag input
-const tagInput = document.getElementById('pointPersonInput');
-const tagWrap  = document.getElementById('pointPersonWrap');
-
-tagInput.addEventListener('keydown', function(e) {
-if ((e.key === 'Enter' || e.key === ',') && this.value.trim()) {
-    e.preventDefault();
-    const tag = document.createElement('span');
-    tag.className = 'tag';
-    tag.innerHTML = this.value.trim() + ' <button class="tag-remove" onclick="removeTag(this)">✕</button>';
-    tagWrap.insertBefore(tag, this);
-    this.value = '';
-}
+// Point Person(s) — the same member picker used on the Project Request
+// form, backed by the Users collection. The people chosen here receive
+// the notification when this rollout is submitted.
+// Requesting Head — the shared selector from common.js, identical to the
+// one on Project Requests. Defaults to the signed-in user with an opt-in
+// to file on behalf of another Executive.
+window.RequestingHead = window.IMC.createRequestingHead({
+    onChange: updateChecklistProgress,
+    pickerHint: 'You will still be recorded as the submitter of this rollout.',
+    pickError: 'Please select the Executive this rollout is for.'
 });
 
-tagWrap.addEventListener('click', () => tagInput.focus());
+// Project selector — the rollout must point at a real Project Request,
+// otherwise the generated PDF has no project to be filed under.
+(async function loadProjectOptions() {
+    const select = document.getElementById('rolloutProject');
+    if (!select) return;
+
+    try {
+        const response = await window.IMC.api.get('/api/projects');
+        const projects = response.data || [];
+
+        if (!projects.length) {
+            select.innerHTML =
+                '<option value="">No project requests available</option>';
+            return;
+        }
+
+        select.innerHTML =
+            '<option value="">Select a project…</option>' +
+            projects.map(function (p) {
+                return '<option value="' + window.IMC.escapeHtml(p.projectName) +
+                    '" data-project-id="' + window.IMC.escapeHtml(p._id) + '">' +
+                    window.IMC.escapeHtml(p.projectName) + '</option>';
+            }).join('');
+    } catch (err) {
+        console.error('Could not load projects:', err);
+        select.innerHTML = '<option value="">Unable to load projects</option>';
+    }
+})();
+
+window.PointPersons = window.IMC.createMemberPicker({
+    wrapId: 'pointPersonWrap',
+    inputId: 'pointPersonInput',
+    placeholder: 'Add a point person…',
+    label: 'Add a point person',
+    onChange: updateChecklistProgress
+});
 
 function removeTag(btn) {
 btn.closest('.tag').remove();
@@ -116,10 +148,12 @@ document.getElementById('checklistCount').textContent = checked + ' / ' + items.
 // Save draft
 // Collect all rollout form data
 function collectRolloutData() {
-// Point persons from tags
-const pointPersons = Array.from(
-    document.querySelectorAll('#pointPersonWrap .tag')
-).map(t => t.textContent.replace('✕','').trim());
+// Point persons — names for display, ids so the server can notify them
+const points = window.PointPersons
+    ? window.PointPersons.getValue()
+    : { names: [], ids: [] };
+
+const pointPersons = points.names;
 
 // Publication rows
 const publications = Array.from(
@@ -154,23 +188,43 @@ const checklist = Array.from(
     document.querySelectorAll('.checklist-item.checked .check-label')
 ).map(el => el.textContent.trim());
 
-// Main fields — grab all visible inputs in order
-const allInputs = document.querySelectorAll('.form-control');
+// Main fields — positional, so the requesting-head controls are excluded
+// deliberately: they are read from the shared component below, and leaving
+// them in the list would shift every index after them.
+const allInputs = Array.from(document.querySelectorAll('.form-control'))
+    .filter(function (el) {
+        return el.id !== 'requestingHeadDisplay' && el.id !== 'requestingHeadSelect';
+    });
+
+const head = window.RequestingHead
+    ? window.RequestingHead.getValue()
+    : { requestingHead: '', requestingHeadUser: null };
+
+// Explicit project reference, so the server never has to guess from a name
+const projectSelect = document.getElementById('rolloutProject');
+const projectId = projectSelect
+    ? (projectSelect.selectedOptions[0] || {}).getAttribute
+        ? projectSelect.selectedOptions[0].getAttribute('data-project-id')
+        : null
+    : null;
 
 return {
+    project:        projectId || null,
     projectName:    allInputs[0]?.value || '',
     committee:      allInputs[1]?.value || '',
     projectType:    allInputs[2]?.value || '',
     targetPlatform: allInputs[3]?.value || '',
     priority:       allInputs[4]?.value || '',
-    requestingHead: allInputs[5]?.value || '',
+    requestingHead: head.requestingHead,
+    requestingHeadUser: head.requestingHeadUser,
     pointPersons,
-    startDate:      allInputs[6]?.value || null,
-    endDate:        allInputs[7]?.value || null,
-    daamDeadline:   allInputs[8]?.value || null,
-    eventDate:      allInputs[9]?.value || null,
-    description:    allInputs[10]?.value || '',
-    keyMessages:    allInputs[11]?.value || '',
+    pointPersonUsers: points.ids,
+    startDate:      allInputs[5]?.value || null,
+    endDate:        allInputs[6]?.value || null,
+    daamDeadline:   allInputs[7]?.value || null,
+    eventDate:      allInputs[8]?.value || null,
+    description:    allInputs[9]?.value || '',
+    keyMessages:    allInputs[10]?.value || '',
     publications,
     publicityPlan,
     checklist,
@@ -180,6 +234,12 @@ return {
 }
 
 async function saveDraft() {
+const headError = window.RequestingHead && window.RequestingHead.validate();
+if (headError) {
+    showToast(headError);
+    return;
+}
+
 const data = collectRolloutData();
 try {
     const res = await fetch('/api/rollouts', {
@@ -201,6 +261,12 @@ try {
 }
 
 async function submitRollout() {
+const headError = window.RequestingHead && window.RequestingHead.validate();
+if (headError) {
+    showToast(headError);
+    return;
+}
+
 const checked = document.querySelectorAll('.checklist-item.checked').length;
 const total   = document.querySelectorAll('.checklist-item').length;
 
@@ -224,7 +290,19 @@ try {
     statusBadge.className = 'status-badge status-review';
     statusBadge.innerHTML = '<span class="dot"></span> Submitted — For Review';
     addRevisionEntry(result.revision);
-    showToast('Rollout submitted! Chairpersons have been notified.');
+
+    // Report what actually happened rather than assuming success:
+    // a skipped PDF or an unsent notification used to be invisible.
+    if (result.warnings && result.warnings.length) {
+        showToast('Rollout submitted, but: ' + result.warnings.join(' '));
+    } else if (result.pdf) {
+        showToast(
+            'Rollout submitted. "' + result.pdf.name +
+            '" was added to the ' + result.pdf.folder + ' folder.'
+        );
+    } else {
+        showToast('Rollout submitted successfully.');
+    }
     } else {
     showToast('Submission failed: ' + result.message);
     }

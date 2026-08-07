@@ -569,6 +569,44 @@ body {
     flex-shrink: 0;
 }
 
+/* ── REQUESTING HEAD: "on behalf of" toggle ──
+   Uses the existing form tokens; no new colours or fonts. */
+.onbehalf-toggle {
+    display: flex;
+    /* Top-aligned so the box stays level with the first line when the
+       label wraps, rather than floating against a two-line block. */
+    align-items: flex-start;
+    gap: 8px;
+    /* Spacing comes from .form-group's own gap; the extra margin here
+       was what pushed this column out of step with its neighbour. */
+    margin-top: 2px;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: var(--gray-700);
+    cursor: pointer;
+    user-select: none;
+}
+
+.onbehalf-toggle input {
+    accent-color: var(--orange);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+    /* Nudge onto the label's first-line baseline */
+    margin-top: 1px;
+}
+
+.onbehalf-toggle:hover { color: var(--gray-900); }
+
+/* The locked default reads as information, not a disabled input */
+#requestingHeadDisplay[readonly] {
+    background: var(--gray-50);
+    color: var(--gray-700);
+    cursor: default;
+}
+#requestingHeadDisplay[readonly]:focus { border-color: var(--gray-200); }
+
 /* ── SHARED FORM CONTROLS ── */
 .form-row {
     display: grid;
@@ -578,6 +616,16 @@ body {
 }
 .form-row.cols-1 { grid-template-columns: 1fr; }
 .form-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+/* People row: Requesting Head beside Point Person(s). The point person
+   field stays the wider of the two, while minmax() keeps the requesting
+   head wide enough to show a full "Name — Position · Committee" label.
+   align-items:start stops the taller column (the one carrying the
+   on-behalf checkbox) from stretching its neighbour. */
+.form-row.cols-people {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    align-items: start;
+}
 .form-row:last-child { margin-bottom: 0; }
 
 .form-group { display: flex; flex-direction: column; gap: 6px; }
@@ -789,6 +837,7 @@ select.form-control {
     .page-content { padding: 20px 16px 48px; }
     .topbar { padding: 0 16px; }
     .form-row,
+    .form-row.cols-people,
     .form-row.cols-3 { grid-template-columns: 1fr; }
 }
 

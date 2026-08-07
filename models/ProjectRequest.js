@@ -27,7 +27,16 @@ const projectRequestSchema = new mongoose.Schema(
         default: null
     },
 
+    // Display names, kept as the canonical value so records created before
+    // the picker existed continue to render unchanged.
     pointPersons:   [{ type: String }],
+
+    // Structured counterpart, populated when the point persons were chosen
+    // from the member list. Optional, so legacy records remain valid.
+    pointPersonUsers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
 
     startDate:      { type: Date },
     postingDate:    { type: Date },

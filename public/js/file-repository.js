@@ -66,6 +66,7 @@
         Caption: "badge-doc",
         Presentation: "badge-preso",
         Document: "badge-doc",
+        "Rollout Form": "badge-preso",
         Other: "badge-doc"
     };
 
@@ -260,6 +261,7 @@
             folderCountCaption: counts.Caption || 0,
             folderCountPresentation: counts.Presentation || 0,
             folderCountDocument: counts.Document || 0,
+            folderCountRolloutForm: counts["Rollout Form"] || 0,
             folderCountOther: counts.Other || 0
         };
 
